@@ -857,6 +857,21 @@
       max-width: 600px;
     }
 
+    .form-success {
+      grid-column: 1 / -1;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .form-success p {
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      color: var(--white) !important;
+      margin: 0 !important;
+      letter-spacing: 1px;
+    }
+
     .contact-form .full-width { grid-column: 1 / -1; }
 
     .form-group {
@@ -1122,7 +1137,7 @@
       <div class="how-num">01</div>
       <div class="how-content">
         <span class="how-tag">Investor Education</span>
-        <h3>Franchise Investor Education</h3>
+        <h3>Franchise Investment Coaching</h3>
         <p>Most franchise buyers enter the market without understanding how to properly evaluate an opportunity. Through MYFranchiseGuide's media platform and coaching programs, buyers learn how to approach franchising with full disclosure and confidence — not as a hopeful buyer.</p>
         <div class="how-learn">
           <p class="how-learn-label">You Will Learn</p>
@@ -1140,8 +1155,8 @@
     <div class="how-help-item alt reveal">
       <div class="how-num">02</div>
       <div class="how-content">
-        <span class="how-tag">Fractional Advisory</span>
-        <h3>Fractional Growth Advisory for Franchise Brands</h3>
+        <span class="how-tag">Brand Support</span>
+        <h3>Fractional Sales &amp; Marketing Advisory</h3>
         <p>Many franchise brands want to grow, but their franchise sales and marketing efforts are often fragmented or inconsistent. MYFranchiseGuide works with selected brands as a fractional growth partner, helping leadership teams build the strategy, systems, and positioning needed for structured expansion.</p>
         <div class="how-learn">
           <p class="how-learn-label">This Includes</p>
@@ -1214,31 +1229,34 @@
       <p class="section-label" style="color:rgba(255,255,255,0.5)">Let's Talk</p>
       <h2>Ready to Make a <span class="accent">Smarter</span> Move?</h2>
       <p>Whether you're an investor exploring franchising or a brand looking to scale — start with a conversation. No fluff, no jargon.</p>
-      <div class="contact-form">
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/mojkaeqz" method="POST">
         <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" placeholder="Full name" />
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Full name" required />
         </div>
         <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="your@email.com" />
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
         </div>
         <div class="form-group full-width">
-          <label>I Am Interested In</label>
-          <select>
+          <label for="interest">I Am Interested In</label>
+          <select id="interest" name="interest" required>
             <option value="" disabled selected>Select a division</option>
-            <option>Media & Investor Education</option>
-            <option>Fractional C-Suite Advisory</option>
-            <option>Training & Capability Building</option>
+            <option>Franchise Investment Coaching</option>
+            <option>Fractional Sales &amp; Marketing Advisory</option>
+            <option>Training &amp; Capability Building</option>
             <option>General Enquiry</option>
           </select>
         </div>
         <div class="form-group full-width">
-          <label>Tell Us About Your Situation</label>
-          <textarea placeholder="Brief overview of where you are and what you're looking to achieve..."></textarea>
+          <label for="message">What Would You Like Guidance On?</label>
+          <textarea id="message" name="message" placeholder="Brief overview of where you are and what you're looking to achieve..." required></textarea>
         </div>
-        <button class="form-submit">Send Message →</button>
-      </div>
+        <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
+        <div class="form-success full-width" id="form-success" style="display:none;">
+          <p>✓ Message sent! We'll be in touch soon.</p>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -1278,6 +1296,37 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    // Formspree async submission
+    const form = document.getElementById('contact-form');
+    const btn = document.getElementById('submit-btn');
+    const success = document.getElementById('form-success');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          btn.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          btn.textContent = 'Something went wrong — try again';
+          btn.disabled = false;
+        }
+      } catch(err) {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    });
   </script>
 </body>
 </html>
