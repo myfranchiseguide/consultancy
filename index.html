@@ -36,6 +36,9 @@
       --mid-grey: #CCCCCC;
       --dark-grey: #1a1a1a;
     }
+
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: var(--white);
@@ -915,13 +918,17 @@
     }
 
     .cta-inner {
-      max-width: 680px;
+      max-width: 1200px;
       position: relative;
       z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
     }
-
+    .cta-left { padding-top: 8px; }
     .cta-section h2 {
-      font-size: clamp(30px, 5vw, 56px);
+      font-size: clamp(28px, 4vw, 48px);
       font-weight: 900;
       text-transform: uppercase;
       color: var(--white);
@@ -929,14 +936,48 @@
       margin-bottom: 20px;
     }
     .cta-section h2 .accent { color: var(--red); }
-
-    .cta-section p {
-      font-size: 16px;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.7;
-      margin-bottom: 48px;
-      max-width: 500px;
+    .cta-intro-p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 0;
     }
+    .cta-seo-block {
+      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 36px;
+    }
+    .cta-seo-block h3 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 16px;
+    }
+    .cta-seo-block p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    .cta-seo-block p:last-of-type { margin-bottom: 0; }
+    .cta-seo-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .cta-seo-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 5px 10px;
+    }
+    .cta-right { position: relative; z-index: 2; }
 
     /* Contact Form */
     .contact-form {
@@ -1608,6 +1649,7 @@
 
       .cta-section { padding: 60px 20px; }
       .cta-section h2 { font-size: clamp(24px, 7vw, 36px); }
+      .cta-inner { grid-template-columns: 1fr; gap: 40px; }
       .contact-form { grid-template-columns: 1fr; }
       .contact-form .full-width { grid-column: 1; }
       .form-submit { grid-column: 1; }
@@ -1653,6 +1695,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#how-we-help">What We Do</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="/scale-calculator">S.C.A.L.E. Calculator</a></li>
       <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
     </ul>
   </nav>
@@ -1755,7 +1798,7 @@
           </ul>
         </div>
         <p class="how-footnote">This is a serious capital decision. Our role is to help you evaluate opportunities rigorously before you commit.</p>
-        <a href="https://app-na2.hubspotdocuments.com/documents/243433647/view/1681986249?accessId=f8b4c2" target="_blank" rel="noopener" class="download-cta">
+        <a href="https://na2.hubs.ly/H040z3b0" target="_blank" rel="noopener" class="download-cta">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download the Free Franchise Buyer Checklist
         </a>
@@ -2054,38 +2097,62 @@
   <!-- CTA / CONTACT -->
   <section class="cta-section" id="contact">
     <div class="cta-inner">
-      <p class="section-label" style="color:rgba(255,255,255,0.5)">Let's Talk</p>
-      <h2>Ready to Make a <span class="accent">Smarter</span> Move?</h2>
-      <p>Whether you're an investor exploring franchising or a brand looking to scale — start with a conversation. No fluff, no jargon.</p>
-      <form class="contact-form" id="contact-form" action="https://formspree.io/f/mojkaeqz" method="POST">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Full name" required />
+
+      <!-- LEFT: SEO + positioning content -->
+      <div class="cta-left reveal-left">
+        <p class="section-label" style="color:rgba(255,255,255,0.5)">Let's Talk</p>
+        <h2>Ready to Make a <span class="accent">Smarter</span> Move?</h2>
+        <p class="cta-intro-p">Whether you're an investor exploring franchising or a brand looking to scale — start with a conversation. No fluff, no jargon.</p>
+
+        <div class="cta-seo-block">
+          <h3>About MYFranchiseGuide</h3>
+          <p>MYFranchiseGuide is Malaysia's franchise investment education and advisory platform. We help professionals and investors make informed franchise decisions through independent analysis, commercial due diligence, and structured evaluation frameworks.</p>
+          <p>Our advisory work spans franchise investment coaching, fractional C-suite advisory for franchise brands, and capability training for franchise founders and management teams across Malaysia and South East Asia.</p>
+          <p>Based in Kuala Lumpur, we serve investors and brands across Malaysia, Singapore, and the broader SEA region — wherever serious franchise decisions are being made.</p>
+          <div class="cta-seo-tags">
+            <span class="cta-seo-tag">Franchise Coach Malaysia</span>
+            <span class="cta-seo-tag">Franchise Investment KL</span>
+            <span class="cta-seo-tag">Franchise Advisory SEA</span>
+            <span class="cta-seo-tag">Franchise Consultant Malaysia</span>
+            <span class="cta-seo-tag">Buy a Franchise Malaysia</span>
+            <span class="cta-seo-tag">Franchise Due Diligence</span>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required />
-        </div>
-        <div class="form-group full-width">
-          <label for="interest">I Am Interested In</label>
-          <select id="interest" name="interest" required>
-            <option value="" disabled selected>Select a division</option>
-            <option>Franchise Investment Coaching</option>
-            <option>Fractional Sales &amp; Marketing Advisory</option>
-            <option>Training &amp; Capability Building</option>
-            <option>General Enquiry</option>
-          </select>
-        </div>
-        <div class="form-group full-width">
-          <label for="message">What Would You Like Guidance On?</label>
-          <textarea id="message" name="message" placeholder="Brief overview of where you are and what you're looking to achieve..." required></textarea>
-        </div>
-        <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
-        <p class="form-reassurance">✓ We'll respond within 24 hours.</p>
-        <div class="form-success full-width" id="form-success" style="display:none;">
-          <p>✓ Message sent! We'll be in touch soon.</p>
-        </div>
-      </form>
+      </div>
+
+      <!-- RIGHT: Contact form -->
+      <div class="cta-right reveal-right">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mojkaeqz" method="POST">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Full name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group full-width">
+            <label for="interest">I Am Interested In</label>
+            <select id="interest" name="interest" required>
+              <option value="" disabled selected>Select a division</option>
+              <option>Franchise Investment Coaching</option>
+              <option>Fractional Sales &amp; Marketing Advisory</option>
+              <option>Training &amp; Capability Building</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="message">What Would You Like Guidance On?</label>
+            <textarea id="message" name="message" placeholder="Brief overview of where you are and what you're looking to achieve..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
+          <p class="form-reassurance">✓ We'll respond within 24 hours.</p>
+          <div class="form-success full-width" id="form-success" style="display:none;">
+            <p>✓ Message sent! We'll be in touch soon.</p>
+          </div>
+        </form>
+      </div>
+
     </div>
   </section>
 
@@ -2107,6 +2174,7 @@
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
       <li><a href="#how-we-help">What We Do</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="footer-social">
