@@ -4,55 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>S.C.A.L.E. Calculator | MYFranchiseGuide</title>
-  <meta name="description" content="Score any franchise opportunity across 5 dimensions before you commit a single ringgit. Built for serious investors." />
+  <meta name="description" content="Score any franchise opportunity across 5 dimensions before you commit a single dollar. Built for serious investors." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --red: #D4202A;
-      --blue: #0056B8;
-      --black: #000000;
-      --white: #FFFFFF;
-      --gray-bg: #F5F5F5;
-      --gray-border: #E0E0E0;
-      --gray-text: #666666;
-      --gray-light: #F9F9F9;
-      --green-bg: #EAF3DE;
-      --green-text: #3B6D11;
-      --amber-bg: #FAEEDA;
-      --amber-text: #854F0B;
-      --red-bg: #FCEBEB;
-      --red-text: #A32D2D;
-      --blue-light: #E6F1FB;
-      --blue-border: #B5D4F4;
+      --red: #D4202A; --blue: #0056B8; --black: #000000; --white: #FFFFFF;
+      --gray-bg: #F5F5F5; --gray-border: #E0E0E0; --gray-text: #666666; --gray-light: #F9F9F9;
+      --green-bg: #EAF3DE; --green-text: #3B6D11;
+      --amber-bg: #FAEEDA; --amber-text: #854F0B;
+      --red-bg: #FCEBEB; --red-text: #A32D2D;
+      --blue-light: #E6F1FB; --blue-border: #B5D4F4;
     }
-
     html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); min-height: 100vh; }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: var(--white);
-      color: var(--black);
-      min-height: 100vh;
-    }
-
-    /* NAV */
-    .nav {
-      background: var(--white);
-      border-bottom: 1px solid var(--gray-border);
-      padding: 0 2rem;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-logo { display: flex; align-items: baseline; gap: 0; font-size: 18px; font-weight: 700; text-decoration: none; letter-spacing: -0.02em; }
+    .nav { background: var(--white); border-bottom: 1px solid var(--gray-border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { display: flex; align-items: baseline; font-size: 18px; font-weight: 700; text-decoration: none; letter-spacing: -0.02em; }
     .nav-logo .my { color: var(--red); }
     .nav-logo .franchise { color: var(--blue); }
     .nav-logo .guide { color: var(--black); }
@@ -60,69 +30,41 @@
     .nav-back:hover { color: var(--blue); }
     .nav-back svg { width: 14px; height: 14px; }
 
-    /* HERO */
-    .hero {
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-      padding: 4rem 2rem 3rem;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: var(--red);
-      color: var(--white);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      padding: 5px 12px;
-      border-radius: 3px;
-      margin-bottom: 1.25rem;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      font-size: clamp(28px, 5vw, 42px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
+    .hero { background: var(--black); color: var(--white); text-align: center; padding: 4rem 2rem 3rem; }
+    .hero-badge { display: inline-block; background: var(--red); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 3px; margin-bottom: 1.25rem; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.2; }
     .hero h1 span { color: var(--red); }
-    .hero p {
-      font-size: 15px;
-      color: #aaa;
-      max-width: 500px;
-      margin: 0 auto;
-      line-height: 1.7;
-      font-weight: 400;
-    }
+    .hero p { font-size: 15px; color: #aaa; max-width: 500px; margin: 0 auto; line-height: 1.7; font-weight: 400; }
 
-    /* MAIN CONTENT */
     .main { max-width: 700px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
 
-    /* BRAND INPUT */
-    .brand-box {
-      background: var(--gray-bg);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .brand-box label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-text); display: block; margin-bottom: 8px; }
-    .brand-box input {
-      width: 100%;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 17px;
-      font-weight: 500;
-      background: var(--white);
-      border: 1px solid var(--gray-border);
-      border-radius: 8px;
-      padding: 11px 14px;
-      color: var(--black);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .brand-box input:focus { border-color: var(--blue); }
+    /* GATE */
+    .gate-card { background: var(--white); border: 1px solid var(--gray-border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .gate-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    .gate-card h2 { font-size: 20px; font-weight: 700; color: var(--black); margin-bottom: 8px; line-height: 1.3; }
+    .gate-sub { font-size: 13px; color: var(--gray-text); font-weight: 400; line-height: 1.7; margin-bottom: 1.75rem; }
+    .field-group { margin-bottom: 1rem; }
+    .field-group label { display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-text); margin-bottom: 6px; }
+    .field-group label .req { color: var(--red); font-size: 13px; line-height: 1; }
+    .field-group label .opt { font-size: 10px; font-weight: 400; color: #aaa; letter-spacing: 0.02em; text-transform: none; margin-left: 2px; }
+    .field-group input { width: 100%; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; background: var(--gray-light); border: 1px solid var(--gray-border); border-radius: 8px; padding: 12px 14px; color: var(--black); outline: none; transition: border-color 0.2s, background 0.2s; }
+    .field-group input:focus { border-color: var(--blue); background: var(--white); }
+    .field-group input.error { border-color: var(--red); }
+    .field-error { font-size: 12px; color: var(--red); margin-top: 4px; display: none; }
+    .field-error.show { display: block; }
+    .gate-form-error { background: var(--red-bg); border: 1px solid #F7C1C1; border-radius: 8px; padding: 11px 14px; font-size: 13px; color: var(--red-text); margin-bottom: 1rem; display: none; }
+    .gate-form-error.show { display: block; }
+    .btn-gate { width: 100%; padding: 14px; border: none; border-radius: 8px; background: var(--red); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: opacity 0.15s; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1.25rem; }
+    .btn-gate:hover { opacity: 0.88; }
+    .btn-gate:disabled { opacity: 0.5; cursor: not-allowed; }
+    .gate-privacy { font-size: 12px; color: var(--gray-text); font-weight: 400; margin-top: 1rem; line-height: 1.6; text-align: center; }
 
-    /* PROGRESS */
+    /* TOOL */
+    .tool-section { display: none; }
+    .brand-box { background: var(--gray-bg); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+    .brand-box label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-text); display: block; margin-bottom: 8px; }
+    .brand-box input { width: 100%; font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 500; background: var(--white); border: 1px solid var(--gray-border); border-radius: 8px; padding: 11px 14px; color: var(--black); outline: none; }
+
     .progress-wrap { display: flex; align-items: center; gap: 8px; margin-bottom: 2rem; }
     .progress-step { flex: 1; height: 4px; border-radius: 2px; background: var(--gray-border); transition: background 0.3s; cursor: pointer; }
     .progress-step.done { background: var(--blue); }
@@ -130,135 +72,53 @@
     .progress-step:hover { opacity: 0.75; }
     .progress-label { font-size: 12px; font-weight: 500; color: var(--gray-text); white-space: nowrap; min-width: 68px; text-align: right; }
 
-    /* SECTION CARD */
-    .section-card {
-      background: var(--white);
-      border: 1px solid var(--gray-border);
-      border-radius: 12px;
-      padding: 1.75rem;
-      margin-bottom: 1.5rem;
-    }
-    .section-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 1.5rem; }
-    .section-letter {
-      width: 44px; height: 44px; border-radius: 8px;
-      background: var(--blue); color: var(--white);
-      font-size: 20px; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
+    .section-card { background: var(--white); border: 1px solid var(--gray-border); border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem; }
+    .section-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 6px; }
+    .section-letter { width: 44px; height: 44px; border-radius: 8px; background: var(--blue); color: var(--white); font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .section-meta h2 { font-size: 17px; font-weight: 700; color: var(--black); margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.02em; }
     .section-meta p { font-size: 13px; color: var(--gray-text); font-weight: 400; }
+    .section-why { font-size: 13px; color: var(--blue); font-weight: 500; background: var(--blue-light); border-radius: 6px; padding: 10px 14px; margin-bottom: 1.25rem; line-height: 1.6; }
 
     .question-row { padding: 14px 0; border-bottom: 1px solid var(--gray-bg); }
     .question-row:last-of-type { border-bottom: none; }
     .question-text { font-size: 14px; font-weight: 500; color: var(--black); margin-bottom: 10px; line-height: 1.55; }
     .score-buttons { display: flex; gap: 8px; }
-    .score-btn {
-      flex: 1; padding: 9px 4px;
-      border: 1px solid var(--gray-border);
-      border-radius: 8px;
-      background: var(--gray-light);
-      color: var(--gray-text);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px; font-weight: 500;
-      cursor: pointer;
-      transition: all 0.15s;
-      text-align: center;
-    }
+    .score-btn { flex: 1; padding: 9px 4px; border: 1px solid var(--gray-border); border-radius: 8px; background: var(--gray-light); color: var(--gray-text); font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; text-align: center; }
     .score-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
     .score-btn.selected { background: var(--blue); border-color: var(--blue); color: var(--white); }
     .score-labels { display: flex; justify-content: space-between; margin-top: 6px; }
     .score-labels span { font-size: 11px; color: #aaa; font-weight: 400; }
-
-    .section-score-row {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-top: 16px; padding-top: 16px;
-      border-top: 1px solid var(--gray-border);
-    }
+    .section-score-row { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--gray-border); }
     .section-score-row span { font-size: 13px; color: var(--gray-text); font-weight: 500; }
     .section-score-val { font-size: 20px; font-weight: 700; color: var(--blue); }
 
-    /* NAV BUTTONS */
     .nav-row { display: flex; gap: 10px; margin-top: 1.5rem; }
-    .btn-prev {
-      flex: 1; padding: 13px;
-      border: 1px solid var(--gray-border); border-radius: 8px;
-      background: transparent; color: var(--gray-text);
-      font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500;
-      cursor: pointer; transition: all 0.15s;
-    }
+    .btn-prev { flex: 1; padding: 13px; border: 1px solid var(--gray-border); border-radius: 8px; background: transparent; color: var(--gray-text); font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
     .btn-prev:hover { border-color: var(--black); color: var(--black); }
-    .btn-next {
-      flex: 2; padding: 13px; border: none; border-radius: 8px;
-      background: var(--red); color: var(--white);
-      font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700;
-      cursor: pointer; transition: opacity 0.15s;
-      text-transform: uppercase; letter-spacing: 0.04em;
-    }
+    .btn-next { flex: 2; padding: 13px; border: none; border-radius: 8px; background: var(--red); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: opacity 0.15s; text-transform: uppercase; letter-spacing: 0.04em; }
     .btn-next:hover { opacity: 0.88; }
     .btn-next:disabled { background: var(--gray-border); color: var(--gray-text); cursor: not-allowed; opacity: 1; }
 
-    /* RED FLAG */
-    .redflag-card {
-      background: var(--white); border: 1px solid var(--gray-border);
-      border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem;
-    }
+    .redflag-card { background: var(--white); border: 1px solid var(--gray-border); border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem; }
     .redflag-card h3 { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
     .redflag-card > p { font-size: 13px; color: var(--gray-text); margin-bottom: 16px; font-weight: 400; line-height: 1.6; }
-    .flag-item {
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 11px 12px;
-      border: 1px solid var(--black);
-      border-radius: 8px; cursor: pointer;
-      margin-bottom: 8px; transition: background 0.15s;
-    }
+    .flag-item { display: flex; align-items: flex-start; gap: 12px; padding: 11px 12px; border: 1px solid var(--black); border-radius: 8px; cursor: pointer; margin-bottom: 8px; transition: background 0.15s; }
     .flag-item:last-child { margin-bottom: 0; }
     .flag-item:hover { background: var(--gray-bg); }
     .flag-item.flagged { background: var(--red-bg); border-color: var(--red); }
-    .flag-check {
-      width: 20px; height: 20px; border-radius: 4px;
-      border: 1.5px solid var(--black);
-      flex-shrink: 0; background: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      margin-top: 1px; transition: all 0.15s;
-    }
+    .flag-check { width: 20px; height: 20px; border-radius: 4px; border: 1.5px solid var(--black); flex-shrink: 0; background: var(--white); display: flex; align-items: center; justify-content: center; margin-top: 1px; transition: all 0.15s; }
     .flag-item.flagged .flag-check { background: var(--red); border-color: var(--red); }
-    .flag-item.flagged .flag-check::after {
-      content: ''; display: block;
-      width: 10px; height: 6px;
-      border-left: 2px solid #fff; border-bottom: 2px solid #fff;
-      transform: rotate(-45deg) translate(1px, -1px);
-    }
+    .flag-item.flagged .flag-check::after { content: ''; display: block; width: 10px; height: 6px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg) translate(1px, -1px); }
     .flag-label { font-size: 14px; color: var(--black); line-height: 1.5; font-weight: 400; }
 
-    /* EDIT BANNER */
-    .edit-banner {
-      background: var(--blue-light); border: 1px solid var(--blue-border);
-      border-radius: 8px; padding: 11px 14px; margin-bottom: 1.5rem;
-      font-size: 13px; color: var(--blue); font-weight: 500;
-      display: flex; align-items: center; gap: 8px;
-    }
+    .edit-banner { background: var(--blue-light); border: 1px solid var(--blue-border); border-radius: 8px; padding: 11px 14px; margin-bottom: 1.5rem; font-size: 13px; color: var(--blue); font-weight: 500; }
 
-    /* RESULTS */
     .results-section { display: none; }
-
-    .results-hero {
-      text-align: center; padding: 2.5rem 1rem 2rem;
-      border-bottom: 1px solid var(--gray-border);
-      margin-bottom: 2rem;
-    }
+    .results-hero { text-align: center; padding: 2.5rem 1rem 2rem; border-bottom: 1px solid var(--gray-border); margin-bottom: 2rem; }
     .score-ring { width: 130px; height: 130px; margin: 0 auto 1.25rem; position: relative; }
     .score-ring svg { width: 100%; height: 100%; }
-    .score-number {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 32px; font-weight: 700; color: var(--black);
-    }
-    .verdict-badge {
-      display: inline-block; padding: 8px 22px;
-      border-radius: 5px; font-size: 13px; font-weight: 700;
-      margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em;
-    }
+    .score-number { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 32px; font-weight: 700; color: var(--black); }
+    .verdict-badge { display: inline-block; padding: 8px 22px; border-radius: 5px; font-size: 13px; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
     .verdict-invest { background: var(--green-bg); color: var(--green-text); }
     .verdict-caution { background: var(--amber-bg); color: var(--amber-text); }
     .verdict-avoid { background: var(--red-bg); color: var(--red-text); }
@@ -266,87 +126,41 @@
 
     .breakdown-label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-text); margin-bottom: 10px; }
     .breakdown-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 1.5rem; }
-    .breakdown-cell {
-      background: var(--gray-bg); border-radius: 10px;
-      padding: 14px 8px; text-align: center;
-      cursor: pointer; border: 1px solid var(--gray-border);
-      transition: border-color 0.15s, background 0.15s;
-    }
+    .breakdown-cell { background: var(--gray-bg); border-radius: 10px; padding: 14px 8px; text-align: center; cursor: pointer; border: 1px solid var(--gray-border); transition: border-color 0.15s, background 0.15s; }
     .breakdown-cell:hover { border-color: var(--blue); background: var(--blue-light); }
     .breakdown-cell .letter { font-size: 20px; font-weight: 700; color: var(--blue); margin-bottom: 5px; }
     .breakdown-cell .pts { font-size: 15px; font-weight: 700; color: var(--black); }
     .breakdown-cell .max { font-size: 11px; color: var(--gray-text); }
     .breakdown-cell .edit-hint { font-size: 10px; color: var(--blue); margin-top: 4px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
 
-    .redflag-notice {
-      background: var(--red-bg); border: 1px solid #F7C1C1;
-      border-radius: 8px; padding: 13px 16px;
-      margin: 0 0 1.5rem; font-size: 14px; color: var(--red-text); font-weight: 500; line-height: 1.6;
-    }
+    .redflag-notice { background: var(--red-bg); border: 1px solid #F7C1C1; border-radius: 8px; padding: 13px 16px; margin: 0 0 1.5rem; font-size: 14px; color: var(--red-text); font-weight: 500; line-height: 1.6; }
 
-    .reality-card {
-      background: var(--gray-bg); border-radius: 12px;
-      padding: 1.5rem; margin-bottom: 1.5rem;
-    }
+    .reality-card { background: var(--gray-bg); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
     .reality-card h3 { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
     .reality-card > p { font-size: 13px; color: var(--gray-text); margin-bottom: 14px; line-height: 1.7; font-weight: 400; }
     .reality-btns { display: flex; gap: 10px; }
-    .reality-btn {
-      flex: 1; padding: 12px;
-      border: 1px solid var(--gray-border); border-radius: 8px;
-      background: var(--white); color: var(--gray-text);
-      font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500;
-      cursor: pointer; transition: all 0.15s;
-    }
+    .reality-btn { flex: 1; padding: 12px; border: 1px solid var(--gray-border); border-radius: 8px; background: var(--white); color: var(--gray-text); font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
     .reality-btn.yes { border-color: var(--green-text); color: var(--green-text); background: var(--green-bg); }
     .reality-btn.no { border-color: var(--red-text); color: var(--red-text); background: var(--red-bg); }
     .reality-response { margin-top: 12px; font-size: 13px; color: var(--gray-text); display: none; line-height: 1.7; font-weight: 400; }
 
-    /* CTA */
-    .cta-card {
-      border: 2px solid var(--blue);
-      border-radius: 12px; padding: 2.5rem 2rem;
-      text-align: center; margin-bottom: 2rem;
-    }
+    .cta-card { border: 2px solid var(--blue); border-radius: 12px; padding: 2.5rem 2rem; text-align: center; margin-bottom: 2rem; }
     .cta-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--blue); text-transform: uppercase; margin-bottom: 10px; }
     .cta-card h3 { font-size: 22px; font-weight: 700; color: var(--black); margin-bottom: 10px; line-height: 1.3; }
-    .cta-card p { font-size: 14px; color: var(--gray-text); max-width: 400px; margin: 0 auto 1.5rem; line-height: 1.7; font-weight: 400; }
-    .cta-btn {
-      display: inline-block;
-      background: var(--red); color: var(--white);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 15px; font-weight: 700;
-      padding: 15px 36px; border-radius: 8px;
-      text-decoration: none; text-transform: uppercase;
-      letter-spacing: 0.05em; transition: opacity 0.15s;
-    }
+    .cta-btn { display: inline-block; background: var(--red); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; padding: 15px 36px; border-radius: 8px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: opacity 0.15s; }
     .cta-btn:hover { opacity: 0.88; }
-    .cta-sub { font-size: 12px; color: var(--gray-text); margin-top: 12px; font-weight: 400; }
 
-    .restart-btn {
-      display: block; text-align: center; margin: 0 auto 1rem;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 15px; font-weight: 500;
-      color: var(--gray-text); background: none; border: none;
-      cursor: pointer; text-decoration: underline;
-    }
+    .restart-btn { display: block; text-align: center; margin: 0 auto 1rem; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 500; color: var(--gray-text); background: none; border: none; cursor: pointer; text-decoration: underline; }
     .restart-btn:hover { color: var(--black); }
 
-    /* FOOTER */
-    .footer {
-      background: var(--black); color: #666;
-      text-align: center; padding: 2rem;
-      font-size: 12px; font-weight: 400;
-      margin-top: 4rem;
-    }
+    .footer { background: var(--black); color: #666; text-align: center; padding: 2rem; font-size: 12px; font-weight: 400; margin-top: 4rem; }
     .footer a { color: #999; text-decoration: none; }
     .footer a:hover { color: var(--white); }
 
     @media (max-width: 480px) {
       .hero { padding: 2.5rem 1.25rem 2rem; }
-      .section-card, .redflag-card { padding: 1.25rem; }
+      .section-card, .redflag-card, .gate-card { padding: 1.25rem; }
       .breakdown-cell { padding: 10px 4px; }
-      .breakdown-cell .letter { font-size: 16px; }
       .cta-card { padding: 1.75rem 1.25rem; }
     }
   </style>
@@ -354,9 +168,7 @@
 <body>
 
   <nav class="nav">
-    <a class="nav-logo" href="/">
-      <span class="my">MY</span><span class="franchise">FRANCHISE</span><span class="guide">GUIDE</span>
-    </a>
+    <a class="nav-logo" href="/"><span class="my">MY</span><span class="franchise">FRANCHISE</span><span class="guide">GUIDE</span></a>
     <a class="nav-back" href="/">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 12L6 8l4-4"/></svg>
       Back to site
@@ -366,69 +178,101 @@
   <div class="hero">
     <div class="hero-badge">MYFG Franchise Evaluator</div>
     <h1>S.C.A.L.E. <span>Calculator</span></h1>
-    <p>Score any franchise opportunity across 5 dimensions before you commit a single ringgit. Built for serious investors -- not wishful thinkers.</p>
+    <p>Score any franchise opportunity across 5 dimensions before you commit a single dollar. Built for serious investors -- not wishful thinkers.</p>
   </div>
 
   <div class="main">
 
-    <div class="brand-box">
-      <label>Which franchise are you evaluating?</label>
-      <input type="text" id="brandName" placeholder="e.g. Tealive, Globalart, Deemcee..." />
+    <!-- GATE FORM -->
+    <div id="gateSection">
+      <div class="gate-card">
+        <p class="gate-eyebrow">Step 1 of 2 -- Tell us who you are</p>
+        <h2>Get free access to the S.C.A.L.E. Calculator</h2>
+        <p class="gate-sub">Enter your details below to unlock the full scoring tool. We will send your results summary to the email provided.</p>
+
+        <div class="gate-form-error" id="gateFormError">Something went wrong submitting your details. Please try again.</div>
+
+        <div class="field-group">
+          <label for="gateName">Name <span class="req">*</span></label>
+          <input type="text" id="gateName" placeholder="Your name" autocomplete="name" />
+          <p class="field-error" id="errName">Please enter your name.</p>
+        </div>
+        <div class="field-group">
+          <label for="gateEmail">Email address <span class="req">*</span></label>
+          <input type="email" id="gateEmail" placeholder="you@email.com" autocomplete="email" />
+          <p class="field-error" id="errEmail">Please enter a valid email address.</p>
+        </div>
+        <div class="field-group">
+          <label for="gatePhone">Phone number <span class="opt">(optional)</span></label>
+          <input type="tel" id="gatePhone" placeholder="+60 12 345 6789" autocomplete="tel" />
+        </div>
+        <div class="field-group">
+          <label for="gateFranchise">Franchise you are evaluating <span class="req">*</span></label>
+          <input type="text" id="gateFranchise" placeholder="e.g. Tealive, Globalart, Deemcee..." />
+          <p class="field-error" id="errFranchise">Please enter the franchise name.</p>
+        </div>
+
+        <button class="btn-gate" id="gateBtn" onclick="submitGate()">Unlock the Calculator</button>
+        <p class="gate-privacy">Your details are kept private and never shared. No spam, ever.</p>
+      </div>
     </div>
 
-    <div class="progress-wrap">
-      <div class="progress-step active" id="ps0" onclick="jumpTo(0)" title="S - System strength"></div>
-      <div class="progress-step" id="ps1" onclick="jumpTo(1)" title="C - Commercial viability"></div>
-      <div class="progress-step" id="ps2" onclick="jumpTo(2)" title="A - Area and saturation"></div>
-      <div class="progress-step" id="ps3" onclick="jumpTo(3)" title="L - Leadership"></div>
-      <div class="progress-step" id="ps4" onclick="jumpTo(4)" title="E - Exit and longevity"></div>
-      <div class="progress-step" id="ps5"></div>
-      <span class="progress-label" id="progressLabel">Step 1 of 6</span>
-    </div>
+    <!-- TOOL -->
+    <div class="tool-section" id="toolSection">
+      <div class="brand-box">
+        <label>Evaluating</label>
+        <input type="text" id="brandName" readonly style="background:var(--gray-bg);cursor:default;" />
+      </div>
 
-    <div id="mainFlow"></div>
+      <div class="progress-wrap">
+        <div class="progress-step active" id="ps0" onclick="jumpTo(0)"></div>
+        <div class="progress-step" id="ps1" onclick="jumpTo(1)"></div>
+        <div class="progress-step" id="ps2" onclick="jumpTo(2)"></div>
+        <div class="progress-step" id="ps3" onclick="jumpTo(3)"></div>
+        <div class="progress-step" id="ps4" onclick="jumpTo(4)"></div>
+        <div class="progress-step" id="ps5"></div>
+        <span class="progress-label" id="progressLabel">Step 1 of 6</span>
+      </div>
 
-    <div class="results-section" id="resultsSection">
-      <div class="results-hero">
-        <div class="score-ring">
-          <svg viewBox="0 0 130 130">
-            <circle cx="65" cy="65" r="56" fill="none" stroke="#E0E0E0" stroke-width="9"/>
-            <circle id="scoreArc" cx="65" cy="65" r="56" fill="none" stroke="#0056B8" stroke-width="9"
-              stroke-linecap="round" stroke-dasharray="351.9" stroke-dashoffset="351.9"
-              transform="rotate(-90 65 65)" style="transition: stroke-dashoffset 1.2s ease;"/>
-          </svg>
-          <div class="score-number" id="scoreDisplay">0</div>
+      <div id="mainFlow"></div>
+
+      <div class="results-section" id="resultsSection">
+        <div class="results-hero">
+          <div class="score-ring">
+            <svg viewBox="0 0 130 130">
+              <circle cx="65" cy="65" r="56" fill="none" stroke="#E0E0E0" stroke-width="9"/>
+              <circle id="scoreArc" cx="65" cy="65" r="56" fill="none" stroke="#0056B8" stroke-width="9"
+                stroke-linecap="round" stroke-dasharray="351.9" stroke-dashoffset="351.9"
+                transform="rotate(-90 65 65)" style="transition: stroke-dashoffset 1.2s ease;"/>
+            </svg>
+            <div class="score-number" id="scoreDisplay">0</div>
+          </div>
+          <div id="verdictBadge" class="verdict-badge"></div>
+          <p id="verdictText"></p>
         </div>
-        <div id="verdictBadge" class="verdict-badge"></div>
-        <p id="verdictText"></p>
-      </div>
 
-      <p class="breakdown-label">Your scores -- click any section to revise</p>
-      <div class="breakdown-grid" id="breakdownGrid"></div>
+        <p class="breakdown-label">Your scores -- click any section to revise</p>
+        <div class="breakdown-grid" id="breakdownGrid"></div>
+        <div id="redFlagNotice" class="redflag-notice" style="display:none;">Red flag triggered -- final score capped at 70. One or more critical warning signals were detected. Do not proceed without addressing these first.</div>
 
-      <div id="redFlagNotice" class="redflag-notice" style="display:none;">
-        Red flag triggered -- final score capped at 70. One or more critical warning signals were detected. Do not proceed without addressing these first.
-      </div>
-
-      <div class="reality-card">
-        <h3>The Claudia reality check</h3>
-        <p>Set aside the projections. Would you still invest in this business if you had to run it yourself for 3 years?</p>
-        <div class="reality-btns">
-          <button class="reality-btn" id="realityYes" onclick="setReality('yes')">Yes -- I would run it</button>
-          <button class="reality-btn" id="realityNo" onclick="setReality('no')">No -- I would not</button>
+        <div class="reality-card">
+          <h3>The Claudia reality check</h3>
+          <p>Set aside the projections. Would you still invest in this business if you had to run it yourself for 3 years?</p>
+          <div class="reality-btns">
+            <button class="reality-btn" id="realityYes" onclick="setReality('yes')">Yes -- I would run it</button>
+            <button class="reality-btn" id="realityNo" onclick="setReality('no')">No -- I would not</button>
+          </div>
+          <p class="reality-response" id="realityResponse"></p>
         </div>
-        <p class="reality-response" id="realityResponse"></p>
-      </div>
 
-      <div class="cta-card">
-        <p class="cta-eyebrow">Next step</p>
-        <h3 id="ctaHeadline">You have done the scoring. Now pressure-test it.</h3>
-        <p id="ctaBody">Blind spots in franchise due diligence cost investors years and six figures. A 30-minute call with Claudia can surface what the numbers do not show.</p>
-        <a class="cta-btn" href="https://meetings-na2.hubspot.com/myfranchiseguide" target="_blank" rel="noopener">Book a call with Claudia</a>
-        <p class="cta-sub">No pitch. Just a frank conversation about what you found.</p>
-      </div>
+        <div class="cta-card">
+          <p class="cta-eyebrow">Next step</p>
+          <h3 id="ctaHeadline">You have done the scoring. Now pressure-test it.</h3>
+          <a class="cta-btn" href="https://meetings-na2.hubspot.com/myfranchiseguide" target="_blank" rel="noopener">Book a call with Claudia</a>
+        </div>
 
-      <button class="restart-btn" onclick="restartTool()">Evaluate another franchise</button>
+        <button class="restart-btn" onclick="restartTool()">Evaluate another franchise</button>
+      </div>
     </div>
 
   </div>
@@ -438,29 +282,40 @@
   </footer>
 
   <script>
+    const FORMSPREE = 'https://formspree.io/f/mjgpvpek';
+
     const SECTIONS = [
       {
-        letter: 'S', title: 'System strength', subtitle: 'Can this business run without the founder?',
+        letter: 'S',
+        title: 'System strength',
+        subtitle: 'Can this business run without the founder?',
+        why: 'A franchise is only as good as its system. Without strong SOPs and training, you are buying a job -- not a business.',
         questions: [
           'Is there a clear SOP for daily operations?',
           'Is training structured -- not just job shadowing?',
-          'Can a new staff member run this within 30 to 60 days?',
+          'Can new staff run the operation independently within 30 to 60 days?',
           'Is there ongoing field support (visits, coaching, check-ins)?',
           'Are performance metrics tracked and shared with franchisees?'
         ]
       },
       {
-        letter: 'C', title: 'Commercial viability', subtitle: 'Does the math actually work?',
+        letter: 'C',
+        title: 'Commercial viability',
+        subtitle: 'Does the math actually work?',
+        why: 'Most investors focus on revenue projections. Smart investors focus on actual margins, payback period, and whether real franchisees are making money.',
         questions: [
           'Is startup cost proportionate to realistic revenue potential?',
           'Are margins healthy after all costs -- rent, staff, royalties, marketing?',
           'Is the payback period achievable within 30 months?',
           'Are there real franchisee performance examples (not just projections)?',
-          'Is revenue sustainable without heavy promos or discounting?'
+          'Is price positioning reasonable compared to the market and competitors?'
         ]
       },
       {
-        letter: 'A', title: 'Area and saturation', subtitle: 'Is there still room to grow?',
+        letter: 'A',
+        title: 'Area and saturation',
+        subtitle: 'Is there still room to grow?',
+        why: 'Location and territory determine your customer base. An over-saturated market or weak territory protection can kill returns before you even open.',
         questions: [
           'Is market demand growing, stable, or declining in your target area?',
           'Is competitor density manageable in your location?',
@@ -470,7 +325,10 @@
         ]
       },
       {
-        letter: 'L', title: 'Leadership and franchisor intent', subtitle: 'Who are you really partnering with?',
+        letter: 'L',
+        title: 'Leadership and franchisor intent',
+        subtitle: 'Who are you really partnering with?',
+        why: 'You are entering a long-term relationship with this franchisor. Their values, vision, and how they treat franchisees will directly affect your experience and returns.',
         questions: [
           'Does the founder have a credible long-term vision?',
           "Are you aligned with the leadership's vision and mission?",
@@ -480,12 +338,15 @@
         ]
       },
       {
-        letter: 'E', title: 'Exit and longevity', subtitle: 'If you do not know how you exit, you should not enter.',
+        letter: 'E',
+        title: 'Exit and longevity',
+        subtitle: 'If you do not know how you exit, you should not enter.',
+        why: 'Every investment needs an exit strategy. If you cannot resell, renew, or transfer your outlet on reasonable terms, you are locked in with no options.',
         questions: [
           'Can you resell your outlet without excessive restrictions?',
           'Are transfer terms reasonable and clearly defined?',
           'Is renewal guaranteed -- or left to franchisor discretion?',
-          'Is this industry durable over a 5 to 10 year outlook?',
+          'Is this industry durable over a 10 to 15 year outlook?',
           'Are there multiple revenue streams, or does everything rely on one?'
         ]
       }
@@ -494,18 +355,74 @@
     const REDFLAGS = [
       'High marketing spend, low repeat customer rate',
       'Founder-dependent concept -- operations collapse without them',
-      'Fast expansion with no real franchisee support infrastructure',
       'Projected ROI looks too good relative to comparable businesses',
       'No real franchisee performance data -- only HQ projections',
       'Franchise agreement heavily favours the franchisor on exit',
       'Overcrowded territory or no protection clause in the agreement',
-      'Support drops off significantly after the first 6 months'
+      'No corporate outlet -- brand has never proven the model itself',
+      'No franchisee validation -- existing franchisees cannot be contacted',
+      'Less than 10 franchisees -- insufficient proof of scalability'
     ];
 
     let scores = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
     let flags = new Array(REDFLAGS.length).fill(false);
     let currentStep = 0;
     let comingFromResults = false;
+    let leadFranchise = '';
+
+    function isValidEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+    async function submitGate() {
+      const name = document.getElementById('gateName').value.trim();
+      const email = document.getElementById('gateEmail').value.trim();
+      const phone = document.getElementById('gatePhone').value.trim();
+      const franchise = document.getElementById('gateFranchise').value.trim();
+
+      const showErr = (errId, inputId, condition) => {
+        document.getElementById(errId).classList.toggle('show', condition);
+        document.getElementById(inputId).classList.toggle('error', condition);
+      };
+
+      showErr('errName', 'gateName', !name);
+      showErr('errEmail', 'gateEmail', !email || !isValidEmail(email));
+      showErr('errFranchise', 'gateFranchise', !franchise);
+
+      if (!name || !email || !isValidEmail(email) || !franchise) return;
+
+      const btn = document.getElementById('gateBtn');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+      document.getElementById('gateFormError').classList.remove('show');
+
+      try {
+        const res = await fetch(FORMSPREE, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            'Name': name,
+            'Email': email,
+            'Phone': phone || 'Not provided',
+            'Franchise Being Evaluated': franchise,
+            'Source': 'SCALE Calculator'
+          })
+        });
+        if (!res.ok) throw new Error();
+        leadFranchise = franchise;
+        document.getElementById('gateSection').style.display = 'none';
+        document.getElementById('toolSection').style.display = 'block';
+        document.getElementById('brandName').value = franchise;
+        renderStep();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch(e) {
+        btn.disabled = false;
+        btn.textContent = 'Unlock the Calculator';
+        document.getElementById('gateFormError').classList.add('show');
+      }
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && document.getElementById('gateSection').style.display !== 'none') submitGate();
+    });
 
     function jumpTo(step) {
       if (step < 5) {
@@ -520,38 +437,24 @@
 
     function renderStep() {
       const flow = document.getElementById('mainFlow');
-      const results = document.getElementById('resultsSection');
       updateProgress();
-
       if (currentStep < 5) {
-        results.style.display = 'none';
+        document.getElementById('resultsSection').style.display = 'none';
         flow.style.display = 'block';
         const sec = SECTIONS[currentStep];
         const sectionScore = scores[currentStep].reduce((a,b)=>a+b,0);
-
-        const editBanner = comingFromResults
-          ? `<div class="edit-banner">Editing section ${currentStep + 1} of 5 -- your other answers are saved. Click "Update results" when done.</div>`
-          : '';
-
-        const qs = sec.questions.map((q, qi) => {
-          const selected = scores[currentStep][qi];
-          const btns = [1,2,3,4].map(v =>
-            `<button class="score-btn ${selected===v?'selected':''}" onclick="setScore(${currentStep},${qi},${v})">${v}</button>`
-          ).join('');
-          return `<div class="question-row">
-            <div class="question-text">${q}</div>
-            <div class="score-buttons">${btns}</div>
-            <div class="score-labels"><span>Unclear / none</span><span>Strong and scalable</span></div>
-          </div>`;
+        const editBanner = comingFromResults ? `<div class="edit-banner">Editing section ${currentStep+1} of 5 -- your other answers are saved. Click "Update results" when done.</div>` : '';
+        const qs = sec.questions.map((q,qi) => {
+          const sel = scores[currentStep][qi];
+          const btns = [1,2,3,4].map(v=>`<button class="score-btn ${sel===v?'selected':''}" onclick="setScore(${currentStep},${qi},${v})">${v}</button>`).join('');
+          return `<div class="question-row"><div class="question-text">${q}</div><div class="score-buttons">${btns}</div><div class="score-labels"><span>Unclear / none</span><span>Strong and scalable</span></div></div>`;
         }).join('');
-
-        const allAnswered = scores[currentStep].every(v => v > 0);
-        const isLast = currentStep === 4;
-        const nextLabel = comingFromResults ? 'Update results' : (isLast ? 'See my results' : 'Next');
+        const allAnswered = scores[currentStep].every(v=>v>0);
+        const nextLabel = comingFromResults ? 'Update results' : (currentStep===4 ? 'See my results' : 'Next');
         const prevBtn = comingFromResults
           ? `<button class="btn-prev" onclick="backToResults()">Cancel</button>`
-          : (currentStep > 0 ? `<button class="btn-prev" onclick="goStep(-1)">Back</button>` : '');
-        const nextAction = comingFromResults ? 'updateAndReturn()' : 'goStep(1)';
+          : (currentStep>0 ? `<button class="btn-prev" onclick="goStep(-1)">Back</button>` : '');
+        const nextFn = comingFromResults ? 'updateAndReturn()' : 'goStep(1)';
 
         flow.innerHTML = `${editBanner}
         <div class="section-card">
@@ -559,23 +462,18 @@
             <div class="section-letter">${sec.letter}</div>
             <div class="section-meta"><h2>${sec.title}</h2><p>${sec.subtitle}</p></div>
           </div>
+          <div class="section-why">${sec.why}</div>
           ${qs}
-          <div class="section-score-row">
-            <span>Section score</span>
-            <span class="section-score-val">${sectionScore} / 20</span>
-          </div>
+          <div class="section-score-row"><span>Section score</span><span class="section-score-val">${sectionScore} / 20</span></div>
         </div>
-        ${currentStep === 4 ? renderRedFlags() : ''}
-        <div class="nav-row">
-          ${prevBtn}
-          <button class="btn-next" ${allAnswered?'':'disabled'} onclick="${nextAction}">${nextLabel}</button>
-        </div>`;
+        ${currentStep===4 ? renderRedFlags() : ''}
+        <div class="nav-row">${prevBtn}<button class="btn-next" ${allAnswered?'':'disabled'} onclick="${nextFn}">${nextLabel}</button></div>`;
 
       } else {
         comingFromResults = false;
         flow.style.display = 'none';
         showResults();
-        results.style.display = 'block';
+        document.getElementById('resultsSection').style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
@@ -584,107 +482,72 @@
       return `<div class="redflag-card">
         <h3>MYFG Red Flag Index</h3>
         <p>Check any red flags that apply. Ticking 2 or more caps your final score at 70 -- regardless of your SCALE total.</p>
-        ${REDFLAGS.map((f,i) => `
-          <div class="flag-item ${flags[i]?'flagged':''}" onclick="toggleFlag(${i})">
-            <div class="flag-check"></div>
-            <div class="flag-label">${f}</div>
-          </div>`).join('')}
+        ${REDFLAGS.map((f,i)=>`<div class="flag-item ${flags[i]?'flagged':''}" onclick="toggleFlag(${i})"><div class="flag-check"></div><div class="flag-label">${f}</div></div>`).join('')}
       </div>`;
     }
 
-    function toggleFlag(i) { flags[i] = !flags[i]; renderStep(); }
-    function setScore(s, q, v) { scores[s][q] = v; renderStep(); }
-    function goStep(d) { currentStep = Math.max(0, Math.min(5, currentStep + d)); renderStep(); }
-    function backToResults() { comingFromResults = false; currentStep = 5; renderStep(); }
-    function updateAndReturn() { comingFromResults = false; currentStep = 5; renderStep(); }
+    function toggleFlag(i) { flags[i]=!flags[i]; renderStep(); }
+    function setScore(s,q,v) { scores[s][q]=v; renderStep(); }
+    function goStep(d) { currentStep=Math.max(0,Math.min(5,currentStep+d)); renderStep(); }
+    function backToResults() { comingFromResults=false; currentStep=5; renderStep(); }
+    function updateAndReturn() { comingFromResults=false; currentStep=5; renderStep(); }
 
     function updateProgress() {
-      for (let i = 0; i < 6; i++) {
-        const el = document.getElementById('ps'+i);
-        if (!el) continue;
-        el.className = 'progress-step' + (i < currentStep ? ' done' : i === currentStep ? ' active' : '');
+      for (let i=0;i<6;i++) {
+        const el=document.getElementById('ps'+i);
+        if(!el) continue;
+        el.className='progress-step'+(i<currentStep?' done':i===currentStep?' active':'');
       }
-      const labels = ['Step 1 of 6','Step 2 of 6','Step 3 of 6','Step 4 of 6','Step 5 of 6','Your results'];
-      document.getElementById('progressLabel').textContent = labels[Math.min(currentStep, 5)];
+      const labels=['Step 1 of 6','Step 2 of 6','Step 3 of 6','Step 4 of 6','Step 5 of 6','Your results'];
+      document.getElementById('progressLabel').textContent=labels[Math.min(currentStep,5)];
     }
 
     function showResults() {
-      const totals = scores.map(s => s.reduce((a,b)=>a+b,0));
+      const totals = scores.map(s=>s.reduce((a,b)=>a+b,0));
       const raw = totals.reduce((a,b)=>a+b,0);
       const flagCount = flags.filter(Boolean).length;
-      const capped = flagCount >= 2;
-      const final = capped ? Math.min(raw, 70) : raw;
+      const capped = flagCount>=2;
+      const final = capped ? Math.min(raw,70) : raw;
 
       const arc = document.getElementById('scoreArc');
-      const offset = 351.9 - (final / 100) * 351.9;
-      setTimeout(() => {
-        arc.style.strokeDashoffset = offset;
-        arc.style.stroke = final >= 80 ? '#639922' : final >= 60 ? '#BA7517' : '#E24B4A';
-      }, 100);
-      document.getElementById('scoreDisplay').textContent = final;
+      setTimeout(()=>{ arc.style.strokeDashoffset=351.9-(final/100)*351.9; arc.style.stroke=final>=80?'#639922':final>=60?'#BA7517':'#E24B4A'; },100);
+      document.getElementById('scoreDisplay').textContent=final;
 
-      let verdict, vClass, vText;
-      if (final >= 80) {
-        verdict = 'Investable'; vClass = 'verdict-invest';
-        vText = 'Strong fundamentals across the board. Proceed with deeper due diligence -- review the actual franchise agreement and speak to existing franchisees.';
-      } else if (final >= 60) {
-        verdict = 'Proceed with caution'; vClass = 'verdict-caution';
-        vText = 'Some risks are present. Negotiate hard on weak areas, validate the commercial numbers independently, and stress-test the support structure before committing.';
-      } else {
-        verdict = 'High risk -- do not proceed'; vClass = 'verdict-avoid';
-        vText = 'Significant gaps across multiple dimensions. Do not invest unless major issues are addressed. Protect your capital.';
-      }
+      let verdict,vClass,vText;
+      if(final>=80){verdict='Investable';vClass='verdict-invest';vText='Strong fundamentals across the board. Proceed with deeper due diligence -- review the actual franchise agreement and speak to existing franchisees.';}
+      else if(final>=60){verdict='Proceed with caution';vClass='verdict-caution';vText='Some risks are present. Negotiate hard on weak areas, validate the commercial numbers independently, and stress-test the support structure before committing.';}
+      else{verdict='High risk -- do not proceed';vClass='verdict-avoid';vText='Significant gaps across multiple dimensions. Do not invest unless major issues are addressed. Protect your capital.';}
 
-      document.getElementById('verdictBadge').textContent = verdict;
-      document.getElementById('verdictBadge').className = 'verdict-badge ' + vClass;
-      document.getElementById('verdictText').textContent = vText;
+      document.getElementById('verdictBadge').textContent=verdict;
+      document.getElementById('verdictBadge').className='verdict-badge '+vClass;
+      document.getElementById('verdictText').textContent=vText;
+      document.getElementById('breakdownGrid').innerHTML=totals.map((t,i)=>`<div class="breakdown-cell" onclick="jumpTo(${i})"><div class="letter">${SECTIONS[i].letter}</div><div class="pts">${t}</div><div class="max">/ 20</div><div class="edit-hint">edit</div></div>`).join('');
+      document.getElementById('redFlagNotice').style.display=capped?'block':'none';
 
-      document.getElementById('breakdownGrid').innerHTML = totals.map((t,i) => `
-        <div class="breakdown-cell" onclick="jumpTo(${i})" title="Edit ${SECTIONS[i].title}">
-          <div class="letter">${SECTIONS[i].letter}</div>
-          <div class="pts">${t}</div>
-          <div class="max">/ 20</div>
-          <div class="edit-hint">edit</div>
-        </div>`).join('');
-
-      document.getElementById('redFlagNotice').style.display = capped ? 'block' : 'none';
-
-      const brand = document.getElementById('brandName').value || 'this franchise';
+      const brand = leadFranchise || 'this franchise';
       const ctaH = document.getElementById('ctaHeadline');
-      const ctaB = document.getElementById('ctaBody');
-      if (final >= 80) {
-        ctaH.textContent = 'Strong score. Now pressure-test it.';
-        ctaB.textContent = brand + ' scored well -- but high scores on paper have still cost investors. A 30-minute call with Claudia can surface what the numbers do not show.';
-      } else if (final >= 60) {
-        ctaH.textContent = 'There are gaps. Let us talk through them.';
-        ctaB.textContent = 'Your score for ' + brand + ' shows real risks. Before you sign anything, book a frank conversation with Claudia to identify exactly where to negotiate and what to walk away from.';
-      } else {
-        ctaH.textContent = 'This one is a red flag. Here is what to do.';
-        ctaB.textContent = brand + ' did not pass the SCALE test. Do not let sunk cost or FOMO cloud your judgment. Book a call with Claudia to explore what alternatives actually meet your investment criteria.';
-      }
+      if(final>=80){ctaH.textContent='Strong score. Now pressure-test it.';}
+      else if(final>=60){ctaH.textContent='There are gaps. Let us talk through them.';}
+      else{ctaH.textContent='This one is a red flag. Here is what to do.';}
     }
 
     function setReality(ans) {
-      document.getElementById('realityYes').className = 'reality-btn' + (ans==='yes'?' yes':'');
-      document.getElementById('realityNo').className = 'reality-btn' + (ans==='no'?' no':'');
-      const r = document.getElementById('realityResponse');
-      r.style.display = 'block';
-      r.textContent = ans === 'yes'
-        ? 'Good. Operational alignment matters -- investors who understand the day-to-day make better decisions and are harder to deceive.'
-        : 'Take that seriously. If you would not run it yourself, you need to be very confident the system can run without you -- and the evidence for that has to be in your SCALE score, not in a sales pitch.';
+      document.getElementById('realityYes').className='reality-btn'+(ans==='yes'?' yes':'');
+      document.getElementById('realityNo').className='reality-btn'+(ans==='no'?' no':'');
+      const r=document.getElementById('realityResponse');
+      r.style.display='block';
+      r.textContent=ans==='yes'?'Good. Operational alignment matters -- investors who understand the day-to-day make better decisions and are harder to deceive.':'Take that seriously. If you would not run it yourself, you need to be very confident the system can run without you -- and the evidence for that has to be in your SCALE score, not in a sales pitch.';
     }
 
     function restartTool() {
-      scores = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
-      flags = new Array(REDFLAGS.length).fill(false);
-      currentStep = 0; comingFromResults = false;
-      document.getElementById('brandName').value = '';
-      document.getElementById('resultsSection').style.display = 'none';
+      scores=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
+      flags=new Array(REDFLAGS.length).fill(false);
+      currentStep=0; comingFromResults=false;
+      document.getElementById('resultsSection').style.display='none';
+      document.getElementById('brandName').value=leadFranchise;
       renderStep();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({top:0,behavior:'smooth'});
     }
-
-    renderStep();
   </script>
 </body>
 </html>
