@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYFranchiseGuide - Franchise Evaluation Checklist</title>
+  <meta name="description" content="Independent guidance for serious buyers who want to compare smarter, avoid costly blind spots, and commit with more confidence.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <script type="text/javascript" id="hs-script-loader" async defer src="https://js-na2.hs-scripts.com/243433647.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    img { max-width: 100%; display: block; }
+
+    :root {
+      --red: #D4202A;
+      --blue: #0056B8;
+      --black: #000000;
+      --white: #FFFFFF;
+      --grey: #F4F4F4;
+      --mid-grey: #CCCCCC;
+      --dark-grey: #1a1a1a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+      padding-top: 72px;
+      --hero-shift: 0px;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.18;
+      filter: blur(8px);
+    }
+
+    body::before {
+      width: 220px;
+      height: 220px;
+      top: 120px;
+      left: -80px;
+      background: rgba(0, 86, 184, 0.08);
+      animation: ambientFloatA 14s ease-in-out infinite;
+    }
+
+    body::after {
+      width: 180px;
+      height: 180px;
+      bottom: 80px;
+      right: -50px;
+      background: rgba(212, 32, 42, 0.08);
+      animation: ambientFloatB 16s ease-in-out infinite;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 60px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--blue);
+    }
+
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      line-height: 1;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+    }
+    .logo-text .my { color: var(--red); display: block; }
+    .logo-text .franchise { color: var(--blue); display: block; }
+    .logo-text .guide-row { display: flex; align-items: center; gap: 3px; }
+    .logo-text .guide { color: var(--black); }
+    .logo-pin {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--black);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: #b01820 !important; color: var(--white) !important; }
+
+    .hero {
+      min-height: 100vh;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 72px 60px 80px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+      animation: heroDriftA 12s ease-in-out infinite;
+      transform: translate3d(0, calc(var(--hero-shift) * -0.18), 0);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -80px;
+      left: 30%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(212, 32, 42, 0.15);
+      pointer-events: none;
+      animation: heroDriftB 14s ease-in-out infinite;
+      transform: translate3d(0, calc(var(--hero-shift) * 0.12), 0);
+    }
+
+    .hero-dots {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      opacity: 0.25;
+    }
+
+    .hero-dots span {
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--white);
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 460px);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .hero-content {
+      animation: fadeUp 0.9s ease both;
+      transform: translate3d(0, calc(var(--hero-shift) * -0.08), 0);
+    }
+
+    .hero-eyebrow,
+    .hero h1,
+    .hero-subhead,
+    .hero-sub,
+    .hero-positioning,
+    .social-proof,
+    .checklist-card {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroSequence 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    .hero-eyebrow { animation-delay: 0.08s; }
+    .hero h1 { animation-delay: 0.18s; }
+    .hero-subhead { animation-delay: 0.3s; }
+    .hero-sub { animation-delay: 0.42s; }
+    .hero-positioning { animation-delay: 0.54s; }
+    .social-proof { animation-delay: 0.66s; }
+    .checklist-card { animation-delay: 0.34s; }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 80px);
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 28px;
+      max-width: 10ch;
+    }
+
+    .hero h1 .accent { color: var(--red); }
+
+    .hero-title-line {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 6px;
+    }
+
+    .hero-title-line > span {
+      display: inline-block;
+      transform: translateY(110%);
+      opacity: 0;
+      animation: titleMaskRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-title-line:nth-child(1) > span { animation-delay: 0.18s; }
+    .hero-title-line:nth-child(2) > span { animation-delay: 0.32s; }
+    .hero-title-line:nth-child(3) > span { animation-delay: 0.46s; }
+
+    .hero-subhead {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--white);
+      max-width: 660px;
+      margin-bottom: 18px;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+
+    .hero-positioning {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 40px;
+    }
+
+    .social-proof {
+      display: inline-block;
+      max-width: 620px;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      line-height: 1.7;
+      color: var(--white);
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-left: 4px solid var(--red);
+      border-radius: 8px;
+      padding: 22px 24px 20px 28px;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+      animation-name: heroSequence, softPulse;
+      animation-duration: 0.8s, 3.6s;
+      animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1), ease-in-out;
+      animation-fill-mode: forwards, none;
+      animation-iteration-count: 1, infinite;
+      animation-delay: 0.66s, 2s;
+    }
+
+    .social-proof::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 5px;
+      pointer-events: none;
+    }
+
+    .social-proof:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.38);
+      background: rgba(255, 255, 255, 0.11);
+    }
+
+    .testimonial-label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.58);
+    }
+
+    .testimonial-quote {
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: block;
+      position: relative;
+      z-index: 1;
+      margin-top: 14px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .checklist-card {
+      padding: 28px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .checklist-card::before {
+      display: none;
+    }
+
+    .checklist-card:hover {
+      transform: translateY(-6px);
+      box-shadow: none;
+    }
+
+    .checklist-card h2 {
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .checklist-card p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .form-group input,
+    .form-group select {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--white);
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+
+    .form-group select option {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .form-group input::placeholder { color: rgba(255, 255, 255, 0.35); }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .form-submit,
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 18px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.18s, box-shadow 0.18s;
+      box-shadow: 0 12px 24px rgba(212, 32, 42, 0.18);
+    }
+
+    .form-submit:hover,
+    .btn-primary:hover {
+      background: #b01820;
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 18px 28px rgba(212, 32, 42, 0.26);
+    }
+
+    .form-submit:active,
+    .btn-primary:active,
+    .btn-outline:active,
+    .nav-cta:active {
+      transform: translateY(0) scale(0.985);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .form-reassurance {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.5px;
+      margin-top: -4px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 18px;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .section-label::after {
+      content: "";
+      position: absolute;
+      left: -105%;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      opacity: 0.25;
+      transition: left 0.7s ease;
+    }
+
+    .reveal.visible .section-label::after {
+      left: 0;
+    }
+
+    .about-copy h2,
+    .why-inner h2,
+    .teaser-inner h2,
+    .cta-section h2 {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-copy h2::after,
+    .why-inner h2::after,
+    .teaser-inner h2::after,
+    .cta-section h2::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      transform: translateX(-135%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .reveal.visible .about-copy h2::after,
+    .reveal.visible .why-inner h2::after,
+    .reveal.visible .teaser-inner h2::after,
+    .reveal.visible .cta-section h2::after {
+      opacity: 1;
+      animation: headingSheen 0.9s ease forwards 0.18s;
+    }
+
+    .about,
+    .why-section,
+    .teaser-section,
+    .thank-you-section {
+      padding: 100px 60px;
+    }
+
+    .about-inner,
+    .why-inner,
+    .teaser-inner,
+    .thank-you-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .video-placeholder {
+      background: var(--grey);
+      border: 2px dashed rgba(0, 86, 184, 0.35);
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.45) 48%, transparent 100%);
+      transform: translateX(-160%);
+      animation: placeholderScan 5.2s ease-in-out infinite;
+      pointer-events: none;
+      opacity: 0.34;
+    }
+
+    .video-placeholder:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
+      border-color: rgba(0, 86, 184, 0.5);
+    }
+
+    .video-placeholder-inner {
+      text-align: center;
+      max-width: 260px;
+    }
+
+    .video-placeholder-badge {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 18px;
+      background: var(--blue);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 900;
+      animation: softPulse 3.2s ease-in-out infinite;
+    }
+
+    .video-placeholder h3 {
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: var(--black);
+    }
+
+    .video-placeholder p {
+      max-width: none;
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .video-embed {
+      background: var(--black);
+      min-height: 520px;
+      padding: 28px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .youtube-video {
+      display: block;
+      width: 100%;
+      height: 520px;
+      border: 0;
+      background: var(--black);
+    }
+
+    .video-fallback-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+      background: var(--red);
+      color: var(--white);
+      padding: 14px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 12px 24px rgba(212, 32, 42, 0.22);
+    }
+
+    .video-fallback-link:hover {
+      background: #b01820;
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .video-link-content {
+      max-width: 280px;
+    }
+
+    .video-play-mark {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      border: 2px solid rgba(255, 255, 255, 0.82);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      line-height: 1;
+      background: rgba(0, 0, 0, 0.28);
+    }
+
+    .video-link-content h3 {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.15;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .video-link-content p {
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .about h2,
+    .why-inner h2,
+    .teaser-inner h2,
+    .thank-you-inner h2,
+    .cta-section h2 {
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.06;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+
+    .about h2 span,
+    .why-inner h2 span,
+    .teaser-inner h2 span,
+    .thank-you-inner h2 span,
+    .cta-section h2 .accent {
+      color: var(--red);
+    }
+
+    .about p,
+    .why-inner > p,
+    .teaser-copy p,
+    .thank-you-inner p {
+      max-width: 860px;
+      font-size: 17px;
+      line-height: 1.9;
+      color: #222;
+      margin-bottom: 18px;
+    }
+
+    .why-section {
+      background: var(--grey);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) minmax(0, 0.9fr);
+      gap: 28px;
+      align-items: start;
+      margin-top: 26px;
+    }
+
+    .why-copy p {
+      max-width: none;
+      font-size: 17px;
+      line-height: 1.9;
+      color: #222;
+      margin-bottom: 0;
+    }
+
+    .list-card {
+      background: var(--white);
+      padding: 28px;
+      border-top: 6px solid var(--blue);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .list-card.negative {
+      border-top-color: var(--red);
+    }
+
+    .list-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 86, 184, 0.05), transparent 48%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .list-card.negative::after {
+      background: linear-gradient(135deg, rgba(212, 32, 42, 0.05), transparent 48%);
+    }
+
+    .list-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.12);
+    }
+
+    .list-card:hover::after {
+      opacity: 1;
+    }
+
+    .list-card h3 {
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .list-card ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .list-card li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #222;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .list-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: var(--blue);
+    }
+
+    .negative li::before {
+      background: var(--red);
+    }
+
+    .motion-card {
+      opacity: 0;
+      transform: translateY(42px) scale(0.96);
+      transition: opacity 0.75s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .motion-card.negative {
+      transition-delay: 0.14s;
+    }
+
+    .motion-card.left-card {
+      transform: translate3d(-44px, 42px, 0) scale(0.96) rotate(-1.2deg);
+    }
+
+    .motion-card.right-card {
+      transform: translate3d(44px, 42px, 0) scale(0.96) rotate(1.2deg);
+    }
+
+    .motion-card li {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    .motion-card.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .motion-card.visible li {
+      animation: bulletRise 0.55s ease forwards;
+    }
+
+    .motion-card.visible li:nth-child(1) { animation-delay: 0.18s; }
+    .motion-card.visible li:nth-child(2) { animation-delay: 0.3s; }
+    .motion-card.visible li:nth-child(3) { animation-delay: 0.42s; }
+    .motion-card.visible li:nth-child(4) { animation-delay: 0.54s; }
+    .motion-card.visible li:nth-child(5) { animation-delay: 0.66s; }
+    .motion-card.visible li:nth-child(6) { animation-delay: 0.78s; }
+
+    .motion-card h3 {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .motion-card h3::after {
+      content: "";
+      position: absolute;
+      left: -110%;
+      bottom: -4px;
+      width: 100%;
+      height: 3px;
+      background: currentColor;
+      opacity: 0.18;
+      transition: left 0.7s ease;
+    }
+
+    .motion-card.visible h3::after {
+      left: 0;
+    }
+
+    .motion-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 0;
+      background: linear-gradient(180deg, rgba(0, 86, 184, 0.08), transparent 70%);
+      transition: width 0.75s ease;
+      pointer-events: none;
+    }
+
+    .motion-card.negative::before {
+      background: linear-gradient(180deg, rgba(212, 32, 42, 0.08), transparent 70%);
+    }
+
+    .motion-card.visible::before {
+      width: 100%;
+    }
+
+    .cta-section {
+      background: var(--blue);
+      padding: 100px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .cta-inner {
+      max-width: 1200px;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .cta-left { padding-top: 8px; }
+
+    .cta-section h2 {
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .cta-intro-p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    .cta-seo-block {
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 36px;
+    }
+
+    .cta-seo-block h3 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 16px;
+    }
+
+    .cta-seo-block p,
+    .cta-closing {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .teaser-section {
+      background: var(--white);
+    }
+
+    .teaser-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .teaser-copy .btn-primary {
+      margin-top: 14px;
+    }
+
+    .teaser-copy.cta-column {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+    }
+
+    .teaser-copy.cta-column .btn-primary {
+      max-width: 28rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    .thank-you-section {
+      background: var(--grey);
+    }
+
+    .thank-you-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 18px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    footer {
+      background: var(--dark-grey);
+      padding: 40px 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo .logo-text { font-size: 18px; }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      list-style: none;
+    }
+
+    .footer-links a,
+    .footer-copy,
+    .footer-hashtags {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .whatsapp-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .footer-hashtags {
+      flex-basis: 100%;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(54px) scale(0.985);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroSequence {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes titleMaskRise {
+      0% {
+        opacity: 0;
+        transform: translateY(110%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bulletRise {
+      0% {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    @keyframes sheenSweep {
+      0%, 100% {
+        transform: skewX(-18deg) translateX(-180%);
+      }
+      45%, 60% {
+        transform: skewX(-18deg) translateX(360%);
+      }
+    }
+
+    @keyframes headingSheen {
+      0% { transform: translateX(-135%); }
+      100% { transform: translateX(135%); }
+    }
+
+    @keyframes placeholderScan {
+      0%, 100% { transform: translateX(-160%); }
+      50% { transform: translateX(160%); }
+    }
+
+    @keyframes heroDriftA {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(-14px, 10px, 0) scale(1.05); }
+    }
+
+    @keyframes heroDriftB {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(12px, -10px, 0) scale(1.04); }
+    }
+
+    @keyframes ambientFloatA {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(16px); }
+    }
+
+    @keyframes ambientFloatB {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    @keyframes mobileFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes mobileBulletRise {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .hero-inner,
+      .about-layout,
+      .why-grid,
+      .cta-inner,
+      .teaser-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      nav,
+      .hero,
+      .about,
+      .why-section,
+      .teaser-section,
+      .thank-you-section,
+      .cta-section,
+      footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      nav {
+        position: sticky;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 16px;
+        width: 100%;
+      }
+
+      body {
+        padding-top: 0;
+      }
+
+      .hero {
+        padding-top: 44px;
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: clamp(36px, 10vw, 56px);
+      }
+
+      .hero-sub {
+        font-size: 15px;
+      }
+
+      .hero-positioning {
+        font-size: 11px;
+      }
+
+      .hero-dots { display: none; }
+
+      .cta-actions,
+      .thank-you-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-inner,
+      .cta-inner,
+      .about-layout,
+      .why-grid,
+      .teaser-layout {
+        gap: 28px;
+      }
+
+      .checklist-card,
+      .list-card,
+      .thank-you-card,
+      .video-placeholder {
+        min-height: auto;
+      }
+
+      .teaser-copy.cta-column {
+        justify-content: flex-start;
+      }
+
+      .teaser-copy.cta-column .btn-primary {
+        max-width: none;
+      }
+
+      body::before,
+      body::after,
+      .hero::before,
+      .hero::after,
+      .hero-dots,
+      .checklist-card::before,
+      .video-placeholder::before,
+      .about-copy h2::after,
+      .why-inner h2::after,
+      .teaser-inner h2::after,
+      .cta-section h2::after {
+        display: none !important;
+      }
+
+      .hero-eyebrow,
+      .hero-subhead,
+      .hero-sub,
+      .hero-positioning,
+      .social-proof,
+      .checklist-card {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .hero-content {
+        animation: fadeUp 0.55s ease both;
+      }
+
+      .hero-eyebrow,
+      .hero-subhead,
+      .hero-sub,
+      .hero-positioning,
+      .social-proof,
+      .checklist-card {
+        animation: mobileFadeUp 0.5s ease both !important;
+      }
+
+      .hero-eyebrow { animation-delay: 0.04s !important; }
+      .hero-subhead { animation-delay: 0.1s !important; }
+      .hero-sub { animation-delay: 0.16s !important; }
+      .hero-positioning { animation-delay: 0.22s !important; }
+      .social-proof { animation-delay: 0.28s !important; }
+      .checklist-card { animation-delay: 0.12s !important; }
+
+      .hero-title-line > span {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: mobileFadeUp 0.45s ease both !important;
+      }
+
+      .hero-title-line:nth-child(1) > span { animation-delay: 0.06s !important; }
+      .hero-title-line:nth-child(2) > span { animation-delay: 0.12s !important; }
+      .hero-title-line:nth-child(3) > span { animation-delay: 0.18s !important; }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .motion-card {
+        opacity: 0;
+        transform: translateY(18px) scale(0.99);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+
+      .motion-card.left-card,
+      .motion-card.right-card {
+        transform: translateY(18px) scale(0.99);
+      }
+
+      .motion-card.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .motion-card li {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      .motion-card.visible li {
+        animation: mobileBulletRise 0.35s ease forwards;
+      }
+
+      .motion-card.visible li:nth-child(1) { animation-delay: 0.08s; }
+      .motion-card.visible li:nth-child(2) { animation-delay: 0.14s; }
+      .motion-card.visible li:nth-child(3) { animation-delay: 0.2s; }
+      .motion-card.visible li:nth-child(4) { animation-delay: 0.26s; }
+
+      .motion-card h3::after {
+        left: -100%;
+        transition: left 0.45s ease;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .logo-text { font-size: 16px; }
+      .logo-pin { width: 12px; height: 12px; }
+      body { padding-top: 0; }
+      .hero { padding-top: 36px; }
+      nav { gap: 10px; }
+      .nav-links {
+        gap: 10px 14px;
+      }
+      .nav-links a {
+        font-size: 11px;
+        letter-spacing: 1.1px;
+      }
+      .nav-cta {
+        padding: 9px 16px;
+      }
+      .social-proof {
+        padding: 20px 18px 18px 22px;
+      }
+      .hero,
+      .about,
+      .why-section,
+      .teaser-section,
+      .cta-section,
+      footer {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .about h2,
+      .why-inner h2,
+      .teaser-inner h2,
+      .thank-you-inner h2,
+      .cta-section h2 {
+        font-size: clamp(28px, 9vw, 40px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="#top" aria-label="MYFranchiseGuide home">
+      <div class="logo-text">
+        <span class="my">MY</span>
+        <span class="franchise">FRANCHISE</span>
+        <span class="guide-row">
+          <span class="guide">GUIDE</span>
+          <svg class="logo-pin" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 8.25 12 18 12 18s12-9.75 12-18C24 5.373 18.627 0 12 0z" fill="#000"/>
+            <circle cx="12" cy="12" r="4.5" fill="white"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#philosophy">Before You Buy</a></li>
+      <li><a href="#why-myfg">Why MYFG</a></li>
+      <li><a href="#fim-cta">FIM</a></li>
+      <li><a href="#checklist" class="nav-cta">Get Checklist</a></li>
+    </ul>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-dots" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>
+            <span class="hero-title-line"><span>A</span></span>
+            <span class="hero-title-line"><span class="accent">RM300,000</span></span>
+            <span class="hero-title-line"><span>DECISION DESERVES A</span></span>
+            <span class="hero-title-line"><span class="accent">SECOND OPINION</span></span>
+          </h1>
+          <p class="hero-subhead">Before You Sign the Franchise Agreement, Pressure-Test the Decision</p>
+          <p class="hero-sub">Independent guidance for serious buyers who want to compare smarter, avoid costly blind spots, and commit with more confidence.</p>
+          <p class="hero-positioning">Independent. Commercial. Grounded. Built for franchise buyers who want clarity before they commit capital.</p>
+          <blockquote class="social-proof">
+            <span class="testimonial-label">Trusted by</span>
+            <span class="testimonial-quote">&ldquo;Claudia helped me break out of research paralysis with clear, practical guidance. The coaching gave me clarity, direction, and insights I would never have thought of on my own. Worth every minute and investment.&rdquo;</span>
+            <cite class="testimonial-author">Christy Wee, Franchise Buyer</cite>
+          </blockquote>
+        </div>
+
+        <aside class="checklist-card" id="checklist">
+          <h2>Get the Franchise Evaluation Checklist</h2>
+          <p>Download the checklist to compare franchise opportunities more objectively before you commit capital.</p>
+
+          <form class="contact-form" id="lead-form" action="thank-you.html" method="get">
+            <div class="form-group">
+              <label for="full-name">* Full Name</label>
+              <input id="full-name" name="full-name" type="text" placeholder="Full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="mobile-number">Mobile Number</label>
+              <input id="mobile-number" name="mobile-number" type="tel" placeholder="Mobile number">
+            </div>
+
+            <div class="form-group">
+              <label for="email-address">* Email Address</label>
+              <input id="email-address" name="email-address" type="email" placeholder="your@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="journey-stage">Where are you now?</label>
+              <select id="journey-stage" name="journey-stage">
+                <option>Just exploring</option>
+                <option>Comparing shortlisted brands</option>
+                <option>Close to deciding</option>
+              </select>
+            </div>
+
+            <button type="submit" class="form-submit">Download the Checklist</button>
+            <p class="form-reassurance" id="form-status">Thinking about buying a franchise at FIM? Start here.</p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="about reveal" id="philosophy">
+      <div class="about-inner">
+        <div class="about-layout">
+          <div class="about-copy">
+            <h2>For buyers who want to invest like a serious entrepreneur &mdash; not get sold like a prospect.</h2>
+            <p>Most franchise buyers don&rsquo;t make bad decisions because they&rsquo;re careless.</p>
+            <p>They make them because they&rsquo;re trying to evaluate a major investment in an environment full of polished sales pitches, pressure, and incomplete information.</p>
+            <p><strong>At FIM, every booth says they&rsquo;re the best. That doesn&rsquo;t mean they&rsquo;re right for you.</strong></p>
+          </div>
+
+          <aside class="video-placeholder video-embed" aria-label="MYFranchiseGuide video" style="display:block;min-height:0;padding:10px;width:340px;max-width:100%;margin:0 auto;border:none;">
+            <div class="vimeo-wrapper" style="padding:177.78% 0 0 0;position:relative;width:100%;">
+              <iframe
+                src="https://player.vimeo.com/video/1189087397?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                title="FIM Video 1">
+              </iframe>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section reveal" id="why-myfg">
+      <div class="why-inner">
+        <h2>
+          Why <span style="color:red;">MY</span><span style="color:blue;">Franchise</span><span style="color:black;">Guide</span>
+        </h2>
+        <div class="why-grid">
+          <div class="why-copy">
+            <p>MyFranchiseGuide exists for buyers who want a more objective lens before committing serious capital. We help you cut through polished sales pitches, compare franchise opportunities more commercially, and pressure-test the decision before money is locked in. This is not about talking you into a deal. It is about helping you make one with your eyes open.</p>
+          </div>
+
+          <div class="list-card motion-card left-card">
+            <h3>This is for you if</h3>
+            <ul>
+              <li>You want to compare brands more objectively</li>
+              <li>You&rsquo;re serious about buying, but want to avoid blind spots</li>
+              <li>You want grounded guidance before signing</li>
+              <li>You prefer clarity over hype</li>
+            </ul>
+          </div>
+
+          <div class="list-card negative motion-card right-card">
+            <h3>This is NOT for you if</h3>
+            <ul>
+              <li>You want a &ldquo;cepat kaya&rdquo; scheme</li>
+              <li>You want someone to simply tell you which brand to buy</li>
+              <li>You are looking for hype, not honest decision support</li>
+              <li>You’re looking for guaranteed returns or “safe options</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section reveal" id="fim-cta">
+      <div class="cta-inner">
+        <div class="cta-left">
+          <h2>Thinking about buying a franchise at <span class="accent">FIM?</span></h2>
+          <p class="cta-intro-p">Download the Franchise Evaluation Checklist before you go in. Use it to compare brands more objectively, ask better questions, and avoid making a major investment decision based on expo hype alone.</p>
+
+          <div class="cta-seo-block">
+            <h3>Before You Commit</h3>
+            <p class="cta-closing">Don&rsquo;t get sold. Get clear before you commit.</p>
+            <p class="cta-closing" style="margin-top: 14px; font-style: italic; color: rgba(255, 255, 255, 0.55);">*FIM &mdash; Franchise International Malaysia Expo &middot; KL Convention Center, Hall 1 &amp; 2 &middot; 10am&ndash;6pm</p>
+          </div>
+        </div>
+
+        <div class="cta-right">
+          <div class="checklist-card" style="display:flex; justify-content:center; align-items:center;">
+            <div class="cta-actions">
+              <a class="btn-primary" href="#checklist">Download the Checklist</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="teaser-section reveal">
+      <div class="teaser-inner">
+        <div class="teaser-layout">
+          <div class="teaser-copy">
+            <h2>Couldn&rsquo;t make it to FIM but still considering buying a franchise?</h2>
+            <p>You don&rsquo;t have to attend the expo to start making a smarter decision. If you&rsquo;re exploring whether franchising is right for you, connect with us for a more grounded and objective perspective before you move forward.</p>
+            <p>Start with the checklist first if you&rsquo;re still early in your journey.</p>
+          </div>
+
+          <div class="teaser-copy cta-column">
+            <a class="btn-primary" href="https://beacons.ai/myfranchiseguide" target="_blank" rel="noopener">EXPLORE SERVICES</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <div class="logo-text">
+        <span class="my">MY</span>
+        <span class="franchise">FRANCHISE</span>
+        <span class="guide-row">
+          <span class="guide" style="color:white">GUIDE</span>
+          <svg class="logo-pin" viewBox="0 0 24 30" fill="none">
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 8.25 12 18 12 18s12-9.75 12-18C24 5.373 18.627 0 12 0z" fill="white"/>
+            <circle cx="12" cy="12" r="4.5" fill="#1a1a1a"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#how-we-help">What We Do</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/myfranchiseguide/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a href="https://www.tiktok.com/@my.franchiseguide" target="_blank" rel="noopener" aria-label="TikTok" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/ngclaudia/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+      <a href="https://wa.me/60163691112" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon whatsapp-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+    </div>
+    <div class="footer-hashtags">#MyFranchiseGuide &nbsp;#FranchiseMalaysia &nbsp;#FranchiseTips</div>
+    <p class="footer-copy">&copy; 2026 MYFranchiseGuide. All rights reserved.</p>
+  </footer>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    document.querySelectorAll(".motion-card").forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    const updateHeroParallax = () => {
+      const shift = Math.min(window.scrollY || 0, 320);
+      document.body.style.setProperty("--hero-shift", shift + "px");
+    };
+
+    updateHeroParallax();
+    window.addEventListener("scroll", updateHeroParallax, { passive: true });
+
+    const leadForm = document.getElementById("lead-form");
+
+    const getCookie = (name) => {
+      const cookie = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith(name + "="));
+      return cookie ? decodeURIComponent(cookie.split("=")[1]) : "";
+    };
+
+    const splitFullName = (fullName) => {
+      const parts = fullName.trim().split(/\s+/).filter(Boolean);
+      if (parts.length <= 1) {
+        return { firstname: parts[0] || "", lastname: "" };
+      }
+      return {
+        firstname: parts.slice(0, -1).join(" "),
+        lastname: parts[parts.length - 1],
+      };
+    };
+
+    if (leadForm) {
+      leadForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const submitButton = leadForm.querySelector(".form-submit");
+        const status = document.getElementById("form-status");
+        const fullName = document.getElementById("full-name").value;
+        const phone = document.getElementById("mobile-number").value;
+        const email = document.getElementById("email-address").value;
+        const journeyStage = document.getElementById("journey-stage").value;
+        const { firstname, lastname } = splitFullName(fullName);
+
+        const fields = [
+          { name: "firstname", value: firstname },
+          { name: "lastname", value: lastname },
+          { name: "phone", value: phone },
+          { name: "email", value: email },
+          { name: "journey_stage", value: journeyStage },
+        ].filter((field) => field.value);
+
+        const context = {
+          pageUri: window.location.href,
+          pageName: document.title,
+        };
+        // HubSpot rejects an empty hutk string. Only include it when the
+        // tracking cookie is actually set.
+        const hutk = getCookie("hubspotutk");
+        if (hutk) {
+          context.hutk = hutk;
+        }
+
+        const payload = { fields, context };
+
+        console.log("[MYFG Form] Submitting to HubSpot:", payload);
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+        status.textContent = "Sending your checklist request...";
+        status.style.color = "";
+
+        try {
+          const response = await fetch("https://api.hsforms.com/submissions/v3/integration/submit/243433647/8beb84c5-afa0-47a4-8e5d-596a442a8fd1", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          // Try to read the response body whether or not the call succeeded
+          let responseBody = null;
+          try {
+            responseBody = await response.json();
+          } catch (parseErr) {
+            console.warn("[MYFG Form] Could not parse HubSpot response as JSON.", parseErr);
+          }
+
+          console.log("[MYFG Form] HubSpot response status:", response.status, response.statusText);
+          console.log("[MYFG Form] HubSpot response body:", responseBody);
+
+          if (!response.ok) {
+            // HubSpot returns the headline reason in `message` and the per-field
+            // detail in `errors[]`. Prefer the detailed errors so the user sees
+            // *which* field is wrong, not just "The request is not valid".
+            const detailedErrors =
+              responseBody && Array.isArray(responseBody.errors) && responseBody.errors.length
+                ? responseBody.errors.map((e) => e.message).join(" | ")
+                : "";
+            const headline = (responseBody && responseBody.message) || ("Status " + response.status + " " + response.statusText);
+            const detail = detailedErrors ? headline + " — " + detailedErrors : headline;
+            throw new Error(detail);
+          }
+
+          window.location.href = "thank-you.html";
+        } catch (error) {
+          console.error("[MYFG Form] Submission failed:", error);
+          status.textContent = "Submission failed: " + (error.message || "Unknown error") + " — open the browser console (right-click → Inspect → Console) for details.";
+          status.style.color = "#ffd0d0";
+          submitButton.disabled = false;
+          submitButton.textContent = "Download the Checklist";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
