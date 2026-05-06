@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYFranchiseGuide - Thank You</title>
+  <meta name="description" content="Your checklist is on the way.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    :root {
+      --red: #D4202A;
+      --blue: #0056B8;
+      --black: #000000;
+      --white: #FFFFFF;
+      --grey: #F4F4F4;
+      --dark-grey: #1a1a1a;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: var(--grey);
+      color: var(--black);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 60px;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 2px solid var(--blue);
+    }
+
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      line-height: 1;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+    }
+    .logo-text .my { color: var(--red); display: block; }
+    .logo-text .franchise { color: var(--blue); display: block; }
+    .logo-text .guide-row { display: flex; align-items: center; gap: 3px; }
+    .logo-text .guide { color: var(--black); }
+    .logo-pin {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+    }
+
+    .page {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px;
+    }
+
+    .thank-you-card {
+      width: min(100%, 980px);
+      background: var(--white);
+      border-top: 8px solid var(--red);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+      padding: 56px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 62px);
+      font-weight: 900;
+      line-height: 1.04;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 760px;
+      font-size: 17px;
+      line-height: 1.9;
+      color: #222;
+    }
+
+    .actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 18px 24px;
+      transition: transform 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--black);
+      border: 2px solid var(--black);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 22px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    footer {
+      background: var(--dark-grey);
+      padding: 30px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo .logo-text { font-size: 18px; }
+
+    .footer-copy {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      nav, .page, footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .thank-you-card {
+        padding: 32px 24px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .logo-text { font-size: 16px; }
+      .logo-pin { width: 12px; height: 12px; }
+
+      .actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Back to landing page">
+      <div class="logo-text">
+        <span class="my">MY</span>
+        <span class="franchise">FRANCHISE</span>
+        <span class="guide-row">
+          <span class="guide">GUIDE</span>
+          <svg class="logo-pin" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 8.25 12 18 12 18s12-9.75 12-18C24 5.373 18.627 0 12 0z" fill="#000"/>
+            <circle cx="12" cy="12" r="4.5" fill="white"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+  </nav>
+
+  <main class="page">
+    <section class="thank-you-card">
+      <p class="eyebrow">Thank You Page</p>
+      <h1>Your checklist is on the way</h1>
+      <p>You&rsquo;re one step closer to making a clearer, smarter franchise decision. If you&rsquo;re already comparing options and want a more grounded second opinion, explore MYFG&rsquo;s Deal Review options next.</p>
+      <div class="actions">
+        <a class="btn-primary" href="https://app-na2.hubspotdocuments.com/documents/243433647/view/1760501461?accessId=952e02" target="_blank" rel="noopener">View the Checklist</a>
+        <a class="btn-secondary" href="https://asiafranchiseguide.com" target="_blank" rel="noopener">Explore Review Options</a>
+      </div>
+      <a class="back-link" href="index.html">Back to landing page</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <div class="logo-text">
+        <span class="my">MY</span>
+        <span class="franchise">FRANCHISE</span>
+        <span class="guide-row">
+          <span class="guide" style="color:white">GUIDE</span>
+          <svg class="logo-pin" viewBox="0 0 24 30" fill="none">
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 8.25 12 18 12 18s12-9.75 12-18C24 5.373 18.627 0 12 0z" fill="white"/>
+            <circle cx="12" cy="12" r="4.5" fill="#1a1a1a"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2026 MYFranchiseGuide. All rights reserved.</p>
+  </footer>
+</body>
+</html>
