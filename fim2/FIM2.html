@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYFranchiseGuide - FIM Franchise Investment Review</title>
+  <meta name="description" content="Book a buyer-side Franchise Investment Review at FIM. Evaluate shortlisted franchise opportunities before you place a deposit or sign the agreement.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="text/javascript" id="hs-script-loader" async defer src="https://js-na2.hs-scripts.com/243433647.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --red: #D4202A;
+      --blue: #0056B8;
+      --black: #000000;
+      --white: #FFFFFF;
+      --grey: #F4F4F4;
+      --mid-grey: #CCCCCC;
+      --dark-grey: #1a1a1a;
+      --ink: #151515;
+      --soft-blue: rgba(0, 86, 184, 0.08);
+      --soft-red: rgba(212, 32, 42, 0.08);
+    }
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+      padding-top: 72px;
+      --hero-shift: 0px;
+    }
+    .no-js-message { display: none; }
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.18;
+      filter: blur(8px);
+    }
+    body::before { width: 220px; height: 220px; top: 120px; left: -80px; background: var(--soft-blue); animation: ambientFloatA 14s ease-in-out infinite; }
+    body::after { width: 180px; height: 180px; bottom: 80px; right: -50px; background: var(--soft-red); animation: ambientFloatB 16s ease-in-out infinite; }
+    img { max-width: 100%; display: block; }
+    a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 60px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--blue);
+    }
+    .nav-logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .logo-text { font-weight: 900; line-height: 1; font-size: 22px; letter-spacing: -0.5px; }
+    .logo-text .my { color: var(--red); display: block; }
+    .logo-text .franchise { color: var(--blue); display: block; }
+    .logo-text .guide-row { display: flex; align-items: center; gap: 3px; }
+    .logo-text .guide { color: var(--black); }
+    .logo-pin { width: 16px; height: 16px; margin-top: 2px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--black); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta { background: var(--red); color: var(--white) !important; padding: 10px 22px; border-radius: 2px; }
+    .nav-cta:hover { background: #b01820; color: var(--white) !important; }
+
+    .hero {
+      min-height: 100vh;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 72px 60px 80px;
+    }
+    .hero::before {
+      content: ""; position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; border-radius: 50%; background: rgba(255, 255, 255, 0.04); pointer-events: none; animation: heroDriftA 12s ease-in-out infinite;
+    }
+    .hero::after {
+      content: ""; position: absolute; bottom: -80px; left: 30%; width: 400px; height: 400px; border-radius: 50%; background: rgba(212, 32, 42, 0.15); pointer-events: none; animation: heroDriftB 14s ease-in-out infinite;
+    }
+    .hero-dots { position: absolute; right: 60px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; opacity: 0.25; }
+    .hero-dots span { display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--white); }
+    .hero-inner {
+      width: 100%; max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;
+      display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(320px, 450px); gap: 56px; align-items: start;
+    }
+    .hero-eyebrow, .hero h1, .hero-subhead, .hero-sub, .hero-actions, .offer-strip, .booking-card { animation: heroSequence 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+    .hero-eyebrow { animation-delay: 0.08s; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+    .hero h1 { animation-delay: 0.18s; font-size: clamp(42px, 7vw, 78px); font-weight: 900; line-height: 1; text-transform: uppercase; color: var(--white); margin-bottom: 28px; max-width: 11ch; }
+    .hero h1 .accent { color: var(--red); }
+    .hero-title-line { display: block; overflow: hidden; padding-bottom: 6px; }
+    .hero-title-line > span { display: inline-block; animation: titleMaskRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .hero-title-line:nth-child(1) > span { animation-delay: 0.18s; }
+    .hero-title-line:nth-child(2) > span { animation-delay: 0.32s; }
+    .hero-title-line:nth-child(3) > span { animation-delay: 0.46s; }
+    .hero-title-line:nth-child(4) > span { animation-delay: 0.60s; }
+    .hero-subhead { animation-delay: 0.3s; font-size: 18px; font-weight: 800; line-height: 1.55; color: var(--white); max-width: 680px; margin-bottom: 18px; }
+    .hero-sub { animation-delay: 0.42s; font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.82); max-width: 600px; margin-bottom: 28px; }
+    .hero-actions { animation-delay: 0.5s; display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 24px; }
+    .offer-strip { animation-delay: 0.58s; display: inline-flex; align-items: center; gap: 12px; padding: 12px 16px; border-left: 4px solid var(--red); background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.86); font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+
+    .btn-primary, .btn-outline, .form-submit {
+      font-family: "Montserrat", sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 16px 28px; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.18s, box-shadow 0.18s; text-align: center; line-height: 1.25;
+    }
+    .btn-primary, .form-submit { background: var(--red); color: var(--white); box-shadow: 0 12px 24px rgba(212, 32, 42, 0.2); }
+    .btn-primary:hover, .form-submit:hover { background: #b01820; transform: translateY(-2px); box-shadow: 0 18px 28px rgba(212, 32, 42, 0.28); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.06); transform: translateY(-2px); }
+
+    .booking-card {
+      animation-delay: 0.36s;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 28px;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+    .booking-card::before { content: ""; position: absolute; inset: -20% auto -20% -40%; width: 38%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent); transform: skewX(-18deg) translateX(-180%); animation: sheenSweep 4.8s ease-in-out infinite; pointer-events: none; }
+    .booking-card h2 { font-size: 30px; font-weight: 900; line-height: 1.05; text-transform: uppercase; color: var(--white); margin-bottom: 14px; }
+    .booking-card p { font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.75; margin-bottom: 18px; }
+    .mini-offer-list { display: grid; gap: 10px; margin: 18px 0; }
+    .mini-offer { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.15); color: var(--white); font-size: 13px; font-weight: 700; }
+    .mini-offer span:last-child { color: rgba(255,255,255,0.65); }
+    .booking-card .btn-primary { width: 100%; margin-top: 4px; }
+    .booking-note { margin-top: 14px !important; font-size: 11px !important; font-weight: 600; color: rgba(255,255,255,0.48) !important; }
+
+    .section { padding: 100px 60px; position: relative; z-index: 1; scroll-margin-top: 74px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+    .section h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 24px; }
+    .section h2 span { color: var(--blue); }
+    .section p { font-size: 15px; line-height: 1.85; color: #444; margin-bottom: 16px; }
+    .narrow { max-width: 780px; }
+
+    .problem { background: var(--white); }
+    .problem-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 70px; align-items: start; }
+    .problem-card { background: var(--grey); border-left: 5px solid var(--red); padding: 34px; }
+    .problem-card p { font-size: 20px; line-height: 1.55; font-weight: 800; color: var(--black); margin: 0; }
+
+    .why { background: var(--grey); }
+    .why-layout { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr); gap: 56px; align-items: start; }
+    .filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .filter-card { background: var(--white); padding: 30px; border-top: 4px solid var(--blue); min-height: 100%; }
+    .filter-card.negative { border-top-color: var(--red); }
+    .filter-card h3 { font-size: 18px; font-weight: 900; text-transform: uppercase; margin-bottom: 16px; }
+    .filter-card ul { list-style: none; display: grid; gap: 12px; }
+    .filter-card li { font-size: 13px; line-height: 1.55; font-weight: 600; color: #333; display: flex; gap: 10px; }
+    .filter-card li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); flex: 0 0 auto; margin-top: 7px; }
+    .filter-card.negative li::before { background: var(--black); }
+
+
+
+    .consultants { background: var(--white); }
+    .consultants-header { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr); gap: 56px; align-items: end; margin-bottom: 46px; }
+    .consultants-header p { margin-bottom: 0; }
+    .consultants-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+    .consultant-card { background: var(--white); padding: 30px; border: 1px solid rgba(0,0,0,0.1); border-top: 5px solid var(--blue); position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 430px; box-shadow: 0 18px 45px rgba(0,0,0,0.08); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .consultant-card:nth-child(2) { border-top-color: var(--red); }
+    .consultant-card:nth-child(3) { border-top-color: var(--blue); }
+    .consultant-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,0.12); }
+    .consultant-card::after { content: ""; position: absolute; right: -64px; top: -64px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255,255,255,0.22); pointer-events: none; }
+    .consultant-lens { display: inline-flex; width: fit-content; padding: 7px 10px; background: var(--soft-blue); color: var(--blue); font-size: 10px; font-weight: 900; letter-spacing: 1.7px; text-transform: uppercase; margin-bottom: 18px; position: relative; z-index: 1; }
+    .consultant-card:nth-child(2) .consultant-lens { background: var(--soft-red); color: var(--red); }
+    .consultant-card:nth-child(3) .consultant-lens { background: var(--soft-blue); color: var(--blue); }
+    .consultant-avatar { width: 66px; height: 66px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--blue); color: var(--white); font-size: 20px; font-weight: 900; margin-bottom: 20px; border: 3px solid rgba(255,255,255,0.75); box-shadow: 0 12px 28px rgba(0,0,0,0.16); position: relative; z-index: 1; }
+    .consultant-card:nth-child(2) .consultant-avatar { background: var(--black); }
+    .consultant-card:nth-child(3) .consultant-avatar { background: var(--red); color: var(--white); }
+    .consultant-card h3 { font-size: 25px; line-height: 1; font-weight: 900; text-transform: uppercase; margin-bottom: 8px; position: relative; z-index: 1; }
+    .consultant-title { font-size: 12px !important; line-height: 1.55 !important; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: rgba(0,0,0,0.62) !important; margin-bottom: 22px !important; position: relative; z-index: 1; }
+    .consultant-card:nth-child(3) .consultant-title { color: rgba(0,0,0,0.62) !important; }
+    .consultant-card ul { list-style: none; display: grid; gap: 11px; margin-top: auto; position: relative; z-index: 1; }
+    .consultant-card li { font-size: 13px; line-height: 1.45; font-weight: 650; color: #333; display: flex; gap: 10px; }
+    .consultant-card:nth-child(3) li { color: #333; }
+    .consultant-card li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--red); flex: 0 0 auto; margin-top: 6px; }
+    .consultant-card:nth-child(2) li::before { background: var(--red); }
+    .consultant-card:nth-child(3) li::before { background: var(--red); }
+    .consultant-closing { margin-top: 34px; background: var(--black); color: var(--white); border-left: 5px solid var(--red); padding: 26px 30px; display: grid; grid-template-columns: 0.45fr 1fr; gap: 28px; align-items: center; }
+    .consultant-closing strong { font-size: 18px; line-height: 1.25; text-transform: uppercase; letter-spacing: 0.5px; }
+    .consultant-closing p { color: rgba(255,255,255,0.72); margin: 0; font-size: 14px; line-height: 1.75; }
+
+    .offers { background: var(--white); }
+    .offers-header { display: flex; justify-content: space-between; gap: 32px; align-items: end; margin-bottom: 42px; }
+    .offers-header p { max-width: 500px; margin-bottom: 0; }
+    .offer-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .offer-card { background: var(--grey); padding: 40px 34px; border-top: 5px solid var(--blue); transition: transform 0.25s ease, box-shadow 0.25s ease; display: flex; flex-direction: column; min-height: 360px; }
+    .offer-card:nth-child(2) { border-top-color: var(--red); background: var(--black); color: var(--white); transform: translateY(-12px); }
+    .offer-card:nth-child(3) { border-top-color: var(--black); }
+    .offer-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,0.12); }
+    .offer-card:nth-child(2):hover { transform: translateY(-18px); }
+    .offer-card .tag { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 18px; }
+    .offer-card:nth-child(2) .tag { color: rgba(255,255,255,0.52); }
+    .offer-card h3 { font-size: 24px; line-height: 1.1; font-weight: 900; text-transform: uppercase; margin-bottom: 16px; }
+    .price { font-size: 38px; line-height: 1; font-weight: 900; color: var(--red); margin-bottom: 20px; }
+    .offer-card:nth-child(2) .price { color: var(--white); }
+    .offer-card p { font-size: 14px; line-height: 1.75; color: #555; margin-bottom: 28px; flex: 1; }
+    .offer-card:nth-child(2) p { color: rgba(255,255,255,0.7); }
+    .offer-card .btn-primary { width: 100%; padding-left: 16px; padding-right: 16px; }
+
+    .fallback { background: var(--blue); color: var(--white); overflow: hidden; }
+    .fallback::before { content: ""; position: absolute; top: -120px; right: -80px; width: 500px; height: 500px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+    .fallback-layout { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; position: relative; z-index: 1; }
+    .fallback h2, .fallback p { color: var(--white); }
+    .fallback p { color: rgba(255,255,255,0.76); }
+    .fallback-panel { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.22); padding: 30px; backdrop-filter: blur(8px); }
+    .fallback-panel .btn-primary { width: 100%; }
+    .fallback-panel p { margin: 14px 0 0; font-size: 12px; color: rgba(255,255,255,0.5); }
+
+    .modal { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; padding: 24px; background: rgba(0,0,0,0.64); }
+    .modal.open { display: flex; }
+    .modal-card { width: min(620px, 100%); background: var(--white); padding: 42px; box-shadow: 0 24px 70px rgba(0,0,0,0.25); position: relative; }
+    .modal-close { position: absolute; right: 18px; top: 16px; border: none; background: none; font-size: 28px; line-height: 1; cursor: pointer; color: #777; }
+    .modal-card h2 { font-size: clamp(26px, 4vw, 40px); line-height: 1.1; font-weight: 900; text-transform: uppercase; margin-bottom: 14px; }
+    .modal-card p { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 22px; }
+    .modal-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .modal-actions .btn-primary { color: var(--white); }
+    .modal-actions .btn-outline { color: var(--black); border-color: var(--mid-grey); }
+    .modal-actions .btn-outline:hover { border-color: var(--black); background: var(--grey); }
+
+    footer { background: var(--dark-grey); padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; position: relative; z-index: 1; }
+    .footer-logo .logo-text { font-size: 18px; }
+    .footer-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.5px; }
+
+    .reveal { opacity: 1; transform: none; }
+    .js-ready .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .js-ready .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes fadeUp { from { opacity: 0.01; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes heroSequence { from { opacity: 0.01; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes titleMaskRise { from { transform: translateY(110%); opacity: 0.01; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes sheenSweep { 0%, 45% { transform: skewX(-18deg) translateX(-180%); } 65%, 100% { transform: skewX(-18deg) translateX(420%); } }
+    @keyframes heroDriftA { 0%,100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(-18px,14px,0); } }
+    @keyframes heroDriftB { 0%,100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(16px,-18px,0); } }
+    @keyframes ambientFloatA { 0%,100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(16px,24px,0); } }
+    @keyframes ambientFloatB { 0%,100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(-18px,-20px,0); } }
+
+    @media (max-width: 980px) {
+      body { padding-top: 0; }
+      nav { position: relative; padding: 16px 20px; align-items: flex-start; gap: 16px; }
+      .nav-links { gap: 12px 16px; justify-content: flex-end; flex-wrap: wrap; }
+      .nav-links a { font-size: 11px; letter-spacing: 1px; }
+      .hero { min-height: auto; padding: 56px 24px 70px; }
+      .hero-inner, .problem-grid, .why-layout, .consultants-header, .consultant-closing, .fallback-layout { grid-template-columns: 1fr; gap: 36px; }
+      .hero-dots { display: none; }
+      .hero h1 { font-size: clamp(40px, 11vw, 64px); max-width: 12ch; }
+      .section { padding: 70px 24px; }
+      .filter-grid, .consultants-grid, .offer-cards { grid-template-columns: 1fr; gap: 16px; }
+      .offer-card:nth-child(2) { transform: none; }
+      .offer-card:nth-child(2):hover { transform: translateY(-8px); }
+      .offers-header { display: block; }
+      .offers-header p { margin-top: 14px; }
+      footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .logo-text { font-size: 16px; }
+      .logo-pin { width: 12px; height: 12px; }
+      .nav-links { display: none; }
+      .hero { padding-top: 44px; }
+      .hero h1 { font-size: clamp(34px, 12vw, 48px); }
+      .hero-subhead { font-size: 16px; }
+      .hero-sub { font-size: 15px; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; }
+      .booking-card, .problem-card, .filter-card, .consultant-card, .consultant-closing, .offer-card, .fallback-panel, .modal-card { padding: 26px 22px; }
+      .section h2 { font-size: clamp(26px, 9vw, 38px); }
+      .consultant-closing { gap: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.001ms !important; }
+      .hero-eyebrow, .hero h1, .hero-subhead, .hero-sub, .hero-actions, .offer-strip, .booking-card, .hero-title-line > span, .reveal { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="#top" aria-label="MYFranchiseGuide home">
+      <div class="logo-text">
+        <span class="my">MY</span>
+        <span class="franchise">FRANCHISE</span>
+        <span class="guide-row"><span class="guide">GUIDE</span><svg class="logo-pin" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12c0 8.25 12 18 12 18s12-9.75 12-18C24 5.373 18.627 0 12 0z" fill="#000"/><circle cx="12" cy="12" r="4.5" fill="white"/></svg></span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#problem">FIM Reality</a></li>
+      <li><a href="#why-myfg">Why MYFG</a></li>
+      <li><a href="#consultants">Consultants</a></li>
+      <li><a href="#offers">Consultation</a></li>
+      <li><a href="#offers" class="nav-cta">BOOK NOW</a></li>
+    </ul>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="hero-eyebrow">Live at FIM • Buyer-side franchise review</p>
+          <h1>
+            <span class="hero-title-line"><span>DON’T MAKE</span></span>
+            <span class="hero-title-line"><span>A&nbsp;&nbsp;</span><span class="accent">RM300,000</span></span>
+            <span class="hero-title-line"><span>DECISION</span></span>
+            <span class="hero-title-line"><span class="accent">BLIND</span></span>
+          </h1>
+          <p class="hero-subhead">Before You Sign the Franchise Agreement, Evaluate the Decision</p>
+          <p class="hero-sub">If you are already comparing franchise brands at FIM, get a second opinion before you place a deposit.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#offers">Book a Meeting Now</a>
+            <a class="btn-outline" href="#checklist">Download the Checklist</a>
+          </div>
+          <div class="offer-strip">Franchise Investment Review for serious buyers before commitment</div>
+        </div>
+
+        <aside class="booking-card" id="booking">
+          <h2>Book a Franchise Investment Review</h2>
+          <p>Choose the level of support you need and speak to MYFG before money gets locked in.</p>
+          <div class="mini-offer-list">
+            <div class="mini-offer"><span>30-Minute Consultation</span><span>RM249</span></div>
+            <div class="mini-offer"><span>1-Hour Consultation</span><span>RM469</span></div>
+            <div class="mini-offer"><span>3 × 1-Hour Review Series</span><span>RM999</span></div>
+          </div>
+          <a class="btn-primary" href="#offers">Choose Your Session</a>
+          <p class="booking-note">Already comparing shortlisted brands? This is the moment to evaluate the decision before you commit.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section problem reveal" id="problem">
+      <div class="section-inner problem-grid">
+        <div>
+          <p class="section-label">FIM reality</p>
+          <h2>Too many booths.</h2>
+          <h2>Too much hype.</h2>
+          <h2><span>Not enough clarity.</span></h2>
+        </div>
+        <div>
+          <p>After speaking to multiple brands, everything starts sounding the same.</p>
+          <p>The real risk is not missing a good opportunity.</p>
+          <p>The real risk is committing to the wrong one with incomplete information.</p>
+          <div class="problem-card"><p>If you are serious about buying a franchise, this is the stage to evaluate the decision before money gets locked in.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why reveal" id="why-myfg">
+      <div class="section-inner why-layout">
+        <div class="narrow">
+          <p class="section-label">Why MYFG</p>
+          <h2>Get a second opinion before you <span>place a deposit.</span></h2>
+          <p>MyFranchiseGuide helps serious franchise buyers compare shortlisted opportunities more objectively, ask better questions, and avoid expensive blind spots before committing capital.</p>
+          <p><strong>We are not here to sell you a franchise.</strong></p>
+          <p>We are here to help you make a smarter decision before you sign.</p>
+        </div>
+        <div class="filter-grid">
+          <div class="filter-card">
+            <h3>This is for you if:</h3>
+            <ul>
+              <li>you are considering if franchising is a right path for you</li>
+              <li>you want to learn how to evaluate a business properly</li>
+              <li>you want to spot blind spots before paying a deposit</li>
+              <li>you want support that is practical, commercial, and clear</li>
+            </ul>
+          </div>
+          <div class="filter-card negative">
+            <h3>This is not for you if:</h3>
+            <ul>
+              <li>you want someone to simply choose the brand for you</li>
+              <li>you are looking for hype or reassurance only</li>
+              <li>you want a fast-money shortcut instead of real evaluation</li>
+              <li>you’re looking for guaranteed returns or “fast rich scheme”</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section consultants reveal" id="consultants">
+      <div class="section-inner">
+        <div class="consultants-header">
+          <div>
+            <p class="section-label">The people behind the consultation</p>
+            <h2>3 perspectives.<br><span>1 smarter franchise decision.</span></h2>
+          </div>
+          <p>Guidance from consultants who have built, run, scaled, and advised franchise businesses — so you get a grounded view before you commit capital.</p>
+        </div>
+
+        <div class="consultants-grid">
+          <article class="consultant-card">
+            <span class="consultant-lens">Buyer strategy lens</span>
+            <img class="consultant-avatar" src="WhatsApp Image 2026-05-13 at 10.17.27 PM.jpeg" alt="Claudia" style="object-fit: cover; object-position: center top;" />
+            <h3>Claudia</h3>
+            <p class="consultant-title">Buyer strategy lens / franchise growth strategist</p>
+            <ul>
+              <li>Founder of MYFranchiseGuide</li>
+              <li>17+ years in building companies</li>
+              <li>Advised 100+ franchise brands</li>
+              <li>Cross-market franchise growth strategist</li>
+              <li>MFA Council Member</li>
+              <li>2x entrepreneur, 1 successful exit</li>
+            </ul>
+          </article>
+
+          <article class="consultant-card">
+            <span class="consultant-lens">Franchisor and system lens</span>
+            <img class="consultant-avatar" src="WhatsApp Image 2026-05-13 at 10.17.14 PM.jpeg" alt="Shamsul" style="object-fit: cover; object-position: center top;" />
+            <h3>Shamsul</h3>
+            <p class="consultant-title">Franchisor and system lens</p>
+            <ul>
+              <li>34 years leadership experience</li>
+              <li>Former CEO of Domino's Malaysia</li>
+              <li>Malaysia's first Domino's multi-unit franchisee</li>
+              <li>Led 300+ stores regionally</li>
+              <li>RM600 million annual revenue</li>
+              <li>Leadership and strategy coach</li>
+            </ul>
+          </article>
+
+          <article class="consultant-card">
+            <span class="consultant-lens">Franchisee and operator lens</span>
+            <img class="consultant-avatar" src="WhatsApp Image 2026-05-13 at 10.17.49 PM.jpeg" alt="Alfred" style="object-fit: cover; object-position: center top;" />
+            <h3>Alfred</h3>
+            <p class="consultant-title">Franchisee and operator lens</p>
+            <ul>
+              <li>15+ years Subway franchisee</li>
+              <li>Multi-unit franchise operator</li>
+              <li>Built strong operating systems</li>
+              <li>Minimal owner dependence</li>
+              <li>Franchisee and investor lens</li>
+              <li>Built for generational wealth</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="consultant-closing">
+          <strong>Franchisor lens. Franchisee lens. Buyer strategy lens.</strong>
+          <p>Together, they bring the franchisor lens, franchisee lens, and buyer strategy lens — helping you pressure-test what makes a franchise opportunity worth buying.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section offers reveal" id="offers">
+      <div class="section-inner">
+        <div class="offers-header">
+          <div>
+            <p class="section-label">Consultation offers</p>
+            <h2>Choose the level of <span>support you need.</span></h2>
+          </div>
+          <p>Whether you want a quick second opinion or deeper support through your decision process, choose the option that fits your stage.</p>
+        </div>
+        <div class="offer-cards">
+          <article class="offer-card">
+            <span class="tag">Focused second opinion</span>
+            <h3>30-Mins Deal Review</h3>
+            <div class="price">RM249 <span style="font-size:22px; color:#888; text-decoration:line-through; font-weight:700;">RM429</span></div>
+            <p>For buyers who want a focused second opinion before committing.</p>
+            <a class="btn-primary open-confirmation" href="#" data-package="30-Mins Deal Review" data-booking-url="https://myfranchiseguide.zohobookings.com/#/4939591000000036079">Book 30-Mins Deal Review</a>
+          </article>
+          <article class="offer-card">
+            <span class="tag">Recommended for shortlisted buyers</span>
+            <h3>1-Hour Deep Dive</h3>
+            <div class="price">RM469 <span style="font-size:22px; color:#888; text-decoration:line-through; font-weight:700;">RM799</span></div>
+            <p>Recommended for 1st time investor.</p>
+            <a class="btn-primary open-confirmation" href="#" data-package="1-Hour Deep Dive" data-booking-url="https://myfranchiseguide.zohobookings.com/#/4939591000000036093">Book 1-Hour Deep Dive</a>
+          </article>
+          <article class="offer-card">
+            <span class="tag">Structured support</span>
+            <h3>3-Sessions Investor Support Package</h3>
+            <div style="margin-bottom:20px;">
+              <div class="price" style="margin-bottom:6px;">RM999 <span style="font-size:22px; color:#888; text-decoration:line-through; font-weight:700;">RM2199</span></div>
+              <i style="font-size:10px; line-height:1.3; color:rgba(0,0,0,0.55);">*Sessions to complete within 6 months from date of purchase</i>
+            </div>
+            <p>For buyers who want structured support across comparison, evaluation, and decision-making.</p>
+            <a class="btn-primary open-confirmation" href="#" data-package="3-Sessions Investor Support Package" data-booking-url="https://myfranchiseguide.zohobookings.com/#/4939591000000036107">Book 3-Session Investor Support Package</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fallback reveal" id="checklist">
+      <div class="section-inner fallback-layout">
+        <div>
+          <p class="section-label">Checklist fallback</p>
+          <h2>Not ready to book yet? Start with the checklist.</h2>
+          <p>Download the Franchise Evaluation Checklist to compare brands more objectively and avoid making a rushed decision based on expo hype alone.</p>
+        </div>
+        <div class="fallback-panel">
+          <a class="btn-primary open-checklist" href="#">Download the Checklist</a>
+          <p>Start with the checklist first if you still need to organise your thinking.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo"><div class="logo-text"><span class="my">MY</span><span class="franchise">FRANCHISE</span><span class="guide-row"><span class="guide" style="color:white">GUIDE</span><svg class="logo-pin" viewBox="0 0 24 30" fill="none"><path d="M12 0C5.373 0 0 5.373 0 12c0 8.25 12 18 12 18s12-9.75 12-18C24 5.373 18.627 0 12 0z" fill="white"/><circle cx="12" cy="12" r="4.5" fill="#1a1a1a"/></svg></span></div></div>
+    <ul class="footer-links"><li><a href="#problem">FIM Reality</a></li><li><a href="#why-myfg">Why MYFG</a></li><li><a href="#consultants">Consultants</a></li><li><a href="#offers">Consultation</a></li><li><a href="#checklist">Checklist</a></li><li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li><li><a href="privacy-notice.html">Privacy Notice</a></li></ul>
+    <div class="footer-copy">© 2026 MYFranchiseGuide. All rights reserved.</div>
+  </footer>
+
+  <div class="modal" id="confirmation-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="confirmation-title">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h2 id="confirmation-title">You’re one step closer to a clearer decision</h2>
+      <p>Choose the consultation option that fits your stage and evaluate the opportunity before you commit capital.</p>
+      <div class="modal-actions">
+        <label style="display:flex; align-items:flex-start; gap:10px; font-size:12px; color:#555; margin-bottom:14px; cursor:pointer; line-height:1.6;">
+          <input type="checkbox" id="terms-agree" style="margin-top:3px; accent-color:var(--blue); flex-shrink:0;" />
+          <span>I have read and agree to MYFG / MYFranchiseGuide's <a href="privacy-notice.html" target="_blank" style="color:var(--blue); font-weight:700;">Privacy Notice</a> and <a href="terms-and-conditions.html" target="_blank" style="color:var(--blue); font-weight:700;">Terms &amp; Conditions</a>, and consent to my personal data being processed for enquiry, checklist, booking, payment, invoice, consultation, and service follow-up purposes.</span>
+        </label>
+        <label style="display:flex; align-items:flex-start; gap:10px; font-size:12px; color:#555; margin-bottom:18px; cursor:pointer; line-height:1.6;">
+          <input type="checkbox" id="marketing-agree" style="margin-top:3px; accent-color:var(--blue); flex-shrink:0;" />
+          <span>I agree to receive franchise education content, event updates, offers, and marketing communications from MYFG / MYFranchiseGuide. I understand I may unsubscribe or opt out at any time.</span>
+        </label>
+        <a class="btn-primary" id="booking-link" href="https://beacons.ai/myfranchiseguide" target="_blank" rel="noopener" style="opacity:0.4; pointer-events:none;" aria-disabled="true">Continue to Booking</a>
+        <a class="btn-outline" href="#offers">Review Options</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="checklist-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="checklist-title">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h2 id="checklist-title">Your checklist is on the way</h2>
+      <p>Use it to compare more clearly before you commit. If you’re already comparing options, book a Franchise Investment Review next.</p>
+      <div class="modal-actions">
+        <a class="btn-primary" href="https://asiafranchiseguide.com/fim/" target="_blank" rel="noopener">View the Checklist</a>
+        <a class="btn-outline" href="#offers">Book a Session Now</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://bookings.nimbuspop.com/assets/embed.js"></script>
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      document.documentElement.classList.add('js-ready');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => observer.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+    function closeModal(modal) {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+    document.querySelectorAll('.open-confirmation').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const selected = btn.getAttribute('data-package');
+        const bookingUrl = btn.getAttribute('data-booking-url') || '';
+        const link = document.getElementById('booking-link');
+        link.setAttribute('data-booking-url', bookingUrl);
+        link.textContent = 'Continue to Booking';
+        // Reset checkbox state each time modal opens
+        const checkbox = document.getElementById('terms-agree');
+        checkbox.checked = false;
+        document.getElementById('marketing-agree').checked = false;
+        link.style.opacity = '0.4';
+        link.style.pointerEvents = 'none';
+        link.setAttribute('aria-disabled', 'true');
+        openModal('confirmation-modal');
+      });
+    });
+
+    // Enable booking button only when terms checkbox is ticked
+    document.getElementById('terms-agree').addEventListener('change', function() {
+      const link = document.getElementById('booking-link');
+      if (this.checked) {
+        link.style.opacity = '1';
+        link.style.pointerEvents = 'auto';
+        link.setAttribute('aria-disabled', 'false');
+      } else {
+        link.style.opacity = '0.4';
+        link.style.pointerEvents = 'none';
+        link.setAttribute('aria-disabled', 'true');
+      }
+    });
+
+    // Open Zoho booking in popup window on Continue to Booking click
+    document.getElementById('booking-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      const url = this.getAttribute('data-booking-url');
+      if (!url) return;
+      closeModal(document.getElementById('confirmation-modal'));
+      const w = 600, h = 700;
+      const left = (screen.width / 2) - (w / 2);
+      const top = (screen.height / 2) - (h / 2);
+      window.open(url, 'ZohoBooking', 'width=' + w + ',height=' + h + ',top=' + top + ',left=' + left + ',scrollbars=yes,resizable=yes');
+    });
+    document.querySelectorAll('.open-checklist').forEach(btn => {
+      btn.addEventListener('click', (e) => { e.preventDefault(); openModal('checklist-modal'); });
+    });
+    document.querySelectorAll('.modal-close').forEach(btn => btn.addEventListener('click', () => closeModal(btn.closest('.modal'))));
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal); });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') document.querySelectorAll('.modal.open').forEach(closeModal);
+    });
+  </script>
+</body>
+</html>
