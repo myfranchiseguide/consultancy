@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Franchise Insider · MYFranchiseGuide</title>
+<meta name="description" content="The first of its kind franchise event in Kuala Lumpur. A small, honest room for franchisees-to-be who want clearer answers before they sign.">
+<meta property="og:title" content="The Franchise Insider · Kuala Lumpur · 20 June 2026">
+<meta property="og:description" content="An intimate half-day room for the franchisees-to-be who are ready, but don't yet have the data points to commit.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0B3D91;
+    --blue-deep: #071F4A;
+    --blue-tint: #EEF2FB;
+    --red: #C8102E;
+    --red-soft: #D33246;
+    --red-tint: #FBE9EC;
+    --black: #111111;
+    --ink: #1A1A1A;
+    --mute: #5E6470;
+    --hair: #E5E7EB;
+    --bg: #FFFFFF;
+    --cream: #FAF5EC;
+    --cream-deep: #F1E9D8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--black);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+  /* ============ NAV ============ */
+  nav {
+    border-bottom: 1px solid var(--hair);
+    padding: 18px 0;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 14px; letter-spacing: 2px; color: var(--black);
+  }
+  .brand-dot { width: 14px; height: 14px; background: var(--red); display: inline-block; }
+  .nav-right { display: flex; align-items: center; gap: 18px; }
+  .nav-urgency { font-size: 11px; color: var(--mute); font-weight: 600; letter-spacing: 1px; }
+  .nav-urgency b { color: var(--red); font-weight: 700; }
+  nav .cta-small {
+    background: var(--red); color: white;
+    padding: 10px 18px; border-radius: 4px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+  }
+  nav .cta-small:hover { background: var(--blue); text-decoration: none; }
+
+  /* ============ URGENCY BAND ============ */
+  .urgency-band {
+    background: var(--blue-deep);
+    color: white;
+    padding: 26px 0;
+    border-bottom: 4px solid var(--red);
+  }
+  .urgency-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .timer-label {
+    font-size: 11px;
+    color: white;
+    opacity: 0.7;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .timer-grid {
+    display: flex;
+    gap: 12px;
+  }
+  .timer-unit {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 64px;
+  }
+  .t-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    display: block;
+  }
+  .t-label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .seats-block { text-align: right; }
+  .seats-label {
+    font-size: 11px;
+    color: white;
+    opacity: 0.7;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .seats-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(200,16,46,0.18);
+    border: 1px solid rgba(200,16,46,0.4);
+    padding: 10px 20px;
+    border-radius: 100px;
+  }
+  .seats-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(200,16,46,0.65); }
+    50% { opacity: 0.7; box-shadow: 0 0 0 12px rgba(200,16,46,0); }
+  }
+  .seats-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+  }
+  .seats-num small {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    margin-left: 4px;
+  }
+
+  /* ============ HERO ============ */
+  .hero { padding: 88px 0 0; border-bottom: 1px solid var(--hair); }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .eyebrow {
+    color: var(--red); font-size: 12px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 24px; display: inline-flex; align-items: center; gap: 10px;
+  }
+  .eyebrow:before {
+    content: ""; width: 28px; height: 2px; background: var(--red); display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(46px, 6.5vw, 80px);
+    font-weight: 800; letter-spacing: -1.5px; margin-bottom: 18px;
+  }
+  .hero h1 .accent { color: var(--red); }
+  .hero-sub {
+    font-size: 19px; color: var(--ink);
+    max-width: 580px; margin-bottom: 32px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic; font-weight: 500;
+  }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 18px;
+    margin-bottom: 32px;
+    font-size: 13px; font-weight: 600; color: var(--black);
+    letter-spacing: 0.5px;
+  }
+  .meta-row .dot { color: var(--red); margin: 0 4px; }
+  .cta {
+    display: inline-block; background: var(--red); color: white;
+    padding: 18px 36px; border-radius: 4px;
+    font-size: 16px; font-weight: 700; letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px rgba(200, 16, 46, 0.25); transition: all 0.2s;
+  }
+  .cta:hover {
+    background: var(--blue); text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(11, 61, 145, 0.3);
+  }
+  .sublink {
+    display: block; margin-top: 14px;
+    font-size: 13px; color: var(--mute); letter-spacing: 0.5px;
+  }
+
+  /* Hero portrait */
+  .hero-portrait { position: relative; padding-top: 60px; padding-bottom: 60px; }
+  .portrait-wrap {
+    position: relative; border-radius: 6px; overflow: hidden;
+    aspect-ratio: 4 / 5; box-shadow: 0 24px 60px rgba(11, 31, 74, 0.18);
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%);
+  }
+  .portrait-wrap img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .portrait-placeholder {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+  }
+  .portrait-placeholder .ph-initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 100px; font-weight: 700; letter-spacing: -2px; opacity: 0.95;
+  }
+  .portrait-tag {
+    position: absolute; bottom: 20px; left: 20px; right: 20px;
+    background: white; padding: 14px 18px;
+    border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  }
+  .portrait-tag .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700; color: var(--black);
+  }
+  .portrait-tag .role {
+    font-size: 11px; color: var(--red); font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; margin-top: 2px;
+  }
+  .portrait-badge {
+    position: absolute; top: 24px; right: -16px;
+    background: var(--red); color: white;
+    padding: 10px 14px; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    box-shadow: 0 6px 16px rgba(200, 16, 46, 0.35);
+  }
+
+  /* ============ CREDIBILITY ============ */
+  .credibility { background: var(--black); padding: 28px 0; color: white; overflow: hidden; }
+  .creds-row {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 28px;
+  }
+  .cred { text-align: center; flex: 1 1 auto; min-width: 130px; }
+  .cred .num {
+    font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 800;
+    color: white; line-height: 1; margin-bottom: 6px;
+  }
+  .cred .num .plus { color: var(--red); font-size: 28px; }
+  .cred .label {
+    font-size: 11px; letter-spacing: 2.5px;
+    color: rgba(255,255,255,0.65); font-weight: 600; text-transform: uppercase;
+  }
+
+  /* ============ SECTIONS ============ */
+  section { padding: 80px 0; border-bottom: 1px solid var(--hair); }
+  .section-eyebrow {
+    color: var(--red); font-size: 11px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .section-eyebrow:before {
+    content: ""; width: 24px; height: 2px; background: var(--red); display: inline-block;
+  }
+  h2 {
+    font-size: clamp(30px, 4.5vw, 44px);
+    letter-spacing: -0.8px; margin-bottom: 24px; max-width: 840px;
+  }
+  .lede {
+    font-size: 19px; color: var(--mute); max-width: 760px; margin-bottom: 0;
+  }
+
+  /* ============ PULL QUOTE ============ */
+  .pullquote {
+    background: var(--cream);
+    padding: 90px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .pullquote-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+  }
+  .pullquote-grid:before {
+    content: "\201C";
+    position: absolute;
+    top: -90px;
+    left: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 280px;
+    color: var(--red);
+    opacity: 0.10;
+    line-height: 1;
+    font-weight: 700;
+  }
+  .pullquote blockquote {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    line-height: 1.45;
+    color: var(--black);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .pullquote cite {
+    display: block;
+    margin-top: 28px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-weight: 600;
+  }
+  .pullquote cite .accent { color: var(--red); }
+  .pullquote-photo {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--blue-tint);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+  }
+  .pullquote-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pullquote-photo .caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.75));
+    color: white;
+    padding: 24px 18px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ============ WHY ============ */
+  .why { background: var(--blue); color: white; border-bottom: 4px solid var(--red); }
+  .why .section-eyebrow { color: white; opacity: 0.8; }
+  .why .section-eyebrow:before { background: white; opacity: 0.5; }
+  .why h2 { color: white; }
+  .why p {
+    color: white; font-size: 18px; line-height: 1.7;
+    max-width: 800px; margin-bottom: 20px;
+  }
+  .why .signature {
+    font-family: 'Caveat', cursive;
+    font-size: 42px; margin-top: 36px; color: white; line-height: 1;
+  }
+  .why .signature small {
+    display: block; font-family: 'Inter', sans-serif; font-style: normal;
+    font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    margin-top: 14px; opacity: 0.8; font-weight: 600;
+  }
+
+  /* ============ BRANDS CONFIRMED ============ */
+  .brands { background: var(--bg); }
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+  }
+  .brand-card {
+    background: white;
+    border: 1px solid var(--hair);
+    border-radius: 6px;
+    padding: 28px 20px;
+    text-align: center;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .brand-card:hover { border-color: var(--red); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+  .brand-card .brand-logo {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .brand-card .brand-logo img {
+    max-height: 70px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  .brand-card .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .brand-card .brand-tag {
+    font-size: 11px;
+    color: var(--mute);
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+  .brand-card.pending {
+    background: var(--cream);
+    border-style: dashed;
+    border-color: var(--red);
+  }
+  .brand-card.pending .brand-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    color: var(--red);
+    font-weight: 300;
+    height: 70px;
+  }
+  .brand-card.pending .brand-name { color: var(--red); }
+
+  /* ============ TWO COLUMN ============ */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  .col-card { padding: 36px 32px; border: 1px solid var(--hair); border-radius: 6px; background: white; }
+  .col-card.positive { border-top: 4px solid var(--blue); }
+  .col-card.negative { border-top: 4px solid var(--red); }
+  .col-card h3 { font-size: 22px; margin-bottom: 22px; }
+  .col-card ul { list-style: none; }
+  .col-card li {
+    padding: 12px 0 12px 32px; position: relative;
+    font-size: 15px; line-height: 1.55; border-bottom: 1px solid var(--hair);
+  }
+  .col-card li:last-child { border-bottom: none; }
+  .col-card.positive li:before {
+    content: ""; position: absolute; left: 0; top: 19px;
+    width: 18px; height: 18px; background: var(--blue); border-radius: 50%;
+  }
+  .col-card.positive li:after {
+    content: "✓"; position: absolute; left: 4px; top: 14px;
+    color: white; font-size: 12px; font-weight: 700;
+  }
+  .col-card.negative li:before {
+    content: ""; position: absolute; left: 0; top: 19px;
+    width: 18px; height: 18px; background: var(--red); border-radius: 50%;
+  }
+  .col-card.negative li:after {
+    content: "×"; position: absolute; left: 6px; top: 11px;
+    color: white; font-size: 14px; font-weight: 700;
+  }
+
+  /* ============ MEET YOUR HOST ============ */
+  .host { background: var(--cream); }
+  .host-grid {
+    display: grid; grid-template-columns: 1fr 1.5fr;
+    gap: 56px; align-items: center;
+  }
+  .host-photo {
+    position: relative; aspect-ratio: 4 / 5;
+    border-radius: 6px; overflow: hidden;
+    background: linear-gradient(135deg, var(--red) 0%, #8a0820 100%);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+  }
+  .host-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .host-photo .corner-mark {
+    position: absolute; top: 16px; left: 16px;
+    background: white; padding: 8px 10px;
+    font-size: 9px; font-weight: 700; letter-spacing: 2px; color: var(--red);
+  }
+  .host h2 { margin-bottom: 8px; }
+  .host .host-tag {
+    font-family: 'Caveat', cursive; font-size: 28px;
+    color: var(--red); margin-bottom: 14px; line-height: 1;
+  }
+  .host-bio { font-size: 16px; line-height: 1.7; color: var(--ink); margin-bottom: 18px; }
+  .host-creds { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .host-creds .chip {
+    background: white; border: 1px solid var(--hair);
+    padding: 8px 14px; font-size: 12px; font-weight: 600;
+    color: var(--black); border-radius: 100px;
+  }
+  .host-creds .chip b { color: var(--red); }
+  .host-sign {
+    font-family: 'Caveat', cursive;
+    font-size: 38px;
+    color: var(--red);
+    margin-top: 24px;
+    line-height: 1;
+  }
+
+  /* ============ AGENDA ============ */
+  .agenda { margin-top: 40px; }
+  .agenda-row {
+    display: grid; grid-template-columns: 56px 180px 1fr;
+    gap: 24px; padding: 24px 0;
+    border-top: 1px solid var(--hair); align-items: start;
+  }
+  .agenda-row:last-child { border-bottom: 1px solid var(--hair); }
+  .agenda-icon {
+    width: 44px; height: 44px; background: var(--blue-tint);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: var(--blue);
+  }
+  .agenda-icon svg { width: 22px; height: 22px; }
+  .agenda-time {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 17px; font-weight: 700; color: var(--blue);
+  }
+  .agenda-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px; font-weight: 700; color: var(--black); margin-bottom: 6px;
+  }
+  .agenda-body { font-size: 15px; color: var(--mute); }
+  .agenda-body small {
+    display: block; margin-top: 6px;
+    font-size: 12px; color: var(--red);
+    font-weight: 600; letter-spacing: 0.5px;
+  }
+
+  /* ============ OUTCOMES ============ */
+  .outcomes { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .outcome {
+    background: var(--blue-tint); padding: 28px; border-radius: 6px;
+    position: relative; padding-left: 60px;
+  }
+  .outcome:before {
+    content: ""; position: absolute; left: 24px; top: 32px;
+    width: 22px; height: 22px; background: var(--red); border-radius: 50%;
+  }
+  .outcome:after {
+    content: "✓"; position: absolute; left: 30px; top: 28px;
+    color: white; font-size: 13px; font-weight: 700;
+  }
+  .outcome h4 { font-size: 17px; margin-bottom: 8px; color: var(--black); }
+  .outcome p { font-size: 14px; color: var(--mute); line-height: 1.55; }
+
+  /* ============ STEPS ============ */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  .step {
+    text-align: center; padding: 30px 24px;
+    border: 1px solid var(--hair); border-radius: 6px; position: relative;
+  }
+  .step .step-num {
+    width: 44px; height: 44px; background: var(--red);
+    color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700; margin: 0 auto 18px;
+  }
+  .step h4 { font-size: 18px; margin-bottom: 8px; }
+  .step p { font-size: 14px; color: var(--mute); line-height: 1.55; }
+
+  /* ============ THE ROOM ============ */
+  .room { background: var(--cream-deep); }
+  .room-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .room-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    height: 480px;
+  }
+  .room-photo {
+    background: var(--blue-tint);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.15);
+  }
+  .room-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .room-photo.main {
+    grid-row: 1 / 3;
+    background: linear-gradient(135deg, rgba(11, 61, 145, 0.85), rgba(7, 31, 74, 0.95));
+  }
+  .room-photo.detail {
+    background: linear-gradient(135deg, rgba(200, 16, 46, 0.85), #8a0820);
+  }
+  .room-photo .caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: white;
+    padding: 24px 16px 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .room-photo .caption small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2px;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  .room h2 { margin-bottom: 18px; }
+  .room p { font-size: 17px; line-height: 1.7; color: var(--ink); margin-bottom: 16px; }
+  .room p strong { color: var(--blue); }
+
+  /* ============ DETAILS ============ */
+  .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
+  .detail-block dt {
+    font-size: 11px; color: var(--red);
+    font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 6px; margin-top: 18px;
+  }
+  .detail-block dt:first-child { margin-top: 0; }
+  .detail-block dd {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 19px; color: var(--black); font-weight: 700;
+  }
+  .detail-block dd small {
+    display: block; font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 400; color: var(--mute); margin-top: 4px;
+  }
+  .price-card {
+    border: 2px solid var(--blue); border-radius: 6px;
+    padding: 28px; margin-bottom: 16px; background: white; position: relative;
+  }
+  .price-card.standard { border-color: var(--black); }
+  .price-card .tier-label {
+    font-size: 11px; letter-spacing: 3px; color: var(--red);
+    font-weight: 700; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .price-card.standard .tier-label { color: var(--black); }
+  .price-card .price {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px; font-weight: 700; color: var(--blue);
+  }
+  .price-card.standard .price { color: var(--black); }
+  .price-card .price small { font-size: 16px; font-weight: 500; }
+  .price-card .window { font-size: 13px; color: var(--mute); margin-top: 6px; }
+
+  /* ============ FAQ ============ */
+  .faq details { border-bottom: 1px solid var(--hair); padding: 22px 0; }
+  .faq details:first-of-type { border-top: 1px solid var(--hair); }
+  .faq summary {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 19px; font-weight: 700; color: var(--black);
+    cursor: pointer; list-style: none;
+    padding-right: 32px; position: relative;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:after {
+    content: "+"; position: absolute; right: 0; top: -4px;
+    font-size: 28px; font-weight: 400; color: var(--red);
+    transition: transform 0.2s;
+  }
+  .faq details[open] summary:after { content: "−"; }
+  .faq details p {
+    margin-top: 14px; color: var(--mute);
+    font-size: 15px; line-height: 1.65; max-width: 780px;
+  }
+
+  /* ============ FINAL CTA ============ */
+  .final-cta { background: var(--black); color: white; text-align: center; border-bottom: none; position: relative; overflow: hidden; }
+  .final-cta:before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0;
+    height: 4px; background: linear-gradient(to right, var(--blue), var(--red));
+  }
+  .final-cta h2 { color: white; margin: 0 auto 18px; }
+  .final-cta .lede { color: rgba(255,255,255,0.7); margin: 0 auto 36px; }
+  .final-cta .cta { background: var(--red); box-shadow: 0 4px 20px rgba(200, 16, 46, 0.45); }
+  .final-cta .cta:hover { background: white; color: var(--black); }
+  .final-cta .sublink { color: rgba(255,255,255,0.6); }
+  .final-cta .sublink a { color: white; }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--black); color: rgba(255,255,255,0.6);
+    padding: 56px 0 32px; font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+  .footer-grid h5 {
+    font-family: 'Inter', sans-serif; color: white;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 14px; font-weight: 700;
+  }
+  .footer-grid p, .footer-grid a {
+    color: rgba(255,255,255,0.65); font-size: 13px;
+    line-height: 1.9; display: block;
+  }
+  .footer-grid a:hover { color: white; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px; display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px; font-size: 12px;
+  }
+  .social-row { display: flex; gap: 14px; margin-top: 12px; }
+  .social-row a {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: white; text-decoration: none;
+  }
+  .social-row a:hover { background: var(--red); border-color: var(--red); }
+  .social-row svg { width: 16px; height: 16px; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-portrait { padding: 0 0 40px; }
+    .portrait-wrap { max-width: 360px; margin: 0 auto; }
+    .host-grid, .room-grid, .pullquote-grid { grid-template-columns: 1fr; gap: 36px; }
+    .host-photo, .pullquote-photo { max-width: 380px; margin: 0 auto; }
+    .room-photos { max-width: 480px; margin: 0 auto; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .brands-grid { grid-template-columns: repeat(2, 1fr); }
+    .urgency-grid { grid-template-columns: 1fr; gap: 24px; }
+    .seats-block { text-align: left; }
+  }
+  @media (max-width: 720px) {
+    section { padding: 56px 0; }
+    .hero { padding: 48px 0 0; }
+    .pullquote { padding: 60px 0; }
+    .two-col, .outcomes, .details-grid, .steps { grid-template-columns: 1fr; gap: 20px; }
+    .agenda-row { grid-template-columns: 44px 1fr; gap: 16px; }
+    .agenda-row .agenda-time { grid-column: 2; font-size: 14px; }
+    .agenda-row .agenda-icon { grid-row: 1 / 3; }
+    .meta-row { flex-direction: column; gap: 6px; }
+    .meta-row .dot { display: none; }
+    nav .cta-small { display: none; }
+    .nav-urgency { display: none; }
+    .cred .num { font-size: 28px; }
+    .creds-row { gap: 18px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .timer-unit { min-width: 56px; padding: 8px 12px; }
+    .t-num { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      MYFRANCHISEGUIDE
+    </div>
+    <div class="nav-right">
+      <span class="nav-urgency"><b id="nav-days">--</b>D · <b id="nav-seats">18</b> SEATS LEFT</span>
+      <a href="https://catalog.billplz.com/myfg/pf/tfi-earlybird" class="cta-small">Reserve my seat</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">The first of its kind franchise event · Kuala Lumpur</div>
+        <h1>The Franchise <span class="accent">Insider</span>.</h1>
+        <p class="hero-sub">An intimate half-day room for the franchisees-to-be who are ready, but don't yet have the data points to commit.</p>
+        <div class="meta-row">
+          <span>Sat, 20 Jun 2026</span>
+          <span class="dot">·</span>
+          <span>9:30 AM – 2:00 PM</span>
+          <span class="dot">·</span>
+          <span>Carfe, Taman Sea</span>
+          <span class="dot">·</span>
+          <span>50 seats</span>
+        </div>
+        <a href="https://catalog.billplz.com/myfg/pf/tfi-earlybird" class="cta">Reserve my seat · RM 69</a>
+        <span class="sublink">Early bird until 5 June. RM 99 after.</span>
+      </div>
+      <div class="hero-portrait">
+        <div class="portrait-wrap">
+          <!-- Save your portrait to: images/claudia-portrait.jpg -->
+          <img src="images/claudia-portrait.jpg" alt="Claudia Ng, Founder of MYFranchiseGuide"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="portrait-placeholder" style="display:none;">
+            <div class="ph-initials">CN</div>
+          </div>
+          <div class="portrait-badge">Your Host</div>
+          <div class="portrait-tag">
+            <div class="name">Claudia Ng</div>
+            <div class="role">Founder, MYFranchiseGuide</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ URGENCY BAND ============ -->
+<div class="urgency-band">
+  <div class="wrap">
+    <div class="urgency-grid">
+      <div>
+        <div class="timer-label">Early bird closes in</div>
+        <div class="timer-grid">
+          <div class="timer-unit"><span class="t-num" id="t-days">--</span><span class="t-label">DAYS</span></div>
+          <div class="timer-unit"><span class="t-num" id="t-hours">--</span><span class="t-label">HOURS</span></div>
+          <div class="timer-unit"><span class="t-num" id="t-mins">--</span><span class="t-label">MINS</span></div>
+          <div class="timer-unit"><span class="t-num" id="t-secs">--</span><span class="t-label">SECS</span></div>
+        </div>
+      </div>
+      <div class="seats-block">
+        <div class="seats-label">Right now</div>
+        <div class="seats-inner">
+          <span class="seats-dot"></span>
+          <span class="seats-num"><b id="seatsLeft">18</b><small>seats left</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CREDIBILITY ============ -->
+<div class="credibility">
+  <div class="wrap">
+    <div class="creds-row">
+      <div class="cred"><div class="num">100<span class="plus">+</span></div><div class="label">Brands Consulted</div></div>
+      <div class="cred"><div class="num">15<span class="plus">+</span></div><div class="label">Years in Franchising</div></div>
+      <div class="cred"><div class="num">MFA</div><div class="label">Council Member</div></div>
+      <div class="cred"><div class="num">2</div><div class="label">Start-ups Founded</div></div>
+      <div class="cred"><div class="num">RM10M<span class="plus">+</span></div><div class="label">Generated for Brands</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PULL QUOTE ============ -->
+<section class="pullquote">
+  <div class="wrap">
+    <div class="pullquote-grid">
+      <div>
+        <blockquote>
+          "I've always been curious about franchising. I'm sick of my 9 to 5. With all the layoffs happening, I feel I need to be prepared for a Plan B. But franchising just seems hard to navigate, and there's a real lack of guidance in this industry. So I'm scared."
+        </blockquote>
+        <cite>What most of you told me at <span class="accent">FIM Weekend 2026</span></cite>
+      </div>
+      <div class="pullquote-photo">
+        <!-- Save your team photo at FIM to: images/team-fim.jpg -->
+        <img src="images/team-fim.jpg" alt="Claudia and the MYFranchiseGuide team at FIM Weekend 2026"
+             onerror="this.style.display='none';">
+        <div class="caption">The MYFG team · FIM Weekend 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="why">
+  <div class="wrap">
+    <div class="section-eyebrow">Why I'm organizing this</div>
+    <h2>The room I wish you'd had is my why.</h2>
+    <p>Many of you have asked for an offline, in-person event. Somewhere to learn how to actually evaluate a franchise business and connect with other people doing the same homework. So this is the first of its kind. I'm bringing the industry experts and the brands into one intimate setting, half a day, for us to connect properly.</p>
+    <p>Most franchise events here optimise for footfall. Brands pay big to be on stage, attendees show up for free food, and the actual conversations (the candid ones, the careful ones) happen quietly in a corner.</p>
+    <p>The Franchise Insider is built differently. The room is intentionally small, so the conversations can be real. The brand pitches are bounded, so you don't sit through hours of pitches dressed up as content. Industry authorities and a lender are in the room, because that's where the real decision-making happens. And the ticket price is deliberately low (RM 69 early, RM 99 standard) so money isn't the filter. Seriousness is.</p>
+    <p>If you're thinking about franchising as a real path, come and ask the hard questions in this room. It's much cheaper than learning them the expensive way later.</p>
+    <div class="signature">Claudia
+      <small>Founder, MYFranchiseGuide</small>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRANDS CONFIRMED ============ -->
+<section class="brands">
+  <div class="wrap">
+    <div class="section-eyebrow">Brands confirmed for the room</div>
+    <h2>Some of the names you'll meet.</h2>
+    <p class="lede">A curated set of franchise brands. Vetted before they were invited. More coming as we finalize.</p>
+    <div class="brands-grid">
+      <div class="brand-card">
+        <div class="brand-logo">
+          <!-- Save Kidocode logo to: images/brand-kidocode.png -->
+          <img src="images/brand-kidocode.png" alt="Kidocode" onerror="this.style.display='none';">
+        </div>
+        <div class="brand-name">Kidocode</div>
+        <div class="brand-tag">Coding &amp; STEM education</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">
+          <!-- Save MicFront logo to: images/brand-micfront.png -->
+          <img src="images/brand-micfront.png" alt="MicFront" onerror="this.style.display='none';">
+        </div>
+        <div class="brand-name">MicFront</div>
+        <div class="brand-tag">Beyond Public Speaking</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">
+          <!-- Save Pernas logo to: images/brand-pernas.png -->
+          <img src="images/brand-pernas.png" alt="Pernas" onerror="this.style.display='none';">
+        </div>
+        <div class="brand-name">Pernas</div>
+        <div class="brand-tag">Franchise group</div>
+      </div>
+      <div class="brand-card pending">
+        <div class="brand-logo">+</div>
+        <div class="brand-name">More to come</div>
+        <div class="brand-tag">2 brands pending confirmation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO THIS IS FOR ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow">Who this is for</div>
+    <div class="two-col">
+      <div class="col-card positive">
+        <h3>This is for you if</h3>
+        <ul>
+          <li>You're wondering if franchising is a real route to creating generational wealth.</li>
+          <li>You're seriously considering investing in a franchise, but you're not sure what's actually out there.</li>
+          <li>You'd love to connect with other like-minded people, hear what they've found, and learn from their perspectives.</li>
+          <li>You want to explore passive income options that aren't another property or another stock pick.</li>
+          <li>You're sick of your 9 to 5 and looking for a way out, or you're considering another vertical to build wealth.</li>
+          <li>You want transparency, want to make a smart decision, and want to walk into a deal with full confidence.</li>
+        </ul>
+      </div>
+      <div class="col-card negative">
+        <h3>This is not for you if</h3>
+        <ul>
+          <li>You want someone to tell you which specific franchise to buy.</li>
+          <li>You want guaranteed returns. We don't sell those, and you should be careful of anyone who does.</li>
+          <li>You're looking for a free meet and greet with brands. There's no free coffee here, only real conversations.</li>
+          <li>You're not willing to ask questions. The value of this room is unlocked by the questions you bring.</li>
+          <li>You're here to pitch your services or network for sales leads. This isn't that kind of room.</li>
+          <li>You think franchising is a get-rich-quick game. It's a real business that operators take years to build.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEET YOUR HOST (moved after Who this is for) ============ -->
+<section class="host">
+  <div class="wrap">
+    <div class="host-grid">
+      <div class="host-photo">
+        <!-- Save your portrait to: images/claudia-portrait.jpg (same photo as hero, or a different one) -->
+        <img src="images/claudia-portrait.jpg" alt="Claudia Ng" onerror="this.style.display='none';">
+        <div class="corner-mark">MEET YOUR HOST</div>
+      </div>
+      <div>
+        <div class="section-eyebrow">Meet your host</div>
+        <h2>Hi, I'm Claudia.</h2>
+        <div class="host-tag">So glad you made it this far.</div>
+        <p class="host-bio">I've just returned from the United States nine months ago after working in franchising for a few years. In my career so far, I've supported over 100 franchise brands. The Franchise Insider sits inside my second start-up, MYFranchiseGuide, which was born nine months ago with one interest: raising the standard of franchising in Malaysia.</p>
+        <p class="host-bio">I came back because I saw something clear. We are behind, but the potential here is huge. Done well, franchising can help our country build real businesses, real jobs, and real wealth for the people who run them. And it can contribute properly to the growth of our economy.</p>
+        <p class="host-bio">The Franchise Insider is born with that same interest. Raising the standard, one small room at a time. If you've been on the fence for a while, I built this for you. Not sure if this will work because being an industry disruptor is always hard. But I hope you can make it.</p>
+        <div class="host-sign">Claudia</div>
+        <div class="host-creds">
+          <div class="chip"><b>·</b> Council Member, Malaysia Franchise Association</div>
+          <div class="chip"><b>·</b> Featured speaker, FIM Weekend 2026</div>
+          <div class="chip"><b>·</b> Founder of two start-ups</div>
+          <div class="chip"><b>·</b> 100+ franchise brands supported</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AGENDA ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow">What's actually on the day</div>
+    <h2>Four and a half hours, structured around what you need.</h2>
+    <div class="agenda">
+      <div class="agenda-row">
+        <div class="agenda-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <div class="agenda-time">9:30 – 10:00 AM</div>
+        <div>
+          <div class="agenda-title">Welcome &amp; how to evaluate a franchise business</div>
+          <div class="agenda-body">We dive right in with the meat. The framework, the economics, the red flags. No long-winded house rules.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M17 11l4 4M21 11l-4 4"/><path d="M1 21v-2a4 4 0 014-4h8a4 4 0 014 4v2"/></svg>
+        </div>
+        <div class="agenda-time">10:00 – 10:45 AM</div>
+        <div>
+          <div class="agenda-title">Franchisees roundtable</div>
+          <div class="agenda-body">Real success stories. Their selection criteria, the journey, and the lessons they wished someone had taught them earlier.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21v-9l9-6 9 6v9"/><path d="M9 21v-6h6v6"/></svg>
+        </div>
+        <div class="agenda-time">10:45 AM – 12:05 PM</div>
+        <div>
+          <div class="agenda-title">4 brands sharing</div>
+          <div class="agenda-body">A curated set of franchise brands present live, with time for you to ask the questions you actually want answered.
+            <small>Kidocode · MicFront · 2 more pending confirmation</small>
+          </div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M3 8h15v9a4 4 0 01-4 4H7a4 4 0 01-4-4z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+        </div>
+        <div class="agenda-time">12:05 – 12:45 PM</div>
+        <div>
+          <div class="agenda-title">Light bites</div>
+          <div class="agenda-body">The room is small enough that lunch is part of the conversation, not a break from it.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="agenda-time">12:45 – 1:15 PM</div>
+        <div>
+          <div class="agenda-title">Funding options for 2026</div>
+          <div class="agenda-body">What banks are approving this year, what they're rejecting, and how to position your application so it has a real shot.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </div>
+        <div class="agenda-time">1:15 – 2:00 PM</div>
+        <div>
+          <div class="agenda-title">Mingle &amp; wrap up</div>
+          <div class="agenda-body">The part of the day where deals actually start. Meet the brands, the lender, and the other franchisees-to-be properly.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTCOMES ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow">What you'll walk out with</div>
+    <h2>You will leave with clarity and new friends.</h2>
+    <div class="outcomes">
+      <div class="outcome">
+        <h4>The Franchise Evaluation Framework</h4>
+        <p>A practical walkthrough you can use the next time a franchise is pitched to you.</p>
+      </div>
+      <div class="outcome">
+        <h4>The questions to ask before you sign</h4>
+        <p>A practical list, gathered from operators and lawyers, of what to ask a franchisor before any money changes hands.</p>
+      </div>
+      <div class="outcome">
+        <h4>Direct access to the brands</h4>
+        <p>Sit with the brands in the room and ask the questions you have, face to face, without a sales filter.</p>
+      </div>
+      <div class="outcome">
+        <h4>An honest read on funding</h4>
+        <p>What banks are approving in 2026, what they're rejecting, and how to position your application so it has a real shot.</p>
+      </div>
+      <div class="outcome">
+        <h4>Real conversations with people who've walked it</h4>
+        <p>Not panellists from a stage you never get near. Operators sitting at the same lunch table as you.</p>
+      </div>
+      <div class="outcome">
+        <h4>A community of like-minded people</h4>
+        <p>Connect with others who want to break free from corporate and seriously consider their options.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE ROOM / CARFE ============ -->
+<section class="room">
+  <div class="wrap">
+    <div class="room-grid">
+      <div class="room-photos">
+        <div class="room-photo main">
+          <!-- Save Carfe interior to: images/carfe-interior.jpg -->
+          <img src="images/carfe-interior.jpg" alt="Carfe café interior, Taman Sea" onerror="this.style.display='none';">
+          <div class="caption">Carfe<small>Taman Sea, Petaling Jaya</small></div>
+        </div>
+        <div class="room-photo detail">
+          <!-- Save vintage cars photo to: images/carfe-cars.jpg -->
+          <img src="images/carfe-cars.jpg" alt="Vintage cars at Carfe" onerror="this.style.display='none';">
+        </div>
+        <div class="room-photo detail" style="background: linear-gradient(135deg, var(--blue-deep), var(--blue));">
+          <div class="caption" style="background: linear-gradient(transparent, rgba(0,0,0,0.5));">
+            <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700;">50</div>
+            <small>SEATS · INVITATION ONLY</small>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-eyebrow">What the room feels like</div>
+        <h2>Small enough to make eye contact. Quiet enough to think.</h2>
+        <p>Carfe is a <strong>family-owned café</strong> tucked away in Taman Sea, with a beautiful collection of vintage cars on display. We've taken it over for the morning, just for us. No expo halls. No floor staff in matching t-shirts. No swag tables.</p>
+        <p>Just fifty seats, arranged so you can hear every operator, ask the brand pitching you a follow-up question, and grab the lender by the elbow at lunch if you've got something on your mind. This is the room where you can finally ask the question you've been carrying for a while.</p>
+        <p>It's intentionally small. It took me a while to decide on this setting. I hope you'll like it.</p>
+        <p style="margin-top: 24px; font-size: 14px;"><a href="mailto:myfranchiseguide@gmail.com" style="color: var(--red); font-weight: 600;">Email Claudia directly</a> if you've got questions about the room or the day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFTER YOU RESERVE ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow">After you reserve</div>
+    <h2>Three simple steps. No mystery.</h2>
+    <p class="lede">Here's exactly what happens after you click reserve.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Secure your seat</h4>
+        <p>Click reserve and you'll be taken to our Billplz checkout. Pay safely with FPX or card. Your seat is locked the moment payment clears.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Get an email confirmation</h4>
+        <p>You'll get a confirmation email from me personally within 24 hours, so you know your seat is locked in and you're officially in the room.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Join the WhatsApp community</h4>
+        <p>I'll add you to our private WhatsApp community, and you'll receive all the prep notes, the venue details, and a heads-up from me leading up to the event.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DETAILS ============ -->
+<section id="reserve">
+  <div class="wrap">
+    <div class="section-eyebrow">The details</div>
+    <h2>Everything you need to know.</h2>
+    <div class="details-grid">
+      <div class="detail-block">
+        <dl>
+          <dt>When</dt>
+          <dd>Saturday, 20 June 2026<small>Doors at 9:15 AM</small></dd>
+          <dt>Time</dt>
+          <dd>9:30 AM to 2:00 PM</dd>
+          <dt>Where</dt>
+          <dd>Carfe, Taman Sea<small>Full address and parking notes sent on sign-up.</small></dd>
+          <dt>Capacity</dt>
+          <dd>50 seats. That's all.<small>Not sure if we'll do the next one. Come join while you can.</small></dd>
+          <dt>Included</dt>
+          <dd>All sessions, light bites, refreshments, a printed agenda, and a post-event recap.</dd>
+        </dl>
+      </div>
+      <div>
+        <div class="price-card">
+          <div class="tier-label">Early bird</div>
+          <div class="price">RM <small>·</small> 69</div>
+          <div class="window">Available until 11:59 PM, Friday 5 June 2026.</div>
+        </div>
+        <div class="price-card standard">
+          <div class="tier-label">Standard</div>
+          <div class="price">RM <small>·</small> 99</div>
+          <div class="window">From 6 June onwards. Sign-ups close when seats fill.</div>
+        </div>
+        <p style="font-size: 13px; color: var(--mute); margin-top: 16px; line-height: 1.55;">
+          50 seats. Once they're gone, registration closes. We'd rather turn people away than break the room.
+        </p>
+        <a href="https://catalog.billplz.com/myfg/pf/tfi-earlybird" class="cta" style="margin-top: 18px; width: 100%; text-align: center;">Reserve my seat · RM 69</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="section-eyebrow">FAQ</div>
+    <div style="margin-top: 32px;">
+      <details>
+        <summary>Is this a sales pitch in disguise?</summary>
+        <p>There are live brand pitches on the agenda, and we're upfront about that. They're one of five sessions and bounded to under two hours. The rest of the day is independent. A lender giving sector-level guidance. And really kind-hearted operators sharing their experience. You won't be cornered.</p>
+      </details>
+      <details>
+        <summary>I'm not sure if franchising is for me yet. Should I come?</summary>
+        <p>Yes. By learning about the businesses and the perspectives in the room, you'll make a much more informed decision about whether this is for you. Worst case scenario, you walk out with a clearer view of what it takes to build a real business. That's useful whether you're already a business owner or thinking of becoming one.</p>
+      </details>
+      <details>
+        <summary>Why is the ticket so cheap?</summary>
+        <p>The event is funded by partner brands and sponsors. The RM 69 or RM 99 ticket isn't paying for the room. It's making sure the room is full of people who actually want to be there. Free events fill with people who don't show up. We chose against that.</p>
+      </details>
+      <details>
+        <summary>Are the brands and partners vetted, or is it pay to play?</summary>
+        <p>Vetted. We've turned down brands we didn't think the room would benefit from. The partners pay for the platform. They don't pay for our endorsement.</p>
+      </details>
+      <details>
+        <summary>I'm a current franchisee. Is this for me?</summary>
+        <p>Yes, if you're considering scaling, switching, or you just want a clearer read on where the industry is heading. You'll also likely be useful in the lunch-table conversations.</p>
+      </details>
+      <details>
+        <summary>What if I sign up and can't make it?</summary>
+        <p>Sorry, tickets are final. But you can transfer your seat to someone you trust. Just let us know who's coming in your place before the day.</p>
+      </details>
+      <details>
+        <summary>Will the sessions be recorded?</summary>
+        <p>No. The sessions are off the record by design. That's what allows the operators and the lender to speak candidly. You're paying for the room, not the replay.</p>
+      </details>
+      <details>
+        <summary>Can I bring a colleague or partner?</summary>
+        <p>Yes, especially if you're thinking about buying a franchise as a family or a group of friends. All the stakeholders should be aligned before any money moves. But the cap is real. We can't accommodate more than 50 people. Once it's full, we'll close registration.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <div class="wrap" style="text-align: center; max-width: 720px;">
+    <h2>50 seats. First come, first served.</h2>
+    <p class="lede">Early bird closes Friday, 5 June. Standard rate runs until the room fills.</p>
+    <a href="https://catalog.billplz.com/myfg/pf/tfi-earlybird" class="cta">Reserve my seat · RM 69</a>
+    <span class="sublink">Got a question first? <a href="mailto:myfranchiseguide@gmail.com">Email Claudia directly</a>.</span>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color: white; margin-bottom: 16px;">
+          <span class="brand-dot"></span>
+          MYFRANCHISEGUIDE
+        </div>
+        <p>Smarter franchise decisions. Practical franchise education, industry transparency, and real growth capability for investors and brands across Malaysia and South East Asia.</p>
+        <div class="social-row">
+          <a href="https://instagram.com/myfranchiseguide" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:myfranchiseguide@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="https://asiafranchiseguide.com" target="_blank" aria-label="Website">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h5>The Event</h5>
+        <a href="#reserve">Reserve a seat</a>
+        <a href="#reserve">The details</a>
+        <a href="#reserve">Pricing</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div>
+        <h5>What we do</h5>
+        <a href="https://asiafranchiseguide.com#about" target="_blank">About</a>
+        <a href="https://asiafranchiseguide.com#how-we-help" target="_blank">Investor coaching</a>
+        <a href="https://asiafranchiseguide.com#how-we-help" target="_blank">Brand advisory</a>
+        <a href="https://asiafranchiseguide.com#how-we-help" target="_blank">Training</a>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <a href="mailto:myfranchiseguide@gmail.com">myfranchiseguide@gmail.com</a>
+        <a href="https://asiafranchiseguide.com/scale-calculator" target="_blank">S.C.A.L.E. Calculator</a>
+        <a href="https://asiafranchiseguide.com" target="_blank">asiafranchiseguide.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 MYFranchiseGuide. The Franchise Insider · Vol. 01 · Kuala Lumpur.</div>
+      <div>Built with care for the room of fifty.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ TIMER SCRIPT ============ -->
+<script>
+  // Early bird deadline: 5 June 2026, end of day Malaysia time (UTC+8)
+  const deadline = new Date('2026-06-05T23:59:59+08:00').getTime();
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = deadline - now;
+
+    if (distance <= 0) {
+      ['t-days','t-hours','t-mins','t-secs'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = '00';
+      });
+      const label = document.querySelector('.timer-label');
+      if (label) label.textContent = 'Early bird has ended';
+      const navDays = document.getElementById('nav-days');
+      if (navDays) navDays.textContent = '0';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('t-days').textContent = pad(days);
+    document.getElementById('t-hours').textContent = pad(hours);
+    document.getElementById('t-mins').textContent = pad(mins);
+    document.getElementById('t-secs').textContent = pad(secs);
+
+    const navDays = document.getElementById('nav-days');
+    if (navDays) navDays.textContent = days;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
