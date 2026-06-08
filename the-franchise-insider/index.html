@@ -48,24 +48,11 @@
   nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; letter-spacing: 2px; color: var(--black); }
   .brand-dot { width: 14px; height: 14px; background: var(--red); display: inline-block; }
-  .nav-right { display: flex; align-items: center; gap: 18px; }
-  .nav-urgency { font-size: 11px; color: var(--mute); font-weight: 600; letter-spacing: 1px; }
-  .nav-urgency b { color: var(--red); font-weight: 700; }
   nav .cta-small { background: var(--red); color: white; padding: 10px 18px; border-radius: 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; }
   nav .cta-small:hover { background: var(--blue); text-decoration: none; }
 
-  /* URGENCY BAND */
-  .urgency-band { background: var(--blue-deep); color: white; padding: 26px 0; border-bottom: 4px solid var(--red); }
-  .urgency-center { text-align: center; }
-  .urgency-center .timer-grid { justify-content: center; }
-  .timer-label { font-size: 11px; color: white; opacity: 0.7; letter-spacing: 3px; font-weight: 700; margin-bottom: 10px; }
-  .timer-grid { display: flex; gap: 12px; }
-  .timer-unit { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); padding: 10px 16px; border-radius: 4px; text-align: center; min-width: 64px; }
-  .t-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: white; line-height: 1; display: block; }
-  .t-label { display: block; font-size: 9px; letter-spacing: 2px; color: rgba(255,255,255,0.55); margin-top: 4px; font-weight: 600; }
-
   /* HERO */
-  .hero { padding: 88px 0 0; border-bottom: 1px solid var(--hair); }
+  .hero { padding: 88px 0 80px; border-bottom: 1px solid var(--hair); }
   .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
   .eyebrow { color: var(--red); font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; display: inline-flex; align-items: center; gap: 10px; }
   .eyebrow:before { content: ""; width: 28px; height: 2px; background: var(--red); display: inline-block; }
@@ -79,7 +66,7 @@
   .cta:hover { background: var(--blue); text-decoration: none; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0, 86, 184, 0.3); }
   .sublink { display: block; margin-top: 14px; font-size: 13px; color: var(--mute); letter-spacing: 0.5px; }
 
-  /* Hero portrait (CLEAN — no badge, no name tag) */
+  /* Hero portrait (clean — no badge, no name tag) */
   .hero-portrait { position: relative; padding-top: 60px; padding-bottom: 60px; }
   .portrait-wrap { position: relative; border-radius: 6px; overflow: hidden; aspect-ratio: 4 / 5; box-shadow: 0 24px 60px rgba(0, 57, 120, 0.18); background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%); }
   .portrait-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -118,12 +105,12 @@
   .brands-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
   .brand-card { background: white; border: 1px solid var(--hair); border-radius: 6px; padding: 28px 20px; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; transition: all 0.2s; }
   .brand-card:hover { border-color: var(--red); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-  .brand-card .brand-logo { height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-  .brand-card .brand-logo img { max-height: 70px; max-width: 100%; width: auto; object-fit: contain; }
-  .brand-card .brand-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--black); }
+  .brand-card .brand-logo { height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .brand-card .brand-logo img { max-height: 90px; max-width: 100%; width: auto; object-fit: contain; }
+  .brand-card .brand-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--black); line-height: 1.3; }
   .brand-card .brand-tag { font-size: 11px; color: var(--mute); margin-top: 4px; letter-spacing: 0.5px; }
   .brand-card.pending { background: var(--cream); border-style: dashed; border-color: var(--red); }
-  .brand-card.pending .brand-logo { font-family: 'Playfair Display', serif; font-size: 64px; color: var(--red); font-weight: 300; height: 70px; }
+  .brand-card.pending .brand-logo { font-family: 'Playfair Display', serif; font-size: 64px; color: var(--red); font-weight: 300; height: 90px; }
   .brand-card.pending .brand-name { color: var(--red); }
 
   /* TWO COL */
@@ -200,14 +187,11 @@
   .detail-block dt:first-child { margin-top: 0; }
   .detail-block dd { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; color: var(--black); font-weight: 700; }
   .detail-block dd small { display: block; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 400; color: var(--mute); margin-top: 4px; }
-  .price-card { border: 2px solid var(--blue); border-radius: 6px; padding: 28px; margin-bottom: 16px; background: white; position: relative; }
-  .price-card.standard { border-color: var(--black); }
-  .price-card .tier-label { font-size: 11px; letter-spacing: 3px; color: var(--red); font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
-  .price-card.standard .tier-label { color: var(--black); }
-  .price-card .price { font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; color: var(--blue); }
-  .price-card.standard .price { color: var(--black); }
-  .price-card .price small { font-size: 16px; font-weight: 500; }
-  .price-card .window { font-size: 13px; color: var(--mute); margin-top: 6px; }
+  .price-card { border: 2px solid var(--blue); border-radius: 6px; padding: 36px 28px; margin-bottom: 16px; background: white; position: relative; text-align: center; }
+  .price-card .tier-label { font-size: 11px; letter-spacing: 3px; color: var(--red); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+  .price-card .price { font-family: 'Playfair Display', Georgia, serif; font-size: 56px; font-weight: 700; color: var(--blue); line-height: 1; }
+  .price-card .price small { font-size: 22px; font-weight: 500; margin-right: 4px; }
+  .price-card .window { font-size: 13px; color: var(--mute); margin-top: 10px; }
 
   /* FAQ */
   .faq details { border-bottom: 1px solid var(--hair); padding: 22px 0; }
@@ -253,7 +237,7 @@
   }
   @media (max-width: 720px) {
     section { padding: 56px 0; }
-    .hero { padding: 48px 0 0; }
+    .hero { padding: 48px 0 56px; }
     .pullquote { padding: 60px 0; }
     .two-col, .outcomes, .details-grid, .steps { grid-template-columns: 1fr; gap: 20px; }
     .agenda-row { grid-template-columns: 44px 1fr; gap: 16px; }
@@ -262,10 +246,7 @@
     .meta-row { flex-direction: column; gap: 6px; }
     .meta-row .dot { display: none; }
     nav .cta-small { display: none; }
-    .nav-urgency { display: none; }
     .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-    .timer-unit { min-width: 56px; padding: 8px 12px; }
-    .t-num { font-size: 22px; }
   }
 </style>
 </head>
@@ -275,10 +256,7 @@
 <nav>
   <div class="wrap">
     <div class="brand"><span class="brand-dot"></span>MYFRANCHISEGUIDE</div>
-    <div class="nav-right">
-      <span class="nav-urgency">EARLY BIRD ENDS IN <b id="nav-days">--</b>D</span>
-      <a href="https://catalog.billplz.com/myfg/pf/tfi-earlybird" class="cta-small">Reserve my seat</a>
-    </div>
+    <a href="https://catalog.billplz.com/myfg/pf/tfi" class="cta-small">Reserve my seat</a>
   </div>
 </nav>
 
@@ -296,8 +274,8 @@
           <span>Carfe, Taman Sea</span><span class="dot">·</span>
           <span>50 seats</span>
         </div>
-        <a href="https://catalog.billplz.com/myfg/pf/tfi-earlybird" class="cta">Reserve my seat · RM 69</a>
-        <span class="sublink">Early bird until 5 June. RM 99 after.</span>
+        <a href="https://catalog.billplz.com/myfg/pf/tfi" class="cta">Reserve my seat · RM 89</a>
+        <span class="sublink">50 seats. Once they're gone, registration closes.</span>
       </div>
       <div class="hero-portrait">
         <div class="portrait-wrap">
@@ -308,21 +286,6 @@
     </div>
   </div>
 </header>
-
-<!-- URGENCY BAND -->
-<div class="urgency-band">
-  <div class="wrap">
-    <div class="urgency-center">
-      <div class="timer-label">Early bird closes in</div>
-      <div class="timer-grid">
-        <div class="timer-unit"><span class="t-num" id="t-days">--</span><span class="t-label">DAYS</span></div>
-        <div class="timer-unit"><span class="t-num" id="t-hours">--</span><span class="t-label">HOURS</span></div>
-        <div class="timer-unit"><span class="t-num" id="t-mins">--</span><span class="t-label">MINS</span></div>
-        <div class="timer-unit"><span class="t-num" id="t-secs">--</span><span class="t-label">SECS</span></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- PULL QUOTE -->
 <section class="pullquote">
@@ -344,21 +307,21 @@
 <section class="why">
   <div class="wrap">
     <div class="section-eyebrow">Why I'm organizing this</div>
-    <h2> Nothing beats real human connection in an AI-driven world. <em style="color: white;"></em></h2>
+    <h2>The room I wish you'd had is my <em style="color: white; font-style: italic; font-weight: 700;">why</em>.</h2>
     <p>Many of you have asked for an offline, in-person event. Somewhere to learn how to actually evaluate a franchise business and connect with other people doing the same homework. So this is the first of its kind. I'm bringing the industry experts and the brands into one intimate setting, half a day, for us to connect properly.</p>
     <p>Most franchise events here optimise for footfall. Brands pay big to be on stage, attendees show up for free food, and the actual conversations (the candid ones, the careful ones) happen quietly in a corner.</p>
-    <p>The Franchise Insider is built differently. The room is intentionally small, so the conversations can be real. The brand pitches are bounded, so you don't sit through hours of pitches dressed up as content. Industry authorities and a lender are in the room, because that's where the real decision-making happens. And the ticket price is deliberately low (RM 69 early, RM 99 standard) so money isn't the filter. Seriousness is.</p>
+    <p>The Franchise Insider is built differently. The room is intentionally small, so the conversations can be real. The brand pitches are bounded, so you don't sit through hours of pitches dressed up as content. Industry authorities and a lender are in the room, because that's where the real decision-making happens. And the ticket price is deliberately low (RM 89) so money isn't the filter. Seriousness is.</p>
     <p>If you're thinking about franchising as a real path, come and ask the hard questions in this room. It's much cheaper than learning them the expensive way later.</p>
     <div class="signature">Claudia<small>Founder, MYFranchiseGuide</small></div>
   </div>
 </section>
 
-<!-- BRANDS -->
+<!-- BRANDS & PARTNERS -->
 <section class="brands">
   <div class="wrap">
-    <div class="section-eyebrow">Brands confirmed for the room</div>
+    <div class="section-eyebrow">Brands &amp; partners confirmed for the room</div>
     <h2>Some of the names you'll meet.</h2>
-    <p class="lede">A curated set of franchise brands. Vetted before they were invited. More coming as we finalize.</p>
+    <p class="lede">A curated set of franchise brands and partners. Vetted before they were invited. More coming as we finalize.</p>
     <div class="brands-grid">
       <div class="brand-card">
         <div class="brand-logo"><img src="brand-kidocode.png" alt="Kidocode" onerror="this.style.display='none';"></div>
@@ -371,9 +334,9 @@
         <div class="brand-tag">Beyond Public Speaking</div>
       </div>
       <div class="brand-card">
-        <div class="brand-logo"><img src="brand-pernas.png" alt="Pernas" onerror="this.style.display='none';"></div>
-        <div class="brand-name">Pernas</div>
-        <div class="brand-tag">Franchise group</div>
+        <div class="brand-logo"><img src="brand-mfa.png" alt="Malaysia Franchise Association" onerror="this.style.display='none';"></div>
+        <div class="brand-name">Malaysia Franchise Association</div>
+        <div class="brand-tag">Supporting institution</div>
       </div>
       <div class="brand-card pending">
         <div class="brand-logo">+</div>
@@ -577,17 +540,12 @@
       </div>
       <div>
         <div class="price-card">
-          <div class="tier-label">Early bird</div>
-          <div class="price">RM <small>·</small> 69</div>
-          <div class="window">Available until 11:59 PM, Friday 5 June 2026.</div>
-        </div>
-        <div class="price-card standard">
-          <div class="tier-label">Standard</div>
-          <div class="price">RM <small>·</small> 99</div>
-          <div class="window">From 6 June onwards. Sign-ups close when seats fill.</div>
+          <div class="tier-label">Your seat</div>
+          <div class="price"><small>RM</small>89</div>
+          <div class="window">Sign-ups close when the room fills.</div>
         </div>
         <p style="font-size: 13px; color: var(--mute); margin-top: 16px; line-height: 1.55;">50 seats. Once they're gone, registration closes. We'd rather turn people away than break the room.</p>
-        <a href="https://catalog.billplz.com/myfg/pf/tfi-earlybird" class="cta" style="margin-top: 18px; width: 100%; text-align: center;">Reserve my seat · RM 69</a>
+        <a href="https://catalog.billplz.com/myfg/pf/tfi" class="cta" style="margin-top: 18px; width: 100%; text-align: center;">Reserve my seat · RM 89</a>
       </div>
     </div>
   </div>
@@ -600,7 +558,7 @@
     <div style="margin-top: 32px;">
       <details><summary>Is this a sales pitch in disguise?</summary><p>There are live brand pitches on the agenda, and we're upfront about that. They're one of five sessions and bounded to under two hours. The rest of the day is independent. A lender giving sector-level guidance. And really kind-hearted operators sharing their experience. You won't be cornered.</p></details>
       <details><summary>I'm not sure if franchising is for me yet. Should I come?</summary><p>Yes. By learning about the businesses and the perspectives in the room, you'll make a much more informed decision about whether this is for you. Worst case scenario, you walk out with a clearer view of what it takes to build a real business. That's useful whether you're already a business owner or thinking of becoming one.</p></details>
-      <details><summary>Why is the ticket so cheap?</summary><p>The event is funded by partner brands and sponsors. The RM 69 or RM 99 ticket isn't paying for the room. It's making sure the room is full of people who actually want to be there. Free events fill with people who don't show up. We chose against that.</p></details>
+      <details><summary>Why is the ticket so cheap?</summary><p>The event is funded by partner brands and sponsors. The RM 89 ticket isn't paying for the room. It's making sure the room is full of people who actually want to be there. Free events fill with people who don't show up. We chose against that.</p></details>
       <details><summary>Are the brands and partners vetted, or is it pay to play?</summary><p>Vetted. We've turned down brands we didn't think the room would benefit from. The partners pay for the platform. They don't pay for our endorsement.</p></details>
       <details><summary>I'm a current franchisee. Is this for me?</summary><p>Yes, if you're considering scaling, switching, or you just want a clearer read on where the industry is heading. You'll also likely be useful in the lunch-table conversations.</p></details>
       <details><summary>What if I sign up and can't make it?</summary><p>Sorry, tickets are final. But you can transfer your seat to someone you trust. Just let us know who's coming in your place before the day.</p></details>
@@ -614,8 +572,8 @@
 <section class="final-cta">
   <div class="wrap" style="text-align: center; max-width: 720px;">
     <h2>50 seats. First come, first served.</h2>
-    <p class="lede">Early bird closes Friday, 5 June. Standard rate runs until the room fills.</p>
-    <a href="https://catalog.billplz.com/myfg/pf/tfi-earlybird" class="cta">Reserve my seat · RM 69</a>
+    <p class="lede">RM 89. Sign-ups close when the room fills.</p>
+    <a href="https://catalog.billplz.com/myfg/pf/tfi" class="cta">Reserve my seat · RM 89</a>
     <span class="sublink">Got a question first? <a href="mailto:myfranchiseguide@gmail.com">Email Claudia directly</a>.</span>
   </div>
 </section>
@@ -661,35 +619,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-  const deadline = new Date('2026-06-05T23:59:59+08:00').getTime();
-  function pad(n) { return String(n).padStart(2, '0'); }
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = deadline - now;
-    if (distance <= 0) {
-      ['t-days','t-hours','t-mins','t-secs'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = '00'; });
-      const label = document.querySelector('.timer-label');
-      if (label) label.textContent = 'Early bird has ended';
-      const navDays = document.getElementById('nav-days');
-      if (navDays) navDays.textContent = '0';
-      return;
-    }
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((distance % (1000 * 60)) / 1000);
-    document.getElementById('t-days').textContent = pad(days);
-    document.getElementById('t-hours').textContent = pad(hours);
-    document.getElementById('t-mins').textContent = pad(mins);
-    document.getElementById('t-secs').textContent = pad(secs);
-    const navDays = document.getElementById('nav-days');
-    if (navDays) navDays.textContent = days;
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-</script>
 
 </body>
 </html>
