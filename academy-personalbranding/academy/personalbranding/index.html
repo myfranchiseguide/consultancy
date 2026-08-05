@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selling Without Selling · Founder Brand Intensive Workshop · MYFranchiseGuide</title>
+<meta name="description" content="A one-day, hands-on workshop for founders and business owners ready to build a content system instead of an ad budget. 27 Aug 2026, Pavilion Damansara Heights.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ink:#0A0A0A;
+    --paper:#FFFFFF;
+    --paper-tint:#F4F5F7;
+    --blue:#0056B8;
+    --blue-deep:#003C82;
+    --red:#D4202A;
+    --red-deep:#A9181F;
+    --gold:#A9822E;
+    --cream:#FBF3E1;
+    --cream-deep:#EFE0BC;
+    --graphite:#54534C;
+    --line:#E3E1DA;
+    --line-soft:#EEEDE7;
+    --font-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --font-body:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --wrap:1120px;
+    --r-sm:10px; --r-md:16px; --r-lg:20px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;line-height:1.6;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  .eyebrow{font-family:var(--font-body);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;margin:0 0 14px;display:flex;align-items:center;gap:10px;}
+  .eyebrow::after{content:'';flex:0 0 auto;width:34px;height:1px;background:repeating-linear-gradient(90deg,var(--blue) 0 4px,transparent 4px 8px);}
+  .eyebrow.red{color:var(--red);}
+  .eyebrow.red::after{background:repeating-linear-gradient(90deg,var(--red) 0 4px,transparent 4px 8px);}
+
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;margin:0;color:var(--ink);}
+  .section-title{font-size:clamp(28px,3.6vw,42px);line-height:1.14;margin-bottom:18px;}
+  .body-lg{font-family:var(--font-body);font-size:19px;color:var(--graphite);max-width:640px;}
+  .body-md{font-family:var(--font-body);font-size:16.5px;color:var(--graphite);max-width:620px;}
+
+  .check-list{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:11px 28px;max-width:680px;}
+  .check-list li{font-family:var(--font-body);font-size:15px;color:var(--graphite);padding-left:20px;position:relative;line-height:1.5;}
+  .check-list li::before{content:'';position:absolute;left:0;top:7px;width:7px;height:7px;border-radius:50%;background:var(--blue);}
+  .check-list.red li::before{background:var(--red);}
+  .check-list.gold li::before{background:var(--gold);}
+  @media (max-width:640px){ .check-list{grid-template-columns:1fr;} }
+
+  .reframe{margin-top:32px;}
+  .reframe-old{font-family:var(--font-display);font-style:italic;font-size:19px;color:#A6A59E;margin:0 0 10px;text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px;}
+  .reframe-new{font-family:var(--font-display);font-style:italic;font-weight:600;font-size:27px;color:var(--ink);margin:0;}
+
+  .btn{
+    position:relative;display:inline-flex;align-items:center;gap:10px;
+    background:var(--ink);color:#fff;
+    font-family:var(--font-body);font-weight:700;font-size:15px;letter-spacing:.02em;
+    padding:15px 30px;border-radius:999px;text-decoration:none;border:1px solid var(--ink);
+    transition:background .2s ease, border-color .2s ease, transform .2s ease;cursor:pointer;
+  }
+  .btn:hover{background:var(--blue-deep);border-color:var(--blue-deep);transform:translateY(-1px);}
+  .btn .dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulseDot 1.8s ease-in-out infinite;}
+  .btn .arrow{transition:transform .25s ease;}
+  .btn:hover .arrow{transform:translateX(4px);}
+  @keyframes pulseDot{0%,100%{opacity:.45;transform:scale(.85);}50%{opacity:1;transform:scale(1.2);}}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink);}
+  .btn.ghost:hover{background:var(--ink);color:#fff;}
+  @media (prefers-reduced-motion:reduce){ .btn .dot{animation:none;} }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .logo{font-family:var(--font-body);font-weight:700;font-size:15px;letter-spacing:.02em;}
+  .logo .my{color:var(--red);}
+  .logo .franchise{color:var(--blue);}
+  .logo .guide{color:var(--ink);}
+  .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500;}
+  .nav-links a{text-decoration:none;color:var(--graphite);font-family:var(--font-body);}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a.btn{color:#fff;}
+  .nav-links a.btn:hover{color:#fff;}
+  .nav-links .btn{padding:10px 22px;font-size:13.5px;}
+  @media (max-width:720px){ .nav-links a:not(.btn){display:none;} }
+
+  .blob{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;}
+  .wave{line-height:0;}
+  .wave svg{display:block;width:100%;height:64px;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:88px 0 64px;position:relative;overflow:hidden;}
+  .hero-head{max-width:820px;}
+  .hero h1{font-size:clamp(44px,7vw,80px);line-height:1.05;letter-spacing:-.01em;margin-bottom:30px;}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--red);}
+  .hero-squiggle{position:relative;display:inline-block;}
+  .hero-squiggle svg{position:absolute;left:0;bottom:-6px;width:100%;height:16px;}
+  .hero .body-lg{margin-bottom:36px;}
+
+  .ticket{display:flex;flex-wrap:wrap;border:1px solid var(--ink);border-radius:var(--r-md);overflow:hidden;margin-bottom:32px;background:#fff;}
+  .ticket-item{flex:1 1 140px;padding:16px 20px;border-right:1px solid var(--line);}
+  .ticket-item:last-child{border-right:none;}
+  .ticket-label{font-family:var(--font-body);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px;}
+  .ticket-value{font-family:var(--font-body);font-size:15.5px;font-weight:700;color:var(--ink);}
+  @media (max-width:640px){ .ticket-item{flex:1 1 45%;border-bottom:1px solid var(--line);} }
+  .hero-cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+
+  /* ---------- SHARED CONTENT SECTIONS (pain + 3 new blocks) ---------- */
+  .story-block{padding:76px 0;}
+  .story-block.tint{background:var(--paper-tint);}
+  .story-block.cream{background:var(--cream);}
+  .story-block .wrap{max-width:760px;}
+  .story-block p{font-family:var(--font-body);font-size:17px;color:var(--graphite);margin:0 0 18px;line-height:1.68;}
+  .story-block .lead{font-family:var(--font-display) !important;font-size:27px;font-style:italic;color:var(--ink);line-height:1.35;margin-bottom:20px;}
+
+  /* ---------- VIDEO TESTIMONIALS ---------- */
+  .testimonials{padding:76px 0;border-top:1px solid var(--line-soft);background:var(--paper-tint);}
+  .testi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;}
+  .testi-item{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:#000;aspect-ratio:9/16;}
+  .testi-item video{width:100%;height:100%;object-fit:cover;display:block;}
+  @media (max-width:900px){ .testi-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .testi-grid{grid-template-columns:1fr;} }
+
+  /* ---------- EVIDENCE CAROUSEL ---------- */
+  .evidence{padding:0 0 76px;background:var(--ink);overflow:hidden;}
+  .evidence-content{padding-top:60px;}
+  .evidence .eyebrow{color:#E8A5A5;}
+  .evidence .eyebrow::after{background:repeating-linear-gradient(90deg,#E8A5A5 0 4px,transparent 4px 8px);}
+  .evidence-head{max-width:640px;margin-bottom:12px;}
+  .evidence-head h2{color:#fff;}
+  .evidence-head p{font-family:var(--font-body);color:#B9B9B4;font-size:16.5px;margin:14px 0 0;}
+  .ev-track-outer{overflow:hidden;width:100%;margin-top:36px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
+  .ev-track{display:flex;gap:16px;width:max-content;animation:scrollLeft 63s linear infinite;}
+  .ev-track:hover{animation-play-state:paused;}
+  @media (prefers-reduced-motion:reduce){ .ev-track{animation:none;} }
+  @keyframes scrollLeft{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .ev-card{flex:0 0 auto;width:250px;border-radius:var(--r-sm);overflow:hidden;background:#141413;border:1px solid #2A2A28;}
+  .ev-card .imgbox{width:100%;height:330px;background:#0F0F0E;display:flex;align-items:center;justify-content:center;}
+  .ev-card img{width:100%;height:100%;object-fit:contain;display:block;}
+  .ev-card .cap{font-family:var(--font-body);padding:13px 15px;font-size:12.5px;color:#C9C9C4;line-height:1.5;}
+
+  /* ---------- WHY LEARN FROM ME ---------- */
+  .whyme{padding:84px 0;position:relative;overflow:hidden;}
+  .whyme-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start;}
+  .whyme-photos{display:flex;flex-direction:column;gap:12px;}
+  .photo-item{position:relative;border-radius:var(--r-md);overflow:hidden;aspect-ratio:3/2;}
+  .photo-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-item .cap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px 10px;font-family:var(--font-body);font-size:11px;color:#fff;line-height:1.4;background:linear-gradient(transparent,rgba(0,0,0,.78));}
+  .whyme-copy p{font-family:var(--font-body);font-size:16px;color:var(--graphite);margin:0 0 16px;line-height:1.65;}
+  .whyme-copy .lead{font-family:var(--font-display) !important;font-size:23px;font-style:italic;color:var(--ink);line-height:1.4;margin-bottom:6px;}
+  .whyme-copy .close-line{font-family:var(--font-display);font-style:italic;font-size:18px;color:var(--ink);margin-top:20px;}
+  @media (max-width:860px){ .whyme-grid{grid-template-columns:1fr;} }
+
+  /* ---------- FIT ---------- */
+  .fit{padding:80px 0;border-top:1px solid var(--line-soft);background:var(--paper-tint);}
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
+  .fit-col{padding:38px 34px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);}
+  .fit-col.no{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .fit-col h3{font-size:20px;margin-bottom:22px;font-weight:600;}
+  .fit-col ul{list-style:none;margin:0;padding:0;}
+  .fit-col li{font-family:var(--font-body);display:flex;gap:12px;font-size:15px;color:var(--graphite);margin-bottom:14px;line-height:1.5;}
+  .fit-col.no li{color:#D9D9D4;}
+  .fit-mark{font-family:var(--font-display);font-style:italic;font-weight:700;flex-shrink:0;}
+  .fit-col.yes .fit-mark{color:var(--blue);}
+  .fit-col.no .fit-mark{color:var(--red);}
+  @media (max-width:820px){ .fit-grid{grid-template-columns:1fr;} }
+  .fit-close{max-width:680px;margin:40px auto 0;text-align:center;}
+  .fit-close-lead{font-family:var(--font-display);font-style:italic;font-size:24px;color:var(--ink);margin:0 0 14px;}
+  .fit-close p{font-family:var(--font-body);font-size:15.5px;color:var(--graphite);margin:0 0 10px;line-height:1.6;}
+
+  /* ---------- WHAT YOU WILL LEARN ---------- */
+  .learn{padding:88px 0;border-top:1px solid var(--line-soft);position:relative;overflow:hidden;background:#FFFDF7;}
+  .learn-head{max-width:680px;margin-bottom:12px;}
+  .learn-head p.after-list{font-family:var(--font-display);font-style:italic;font-size:18px;color:var(--ink);margin:22px 0 4px;}
+  .learn-transition{font-family:var(--font-display);font-style:italic;font-size:28px;color:var(--ink);margin:0;line-height:1.35;}
+  .module-list{display:flex;flex-direction:column;gap:26px;margin-top:28px;}
+  .module-card{display:flex;gap:26px;align-items:flex-start;}
+  .module-badge{
+    width:80px;height:80px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:var(--font-display);font-style:italic;font-weight:600;font-size:28px;
+    box-shadow:0 10px 22px rgba(0,0,0,.14);
+  }
+  .m1{background:linear-gradient(135deg,var(--red),var(--blue));}
+  .m2{background:linear-gradient(135deg,var(--blue),var(--gold));}
+  .m3{background:linear-gradient(135deg,var(--gold),var(--red));}
+  .m4{background:linear-gradient(135deg,var(--ink),var(--red));}
+  .module-content{flex:1;background:var(--cream);border:1px solid var(--cream-deep);border-radius:var(--r-lg);padding:26px 30px;}
+  .module-content h3{font-size:23px;margin-bottom:14px;}
+  .module-content ul{list-style:none;margin:0;padding:0;}
+  .module-content li{font-family:var(--font-body);font-size:15.5px;color:var(--graphite);margin-bottom:8px;padding-left:18px;position:relative;line-height:1.5;}
+  .module-content li:last-child{margin-bottom:0;}
+  .module-content li::before{content:'–';position:absolute;left:0;color:var(--blue);}
+  .learn-footnote{margin-top:40px;font-family:var(--font-display);font-style:italic;font-size:16px;color:var(--graphite);max-width:560px;}
+  @media (max-width:640px){ .module-card{flex-direction:column;} .module-badge{width:64px;height:64px;font-size:22px;} }
+
+  /* ---------- LEAVE WITH ---------- */
+  .leave{padding:80px 0;border-top:1px solid var(--line-soft);background:var(--paper-tint);}
+  .leave-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px;}
+  .leave-card{background:#fff;padding:26px 22px;border:1px solid var(--line);border-radius:var(--r-md);}
+  .leave-num{font-family:var(--font-display);font-style:italic;color:var(--red);font-size:15px;margin-bottom:14px;}
+  .leave-card h4{font-family:var(--font-body);font-size:15.5px;font-weight:700;margin:0 0 10px;}
+  .leave-card p{font-family:var(--font-body);font-size:14px;color:var(--graphite);margin:0;}
+  @media (max-width:900px){ .leave-grid{grid-template-columns:1fr 1fr 1fr;} }
+  @media (max-width:640px){ .leave-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:420px){ .leave-grid{grid-template-columns:1fr;} }
+
+  /* ---------- VENUE ---------- */
+  .venue{padding:80px 0;border-top:1px solid var(--line-soft);}
+  .venue-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:40px;}
+  .venue-grid .ph{height:240px;border-radius:var(--r-md);background:linear-gradient(135deg,#F4F5F7 0%,#E9EBEF 100%);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#9A9A93;font-family:var(--font-body);font-size:12.5px;letter-spacing:.06em;text-align:center;padding:20px;}
+  @media (max-width:760px){ .venue-grid{grid-template-columns:1fr;} }
+
+  /* ---------- AFTER CONFIRMATION ---------- */
+  .after{padding:80px 0;border-top:1px solid var(--line-soft);background:var(--ink);color:#fff;}
+  .after .eyebrow{color:#8FB8E8;}
+  .after .eyebrow::after{background:repeating-linear-gradient(90deg,#8FB8E8 0 4px,transparent 4px 8px);}
+  .after-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:44px;}
+  .after-step{border-left:2px solid var(--red);padding-left:22px;}
+  .after-step-num{font-family:var(--font-display);font-style:italic;font-size:15px;color:#8FB8E8;margin-bottom:10px;}
+  .after-step h4{font-size:18px;font-weight:700;margin:0 0 8px;}
+  .after-step p{font-family:var(--font-body);font-size:15px;color:#C9C9C4;margin:0;}
+  @media (max-width:720px){ .after-grid{grid-template-columns:1fr;} }
+
+  /* ---------- DETAILS / PRICING ---------- */
+  .details{padding:88px 0;border-top:1px solid var(--line-soft);}
+  .details-card{border:1px solid var(--ink);border-radius:var(--r-lg);padding:48px;display:grid;grid-template-columns:.95fr 1.15fr;gap:44px;align-items:start;}
+  .details-rows{display:grid;grid-template-columns:1fr 1fr;gap:24px 32px;}
+  .d-row .ticket-label{margin-bottom:4px;}
+  .d-row .ticket-value{font-size:16px;}
+  .price-tiers{display:flex;gap:14px;margin-bottom:18px;}
+  .price-tier{flex:1;border:1px solid var(--line);border-radius:var(--r-md);padding:20px;}
+  .price-tier.featured{background:var(--ink);color:#fff;border-color:var(--ink);position:relative;}
+  .tier-badge{font-family:var(--font-body);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--red-deep);font-weight:700;margin-bottom:10px;}
+  .price-tier.featured .tier-badge{color:#F0A8A8;}
+  .tier-label{font-family:var(--font-body);font-size:13px;color:var(--graphite);margin-bottom:4px;}
+  .price-tier.featured .tier-label{color:#B9B9B4;}
+  .tier-price{font-family:var(--font-display);font-size:30px;font-weight:600;}
+  .tier-sub{font-family:var(--font-body);font-size:12px;color:#9A9A93;margin-top:2px;}
+  .tier-note{font-family:var(--font-body);font-size:13.5px;color:var(--graphite);line-height:1.6;margin:0 0 20px;}
+  .refund-note{font-family:var(--font-body);font-size:12.5px;color:#9A9A93;margin-top:12px;}
+  @media (max-width:760px){
+    .details-card{grid-template-columns:1fr;padding:32px;}
+    .details-rows{grid-template-columns:1fr;}
+    .price-tiers{flex-direction:column;}
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:80px 0;border-top:1px solid var(--line-soft);background:var(--paper-tint);}
+  .faq-list{max-width:760px;margin-top:40px;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item summary{font-family:var(--font-body);list-style:none;cursor:pointer;padding:22px 0;font-size:16.5px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:'+';font-family:var(--font-display);font-size:26px;font-weight:400;color:var(--red);flex-shrink:0;transition:transform .2s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{font-family:var(--font-body);margin:0 0 24px;font-size:15.5px;color:var(--graphite);max-width:640px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:#C9C9C4;padding:64px 0 32px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+  .foot-logo{font-family:var(--font-body);font-size:15px;font-weight:700;margin-bottom:14px;}
+  .foot-logo .my{color:var(--red);}
+  .foot-logo .franchise{color:#5A9AE0;}
+  .foot-logo .guide{color:#fff;}
+  footer p{font-family:var(--font-body);font-size:14px;color:#9A9A93;max-width:320px;}
+  footer h5{font-family:var(--font-body);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6E6E68;margin:0 0 16px;}
+  footer ul{list-style:none;margin:0;padding:0;}
+  footer li{margin-bottom:10px;font-size:14.5px;}
+  footer a{text-decoration:none;color:#C9C9C4;font-family:var(--font-body);}
+  footer a:hover{color:#fff;}
+  .foot-bottom{border-top:1px solid #2A2A28;padding-top:24px;font-family:var(--font-body);font-size:12.5px;color:#6E6E68;}
+  @media (max-width:720px){ .foot-grid{grid-template-columns:1fr;} }
+
+  section{scroll-margin-top:80px;}
+  [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].is-visible{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion:reduce){ [data-reveal]{opacity:1;transform:none;transition:none;} }
+
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <div class="logo"><span class="my">MY</span><span class="franchise">FRANCHISE</span><span class="guide">GUIDE</span></div>
+    <nav class="nav-links">
+      <a href="#agenda">Curriculum</a>
+      <a href="#details">Details</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://catalog.billplz.com/myfg/link/brands" target="_blank" rel="noopener" class="btn"><span class="dot"></span>Reserve my seat<span class="arrow">→</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob" style="width:420px;height:420px;background:var(--gold);opacity:.15;top:-140px;right:-120px;"></div>
+  <div class="blob" style="width:320px;height:320px;background:var(--blue);opacity:.10;bottom:-160px;left:-100px;"></div>
+  <div class="blob" style="width:180px;height:180px;background:var(--red);opacity:.10;top:40%;left:38%;"></div>
+  <div class="wrap">
+    <div class="hero-head">
+      <p class="eyebrow">Founder Brand Intensive Workshop</p>
+      <h1><span class="hero-squiggle">Selling<svg viewBox="0 0 220 16" preserveAspectRatio="none"><path d="M2,9 C55,2 165,15 218,7" stroke="var(--red)" stroke-width="4" fill="none" stroke-linecap="round"/></svg></span> <em>Without</em> Selling</h1>
+      <p class="body-lg">You've posted before and watched it disappear without a trace, or never quite worked up the nerve to hit record. This one day exists to fix what's actually broken: no system, no content pillars, no plan for what to say next.</p>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-item"><div class="ticket-label">Date</div><div class="ticket-value">Thu, 27 Aug 2026</div></div>
+      <div class="ticket-item"><div class="ticket-label">Time</div><div class="ticket-value">9:00 AM – 5:00 PM</div></div>
+      <div class="ticket-item"><div class="ticket-label">Venue</div><div class="ticket-value">Klang Valley (TBC)</div></div>
+      <div class="ticket-item"><div class="ticket-label">Investment</div><div class="ticket-value">RM 1,499 · RM 2,199 for 2 pax</div></div>
+    </div>
+
+    <div class="hero-cta-row">
+      <a href="https://catalog.billplz.com/myfg/link/brands" target="_blank" rel="noopener" class="btn"><span class="dot"></span>Reserve my seat<span class="arrow">→</span></a>
+      <a href="#agenda" class="btn ghost">See what you'll learn</a>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN / WHY NOW -->
+<section class="story-block">
+  <div class="wrap">
+    <p class="eyebrow red">Why now</p>
+    <h2 class="section-title">Selling Has Changed. Has Your Approach?</h2>
+    <p>Selling in 2026 is harder. AI-generated content has flooded every feed. Scams have made buyers more cautious than they used to be. Every business out there is making similar promises.</p>
+    <p>Long before they ever contact you, prospects are already:</p>
+    <ul class="check-list red">
+      <li>Searching your name</li>
+      <li>Looking at your social media</li>
+      <li>Comparing you with competitors</li>
+      <li>Assessing your expertise</li>
+      <li>Deciding whether they trust you</li>
+    </ul>
+    <p style="margin-top:26px;">This is especially true when what's being sold is a high-ticket product, a professional service, or a business opportunity.</p>
+    <p>If buyers cannot find you, or cannot understand why they should trust you, they may never get the chance to choose you.</p>
+  </div>
+</section>
+
+<!-- BRAND AS SALES SYSTEM -->
+<section class="story-block tint" data-reveal>
+  <div class="wrap">
+    <p class="eyebrow">The shift</p>
+    <h2 class="section-title">Your Personal Brand Is Now Part of Your Sales System</h2>
+    <p>More founders and CEOs are creating content, and it isn't because they suddenly found extra hours in the day. Buyer behaviour has changed.</p>
+    <p>A strong founder brand helps:</p>
+    <ul class="check-list">
+      <li>Build trust before the first conversation</li>
+      <li>Make your expertise easier to see</li>
+      <li>Keep you visible to future buyers</li>
+      <li>Shorten the sales journey</li>
+      <li>Attract customers, partnerships and opportunities</li>
+      <li>Reduce how much you depend on paid advertising</li>
+    </ul>
+    <div class="reframe">
+      <p class="reframe-old">"Do I have time to build my personal brand?"</p>
+      <p class="reframe-new">Can your business afford for you to stay invisible?</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOT AN INFLUENCER -->
+<section class="story-block" data-reveal>
+  <div class="wrap">
+    <p class="eyebrow">A common worry</p>
+    <h2 class="section-title">You Don't Need to Become an Influencer</h2>
+    <p>This isn't about dancing for views, chasing every trend, or handing over your personal life. It's about turning what you already know into content that helps the right people:</p>
+    <ul class="check-list">
+      <li>Discover you</li>
+      <li>Understand what you do</li>
+      <li>Trust how you think</li>
+      <li>Remember your business</li>
+      <li>Take action when they're ready</li>
+    </ul>
+    <p style="margin-top:26px;">The knowledge, the experience, the stories, all of it already exists. What's missing is a system to turn it into content consistently.</p>
+  </div>
+</section>
+
+<!-- BUILT FOR BUSY FOUNDERS -->
+<section class="story-block cream" data-reveal>
+  <div class="wrap">
+    <p class="eyebrow">Built for real schedules</p>
+    <h2 class="section-title">Built for Founders Who Are Already Busy</h2>
+    <p>This isn't another full-time job called content creation. It's a practical system for:</p>
+    <ul class="check-list gold">
+      <li>Clarifying what you want to be known for</li>
+      <li>Choosing content pillars that support the business</li>
+      <li>Generating ideas without starting from zero every time</li>
+      <li>Creating content more efficiently</li>
+      <li>Communicating naturally and with confidence on camera</li>
+      <li>Turning attention into trust, and trust into enquiries</li>
+    </ul>
+    <p style="margin-top:26px;">This intensive hands you the strategy, the structure and the shortcut to show up consistently, without content taking over your life.</p>
+  </div>
+</section>
+
+<!-- WHY LEARN FROM ME -->
+<section class="whyme">
+  <div class="blob" style="width:300px;height:300px;background:var(--red);opacity:.08;top:20%;right:-120px;"></div>
+  <div class="wrap whyme-grid">
+    <div data-reveal>
+      <div class="whyme-photos">
+        <div class="photo-item">
+          <img src="assets/images/claudia-speaking-to-a-crowd-at-an-event.jpg" alt="Claudia speaking to a crowd at an event">
+          <div class="cap">Invited to speak at Content Conference, July 2026.</div>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/on-set-filming-a-client-shoot-for-a-senior-l.jpg" alt="On set filming a client shoot for a senior living brand">
+          <div class="cap">On set for a client shoot, senior living industry.</div>
+        </div>
+      </div>
+    </div>
+    <div class="whyme-copy" data-reveal>
+      <p class="eyebrow">A crowded space</p>
+      <h2 class="section-title" style="margin-bottom:20px;">Why Learn This From Claudia</h2>
+      <p class="lead">Less than a year after returning to Malaysia and rebuilding a network from zero, a combined audience of more than 37,000 grew across social platforms. Organically.</p>
+      <p>Content has generated:</p>
+      <ul class="check-list red">
+        <li>Business enquiries</li>
+        <li>Brand partnerships</li>
+        <li>Speaking opportunities</li>
+        <li>Event registrations</li>
+        <li>Industry visibility</li>
+        <li>100% organic sales</li>
+      </ul>
+      <p style="margin-top:24px;">Behind that growth: more than RM8,000 invested in learning the craft, on top of years of experience in sales, marketing, growth and franchising across more than 100 brands.</p>
+      <p>There's no claim here that this is the only way to win on social media. What gets taught is the practical system that worked, the lessons learned along the way, and how to adapt all of it to your own expertise, personality and business.</p>
+      <p class="close-line">The goal was never fame. It's making your expertise visible, your value clear, and your business easier to trust.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="wrap">
+    <p class="eyebrow">In their own words</p>
+    <h2 class="section-title">What People Are Saying</h2>
+    <div class="testi-grid">
+      <div class="testi-item" data-reveal>
+        <video controls playsinline preload="metadata" poster="assets/images/testimonial-1-poster.jpg">
+          <source src="assets/videos/testimonial-1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="testi-item" data-reveal>
+        <video controls playsinline preload="metadata" poster="assets/images/testimonial-2-poster.jpg">
+          <source src="assets/videos/testimonial-2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="testi-item" data-reveal>
+        <video controls playsinline preload="metadata" poster="assets/images/testimonial-3-poster.jpg">
+          <source src="assets/videos/testimonial-3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="testi-item" data-reveal>
+        <video controls playsinline preload="metadata" poster="assets/images/testimonial-4-poster.jpg">
+          <source src="assets/videos/testimonial-4.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE CAROUSEL -->
+<section class="evidence">
+  <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,55 C300,100 720,0 1080,45 C1260,68 1380,55 1440,40 L1440,100 L0,100 Z" fill="#0A0A0A"/></svg></div>
+  <div class="evidence-content">
+    <div class="wrap evidence-head">
+      <h2 class="section-title">Some Examples of Opportunities Presented to Me by Showing Up Online</h2>
+    </div>
+    <div class="ev-track-outer">
+      <div class="ev-track">
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/an-instagram-post-liked-by-malaysia-s-prime.jpg" alt="An Instagram post liked by Malaysia's Prime Minister's account"></div><div class="cap">A post reaching Malaysia's Prime Minister's own feed. Unpaid, unboosted.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/instagram-insights-showing-872-9k-views-in-o.jpg" alt="Instagram insights showing 872.9K views in one month"></div><div class="cap">872.9K views in a single month. Fully organic.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/inbound-dm-asking-about-buying-an-f-b-franch.jpg" alt="Inbound DM asking about buying an F&B franchise in Kuala Lumpur"></div><div class="cap">An inbound DM from someone ready to buy a franchise in KL.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/inbound-dm-asking-about-a-mcdonald-s-franchi.jpg" alt="Inbound DM asking about a McDonald's franchise in East Malaysia"></div><div class="cap">An inbound DM asking about a McDonald's franchise in Sabah.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/claudia-speaking-on-stage-at-a-franchise-con.jpg" alt="Claudia speaking on stage at a franchise conference"></div><div class="cap">Sharing with 100+ franchise executives in the US on how storytelling impacts the sales funnel.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/a-packed-room-of-attendees-at-a-kuala-lumpur.jpg" alt="A packed room of attendees at a Kuala Lumpur event"></div><div class="cap">A sold-out event, filled organically.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/post-performance-stats-for-a-brand-deal-reel.jpg" alt="Post performance stats for a brand deal reel breaking down RM54,000"></div><div class="cap">A brand deal that generated 400+ leads organically for the client.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/behind-the-scenes-shot-of-a-camera-monitor-d.jpg" alt="Behind the scenes shot of a camera monitor during a filming session"></div><div class="cap">Behind the scenes of an actual shoot.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/ctos-sme-biz-day-2026-speaker-lineup-featuri.jpg" alt="CTOS SME Biz Day 2026 speaker lineup featuring Claudia Ng"></div><div class="cap">Speaker lineup, CTOS SME Biz Day 2026, alongside a former Minister of Health.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/mifb-panel-graphic-featuring-claudia-ng.jpg" alt="MIFB panel graphic featuring Claudia Ng"></div><div class="cap">Panel speaker, Malaysian International Food &amp; Beverage Trade Fair 2026.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/underdog-content-con-26-speaker-lineup-featu.jpg" alt="Underdog Content Con 26 speaker lineup featuring Claudia Ng"></div><div class="cap">Speaker lineup, Underdog Content Con '26.</div></div>
+
+
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/an-instagram-post-liked-by-malaysia-s-prime.jpg" alt="An Instagram post liked by Malaysia's Prime Minister's account"></div><div class="cap">A post reaching Malaysia's Prime Minister's own feed. Unpaid, unboosted.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/instagram-insights-showing-872-9k-views-in-o.jpg" alt="Instagram insights showing 872.9K views in one month"></div><div class="cap">872.9K views in a single month. Fully organic.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/inbound-dm-asking-about-buying-an-f-b-franch.jpg" alt="Inbound DM asking about buying an F&B franchise in Kuala Lumpur"></div><div class="cap">An inbound DM from someone ready to buy a franchise in KL.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/inbound-dm-asking-about-a-mcdonald-s-franchi.jpg" alt="Inbound DM asking about a McDonald's franchise in East Malaysia"></div><div class="cap">An inbound DM asking about a McDonald's franchise in Sabah.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/claudia-speaking-on-stage-at-a-franchise-con.jpg" alt="Claudia speaking on stage at a franchise conference"></div><div class="cap">Sharing with 100+ franchise executives in the US on how storytelling impacts the sales funnel.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/a-packed-room-of-attendees-at-a-kuala-lumpur.jpg" alt="A packed room of attendees at a Kuala Lumpur event"></div><div class="cap">A sold-out event, filled organically.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/post-performance-stats-for-a-brand-deal-reel.jpg" alt="Post performance stats for a brand deal reel breaking down RM54,000"></div><div class="cap">A brand deal that generated 400+ leads organically for the client.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/behind-the-scenes-shot-of-a-camera-monitor-d.jpg" alt="Behind the scenes shot of a camera monitor during a filming session"></div><div class="cap">Behind the scenes of an actual shoot.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/ctos-sme-biz-day-2026-speaker-lineup-featuri.jpg" alt="CTOS SME Biz Day 2026 speaker lineup featuring Claudia Ng"></div><div class="cap">Speaker lineup, CTOS SME Biz Day 2026, alongside a former Minister of Health.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/mifb-panel-graphic-featuring-claudia-ng.jpg" alt="MIFB panel graphic featuring Claudia Ng"></div><div class="cap">Panel speaker, Malaysian International Food &amp; Beverage Trade Fair 2026.</div></div>
+        <div class="ev-card"><div class="imgbox"><img src="assets/images/underdog-content-con-26-speaker-lineup-featu.jpg" alt="Underdog Content Con 26 speaker lineup featuring Claudia Ng"></div><div class="cap">Speaker lineup, Underdog Content Con '26.</div></div>
+
+      </div>
+    </div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,45 C300,0 720,100 1080,55 C1260,32 1380,45 1440,60 L1440,100 L0,100 Z" fill="#F4F5F7"/></svg></div>
+</section>
+
+<!-- FIT -->
+<section class="fit">
+  <div class="wrap">
+    <h2 class="section-title" style="margin-bottom:40px;font-size:clamp(36px,5.2vw,54px);">Who This Is For</h2>
+    <div class="fit-grid">
+      <div class="fit-col yes">
+        <h3>This is for you if you are:</h3>
+        <ul>
+          <li><span class="fit-mark">✓</span> A founder, business owner, CEO or independent professional</li>
+          <li><span class="fit-mark">✓</span> Good at what you do, but not enough people know it</li>
+          <li><span class="fit-mark">✓</span> Feeling the pain of rising ad costs while sales haven't grown</li>
+          <li><span class="fit-mark">✓</span> Struggling to turn your expertise into useful content</li>
+          <li><span class="fit-mark">✓</span> Unsure what to talk about or how to position yourself online</li>
+          <li><span class="fit-mark">✓</span> Inconsistent, because content always feels time-consuming</li>
+          <li><span class="fit-mark">✓</span> Ready to become more visible and build trust around your business</li>
+          <li><span class="fit-mark">✓</span> Willing to learn, practise and create during the workshop</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h3>This is not for you if you:</h3>
+        <ul>
+          <li><span class="fit-mark">✕</span> Want to become an influencer for the sake of fame</li>
+          <li><span class="fit-mark">✕</span> Are only looking for viral hooks, trends or follower hacks</li>
+          <li><span class="fit-mark">✕</span> Expect someone else to build your personal brand for you</li>
+          <li><span class="fit-mark">✕</span> Want a completely done-for-you content service</li>
+          <li><span class="fit-mark">✕</span> Are unwilling to appear, speak or share your point of view</li>
+          <li><span class="fit-mark">✕</span> Expect instant sales after posting a few videos</li>
+          <li><span class="fit-mark">✕</span> Are not prepared to practise and apply what you learn</li>
+          <li><span class="fit-mark">✕</span> Do not yet have a business, expertise or clear value to offer</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fit-close" data-reveal>
+      <p class="fit-close-lead">This is not a "go viral overnight" workshop.</p>
+      <p>It's a practical business workshop for people who want to use their knowledge, voice and experience to build credibility, earn trust and create more opportunities.</p>
+      <p>You do not need a large following, professional equipment or previous content experience. You need real expertise, a business you believe in, and the willingness to show up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU WILL LEARN -->
+<section class="learn" id="agenda">
+  <div class="blob" style="width:360px;height:360px;background:var(--gold);opacity:.18;top:-100px;left:-140px;"></div>
+  <div class="blob" style="width:280px;height:280px;background:var(--red);opacity:.09;bottom:-120px;right:-100px;"></div>
+  <div class="wrap">
+    <div class="learn-head">
+      <p class="eyebrow red">The curriculum</p>
+      <p class="learn-transition">Here's what gets worked through, together:</p>
+    </div>
+
+    <div class="module-list">
+      <div class="module-card" data-reveal>
+        <div class="module-badge m1">01</div>
+        <div class="module-content">
+          <h3>Selling in 2026</h3>
+          <ul>
+            <li>How customers now decide who to trust</li>
+            <li>Why founder-led visibility matters as advertising costs rise</li>
+            <li>The foundations of a trusted brand</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module-card" data-reveal>
+        <div class="module-badge m2">02</div>
+        <div class="module-content">
+          <h3>Content Pillars, Profile &amp; Production</h3>
+          <ul>
+            <li>Defining the core themes your content will own</li>
+            <li>Building a production process you can sustain</li>
+            <li>Writing a social profile that attracts and converts</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module-card" data-reveal>
+        <div class="module-badge m3">03</div>
+        <div class="module-content">
+          <h3>Storytelling &amp; Scriptwriting</h3>
+          <ul>
+            <li>The structure behind content that holds attention: hook, setup, turn and close</li>
+            <li>Writing a script for your own brand, ready to film</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module-card" data-reveal>
+        <div class="module-badge m4">04</div>
+        <div class="module-content">
+          <h3>Film &amp; Edit a Reel Together</h3>
+          <ul>
+            <li>Filming your reel from start to finish</li>
+            <li>Editing it on the spot</li>
+            <li>Walking away with a video ready to post</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LEAVE WITH -->
+<section class="leave">
+  <div class="wrap">
+    <p class="eyebrow">What you walk out with</p>
+    <h2 class="section-title">Ready to Get Your Hands Dirty and Start Building.</h2>
+    <div class="leave-grid">
+      <div class="leave-card" data-reveal>
+        <div class="leave-num">01</div>
+        <h4>A system to implement</h4>
+        <p>Not theory. A repeatable process built around your own content.</p>
+      </div>
+      <div class="leave-card" data-reveal>
+        <div class="leave-num">02</div>
+        <h4>Workbook</h4>
+        <p>Every exercise from the day, yours to keep.</p>
+      </div>
+      <div class="leave-card" data-reveal>
+        <div class="leave-num">03</div>
+        <h4>New friends on the same journey</h4>
+        <p>A room of founders who'll genuinely hold each other accountable.</p>
+      </div>
+      <div class="leave-card" data-reveal>
+        <div class="leave-num">04</div>
+        <h4>Continuous support post-workshop</h4>
+        <p>Direct access to Claudia once the room empties.</p>
+      </div>
+      <div class="leave-card" data-reveal>
+        <div class="leave-num">05</div>
+        <h4>A finished reel</h4>
+        <p>Filmed throughout the day, ready to post before you leave.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AFTER CONFIRMATION -->
+<section class="after">
+  <div class="wrap">
+    <p class="eyebrow">After confirmation</p>
+    <h2 class="section-title" style="color:#fff;">Two Steps. No Mystery.</h2>
+    <div class="after-grid">
+      <div class="after-step" data-reveal>
+        <div class="after-step-num">01</div>
+        <h4>Secure your seat</h4>
+        <p>Complete payment and your seat locks in immediately.</p>
+      </div>
+      <div class="after-step" data-reveal>
+        <div class="after-step-num">02</div>
+        <h4>Join the WhatsApp group</h4>
+        <p>You'll be added to our private group, with venue details, prep notes, and more shared as the date gets closer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section class="details" id="details">
+  <div class="wrap">
+    <p class="eyebrow red">The details</p>
+    <h2 class="section-title" style="margin-bottom:40px;">Everything You Need to Know.</h2>
+    <div class="details-card" id="reserve">
+      <div>
+        <div class="details-rows">
+          <div class="d-row"><div class="ticket-label">When</div><div class="ticket-value">Thu, 27 Aug 2026</div></div>
+          <div class="d-row"><div class="ticket-label">Time</div><div class="ticket-value">9:00 AM – 5:00 PM</div></div>
+          <div class="d-row"><div class="ticket-label">Included</div><div class="ticket-value">Coffee &amp; tea, and lunch</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="tier-label">1 Seat</div>
+            <div class="tier-price">RM 1,499</div>
+            <div class="tier-sub">Per pax</div>
+          </div>
+          <div class="price-tier featured">
+            <div class="tier-badge">Recommended for teams</div>
+            <div class="tier-label">2 Seats</div>
+            <div class="tier-price">RM 2,199</div>
+            <div class="tier-sub">For 2 pax</div>
+          </div>
+        </div>
+        <p class="tier-note">Strongly recommended for founders bringing a colleague or the marketing lead along, so the whole team walks out aligned on the same strategy.</p>
+        <p class="tier-note">HRD Claimable is available at an additional 15%. DM us to arrange this option.</p>
+        <a href="https://catalog.billplz.com/myfg/link/brands" target="_blank" rel="noopener" class="btn" style="width:100%;justify-content:center;"><span class="dot"></span>Reserve my seat<span class="arrow">→</span></a>
+        <p class="refund-note">Non-refundable. Transferable to someone you trust, just send us their details.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2 class="section-title">Before You Book.</h2>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>I've never filmed anything for my business. Will I keep up?</summary>
+        <p>Yes. Module 4 is built for people filming their first reel that day, in the room, with help beside them the whole time.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this work outside F&amp;B or franchise industries?</summary>
+        <p>Yes. The frameworks are built around how people decide to trust a founder, not around any one product category. You'll apply everything to your own business specifically.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will the sessions be recorded?</summary>
+        <p>No. It's live only, by design. You're paying for the room, not a replay.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I sign up and can't make it?</summary>
+        <p>Payment is non-refundable, but you're welcome to transfer your seat to someone you trust. Just send us their details and we'll handle the rest.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens right after I pay?</summary>
+        <p>You'll be invited to join a WhatsApp group, with more details about the workshop shared closer to the event date.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><span class="my">MY</span><span class="franchise">FRANCHISE</span><span class="guide">GUIDE</span></div>
+        <p>Helping buyers invest smarter and brands grow right. Selling Without Selling is a MYFranchiseGuide founder workshop.</p>
+      </div>
+      <div>
+        <h5>The Workshop</h5>
+        <ul>
+          <li><a href="#agenda">Curriculum</a></li>
+          <li><a href="#details">Details &amp; pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="mailto:myfranchiseguide@gmail.com">myfranchiseguide@gmail.com</a></li>
+          <li><a href="https://instagram.com/myfranchiseguide">Instagram</a></li>
+          <li><a href="https://asiafranchiseguide.com">asiafranchiseguide.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 MYFranchiseGuide. Selling Without Selling · Founder Brand Intensive Workshop.</div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
