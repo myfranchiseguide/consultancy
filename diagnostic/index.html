@@ -1,0 +1,1018 @@
+<title>Franchise Brand Health Diagnostic</title>
+<style>
+:root{
+  --ground:#FFFFFF;
+  --surface:#FFFFFF;
+  --card-line:#EAE8E1;
+  --ink:#16181C;
+  --ink-soft:#6B7280;
+  --ink-faint:#9CA3AF;
+  --blue:#0056B8;
+  --blue-deep:#003B82;
+  --blue-tint:#EAF2FC;
+  --red:#D4202A;
+  --yellow:#FFDE01;
+  --good:#1C7C54;
+  --good-tint:#E9F6EF;
+  --warn:#B5750E;
+  --warn-tint:#FDF3E3;
+  --crit:#C22A2A;
+  --crit-tint:#FCEAEA;
+  --font-display:'Montserrat',-apple-system,sans-serif;
+  --font-body:'Montserrat',-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#12151A;
+    --surface:#1A1E25;
+    --card-line:#2B313B;
+    --ink:#F1F2F0;
+    --ink-soft:#A7ADB8;
+    --ink-faint:#6B7280;
+    --blue:#5B9BEA;
+    --blue-deep:#82B4F0;
+    --blue-tint:#1B2A3D;
+    --yellow:#FFE23D;
+    --good:#3FAE7E;
+    --good-tint:#12261D;
+    --warn:#D89A3E;
+    --warn-tint:#2B2010;
+    --crit:#E2585D;
+    --crit-tint:#2B1414;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#12151A;--surface:#1A1E25;--card-line:#2B313B;--ink:#F1F2F0;--ink-soft:#A7ADB8;--ink-faint:#6B7280;
+  --blue:#5B9BEA;--blue-deep:#82B4F0;--blue-tint:#1B2A3D;--yellow:#FFE23D;--good:#3FAE7E;--good-tint:#12261D;
+  --warn:#D89A3E;--warn-tint:#2B2010;--crit:#E2585D;--crit-tint:#2B1414;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-body);
+  padding:0 20px;padding-block:32px 64px;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;}
+.brand{display:flex;align-items:baseline;gap:2px;font-family:var(--font-display);font-weight:800;font-size:13px;
+  letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px;}
+.brand .my{color:var(--red);}.brand .fr{color:var(--blue);}.brand .gd{color:var(--ink);}
+.brand .pin{color:var(--ink-soft);font-weight:600;margin-left:2px;}
+
+/* section progress */
+.sectionBar{display:flex;gap:8px;margin-bottom:8px;}
+.secSeg{flex:1;}
+.secSeg .label{font-family:var(--font-display);font-size:10.5px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-faint);margin-bottom:5px;display:flex;justify-content:space-between;}
+.secSeg .label .cur{color:var(--blue);}
+.secTrack{height:5px;border-radius:3px;background:var(--card-line);overflow:hidden;}
+.secFill{height:100%;background:var(--blue);border-radius:3px;transition:width .25s ease;width:0%;}
+.stepCounter{font-size:12px;color:var(--ink-faint);margin:0 0 26px;text-align:right;}
+
+.card{background:var(--surface);border:1px solid var(--card-line);border-radius:10px;padding:38px 34px;
+  box-shadow:0 1px 2px rgba(20,20,15,.03);}
+@media (max-width:480px){.card{padding:26px 20px;}}
+
+.step{display:none;}
+.step.active{display:block;animation:rise .3s ease both;}
+@keyframes rise{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+.eyebrow{font-family:var(--font-display);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 10px;}
+h1{font-family:var(--font-display);font-weight:800;font-size:27px;line-height:1.18;letter-spacing:-.01em;
+  margin:0 0 14px;text-wrap:balance;}
+h2{font-family:var(--font-display);font-weight:800;font-size:20px;line-height:1.28;margin:0 0 8px;text-wrap:balance;}
+p.lede{font-size:15px;line-height:1.6;color:var(--ink-soft);margin:0 0 22px;max-width:62ch;}
+p.sub{font-size:13.5px;color:var(--ink-soft);margin:0 0 20px;}
+
+.field{margin-bottom:16px;}
+.field.full{grid-column:1/-1;}
+.field label{display:block;font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--ink-soft);margin-bottom:6px;}
+.field input,.field textarea,.field select{width:100%;padding:11px 13px;font-size:15px;font-family:var(--font-body);
+  background:var(--ground);border:1px solid var(--card-line);border-radius:6px;color:var(--ink);}
+.field textarea{resize:vertical;min-height:70px;line-height:1.5;}
+.field input:focus,.field textarea:focus{outline:2px solid var(--blue);outline-offset:1px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+@media (max-width:480px){.grid2,.grid3{grid-template-columns:1fr;}}
+
+/* 1-5 single rating */
+.ratingRow{display:flex;gap:8px;margin:6px 0 4px;}
+.rateBtn{flex:1;padding:14px 4px;text-align:center;border:1px solid var(--card-line);border-radius:8px;
+  cursor:pointer;background:var(--ground);font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--ink-soft);}
+.rateBtn:hover{border-color:var(--blue);}
+.rateBtn.picked{border-color:var(--blue);background:var(--blue-tint);color:var(--blue);}
+.rateEnds{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-faint);margin-bottom:18px;}
+
+/* matrix (list of statements each rated 1-5) */
+.matrixRow{padding:16px 0;border-bottom:1px solid var(--card-line);}
+.matrixRow:last-child{border-bottom:none;}
+.matrixTxt{font-size:14.5px;color:var(--ink);margin-bottom:10px;line-height:1.45;}
+.matrixScale{display:flex;gap:6px;}
+.mBtn{flex:1;padding:9px 2px;text-align:center;border:1px solid var(--card-line);border-radius:6px;cursor:pointer;
+  background:var(--ground);font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--ink-soft);}
+.mBtn.picked{border-color:var(--blue);background:var(--blue-tint);color:var(--blue);}
+.matrixCaption{display:flex;justify-content:space-between;font-size:10.5px;color:var(--ink-faint);margin-top:14px;}
+
+/* checklist */
+.checkGrid{display:flex;flex-direction:column;gap:9px;}
+.chk{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--card-line);border-radius:7px;
+  cursor:pointer;background:var(--ground);}
+.chk.picked{border-color:var(--blue);background:var(--blue-tint);}
+.chk.disabled{opacity:.4;cursor:not-allowed;}
+.chk .box{width:18px;height:18px;border:1.5px solid var(--ink-faint);border-radius:4px;flex:none;
+  display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;}
+.chk.picked .box{background:var(--blue);border-color:var(--blue);}
+.chk .txt{font-size:14px;color:var(--ink);}
+.checkCounter{font-size:12px;color:var(--ink-faint);margin-top:10px;text-align:right;}
+
+/* single select radio list (reuse chk look, circular) */
+.radioGrid{display:flex;flex-direction:column;gap:9px;}
+.rdo{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--card-line);border-radius:7px;
+  cursor:pointer;background:var(--ground);}
+.rdo.picked{border-color:var(--blue);background:var(--blue-tint);}
+.rdo .dot{width:18px;height:18px;border:1.5px solid var(--ink-faint);border-radius:50%;flex:none;position:relative;}
+.rdo.picked .dot{border-color:var(--blue);}
+.rdo.picked .dot::after{content:'';position:absolute;inset:3px;background:var(--blue);border-radius:50%;}
+.rdo .txt{font-size:14px;color:var(--ink);}
+
+/* sop gap */
+.pillRow{display:flex;gap:10px;margin-bottom:14px;}
+.pill{padding:10px 20px;border:1px solid var(--card-line);border-radius:20px;cursor:pointer;background:var(--ground);
+  font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--ink-soft);}
+.pill.picked{border-color:var(--blue);background:var(--blue-tint);color:var(--blue);}
+
+/* numeric grid */
+.numGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:480px){.numGrid{grid-template-columns:1fr;}}
+.numRow label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:6px;}
+
+.otherBox{margin-top:8px;}
+
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:12px;}
+button{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.03em;text-transform:uppercase;
+  border-radius:6px;cursor:pointer;border:none;padding:13px 22px;}
+.btn-primary{background:var(--blue);color:#fff;}
+.btn-primary:hover{background:var(--blue-deep);}
+.btn-primary:disabled{background:var(--card-line);color:var(--ink-faint);cursor:not-allowed;}
+.btn-ghost{background:transparent;color:var(--ink-soft);border:1px solid var(--card-line);}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink-faint);}
+
+/* results */
+.pillarScores{display:flex;flex-direction:column;gap:14px;margin:22px 0;}
+.pillarCard{border:1px solid var(--card-line);border-radius:10px;padding:18px 20px;}
+.pillarHead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+.pillarName{font-family:var(--font-display);font-weight:800;font-size:14px;}
+.pillarNum{font-family:var(--font-display);font-weight:800;font-size:20px;font-variant-numeric:tabular-nums;}
+.pillarTrack{height:8px;background:var(--card-line);border-radius:4px;overflow:hidden;}
+.pillarFill{height:100%;border-radius:4px;}
+.verdict{font-family:var(--font-display);font-weight:800;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
+  padding:6px 12px;border-radius:20px;display:inline-block;margin-bottom:10px;}
+.verdict.risk{background:var(--crit-tint);color:var(--crit);}
+.verdict.crack{background:var(--warn-tint);color:var(--warn);}
+.verdict.strength{background:var(--good-tint);color:var(--good);}
+.radarWrap{display:flex;justify-content:center;margin:20px 0 4px;}
+svg text{font-family:var(--font-body);}
+.flags{display:flex;flex-direction:column;gap:12px;}
+.flag{border-left:3px solid var(--crit);padding:3px 0 3px 14px;}
+.flag.warn{border-color:var(--warn);}
+.flag h3{margin:0 0 3px;font-size:14px;font-family:var(--font-display);}
+.flag p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.5;}
+.section-divider{border:none;border-top:1px solid var(--card-line);margin:28px 0;}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;}
+.submitNote{font-size:12px;color:var(--ink-faint);margin-top:14px;}
+footer.note{text-align:center;font-size:12px;color:var(--ink-faint);margin-top:18px;}
+
+@media print{
+  body{padding:0;}
+  .sectionBar,.stepCounter,.actions,footer.note{display:none !important;}
+  .card{border:none;padding:0;box-shadow:none;}
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<div class="wrap">
+  <div class="brand"><span class="my">MY</span><span class="fr">FRANCHISE</span><span class="gd">GUIDE</span><span class="pin">— Brand Health Diagnostic</span></div>
+
+  <div class="sectionBar" id="sectionBar"></div>
+  <p class="stepCounter" id="stepCounter"></p>
+
+  <div class="card" id="card">
+    <div class="step active" data-step="0">
+      <p class="eyebrow">MYFG Proprietary Franchise Diagnostic</p>
+      <h1>Franchise Brand Health Diagnostic</h1>
+      <p class="lede">Three sections — Network Health, Franchisee Health, and Growth Health. Every question matters, so please answer as accurately as you can — a best estimate is fine where you don't have an exact figure. We'll walk through your results together, live, on our next meeting.</p>
+      <div id="resumeBanner" style="display:none;background:var(--blue-tint);border:1px solid var(--blue);border-radius:8px;padding:14px 16px;margin-bottom:20px;">
+        <p style="margin:0 0 10px;font-size:13.5px;color:var(--ink);">You have answers saved on this device from a previous visit.</p>
+        <div style="display:flex;gap:10px;">
+          <button class="btn-primary" data-action="resume" style="padding:9px 16px;">Continue where I left off →</button>
+          <button class="btn-ghost" data-action="discard" style="padding:9px 16px;">Start fresh</button>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label for="fName">Your name</label><input id="fName" type="text" autocomplete="name"></div>
+        <div class="field"><label for="fBrand">Franchise brand</label><input id="fBrand" type="text"></div>
+      </div>
+      <div class="nav">
+        <span></span>
+        <button class="btn-primary" id="beginBtn" disabled data-goto="1">Begin →</button>
+      </div>
+    </div>
+
+    <div id="qHost"></div>
+
+    <div class="step" id="resultsStep">
+      <p class="eyebrow" id="resBrandLine">Your Brand Health</p>
+      <div id="verdictBlock"></div>
+      <p class="lede" id="verdictText"></p>
+
+      <div class="pillarScores" id="pillarScores"></div>
+      <div class="radarWrap"><svg id="radar" width="480" height="460" viewBox="0 0 480 460"></svg></div>
+
+      <div class="actions">
+        <button class="btn-primary" data-action="print" id="pdfBtn">Download my results (PDF)</button>
+        <button class="btn-ghost" data-action="restart">Start over</button>
+      </div>
+      <p class="submitNote" id="submitNote"></p>
+      <footer class="note">MYFranchiseGuide · This diagnostic is a discovery tool, not an audit. We'll validate everything together on the call.</footer>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================================
+   CONFIG — paste your Google Apps Script Web App URL here once deployed.
+   See the setup notes sent alongside this file. Leave blank to disable
+   submission (the diagnostic still works fully offline for the prospect).
+   ========================================================================= */
+const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzGevN3Rcdc-C2o0wBAyfPXPsCql8_A5cueCFuHlkfP-8GMUUBlqk7C89TvP46uGvbewQ/exec";
+
+/* =========================================================================
+   SCHEMA — one entry per screen. Section 1/2/3 = the three pillars.
+   ========================================================================= */
+const STRONG_REASONS = ["Strong local marketing execution","Owner-operator highly engaged","Great location / site selection","Prior business or management experience","Full compliance with SOPs","Strong team culture / staff retention","Active community engagement","Additional revenue streams (upsells)","Effective use of local ad co-op","Other"];
+const WEAK_REASONS = ["Poor location / site selection","Weak owner engagement / absentee ownership","Undercapitalized at launch","Poor local marketing execution","High staff turnover","Non-compliance with SOPs","Lack of business or management experience","Market saturation / competition","Slow to adapt to local market","Other"];
+const OBJECTIONS = ["Price / investment too high","Uncertain ROI or payback period","Competing franchise offers","Lack of trust in brand support","Territory availability concerns","Financing difficulty","Family or partner not on board","Timing not right","Concerns about market saturation","Worry about hiring or staffing","Other"];
+
+const SCREENS = [
+  {sec:1, type:'fields', title:'Current network size', field:'s1size', items:[
+    {id:'companyOwned',label:'Company-owned outlets',type:'number'},
+    {id:'franchiseOutlets',label:'Franchise outlets',type:'number'},
+    {id:'activeFranchisees',label:'Active franchisees',type:'number'},
+  ]},
+  {sec:1, type:'fields', title:'Network movement — last 3 years', sub:'Totals across the last 3 years.', field:'s1move', items:[
+    {id:'opened',label:'Opened',type:'number'},
+    {id:'closed',label:'Closed',type:'number'},
+    {id:'transferred',label:'Transferred',type:'number'},
+    {id:'terminated',label:'Terminated',type:'number'},
+    {id:'renewed',label:'Renewed',type:'number'},
+    {id:'closureReason',label:'Most common reason for closure or transfer',type:'text',full:true},
+  ]},
+  {sec:1, type:'fields', title:'Revenue — last 12 months', field:'s1rev', items:[
+    {id:'systemRevenue',label:'Total system-wide revenue',type:'text',placeholder:'e.g. RM 12,000,000'},
+    {id:'revenueGrowth',label:'% growth or decline vs prior year',type:'number',placeholder:'%'},
+    {id:'hqRevenue',label:'Total HQ revenue',type:'text',placeholder:'e.g. RM 2,400,000',full:true},
+  ]},
+  {sec:1, type:'fields', title:'Profitability & payback', field:'s1profit', items:[
+    {id:'pctProfitable',label:'% of outlets currently profitable',type:'number',placeholder:'%'},
+    {id:'breakeven',label:'Typical break-even / payback period',type:'text',placeholder:'e.g. 18 months'},
+  ]},
+  {sec:1, type:'rating', title:'How confident are you in the accuracy of your franchise network data?', sub:'Think about your unit counts, revenue figures and franchisee status — how up to date and reliable is that information right now?', field:'dataConfidence', low:'Not confident', high:'Very confident'},
+  {sec:1, type:'matrix', title:'HQ readiness', field:'hqReady', items:[
+    'We have the right people and capabilities.','Roles and accountability are clear.','Our systems and processes are consistent.','We have enough capacity to support growth.','The business is not overly dependent on the founder.']},
+  {sec:1, type:'matrix', title:'Leadership & culture', field:'leadership', items:[
+    'Leadership agrees on the main priorities.','Teams communicate and work well together.','Problems are raised openly.','Decisions are followed through.']},
+  {sec:1, type:'text', title:'What are your top three internal challenges?', field:'internalChallenges', rows:4},
+
+  {sec:2, type:'fields', title:'Franchisee classification', sub:"Estimate the % of your network in each category — roughly totaling 100%.", field:'s2classify', items:[
+    {id:'pctHighPerforming',label:'High-performing %',type:'number'},
+    {id:'pctStable',label:'Stable %',type:'number'},
+    {id:'pctStruggling',label:'Struggling %',type:'number'},
+    {id:'pctAtRisk',label:'At risk %',type:'number'},
+  ]},
+  {sec:2, type:'fields', title:'Renewal confidence', sub:'Guess to your best ability — an exact figure is not required.', field:'s2renew', items:[
+    {id:'renewConfidence',label:'% of franchisees you expect to renew next term',type:'number',placeholder:'%'},
+  ]},
+  {sec:2, type:'rating', title:'How would you rate your overall relationship with franchisees?', field:'relationshipRating', low:'Strained', high:'Excellent'},
+  {sec:2, type:'text', title:'Top complaints & current risks', sub:"The 3 complaints repeated most often, and any current issues we should know about.", field:'complaintsRisks', rows:4},
+  {sec:2, type:'checklist', title:'Why do your strongest franchisees perform well?', sub:'Pick up to 3.', field:'strongReasons', max:3, options:STRONG_REASONS},
+  {sec:2, type:'checklist', title:'Why do your underperforming franchisees struggle?', sub:'Pick up to 3.', field:'weakReasons', max:3, options:WEAK_REASONS},
+  {sec:2, type:'checklist', title:'Which support and feedback mechanisms currently exist?', field:'supportMechanisms', max:99, options:[
+    'Assigned support person','Regular business reviews','Field visits','Sales and marketing support','Financial coaching','Ongoing training','Franchisee council','Franchisee survey','Formal complaint process','Other']},
+  {sec:2, type:'matrix', title:'Franchisee support', field:'support', items:[
+    'Support is timely and practical.','Franchisees receive ongoing upskilling.','Franchisees understand their performance.','Franchisee feedback leads to action.']},
+  {sec:2, type:'sopgap', title:'Are there gaps in your current SOP?', field:'sopGap'},
+  {sec:2, type:'fields', title:'Audits', field:'s2audit', items:[
+    {id:'auditFrequency',label:'How often are outlets audited?',type:'text',placeholder:'e.g. Quarterly'},
+    {id:'auditScore',label:'Average audit score',type:'text',placeholder:'e.g. 82%'},
+  ]},
+
+  {sec:3, type:'text', title:'What specific growth outcome do you want in the next 12 months?', field:'growthOutcome', rows:3},
+  {sec:3, type:'checklist', title:'Which three outcomes matter most right now?', sub:'Pick up to 3.', field:'priorities', max:3, options:[
+    'More outlet sales','More qualified franchise leads','Higher franchise conversion','Faster outlet openings','Higher franchisee profitability','More renewals','More multi-unit franchisees','Expansion into new markets','Product innovation','Other']},
+  {sec:3, type:'text', title:'What have you tried in the last 12 months?', sub:'What worked, what failed, and why.', field:'triedLastYear', rows:4},
+  {sec:3, type:'matrix', title:'Franchise growth position', field:'growthPosition', items:[
+    'Our franchise offering is competitive.','Our competitive advantage is clear.','We know our ideal franchisee.','We are attracting the right leads.','Existing franchisees will happily validate the opportunity.']},
+  {sec:3, type:'text', title:'In one sentence, why should someone invest in your franchise instead of a competitor?', field:'onelinePitch', rows:2},
+  {sec:3, type:'checklist', title:'What are the most common objections from potential franchisees?', sub:'Pick up to 3.', field:'objections', max:3, options:OBJECTIONS},
+  {sec:3, type:'fields', title:'Average monthly figures', sub:'Outlets opened is already covered under Network Health, so it is not repeated here. Enter "N/A" for cost per lead or cost per acquisition if those are unclear.', field:'s3figures', grid:true, items:[
+    {id:'mfLeads',label:'Franchise leads (monthly)',type:'number'},
+    {id:'mfQualified',label:'Qualified leads (monthly)',type:'number'},
+    {id:'mfDiscovery',label:'Discovery meetings (monthly)',type:'number'},
+    {id:'mfSigned',label:'Signed agreements (monthly)',type:'number'},
+    {id:'mfSpend',label:'Marketing spend (monthly)',type:'text',placeholder:'e.g. RM 5,000/month'},
+    {id:'mfCpl',label:'Cost per lead',type:'text',placeholder:'e.g. RM 50, or N/A if unclear'},
+    {id:'mfCpa',label:'Cost per acquisition',type:'text',placeholder:'e.g. RM 3,200, or N/A if unclear'},
+  ]},
+  {sec:3, type:'checklist', title:'Where do you currently spend your franchise marketing budget?', field:'channels', max:99, options:[
+    'Meta advertising','Google advertising','Franchise expos','Organic content','Referrals','Outbound sales','Brokers or consultants','Partnerships','Other']},
+  {sec:3, type:'single', title:'Who currently owns franchise sales?', field:'salesOwner', options:[
+    'Founder','Dedicated franchise sales team','Shared internal role','External consultant or broker','No clear owner']},
+  {sec:3, type:'matrix', title:'Franchise sales process', field:'salesProcess', items:[
+    'We have a clear lead tracking system (e.g. CRM, sheet, tools).','Leads receive prompt follow-up.','We have clear qualification criteria.','Our sales stages are documented.','We have a clear prospect nurturing system.','We understand why leads are lost.']},
+  {sec:3, type:'fields', title:'Sales operations', field:'s3ops', items:[
+    {id:'followUps',label:'Follow-ups made before a lead is marked closed',type:'number'},
+    {id:'salesTarget',label:'Sales target & how the sales team is rewarded',type:'text',full:true},
+  ]},
+];
+
+const SECTION_NAMES = {1:'Network Health', 2:'Franchisee Health', 3:'Growth Health'};
+let answers = {}; // flat: answers[field] = value | {idx:val} for matrix | [selected] for checklist | {itemId:val} for fields
+
+let step = 0; // 0 = intro, 1..N = SCREENS index+1, N+1 = results
+const TOTAL = SCREENS.length;
+
+/* ---------------- local autosave (per-viewer, this browser only) ---------------- */
+const STORAGE_KEY = 'mfg_diagnostic_progress_v1';
+let savedProgress = null;
+try {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (raw) savedProgress = JSON.parse(raw);
+} catch (e) { savedProgress = null; }
+
+if (savedProgress && savedProgress.answers) {
+  answers = savedProgress.answers;
+}
+
+function saveProgress(){
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      answers, step,
+      name: document.getElementById('fName') ? document.getElementById('fName').value : '',
+      brand: document.getElementById('fBrand') ? document.getElementById('fBrand').value : '',
+      savedAt: Date.now(),
+    }));
+  } catch (e) { /* storage unavailable — proceed without autosave */ }
+}
+
+function clearProgress(){
+  try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+}
+
+/* ---------------- render helpers ---------------- */
+function ratingHTML(field, low, high, saved){
+  let btns = '';
+  for (let v=1; v<=5; v++){
+    btns += `<div class="rateBtn ${saved===v?'picked':''}" data-rate="${field}" data-val="${v}">${v}</div>`;
+  }
+  return `<div class="ratingRow">${btns}</div><div class="rateEnds"><span>${low}</span><span>${high}</span></div>`;
+}
+
+function matrixHTML(field, items, saved){
+  saved = saved || {};
+  let rows = items.map((txt, idx) => {
+    let btns = '';
+    for (let v=1; v<=5; v++){
+      btns += `<div class="mBtn ${saved[idx]===v?'picked':''}" data-matrix="${field}" data-idx="${idx}" data-val="${v}">${v}</div>`;
+    }
+    return `<div class="matrixRow"><div class="matrixTxt">${txt}</div><div class="matrixScale">${btns}</div></div>`;
+  }).join('');
+  return `${rows}<div class="matrixCaption"><span>Strongly disagree</span><span>Strongly agree</span></div>`;
+}
+
+function checklistHTML(field, options, max, saved){
+  saved = saved || [];
+  let rows = options.map((txt,idx) => {
+    const picked = saved.includes(txt);
+    return `<label class="chk ${picked?'picked':''}" data-check="${field}" data-max="${max}" data-txt="${txt.replace(/"/g,'&quot;')}">
+      <span class="box">${picked?'✓':''}</span><span class="txt">${txt}</span></label>`;
+  }).join('');
+  const counter = max < 99 ? `<div class="checkCounter" data-counter="${field}">${saved.length}/${max} selected</div>` : '';
+  const hasOther = options.includes('Other');
+  const otherShown = saved.includes('Other');
+  const otherBox = hasOther ? `<div class="field otherBox" style="display:${otherShown?'block':'none'}" data-otherbox="${field}">
+      <label>Please elaborate on "Other"</label>
+      <input data-othertext="${field}" type="text" value="${(answers[field+'_otherDetail']||'').replace(/"/g,'&quot;')}">
+    </div>` : '';
+  return `<div class="checkGrid">${rows}</div>${counter}${otherBox}`;
+}
+
+function singleHTML(field, options, saved){
+  let rows = options.map(txt => {
+    const picked = saved === txt;
+    return `<label class="rdo ${picked?'picked':''}" data-single="${field}" data-txt="${txt.replace(/"/g,'&quot;')}">
+      <span class="dot"></span><span class="txt">${txt}</span></label>`;
+  }).join('');
+  return `<div class="radioGrid">${rows}</div>`;
+}
+
+function fieldsHTML(field, items, saved, grid){
+  saved = saved || {};
+  const wrap = grid ? 'numGrid' : 'grid2';
+  const rows = items.map(it => {
+    const val = saved[it.id] || '';
+    const cls = it.full ? 'field full' : 'field';
+    const input = it.type === 'text' && it.rows ? '' : '';
+    return `<div class="${cls}"><label>${it.label}</label>
+      <input data-fieldval="${field}|${it.id}" type="${it.type}" value="${val.replace ? val.replace(/"/g,'&quot;') : val}" placeholder="${it.placeholder||''}">
+    </div>`;
+  }).join('');
+  return `<div class="${wrap}">${rows}</div>`;
+}
+
+function textHTML(field, rows, saved){
+  return `<div class="field"><textarea data-textval="${field}" rows="${rows||4}" placeholder="Type your answer...">${saved||''}</textarea></div>`;
+}
+
+function sopgapHTML(field, saved){
+  saved = saved || {};
+  const opts = ['Yes','No','Unsure'];
+  const pills = opts.map(o => `<div class="pill ${saved.choice===o?'picked':''}" data-sopchoice="${field}" data-val="${o}">${o}</div>`).join('');
+  const showText = saved.choice === 'Yes';
+  return `<div class="pillRow">${pills}</div>
+    <div class="field" style="display:${showText?'block':'none'}" data-sopdetail="${field}">
+      <label>Please specify</label>
+      <textarea data-sopdetailtext="${field}" rows="3">${saved.detail||''}</textarea>
+    </div>`;
+}
+
+/* ---------------- required-answer validation ---------------- */
+function isComplete(s){
+  const v = answers[s.field];
+  if (s.type === 'rating') return typeof v === 'number';
+  if (s.type === 'matrix') {
+    if (!v) return false;
+    return s.items.every((_, idx) => v[idx] !== undefined && v[idx] !== null);
+  }
+  if (s.type === 'checklist') {
+    if (!v || v.length === 0) return false;
+    if (v.includes('Other')) {
+      const other = answers[s.field+'_otherDetail'];
+      if (!other || !String(other).trim()) return false;
+    }
+    return true;
+  }
+  if (s.type === 'single') return !!v;
+  if (s.type === 'fields') {
+    if (!v) return false;
+    return s.items.every(it => v[it.id] !== undefined && String(v[it.id]).trim() !== '');
+  }
+  if (s.type === 'text') return !!(v && v.trim());
+  if (s.type === 'sopgap') {
+    if (!v || !v.choice) return false;
+    if (v.choice === 'Yes') return !!(v.detail && v.detail.trim());
+    return true;
+  }
+  return true;
+}
+
+function updateContinueState(stepNum){
+  const s = SCREENS[stepNum-1];
+  if (!s) return;
+  const btn = document.getElementById(`continueBtn-${stepNum}`);
+  if (btn) btn.disabled = !isComplete(s);
+}
+
+/* ---------------- build screens ---------------- */
+const qHost = document.getElementById('qHost');
+SCREENS.forEach((s, idx) => {
+  const stepNum = idx + 1;
+  const div = document.createElement('div');
+  div.className = 'step';
+  div.dataset.step = String(stepNum);
+  div.dataset.sec = s.sec;
+
+  let body = '';
+  if (s.type === 'rating') body = ratingHTML(s.field, s.low, s.high, answers[s.field]);
+  else if (s.type === 'matrix') body = matrixHTML(s.field, s.items, answers[s.field]);
+  else if (s.type === 'checklist') body = checklistHTML(s.field, s.options, s.max, answers[s.field]);
+  else if (s.type === 'single') body = singleHTML(s.field, s.options, answers[s.field]);
+  else if (s.type === 'fields') body = fieldsHTML(s.field, s.items, answers[s.field], s.grid);
+  else if (s.type === 'text') body = textHTML(s.field, s.rows, answers[s.field]);
+  else if (s.type === 'sopgap') body = sopgapHTML(s.field, answers[s.field]);
+
+  const disabledAttr = isComplete(s) ? '' : 'disabled';
+
+  div.innerHTML = `
+    <p class="eyebrow">${SECTION_NAMES[s.sec]}</p>
+    <h2>${s.title}</h2>
+    ${s.sub ? `<p class="sub">${s.sub}</p>` : ''}
+    <div class="qbody" id="qbody-${stepNum}">${body}</div>
+    <div class="nav">
+      <button class="btn-ghost" data-goto="${stepNum-1}">← Back</button>
+      <button class="btn-primary" id="continueBtn-${stepNum}" ${disabledAttr} data-goto="${stepNum+1}">${stepNum === TOTAL ? 'See my results →' : 'Continue →'}</button>
+    </div>`;
+  qHost.appendChild(div);
+});
+
+/* ---------------- section progress bar ---------------- */
+const sectionBar = document.getElementById('sectionBar');
+[1,2,3].forEach(sec => {
+  const seg = document.createElement('div');
+  seg.className = 'secSeg';
+  seg.innerHTML = `<div class="label"><span>${SECTION_NAMES[sec]}</span><span class="cur"></span></div><div class="secTrack"><div class="secFill" data-secfill="${sec}"></div></div>`;
+  sectionBar.appendChild(seg);
+});
+
+function renderProgress(){
+  const stepCounter = document.getElementById('stepCounter');
+  if (step === 0) { stepCounter.textContent = ''; [1,2,3].forEach(sec=>updateSecFill(sec,0)); return; }
+  if (step > TOTAL) { stepCounter.textContent = ''; [1,2,3].forEach(sec=>updateSecFill(sec,1)); return; }
+  const s = SCREENS[step-1];
+  const secScreens = SCREENS.filter(x=>x.sec===s.sec);
+  const idxInSec = secScreens.indexOf(s) + 1;
+  stepCounter.textContent = `${SECTION_NAMES[s.sec]} — ${idxInSec} of ${secScreens.length}`;
+  [1,2,3].forEach(sec => {
+    if (sec < s.sec) updateSecFill(sec,1);
+    else if (sec > s.sec) updateSecFill(sec,0);
+    else updateSecFill(sec, idxInSec/secScreens.length);
+  });
+}
+function updateSecFill(sec, pct){
+  document.querySelector(`.secFill[data-secfill="${sec}"]`).style.width = (pct*100)+'%';
+}
+
+/* ---------------- navigation ---------------- */
+function goTo(n){
+  document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+  if (n === 0) {
+    document.querySelector('.step[data-step="0"]').classList.add('active');
+  } else if (n > TOTAL) {
+    computeAndRenderResults();
+    document.getElementById('resultsStep').classList.add('active');
+    setTimeout(autoEmailPdfCopy, 200); // let layout settle before capturing
+  } else {
+    document.querySelector(`.step[data-step="${n}"]`).classList.add('active');
+  }
+  step = n;
+  renderProgress();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ---------------- interaction wiring (delegated, CSP-safe) ---------------- */
+document.getElementById('card').addEventListener('click', (e) => {
+  const rate = e.target.closest('[data-rate]');
+  if (rate) {
+    const field = rate.dataset.rate, val = parseInt(rate.dataset.val,10);
+    answers[field] = val;
+    rate.parentElement.querySelectorAll('.rateBtn').forEach(b=>b.classList.remove('picked'));
+    rate.classList.add('picked');
+    updateContinueState(step); saveProgress();
+    return;
+  }
+  const mx = e.target.closest('[data-matrix]');
+  if (mx) {
+    const field = mx.dataset.matrix, idx = mx.dataset.idx, val = parseInt(mx.dataset.val,10);
+    answers[field] = answers[field] || {};
+    answers[field][idx] = val;
+    mx.closest('.matrixScale').querySelectorAll('.mBtn').forEach(b=>b.classList.remove('picked'));
+    mx.classList.add('picked');
+    updateContinueState(step); saveProgress();
+    return;
+  }
+  const chk = e.target.closest('[data-check]');
+  if (chk) {
+    const field = chk.dataset.check, txt = chk.dataset.txt, max = parseInt(chk.dataset.max,10);
+    answers[field] = answers[field] || [];
+    const i = answers[field].indexOf(txt);
+    if (i >= 0) { answers[field].splice(i,1); chk.classList.remove('picked'); chk.querySelector('.box').textContent=''; }
+    else {
+      if (answers[field].length >= max) return;
+      answers[field].push(txt); chk.classList.add('picked'); chk.querySelector('.box').textContent='✓';
+    }
+    const counter = chk.closest('.qbody').querySelector(`[data-counter="${field}"]`);
+    if (counter) counter.textContent = `${answers[field].length}/${max} selected`;
+    if (txt === 'Other') {
+      const otherBox = chk.closest('.qbody').querySelector(`[data-otherbox="${field}"]`);
+      if (otherBox) otherBox.style.display = answers[field].includes('Other') ? 'block' : 'none';
+    }
+    updateContinueState(step); saveProgress();
+    return;
+  }
+  const rdo = e.target.closest('[data-single]');
+  if (rdo) {
+    const field = rdo.dataset.single, txt = rdo.dataset.txt;
+    answers[field] = txt;
+    rdo.closest('.radioGrid').querySelectorAll('.rdo').forEach(b=>b.classList.remove('picked'));
+    rdo.classList.add('picked');
+    updateContinueState(step); saveProgress();
+    return;
+  }
+  const sop = e.target.closest('[data-sopchoice]');
+  if (sop) {
+    const field = sop.dataset.sopchoice, val = sop.dataset.val;
+    answers[field] = answers[field] || {};
+    answers[field].choice = val;
+    sop.closest('.pillRow').querySelectorAll('.pill').forEach(b=>b.classList.remove('picked'));
+    sop.classList.add('picked');
+    const detailBox = sop.closest('.qbody').querySelector(`[data-sopdetail="${field}"]`);
+    if (detailBox) detailBox.style.display = (val === 'Yes') ? 'block' : 'none';
+    updateContinueState(step); saveProgress();
+    return;
+  }
+  const btn = e.target.closest('button');
+  if (btn && btn.dataset.goto !== undefined) {
+    if (btn.disabled) return;
+    goTo(parseInt(btn.dataset.goto,10)); return;
+  }
+  if (btn && btn.dataset.action === 'print') { downloadResultsPDF(); return; }
+  if (btn && btn.dataset.action === 'restart') { clearProgress(); location.reload(); return; }
+});
+
+document.getElementById('card').addEventListener('input', (e) => {
+  const fv = e.target.closest('[data-fieldval]');
+  if (fv) {
+    const [field, id] = fv.dataset.fieldval.split('|');
+    answers[field] = answers[field] || {};
+    answers[field][id] = fv.value;
+  }
+  const tv = e.target.closest('[data-textval]');
+  if (tv) answers[tv.dataset.textval] = tv.value;
+  const sd = e.target.closest('[data-sopdetailtext]');
+  if (sd) {
+    const field = sd.dataset.sopdetailtext;
+    answers[field] = answers[field] || {};
+    answers[field].detail = sd.value;
+  }
+  const ot = e.target.closest('[data-othertext]');
+  if (ot) answers[ot.dataset.othertext+'_otherDetail'] = ot.value;
+  if (e.target.id === 'fName' || e.target.id === 'fBrand') updateBeginState();
+  updateContinueState(step);
+  saveProgress();
+});
+
+function updateBeginState(){
+  const name = document.getElementById('fName').value.trim();
+  const brand = document.getElementById('fBrand').value.trim();
+  document.getElementById('beginBtn').disabled = !(name && brand);
+}
+
+/* ---------------- scoring ---------------- */
+const RATING_GROUPS = [
+  {key:'dataConfidence', label:'Data Accuracy', axis:'Data Accuracy', pillar:1, kind:'single', text:'Confidence in network data accuracy'},
+  {key:'hqReady', label:'HQ Readiness', axis:'HQ Readiness', pillar:1, kind:'matrix', items:SCREENS.find(s=>s.field==='hqReady').items},
+  {key:'leadership', label:'Leadership & Culture', axis:'Leadership & Culture', pillar:1, kind:'matrix', items:SCREENS.find(s=>s.field==='leadership').items},
+  {key:'relationshipRating', label:'Franchisee Relationship', axis:'Relationship', pillar:2, kind:'single', text:'Overall relationship with franchisees'},
+  {key:'support', label:'Franchisee Support', axis:'Support', pillar:2, kind:'matrix', items:SCREENS.find(s=>s.field==='support').items},
+  {key:'growthPosition', label:'Growth Position', axis:'Growth Position', pillar:3, kind:'matrix', items:SCREENS.find(s=>s.field==='growthPosition').items},
+  {key:'salesProcess', label:'Sales Process', axis:'Sales Process', pillar:3, kind:'matrix', items:SCREENS.find(s=>s.field==='salesProcess').items},
+];
+const PILLAR_NAMES = {1:'Network Health', 2:'Franchisee Health', 3:'Growth Health'};
+
+function groupAverage(g){
+  if (g.kind === 'single') {
+    const v = answers[g.key];
+    return {avg: v || null, answered: !!v};
+  }
+  const vals = answers[g.key] || {};
+  const nums = Object.values(vals).filter(v=>v);
+  if (nums.length === 0) return {avg:null, answered:false};
+  return {avg: nums.reduce((a,b)=>a+b,0)/nums.length, answered:true};
+}
+
+let lastScores = null;
+
+function computeAndRenderResults(){
+  const groupResults = RATING_GROUPS.map(g => ({...g, ...groupAverage(g)}));
+  const pillarScores = {1:[],2:[],3:[]};
+  groupResults.forEach(g => pillarScores[g.pillar].push(g.avg !== null ? g.avg : 3));
+  const pillarAvg = {};
+  [1,2,3].forEach(p => pillarAvg[p] = pillarScores[p].reduce((a,b)=>a+b,0)/pillarScores[p].length);
+  const overall = (pillarAvg[1]+pillarAvg[2]+pillarAvg[3])/3;
+  lastScores = {pillarAvg, overall};
+
+  const brand = document.getElementById('fBrand').value.trim();
+  document.getElementById('resBrandLine').textContent = brand ? `${brand} — Brand Health` : 'Your Brand Health';
+
+  // verdict
+  const vb = document.getElementById('verdictBlock');
+  const vt = document.getElementById('verdictText');
+  let pill, text;
+  if (pillarAvg[1] < 2.75) {
+    pill = ['risk','Network foundation first'];
+    text = "HQ readiness and network fundamentals are the constraint. Before adding franchisee-facing programs or a growth push, the data, systems and leadership alignment behind the network need to be solid — otherwise growth just scales the cracks.";
+  } else if (pillarAvg[2] < 2.75) {
+    pill = ['risk','Franchisee health is the constraint'];
+    text = "The HQ side of the business is workable, but franchisee relationships and support are the weak link. This is where churn and underperformance are coming from, and it will undercut any growth investment until it's addressed.";
+  } else if (pillarAvg[3] < 3.25) {
+    pill = ['crack','Foundation solid — growth is the gap'];
+    text = "Network and franchisee health can support more scale. The constraint is on the growth side — positioning, lead quality, or sales process discipline. This is a good system to build a growth engine on top of.";
+  } else {
+    pill = ['strength','Strong across all three pillars'];
+    text = "Network health, franchisee health and growth mechanics are all in solid shape. The conversation from here is about ambition and capacity, not repair.";
+  }
+  vb.innerHTML = `<div class="verdict ${pill[0]}">${pill[1]}</div>`;
+  vt.textContent = text;
+
+  // pillar cards
+  const pillarHost = document.getElementById('pillarScores');
+  pillarHost.innerHTML = [1,2,3].map(p => {
+    const pct = Math.round((pillarAvg[p]/5)*100);
+    const color = pillarAvg[p] < 2.75 ? 'var(--crit)' : (pillarAvg[p] < 3.75 ? 'var(--warn)' : 'var(--good)');
+    return `<div class="pillarCard">
+      <div class="pillarHead"><span class="pillarName">${PILLAR_NAMES[p]}</span><span class="pillarNum" style="color:${color}">${pillarAvg[p].toFixed(1)}<span style="font-size:13px;color:var(--ink-faint)">/5</span></span></div>
+      <div class="pillarTrack"><div class="pillarFill" style="width:${pct}%;background:${color}"></div></div>
+    </div>`;
+  }).join('');
+
+  drawRadar(groupResults);
+
+  submitToSheet({pillarAvg, overall});
+  clearProgress();
+}
+
+function wrapAxisLabel(text, maxLen){
+  maxLen = maxLen || 12;
+  const words = text.split(' ');
+  const lines = [];
+  let cur = '';
+  words.forEach(w => {
+    const trial = (cur + ' ' + w).trim();
+    if (cur && trial.length > maxLen) { lines.push(cur); cur = w; }
+    else cur = trial;
+  });
+  if (cur) lines.push(cur);
+  return lines;
+}
+
+function drawRadar(groupResults){
+  const svg = document.getElementById('radar');
+  const cx = 240, cy = 220, R = 128;
+  const n = groupResults.length;
+  const levels = 5;
+  const cs = getComputedStyle(document.documentElement);
+  const lineColor = cs.getPropertyValue('--card-line').trim();
+  const inkSoft = cs.getPropertyValue('--ink-soft').trim();
+  const blue = cs.getPropertyValue('--blue').trim();
+  let out = '';
+  for (let l=1;l<=levels;l++){
+    const r = R*l/levels; let pts=[];
+    for (let i=0;i<n;i++){ const a=(Math.PI*2*i)/n - Math.PI/2; pts.push(`${cx+r*Math.cos(a)},${cy+r*Math.sin(a)}`); }
+    out += `<polygon points="${pts.join(' ')}" fill="none" stroke="${lineColor}" stroke-width="1"/>`;
+  }
+  for (let i=0;i<n;i++){
+    const a=(Math.PI*2*i)/n - Math.PI/2;
+    const x2=cx+R*Math.cos(a), y2=cy+R*Math.sin(a);
+    out += `<line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" stroke="${lineColor}" stroke-width="1"/>`;
+    const lx=cx+(R+34)*Math.cos(a), ly=cy+(R+34)*Math.sin(a);
+    const anchor = Math.abs(Math.cos(a))<0.2 ? 'middle' : (Math.cos(a)>0?'start':'end');
+    const lines = wrapAxisLabel(groupResults[i].axis);
+    const lineHeight = 12;
+    const startY = ly - ((lines.length-1)*lineHeight)/2;
+    const tspans = lines.map((line, li) => `<tspan x="${lx}" dy="${li===0?0:lineHeight}">${line}</tspan>`).join('');
+    out += `<text x="${lx}" y="${startY}" font-size="10.5" font-weight="700" fill="${inkSoft}" text-anchor="${anchor}">${tspans}</text>`;
+  }
+  let dPts=[];
+  groupResults.forEach((g,i)=>{
+    const v = g.avg !== null ? g.avg : 3;
+    const r = R*v/levels; const a=(Math.PI*2*i)/n - Math.PI/2;
+    dPts.push(`${cx+r*Math.cos(a)},${cy+r*Math.sin(a)}`);
+  });
+  out += `<polygon points="${dPts.join(' ')}" fill="${blue}" fill-opacity="0.16" stroke="${blue}" stroke-width="2.5"/>`;
+  groupResults.forEach((g,i)=>{
+    const v = g.avg !== null ? g.avg : 3;
+    const r = R*v/levels; const a=(Math.PI*2*i)/n - Math.PI/2;
+    out += `<circle cx="${cx+r*Math.cos(a)}" cy="${cy+r*Math.sin(a)}" r="3.5" fill="${blue}"/>`;
+  });
+  svg.innerHTML = out;
+}
+
+/* ---------------- submission ---------------- */
+function flattenAnswers(scores){
+  const out = {
+    submittedAt: new Date().toISOString(),
+    name: document.getElementById('fName').value,
+    brand: document.getElementById('fBrand').value,
+    overallScore: scores.overall.toFixed(2),
+    networkScore: scores.pillarAvg[1].toFixed(2),
+    franchiseeScore: scores.pillarAvg[2].toFixed(2),
+    growthScore: scores.pillarAvg[3].toFixed(2),
+  };
+  SCREENS.forEach(s => {
+    const v = answers[s.field];
+    if (s.type === 'fields') {
+      s.items.forEach(it => out[it.id] = (v && v[it.id]) || '');
+    } else if (s.type === 'matrix') {
+      s.items.forEach((txt,idx) => out[`${s.field}_${idx+1}`] = (v && v[idx]) || '');
+    } else if (s.type === 'checklist') {
+      out[s.field] = (v || []).join('; ');
+      if (s.options.includes('Other')) out[`${s.field}_otherDetail`] = answers[`${s.field}_otherDetail`] || '';
+    } else if (s.type === 'sopgap') {
+      out.sopGap = (v && v.choice) || '';
+      out.sopGapDetail = (v && v.detail) || '';
+    } else {
+      out[s.field] = v || '';
+    }
+  });
+  return out;
+}
+
+/* ---------------- PDF generation ----------------
+   window.print() is blocked inside the artifact sandbox, and a screenshot-based
+   PDF (html2canvas) rendered CSS custom-property colors as near-invisible text.
+   So the PDF is built as real text with jsPDF: a scores summary followed by
+   every question and its answer, section by section. */
+function answerText(s){
+  const v = answers[s.field];
+  if (s.type === 'rating') return v ? `${v}/5` : 'No answer';
+  if (s.type === 'matrix') {
+    return s.items.map((txt, idx) => `- ${txt} (${(v && v[idx]) || '—'}/5)`).join('\n');
+  }
+  if (s.type === 'checklist') {
+    let str = (v && v.length) ? v.join(', ') : 'No answer';
+    if (v && v.includes('Other') && answers[s.field+'_otherDetail']) str += `  [Other: ${answers[s.field+'_otherDetail']}]`;
+    return str;
+  }
+  if (s.type === 'single') return v || 'No answer';
+  if (s.type === 'fields') {
+    return s.items.map(it => `- ${it.label}: ${(v && v[it.id]) || '—'}`).join('\n');
+  }
+  if (s.type === 'text') return v || 'No answer';
+  if (s.type === 'sopgap') {
+    let str = (v && v.choice) || 'No answer';
+    if (v && v.choice === 'Yes' && v.detail) str += ` — ${v.detail}`;
+    return str;
+  }
+  return 'No answer';
+}
+
+function pdfFilename(){
+  const brand = (document.getElementById('fBrand').value || 'diagnostic').trim().replace(/[^a-z0-9]+/gi, '-');
+  return `${brand}-brand-health-diagnostic.pdf`;
+}
+
+function buildFullPdfBlob(scores){
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF('p', 'pt', 'a4');
+  const margin = 48;
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const pageHeight = pdf.internal.pageSize.getHeight();
+  const maxWidth = pageWidth - margin * 2;
+  let y = margin;
+
+  function ensureSpace(h){
+    if (y + h > pageHeight - margin) { pdf.addPage(); y = margin; }
+  }
+  function heading(text, size){
+    ensureSpace(size + 14);
+    pdf.setFont('helvetica', 'bold'); pdf.setFontSize(size); pdf.setTextColor(11, 24, 43);
+    pdf.text(text, margin, y); y += size + 8;
+  }
+  function label(text){
+    ensureSpace(24);
+    pdf.setFont('helvetica', 'bold'); pdf.setFontSize(11); pdf.setTextColor(20, 20, 20);
+    const lines = pdf.splitTextToSize(text, maxWidth);
+    lines.forEach(line => { ensureSpace(14); pdf.text(line, margin, y); y += 14; });
+  }
+  function body(text, color){
+    pdf.setFont('helvetica', 'normal'); pdf.setFontSize(10); pdf.setTextColor(...(color || [70,70,70]));
+    const lines = pdf.splitTextToSize(text, maxWidth);
+    lines.forEach(line => { ensureSpace(13); pdf.text(line, margin + 4, y); y += 13; });
+    y += 6;
+  }
+  function rule(){
+    ensureSpace(10);
+    pdf.setDrawColor(225, 225, 220);
+    pdf.line(margin, y, pageWidth - margin, y);
+    y += 14;
+  }
+
+  const brand = document.getElementById('fBrand').value.trim() || '(brand not given)';
+  const name = document.getElementById('fName').value.trim() || '(name not given)';
+
+  heading(`${brand} — Brand Health Diagnostic`, 18);
+  pdf.setFont('helvetica', 'normal'); pdf.setFontSize(10.5); pdf.setTextColor(110,110,110);
+  pdf.text(`Completed by ${name} on ${new Date().toLocaleDateString()}`, margin, y);
+  y += 22;
+
+  heading('Pillar Scores', 13);
+  body(`Network Health: ${scores.pillarAvg[1].toFixed(1)}/5     Franchisee Health: ${scores.pillarAvg[2].toFixed(1)}/5     Growth Health: ${scores.pillarAvg[3].toFixed(1)}/5`, [20,20,20]);
+  rule();
+
+  [1,2,3].forEach(sec => {
+    heading(SECTION_NAMES[sec], 14);
+    SCREENS.filter(s => s.sec === sec).forEach(s => {
+      label(s.title);
+      body(answerText(s));
+    });
+    rule();
+  });
+
+  return pdf.output('blob');
+}
+
+async function downloadResultsPDF(){
+  const note = document.getElementById('submitNote');
+  const btn = document.getElementById('pdfBtn');
+  const prevLabel = btn.textContent;
+  btn.textContent = 'Preparing PDF…';
+  btn.disabled = true;
+  try {
+    const blob = buildFullPdfBlob(lastScores);
+    const downloads = (typeof claude !== 'undefined' && claude.use) ? await claude.use('downloads') : null;
+    if (downloads) {
+      await downloads.save({filename: pdfFilename(), data: blob});
+      if (note) note.textContent = 'PDF saved.';
+    } else {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = pdfFilename();
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
+    }
+  } catch (err) {
+    if (note) note.textContent = 'Could not generate the PDF just now — please try again.';
+  } finally {
+    btn.textContent = prevLabel;
+    btn.disabled = false;
+  }
+}
+
+async function autoEmailPdfCopy(){
+  if (!WEBHOOK_URL || !lastScores) return;
+  try {
+    const blob = buildFullPdfBlob(lastScores);
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const dataUri = reader.result; // "data:application/pdf;base64,...."
+      const base64 = dataUri.split(',')[1];
+      const body = new URLSearchParams({
+        type: 'pdf_copy',
+        name: document.getElementById('fName').value,
+        brand: document.getElementById('fBrand').value,
+        filename: pdfFilename(),
+        pdfBase64: base64,
+      });
+      fetch(WEBHOOK_URL, {method:'POST', mode:'no-cors', body}).catch(()=>{});
+    };
+    reader.readAsDataURL(blob);
+  } catch (err) { /* best-effort — never interrupt the visitor's flow */ }
+}
+
+function submitToSheet(scores){
+  const note = document.getElementById('submitNote');
+  if (!WEBHOOK_URL) { note.textContent = ''; return; }
+  const payload = flattenAnswers(scores);
+  const body = new URLSearchParams(payload);
+  fetch(WEBHOOK_URL, {method:'POST', mode:'no-cors', body})
+    .then(() => { note.textContent = 'Your responses have been recorded.'; })
+    .catch(() => { note.textContent = ''; });
+}
+
+// restore name/brand fields and show resume banner if there's saved progress
+if (savedProgress) {
+  if (savedProgress.name) document.getElementById('fName').value = savedProgress.name;
+  if (savedProgress.brand) document.getElementById('fBrand').value = savedProgress.brand;
+  if (savedProgress.step > 0) {
+    document.getElementById('resumeBanner').style.display = 'block';
+  }
+}
+updateBeginState();
+
+document.getElementById('card').addEventListener('click', (e) => {
+  const resumeBtn = e.target.closest('[data-action="resume"]');
+  if (resumeBtn) {
+    // rebuild all screen bodies so they reflect restored answers, then jump to saved step
+    document.querySelectorAll('.qbody').forEach(el => {
+      const stepNum = parseInt(el.id.replace('qbody-',''), 10);
+      const s = SCREENS[stepNum-1];
+      if (s.type === 'rating') el.innerHTML = ratingHTML(s.field, s.low, s.high, answers[s.field]);
+      else if (s.type === 'matrix') el.innerHTML = matrixHTML(s.field, s.items, answers[s.field]);
+      else if (s.type === 'checklist') el.innerHTML = checklistHTML(s.field, s.options, s.max, answers[s.field]);
+      else if (s.type === 'single') el.innerHTML = singleHTML(s.field, s.options, answers[s.field]);
+      else if (s.type === 'fields') el.innerHTML = fieldsHTML(s.field, s.items, answers[s.field], s.grid);
+      else if (s.type === 'text') el.innerHTML = textHTML(s.field, s.rows, answers[s.field]);
+      else if (s.type === 'sopgap') el.innerHTML = sopgapHTML(s.field, answers[s.field]);
+    });
+    document.getElementById('resumeBanner').style.display = 'none';
+    goTo(savedProgress.step || 1);
+    return;
+  }
+  const discardBtn = e.target.closest('[data-action="discard"]');
+  if (discardBtn) {
+    answers = {};
+    savedProgress = null;
+    clearProgress();
+    document.getElementById('resumeBanner').style.display = 'none';
+    document.getElementById('fName').value = '';
+    document.getElementById('fBrand').value = '';
+    updateBeginState();
+    return;
+  }
+});
+
+// autosave on every answer change and every navigation
+document.getElementById('card').addEventListener('click', saveProgress);
+document.getElementById('card').addEventListener('input', saveProgress);
+
+renderProgress();
+</script>
