@@ -907,6 +907,21 @@ function buildFullPdfBlob(scores){
     rule();
   });
 
+  // confidentiality footer — stamped on every page
+  const footerText = 'MYFG Proprietary & Confidential — Contains confidential brand information. Not for distribution or circulation. All rights reserved.';
+  const totalPages = pdf.internal.getNumberOfPages();
+  for (let p = 1; p <= totalPages; p++) {
+    pdf.setPage(p);
+    pdf.setDrawColor(225, 225, 220);
+    pdf.line(margin, pageHeight - 34, pageWidth - margin, pageHeight - 34);
+    pdf.setFont('helvetica', 'normal'); pdf.setFontSize(7.5); pdf.setTextColor(140, 140, 140);
+    const footerLines = pdf.splitTextToSize(footerText, maxWidth);
+    let fy = pageHeight - 24;
+    footerLines.forEach(line => { pdf.text(line, margin, fy); fy += 9; });
+    pdf.text(`© ${new Date().getFullYear()} MYFranchiseGuide`, pageWidth - margin, pageHeight - 24, {align:'right'});
+    pdf.text(`Page ${p} of ${totalPages}`, pageWidth - margin, pageHeight - 24 + 9, {align:'right'});
+  }
+
   return pdf.output('blob');
 }
 
