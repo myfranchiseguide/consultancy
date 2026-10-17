@@ -1,0 +1,1336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Franchise Insider – Brand Edition</title>
+<meta name="description" content="Malaysia's first-of-its-kind franchise industry dialogue. A highly curated, high-intent business networking event. 3 December 2026, HELP University Subang. HRD Claimable.">
+<meta property="og:title" content="The Franchise Insider – Brand Edition">
+<meta property="og:description" content="Malaysia's first-of-its-kind franchise industry dialogue. 3 Dec 2026 · HELP University Subang · HRD Claimable.">
+<meta name="theme-color" content="#0B3D91">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<style>
+/* Layout: white editorial page; red-square section labels; navy/red blocks carry emphasis, the roundtable diagram is the signature moment */
+:root{
+  --ink:#111111; --muted:#5E6470; --paper:#FFFFFF; --mist:#EEF2FB; --blush:#FBE9EC;
+  --navy:#0B3D91; --navy-deep:#082D6B; --red:#C8102E; --line:#E5E7EB; --navy-soft:#C9D4EE;
+  --display:'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --body:'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --wrap:1180px; --radius:4px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+section{padding-block:96px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.005em}
+h2{font-size:clamp(34px,4.6vw,56px)}
+h3{font-size:clamp(22px,2.2vw,28px);line-height:1.2}
+p{margin:0}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+.eyebrow::before{content:"";width:12px;height:12px;background:var(--red);flex:none}
+.lede{font-size:clamp(17px,1.5vw,20px);color:var(--muted);max-width:62ch}
+.sec-head{display:flex;flex-direction:column;gap:18px;margin-bottom:48px;max-width:780px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:var(--radius);font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;transition:transform .2s ease, background .2s ease, box-shadow .2s ease}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#A60D26;transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(200,16,46,.6)}
+.btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-ghost:hover{background:var(--navy);color:#fff}
+.btn-white{background:#fff;color:var(--navy)}
+.btn-white:hover{transform:translateY(-2px)}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:saturate(160%) blur(10px);-webkit-backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.nav-logo img{height:34px;width:auto}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{text-decoration:none;font-size:15px;font-weight:500;color:var(--muted)}
+.nav-links a:hover{color:var(--navy)}
+.nav .btn{padding:11px 18px;font-size:14px}
+.nav-links a.btn,.nav-links a.btn:hover{color:#fff}
+@media (max-width:900px){.nav-links a{display:none}}
+
+/* hero */
+.hero{padding-block:56px 80px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-180px;top:-120px;width:520px;height:520px;border:1px solid var(--line);border-radius:50%;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:64px;align-items:center;position:relative;z-index:1}
+.hero-copy{display:flex;flex-direction:column;gap:26px;min-width:0}
+.hero-mark{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.hero-mark{flex-wrap:wrap}.hero-mark span{display:inline-block;white-space:nowrap;padding:6px 12px;background:var(--blush);border-radius:2px}
+.hero-word{width:min(560px,100%);height:auto}
+.hero h1{font-size:clamp(40px,5.4vw,72px)}
+.hero h1 i{color:var(--navy)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:600;background:#fff}
+.chip svg{width:16px;height:16px;color:var(--red);flex:none}
+.chip.hrd{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip.hrd svg{color:#fff}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.countdown{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.cd-units{display:flex;gap:8px}
+.cd-unit{min-width:58px;padding:8px 6px;background:var(--mist);text-align:center;border-radius:3px}
+.cd-unit b{display:block;font-family:var(--display);font-size:26px;line-height:1;color:var(--navy);font-weight:400}
+.cd-unit small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+
+/* VSL */
+.vsl{position:relative;justify-self:end;width:min(360px,100%);aspect-ratio:9/16;max-width:100%;border-radius:18px;overflow:hidden;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 70%);box-shadow:0 40px 80px -40px rgba(11,61,145,.55),0 0 0 1px rgba(11,61,145,.12);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:22px}
+.vsl::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(200,16,46,.55),transparent 45%);pointer-events:none}
+.vsl-top{position:relative;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.vsl-top img{height:22px;width:auto}
+.vsl-play{position:relative;align-self:center;width:84px;height:84px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;border:0;box-shadow:0 0 0 0 rgba(255,255,255,.5);animation:pulse 2.4s ease-out infinite}
+.vsl-play svg{width:30px;height:30px;margin-left:5px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.45)}80%,100%{box-shadow:0 0 0 22px rgba(255,255,255,0)}}
+.vsl-cap{position:relative;display:flex;flex-direction:column;gap:6px}
+.vsl-cap h3{font-size:24px}
+.vsl-cap p{font-size:14px;color:var(--navy-soft)}
+.vsl-note{position:absolute;left:22px;right:22px;bottom:50%;transform:translateY(80px);text-align:center;font-size:13px;color:var(--navy-soft);opacity:0;transition:opacity .3s}
+.vsl.tapped .vsl-note{opacity:1}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .vsl{justify-self:center;width:min(300px,100%)}
+  .hero::after{display:none}
+}
+
+/* details band */
+.band{background:var(--navy);color:#fff;padding-block:0}
+.band-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.band-item{padding:30px 26px;display:flex;gap:16px;align-items:flex-start;border-left:1px solid rgba(255,255,255,.14)}
+.band-item:first-child{border-left:0;padding-left:0}
+.band-item svg{width:30px;height:30px;flex:none;color:#fff;opacity:.9}
+.band-item small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy-soft);margin-bottom:4px}
+.band-item b{display:block;font-family:var(--display);font-weight:400;font-size:24px;line-height:1.15}
+.band-item span{font-size:14px;color:var(--navy-soft)}
+@media (max-width:900px){.band-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.band-item{border-left:0;padding-left:0;border-top:1px solid rgba(255,255,255,.14)}.band-item:nth-child(-n+2){border-top:0}}
+@media (max-width:520px){.band-grid{grid-template-columns:1fr}.band-item:nth-child(2){border-top:1px solid rgba(255,255,255,.14)}}
+
+/* first of its kind */
+.first-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.stamp{display:inline-block;padding:8px 14px;border:2px solid var(--red);color:var(--red);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;transform:rotate(-2deg);border-radius:2px}
+.steps{display:flex;flex-direction:column;margin-top:28px;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px;padding:18px 0;border-bottom:1px solid var(--line);background:none;border-left:0;border-right:0;border-top:0;text-align:left;color:inherit;transition:background .25s}
+.step b{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.step h3{font-size:22px}
+.step p{font-size:15px;color:var(--muted);margin-top:4px}
+.step.on b{color:var(--red)}
+.step.on h3{color:var(--navy)}
+.rt-card{background:var(--mist);border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.rt-stage{position:relative;width:100%;aspect-ratio:5/2.5;max-width:100%}
+.rt-table{position:absolute;width:8.4%;aspect-ratio:1;border-radius:50%;background:#fff;border:2px solid var(--navy);transform:translate(-50%,-50%);display:grid;place-items:center}
+.rt-table i{width:34%;aspect-ratio:1;border-radius:50%;background:var(--red)}
+.rt-seat{position:absolute;width:2.2%;aspect-ratio:1;border-radius:50%;background:var(--navy);transform:translate(-50%,-50%);transition:left 1.4s cubic-bezier(.6,.05,.3,1),top 1.4s cubic-bezier(.6,.05,.3,1),background .4s}
+.rt-stage.moving .rt-seat{background:#7C93C9}
+.rt-legend{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:var(--muted)}
+.rt-legend span{display:inline-flex;align-items:center;gap:8px}
+.rt-legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.rt-status{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--navy)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:64px}
+.stat{border-top:4px solid var(--red);padding-top:18px}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(48px,6vw,76px);line-height:1;color:var(--navy)}
+.stat small{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--red);margin-top:10px}
+.stat p{font-size:15px;color:var(--muted);margin-top:4px}
+@media (max-width:900px){.first-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.step{grid-template-columns:1fr;gap:4px}}
+
+/* topics */
+.topics{background:var(--mist)}
+.topic-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.topic{background:#fff;padding:22px 20px;border-top:4px solid var(--navy);display:flex;flex-direction:column;gap:10px;transition:transform .25s ease, box-shadow .25s ease}
+.topic:hover{transform:translateY(-4px);box-shadow:0 18px 30px -22px rgba(11,61,145,.5)}
+.topic small{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.topic p{font-family:var(--display);font-size:20px;line-height:1.22}
+.topic-note{margin-top:28px;display:flex;gap:16px;align-items:center;background:#fff;border-left:5px solid var(--red);padding:18px 22px;font-size:15px}
+.topic-note svg{width:26px;height:26px;color:var(--red);flex:none}
+@media (max-width:1000px){.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.topic-grid{grid-template-columns:1fr}}
+
+/* for / not for */
+.fit-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.fit{padding:34px;display:flex;flex-direction:column;gap:18px}
+.fit.yes{background:var(--navy);color:#fff}
+.fit.no{border:1px solid var(--line)}
+.fit h3{font-size:30px}
+.fit ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.fit li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:12px;padding:13px 0;border-top:1px solid rgba(255,255,255,.16);font-size:16px}
+.fit.no li{border-top-color:var(--line);color:var(--muted)}
+.fit li svg{width:22px;height:22px;margin-top:2px}
+.fit.yes li svg{color:#fff}
+.fit.no li svg{color:var(--red)}
+@media (max-width:800px){.fit-grid{grid-template-columns:1fr}}
+
+/* founder */
+.founder-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
+.quote{font-family:var(--display);font-size:clamp(28px,3.4vw,44px);line-height:1.18;position:relative;padding-left:28px;border-left:6px solid var(--red)}
+.quote i{color:var(--navy)}
+.sig{display:flex;align-items:center;gap:16px;margin-top:28px}
+.sig .av{width:58px;height:58px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:24px;flex:none}
+.sig b{display:block;font-size:17px}
+.sig span{font-size:14px;color:var(--muted)}
+.pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pillar{background:var(--mist);padding:20px;display:flex;flex-direction:column;gap:8px}
+.pillar svg{width:26px;height:26px;color:var(--navy)}
+.pillar b{font-size:16px}
+.pillar span{font-size:14px;color:var(--muted)}
+.creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.creds span{font-size:13px;font-weight:600;padding:7px 12px;border:1px solid var(--line);border-radius:999px}
+@media (max-width:900px){.founder-grid{grid-template-columns:1fr}}
+
+/* agenda */
+.agenda{background:var(--mist)}
+.tabs{display:inline-flex;background:#fff;padding:5px;border-radius:999px;gap:4px;margin-bottom:28px;border:1px solid var(--line)}
+.tab{border:0;background:transparent;padding:10px 20px;border-radius:999px;font-weight:700;font-size:14px;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--navy);color:#fff}
+.agenda-list{background:#fff;display:flex;flex-direction:column}
+.slot{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:20px;padding:18px 26px;border-bottom:1px solid var(--line);align-items:center;transition:background .2s}
+.slot:hover{background:#FAFBFE}
+.slot time{font-weight:700;color:var(--red);font-size:16px}
+.slot b{font-size:17px;font-weight:600}
+.slot .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:2px;background:var(--mist);color:var(--navy);white-space:nowrap}
+.slot.key{background:var(--blush)}
+.slot.key .tag{background:var(--red);color:#fff}
+.agenda-foot{margin-top:18px;font-size:14px;color:var(--muted);font-style:italic}
+@media (max-width:600px){.slot{grid-template-columns:70px minmax(0,1fr);padding:16px 16px}.slot .tag{grid-column:2;justify-self:start}}
+
+/* past */
+.past-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.vol{border:1px solid var(--line);padding:30px;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden}
+.vol::before{content:"";position:absolute;inset:0 0 auto;height:6px;background:var(--navy)}
+.vol.v2::before{background:var(--red)}
+.vol-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.vol-head h3{font-size:38px;color:var(--navy)}
+.vol.v2 .vol-head h3{color:var(--red)}
+.vol-head span{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.vol-stats{display:flex;gap:28px}
+.vol-stats b{display:block;font-family:var(--display);font-size:38px;font-weight:400;line-height:1}
+.vol-stats small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.tm{background:var(--mist);padding:18px 20px;border-left:4px solid var(--navy)}
+.vol.v2 .tm{border-left-color:var(--red)}
+.tm p{font-family:var(--display);font-size:19px;line-height:1.35}
+.tm span{display:block;margin-top:8px;font-size:13px;font-weight:700;color:var(--muted)}
+.past-foot{margin-top:26px;background:var(--navy);color:#fff;padding:20px 26px;display:flex;gap:14px;align-items:center;font-size:16px}
+.past-foot svg{width:24px;height:24px;flex:none}
+@media (max-width:800px){.past-grid{grid-template-columns:1fr}}
+
+
+.vol-body{display:grid;grid-template-columns:190px minmax(0,1fr);gap:20px;align-items:start}
+.vol-txt{display:flex;flex-direction:column;gap:14px;min-width:0}
+.yt{position:relative;width:100%;aspect-ratio:9/16;max-width:100%;border-radius:10px;overflow:hidden;background:var(--navy);border:0;padding:0;display:block;color:#fff}
+.yt img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.yt:hover img{transform:scale(1.04)}
+.yt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(8,29,70,.75))}
+.yt .yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:var(--red);display:grid;place-items:center;z-index:1;box-shadow:0 8px 20px -6px rgba(0,0,0,.5)}
+.yt .yt-play svg{width:22px;height:22px;margin-left:3px}
+.yt .yt-cap{position:absolute;left:12px;right:12px;bottom:12px;z-index:1;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:left}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt.soon{display:grid;place-items:center;background:linear-gradient(160deg,var(--red),#8E0B20);cursor:default}
+.yt.soon::after{display:none}
+.yt.soon span{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:12px}
+@media (max-width:520px){.vol-body{grid-template-columns:1fr}.yt{width:min(240px,100%);justify-self:center}}
+
+/* partners */
+.partner-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.partner{border:1px solid var(--line);background:#fff;padding:0;text-align:left;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease, border-color .25s}
+.partner:hover{transform:translateY(-5px);box-shadow:0 24px 40px -26px rgba(11,61,145,.45);border-color:var(--navy)}
+.partner-logo{aspect-ratio:16/10;display:grid;place-items:center;padding:24px}
+.partner-logo img{max-height:120px;width:auto;object-fit:contain}
+.partner-meta{padding:18px 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.partner-meta small{display:block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.partner-meta b{font-size:16px}
+.partner-meta svg{width:20px;height:20px;color:var(--navy);flex:none;transition:transform .25s}
+.partner:hover .partner-meta svg{transform:translateX(4px)}
+.partner-more{margin-top:20px;font-size:15px;color:var(--muted)}
+@media (max-width:860px){.partner-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.partner-grid{grid-template-columns:1fr}}
+
+/* modal */
+dialog{border:0;padding:0;max-width:min(560px,calc(100vw - 32px));width:100%;border-radius:8px;box-shadow:0 40px 80px -30px rgba(0,0,0,.45);color:var(--ink)}
+dialog::backdrop{background:rgba(8,20,48,.55);backdrop-filter:blur(3px)}
+dialog[open]{animation:pop .35s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.m-logo{display:grid;place-items:center;padding:28px;aspect-ratio:16/7}
+.m-logo img{max-height:120px;width:auto}
+.m-body{padding:28px;display:flex;flex-direction:column;gap:14px}
+.m-body small{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.m-body h3{font-size:30px}
+.m-tag{font-family:var(--display);font-size:20px;color:var(--navy);line-height:1.3}
+.m-body p{color:var(--muted);font-size:16px}
+.m-list{display:flex;flex-wrap:wrap;gap:8px}
+.m-list span{font-size:13px;font-weight:600;padding:6px 11px;background:var(--mist);border-radius:2px}
+.m-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 28px;border-top:1px solid var(--line);flex-wrap:wrap}
+.m-close{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.9);display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.m-close svg{width:18px;height:18px}
+
+/* tickets */
+.tickets{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.tickets::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;border:1px solid rgba(255,255,255,.1);left:-260px;bottom:-320px}
+.tickets .eyebrow{color:#fff}
+.tickets .eyebrow::before{background:var(--red)}
+.tickets .lede{color:var(--navy-soft)}
+.price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;position:relative}
+.price{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);padding:28px;display:flex;flex-direction:column;gap:10px;position:relative}
+.price.live{background:#fff;color:var(--ink);border-color:#fff}
+.price small{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy-soft)}
+.price.live small{color:var(--red)}
+.price .amt{font-family:var(--display);font-size:60px;line-height:1}
+.price .amt sup{font-size:22px;vertical-align:top;margin-right:4px;font-family:var(--body);font-weight:700}
+.price span{font-size:14px;color:var(--navy-soft)}
+.price.live span{color:var(--muted)}
+.price .badge{position:absolute;top:-12px;right:20px;background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px;border-radius:2px}
+.price.past{opacity:.45}
+.price.past .amt{text-decoration:line-through;text-decoration-thickness:2px}
+.buy-row{margin-top:30px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;position:relative}
+.buy-row p{font-size:14px;color:var(--navy-soft)}
+.next{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid rgba(255,255,255,.18);position:relative}
+.next div{padding:24px 24px 0 0;display:flex;flex-direction:column;gap:8px}
+.next b{font-family:var(--display);font-weight:400;font-size:44px;line-height:1;color:var(--red)}
+.next h3{font-size:22px}
+.next p{font-size:15px;color:var(--navy-soft)}
+@media (max-width:860px){.price-grid,.next{grid-template-columns:1fr}.next div{padding-right:0}}
+
+/* HRD form */
+.hrd-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.hrd-steps{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:0;counter-reset:s}
+.hrd-steps li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;padding:16px 0;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
+.hrd-steps li::before{counter-increment:s;content:counter(s);width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.hrd-steps b{color:var(--ink);display:block}
+.warn{margin-top:20px;background:var(--blush);border-left:5px solid var(--red);padding:16px 18px;font-size:14px}
+form{background:var(--mist);padding:32px;display:flex;flex-direction:column;gap:22px;min-width:0}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;min-width:0}
+legend{font-family:var(--display);font-size:24px;padding:0;margin-bottom:6px}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;min-width:0}
+label em{font-style:normal;color:var(--red)}
+input,select,textarea{font:inherit;font-size:15px;padding:12px 14px;border:1px solid #CBD3E3;border-radius:3px;background:#fff;color:var(--ink);width:100%;min-width:0}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,61,145,.15)}
+.hint{font-size:12px;font-weight:400;color:var(--muted)}
+.pax{background:#fff;padding:18px;display:flex;flex-direction:column;gap:12px;border-left:4px solid var(--navy);position:relative}
+.pax-head{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px;color:var(--navy)}
+.pax-rm{border:0;background:none;color:var(--red);font-size:13px;font-weight:700}
+.add-pax{align-self:flex-start;border:1px dashed var(--navy);background:transparent;color:var(--navy);padding:10px 16px;border-radius:3px;font-weight:700;font-size:14px}
+.check{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;font-size:14px;color:var(--muted)}
+.check input{width:18px;height:18px;margin-top:2px;flex:none}
+.form-msg{padding:16px 18px;font-size:15px;border-radius:3px}
+.form-msg.ok{background:#E7F5EC;color:#14532D;border-left:5px solid #15803D}
+.form-msg.err{background:var(--blush);color:#7F1D1D;border-left:5px solid var(--red)}
+@media (max-width:900px){.hrd-grid{grid-template-columns:1fr}}
+@media (max-width:560px){.row{grid-template-columns:1fr}form{padding:22px}}
+
+/* FAQ */
+.faq-list{border-top:1px solid var(--line);max-width:860px}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;text-align:left;font-family:var(--display);font-size:clamp(20px,2vw,24px);color:var(--ink)}
+.faq-q span.ic{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none;transition:transform .3s, background .3s}
+.faq-q span.ic svg{width:14px;height:14px}
+.faq-item.open .faq-q span.ic{transform:rotate(45deg);background:var(--navy);color:#fff;border-color:var(--navy)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a > div{overflow:hidden}
+.faq-a p{padding:0 50px 22px 0;color:var(--muted);font-size:16px;max-width:68ch}
+.faq-a p + p{padding-top:0}
+
+/* final */
+.final{padding-block:110px;text-align:left}
+.final-in{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.final h2{font-size:clamp(40px,6vw,84px)}
+.final h2 i{color:var(--red)}
+footer{border-top:1px solid var(--line);padding-block:36px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.foot img{height:30px;width:auto}
+.contact{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.copy{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:14px;color:var(--ink);user-select:all}
+.copy svg{width:14px;height:14px;color:var(--muted)}
+
+/* mobile sticky buy */
+.mbuy{position:fixed;left:0;right:0;bottom:0;z-index:45;background:#fff;border-top:1px solid var(--line);padding:12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));display:none;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .35s}
+.mbuy.show{transform:none}
+.mbuy b{font-family:var(--display);font-size:22px;font-weight:400}
+.mbuy small{display:block;font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.mbuy .btn{padding:12px 18px;font-size:15px}
+@media (max-width:760px){.mbuy{display:flex}}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease, transform .8s ease}
+.js .rv.in{opacity:1;transform:none}
+.hero .ld{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.hero .ld:nth-child(2){animation-delay:.08s}.hero .ld:nth-child(3){animation-delay:.16s}.hero .ld:nth-child(4){animation-delay:.24s}.hero .ld:nth-child(5){animation-delay:.32s}.hero .ld:nth-child(6){animation-delay:.4s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.vsl{animation:rise 1s .3s cubic-bezier(.2,.8,.2,1) both}
+
+/* v2 additions */
+.hrd-logo{width:58px;height:58px;flex:none;margin:-10px 0}
+.hrd-band{width:46px;height:46px;flex:none;border-radius:50%;background:#fff}
+.hrd-head{display:flex;align-items:center;gap:18px}
+.hrd-head img{width:92px;height:92px}
+.founder{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
+.founder::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;border:1px solid rgba(255,255,255,.08);right:-200px;top:-220px;pointer-events:none}
+.founder .eyebrow{color:#fff}
+.founder .eyebrow::before{background:var(--red)}
+.founder .quote{color:#fff}
+.founder .quote i{color:#F6A3B0}
+.founder .sig span{color:var(--navy-soft)}
+.founder .sig .av{background:var(--red)}
+.founder .creds span{border-color:rgba(255,255,255,.25);color:#fff}
+.f-note{margin-top:24px;display:flex;flex-direction:column;gap:14px;font-size:17px;color:#DCE4F5;max-width:58ch}
+.founder-grid{position:relative}
+.mosaic{margin:0;display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:repeat(3,minmax(0,1fr));gap:10px;aspect-ratio:1/1.02}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:6px;display:block;box-shadow:0 20px 40px -24px rgba(0,0,0,.6)}
+.mosaic .m1{grid-column:1;grid-row:1/3}
+.mosaic .m2{grid-column:2;grid-row:1/3;object-position:50% 40%}
+.mosaic .m3{grid-column:1;grid-row:3}
+.mosaic .m4{grid-column:2;grid-row:3}
+.mosaic figcaption{grid-column:1/-1;font-size:13px;color:var(--navy-soft);font-style:italic}
+.mosaic{grid-template-rows:1fr 1fr 1fr auto;aspect-ratio:auto}
+.mosaic img{min-height:0}
+.mosaic .m1,.mosaic .m2{height:300px}
+.mosaic .m3,.mosaic .m4{height:150px}
+.founder .pillars{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:48px}
+.founder .pillar{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.founder .pillar svg{color:#F6A3B0}
+.founder .pillar span{color:var(--navy-soft)}
+@media (max-width:900px){.founder .pillars{grid-template-columns:1fr 1fr}.mosaic .m1,.mosaic .m2{height:220px}.mosaic .m3,.mosaic .m4{height:120px}}
+@media (max-width:480px){.founder .pillars{grid-template-columns:1fr}}
+.past-grid{grid-template-columns:1fr 1fr .75fr;align-items:stretch}.past-grid .past-foot{margin-top:0;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:28px;font-family:var(--display);font-size:24px;line-height:1.25}.past-grid .past-foot svg{width:30px;height:30px;color:#F6A3B0}@media (max-width:1000px){.past-grid{grid-template-columns:1fr 1fr}.past-grid .past-foot{grid-column:1/-1}}@media (max-width:800px){.past-grid{grid-template-columns:1fr}}
+.vol{padding:24px;gap:14px}
+.vol-body{grid-template-columns:140px minmax(0,1fr);gap:18px}
+.vol-head h3{font-size:32px}.vol-head{flex-direction:column;align-items:flex-start;gap:6px}
+@media (max-width:520px){.vol-body{grid-template-columns:140px minmax(0,1fr)}.yt{width:100%}}
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wa-btn{width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(0,0,0,.45);transition:transform .2s}
+.wa-btn:hover{transform:scale(1.07)}
+.wa-tip{position:relative;max-width:250px;background:#fff;color:var(--ink);font-size:14px;line-height:1.45;padding:14px 32px 14px 16px;border-radius:12px 12px 2px 12px;box-shadow:0 16px 36px -14px rgba(8,29,70,.45);border:1px solid var(--line);opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .35s,transform .35s}
+.wa-tip.show{opacity:1;transform:none;pointer-events:auto}
+.wa-tip b{color:var(--red)}
+.wa-x{position:absolute;top:4px;right:6px;border:0;background:none;font-size:20px;line-height:1;color:var(--muted);width:24px;height:24px}
+@media (max-width:760px){.wa{bottom:92px;right:14px}.wa-btn{width:54px;height:54px}}
+
+/* v3 */
+.hero h1{font-size:clamp(38px,4.8vw,64px)}
+.vsl{padding:22px}
+.vsl-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.vsl-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,45,107,.55) 0%,rgba(8,45,107,0) 30%,rgba(8,45,107,0) 45%,rgba(8,29,70,.92) 100%)}
+.vsl::before{z-index:1;opacity:.5}
+.vsl-top,.vsl-cap{z-index:2}
+.vsl-cap .live{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--red);padding:6px 10px;border-radius:2px;align-self:flex-start}
+.vsl-cap .live i{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+.proof{padding-block:56px;border-bottom:1px solid var(--line)}
+.proof-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center}
+.proof-row small{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.logo-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.lg{width:118px;height:72px;border:1px solid var(--line);border-radius:4px;display:grid;place-items:center;padding:10px;transition:transform .2s,box-shadow .2s}
+.lg:hover{transform:translateY(-3px);box-shadow:0 14px 24px -18px rgba(11,61,145,.6)}
+.lg img{max-width:100%;max-height:52px;object-fit:contain}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:0}
+.q{margin:0;padding:24px;background:var(--mist);border-top:4px solid var(--red);display:flex;flex-direction:column;gap:14px;justify-content:space-between}
+.q blockquote{margin:0;font-family:var(--display);font-size:20px;line-height:1.35}
+.q figcaption{font-size:13px;color:var(--muted)}
+.q figcaption b{display:block;color:var(--ink);font-size:15px}
+@media (max-width:860px){.quotes{grid-template-columns:1fr}}
+.topic{border:0;border-top:4px solid var(--navy);text-align:left;color:inherit;cursor:pointer;position:relative;font:inherit}
+.topic[aria-pressed="true"]{background:var(--navy);color:#fff;border-top-color:var(--red);transform:translateY(-4px)}
+.topic[aria-pressed="true"] small{color:#F6A3B0}
+.topic .tk{position:absolute;top:10px;right:10px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--red);color:#fff;padding:3px 7px;border-radius:2px}
+.topic .tk:empty{display:none}
+.pick-bar{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:18px;background:#fff;border-left:5px solid var(--navy);padding:18px 22px;flex-wrap:wrap;transition:border-color .3s}
+.pick-bar small{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.pick-bar p{font-size:16px;margin-top:2px}
+.pick-bar .btn{opacity:.55;transition:opacity .3s}
+.pick-bar.ready{border-left-color:var(--red)}
+.pick-bar.ready .btn{opacity:1}
+.outcomes{background:var(--blush)}
+.out-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.out{background:#fff;padding:26px;display:flex;flex-direction:column;gap:10px}
+.out b{font-family:var(--display);font-weight:400;font-size:64px;line-height:1;color:var(--red)}
+.out h3{font-size:22px}
+.out p{font-size:15px;color:var(--muted)}
+@media (max-width:1000px){.out-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.out-grid{grid-template-columns:1fr}}
+.past-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:56px;align-items:center}
+.past-copy{display:flex;flex-direction:column;gap:20px}
+.past-copy .past-foot{margin-top:8px}
+.past-vids{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pv{margin:0;display:flex;flex-direction:column;gap:12px}
+.pv .yt{border-radius:14px;box-shadow:0 30px 50px -30px rgba(11,61,145,.6)}
+.pv .yt .yt-play{width:72px;height:72px}
+.pv figcaption b{font-family:var(--display);font-weight:400;font-size:28px;color:var(--navy);display:block;line-height:1}
+.pv.v2 figcaption b{color:var(--red)}
+.pv figcaption span{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:900px){.past-wrap{grid-template-columns:1fr;gap:32px}}
+@media (max-width:520px){.past-vids{gap:12px}.pv .yt{width:100%}.pv figcaption b{font-size:22px}}
+.price{gap:12px}
+.price .btn{margin-top:8px;align-self:stretch}
+.price .foot{font-size:13px;color:var(--muted);margin-top:2px}
+.price.mfa .foot,.price.hrdc span{color:var(--navy-soft)}
+.price .badge.navy{background:#fff;color:var(--navy)}
+.price .cents{font-size:28px}
+.price.mfa{border-color:rgba(255,255,255,.45)}
+.price.hrdc img{width:64px;height:64px}
+.amt-sm{font-family:var(--display);font-size:30px;line-height:1.1}
+.btn-ghost-w{border-color:#fff;color:#fff}
+.btn-ghost-w:hover{background:#fff;color:var(--navy)}
+.secure{margin-top:20px;font-size:14px;color:var(--navy-soft);position:relative}
+.next{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:860px){.next{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.next{grid-template-columns:1fr}}
+.hrd-sec{padding-block:56px}
+.hrd-bar{display:flex;align-items:center;gap:20px;border:1px solid var(--line);padding:20px 24px;flex-wrap:wrap}
+.hrd-bar p{flex:1;min-width:240px;font-size:16px;color:var(--muted)}
+.hrd-bar p b{color:var(--ink)}
+.hrd-sec .hrd-grid:not([hidden]){padding-top:8px}
+.price .amt{display:flex;align-items:flex-start}
+.price .amt span{font-size:inherit;color:inherit;display:inline;line-height:1}
+.price .amt .cents{font-size:28px;margin-top:4px}
+.price .badge{color:#fff!important}
+.price .badge.navy{color:var(--navy)!important}
+.hero h1{font-size:clamp(34px,4.4vw,58px)}
+@media (max-width:600px){.hero-mark span{white-space:normal;letter-spacing:.14em}}
+.social{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.social a{display:inline-flex;align-items:center;gap:8px;color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+.social a:hover{color:var(--navy)}
+.social svg{width:18px;height:18px;flex:none}
+.rights{font-size:13px;color:var(--muted);width:100%}
+.out h3{font-size:21px}
+.yt img{object-position:50% 50%}
+.stamp{transform:none;align-self:flex-start;width:fit-content}
+.hero h1{font-size:clamp(30px,3.4vw,46px);line-height:1.12}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M7.5 12.3l3 3 6-6.3"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.3-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.5c2.6.2 4.4 1.9 5 4.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="nav-logo" href="#top" aria-label="The Franchise Insider, back to top"><img src="assets/tfi-mark.png" alt="TFI" width="66" height="34"></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#format">The format</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#partners">Partners</a>
+      <a href="#topics">Topics</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-red" href="#tickets">Get your seat</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="hero-mark ld">Brand Edition <span>Malaysia's first franchise industry dialogue</span></div>
+      <img class="hero-word ld" src="assets/tfi-wordmark.png" alt="The Franchise Insider" width="560" height="152">
+      <h1 class="ld">Bring your toughest franchise problem. Leave with <i>the people who've solved it.</i></h1>
+      <p class="lede ld">100 brand owners. 10 roundtables. One handpicked expert at every table, and no sales pitches. A full day built around the challenges franchise brands are actually facing.</p>
+      <div class="chips ld">
+        <span class="chip"><svg><use href="#i-cal"/></svg>Thu, 3 Dec 2026</span>
+        <span class="chip"><svg><use href="#i-clock"/></svg>9:00am – 5:30pm</span>
+        <span class="chip"><svg><use href="#i-pin"/></svg>HELP University Subang</span>
+        <img class="hrd-logo" src="assets/hrd-claimable.png" alt="HRD Corp Claimable" width="58" height="58">
+      </div>
+      <div class="hero-cta ld">
+        <a class="btn btn-red" href="https://catalog.billplz.com/myfg/link/tfib" target="_blank" rel="noopener" data-price-btn>Get early-bird ticket · RM297 <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#tickets">MFA member or HRD claim?</a>
+      </div>
+      <div class="countdown ld" id="countdown" aria-live="polite">
+        <span id="cd-label">Early-bird price ends in</span>
+        <div class="cd-units tnum">
+          <div class="cd-unit"><b id="cd-d">--</b><small>Days</small></div>
+          <div class="cd-unit"><b id="cd-h">--</b><small>Hrs</small></div>
+          <div class="cd-unit"><b id="cd-m">--</b><small>Min</small></div>
+          <div class="cd-unit"><b id="cd-s">--</b><small>Sec</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VSL slot: when your founder video is ready, replace the <img class="vsl-photo"> with your 9:16 video, e.g.
+         <video src="your-video.mp4" controls playsinline poster="poster.jpg" style="width:100%;height:100%;object-fit:cover"></video> -->
+    <div class="vsl" id="vsl">
+      <img class="vsl-photo" src="assets/roundtable-claudia-malaysia.jpg" alt="Claudia Ng facilitating a MYFranchiseGuide roundtable">
+      <div class="vsl-shade"></div>
+      <div class="vsl-top"><img src="assets/tfi-mark-white.png" alt="" width="42" height="22"><span>3 Dec · Subang</span></div>
+      <div class="vsl-cap">
+        <span class="live"><i></i>Roundtable in session</span>
+        <h3>Real problems. Real people. One table.</h3>
+        <p>Claudia Ng facilitating a MYFranchiseGuide roundtable</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS BAND -->
+<div class="band" id="details">
+  <div class="wrap band-grid">
+    <div class="band-item"><svg><use href="#i-cal"/></svg><div><small>Date</small><b>3 December 2026</b><span>Thursday</span></div></div>
+    <div class="band-item"><svg><use href="#i-clock"/></svg><div><small>Time</small><b>9:00am – 5:30pm</b><span>Registration from 8:30am</span></div></div>
+    <div class="band-item"><svg><use href="#i-pin"/></svg><div><small>Venue</small><b>HELP University</b><span>Subang campus</span></div></div>
+    <div class="band-item"><img class="hrd-band" src="assets/hrd-claimable.png" alt="" width="46" height="46"><div><small>Training</small><b>HRD Claimable</b><span>For HRD Corp registered employers</span></div></div>
+  </div>
+</div>
+
+<!-- PROOF -->
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="quotes rv">
+      <figure class="q"><blockquote>“A very meaningful event. The demographic is different from anything I've seen in years, with high-intent leads. Truly first of its kind.”</blockquote><figcaption><b>Daniel Sim</b>Director, Cambridge English for Life · Vol. 2</figcaption></figure>
+      <figure class="q"><blockquote>“I travelled from Brunei for this event. It was an eye-opening experience. Next time I'll bring my team.”</blockquote><figcaption><b>Chewy</b>F&amp;B multi-brand owner · Vol. 2</figcaption></figure>
+      <figure class="q"><blockquote>“I travelled from Singapore for this and learned so much. This should happen more often.”</blockquote><figcaption><b>Rong Jian</b>Corporate professional · Vol. 1</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section id="founder" class="founder">
+  <div class="wrap">
+    <div class="founder-grid">
+      <div class="rv">
+        <span class="eyebrow">A note from the founder</span>
+        <blockquote class="quote" style="margin:26px 0 0">Growing a franchise brand can be lonely and overwhelming. The good news? <i>You're not alone.</i></blockquote>
+        <div class="f-note">
+          <p>Whatever you're facing, chances are someone has already solved it, or is working through it right now. The best part of any conference is the networking and the people you connect with.</p>
+          <p>I've experienced this first-hand at countless conferences in the US. My wish is to connect all of you together, so we can work through the solutions side by side.</p>
+        </div>
+        <div class="sig"><div class="av">C</div><div><b>Claudia Ng</b><span>Founder, MYFranchiseGuide · Host, The Franchise Insider</span></div></div>
+        <div class="creds"><span>40,000 followers</span><span>100+ franchise brands guided</span><span>MFA Committee Member</span></div>
+      </div>
+      <figure class="mosaic rv" aria-label="Roundtable discussions Claudia has joined and facilitated">
+        <img class="m1" src="assets/roundtable-us-conference-1.jpg" alt="Claudia at a facilitated roundtable at a US franchise conference" loading="lazy">
+        <img class="m2" src="assets/roundtable-claudia-malaysia.jpg" alt="Claudia facilitating a roundtable discussion in Malaysia" loading="lazy">
+        <img class="m3" src="assets/roundtable-malaysia.jpg" alt="Franchise business owners in a roundtable discussion" loading="lazy">
+        <img class="m4" src="assets/roundtable-us-conference-2.jpg" alt="A full ballroom of roundtables at a US franchise conference" loading="lazy">
+        <figcaption>Roundtables done right: from US franchise conferences to our own tables in Malaysia.</figcaption>
+      </figure>
+    </div>
+    <div class="pillars rv">
+      <div class="pillar"><svg><use href="#i-users"/></svg><b>Collaboration</b><span>Brand owners solving shared problems together</span></div>
+      <div class="pillar"><svg><use href="#i-chat"/></svg><b>Conversation</b><span>Facilitated, face to face, around real issues</span></div>
+      <div class="pillar"><svg><use href="#i-eye"/></svg><b>Transparency</b><span>Honest numbers and lessons, not highlight reels</span></div>
+      <div class="pillar"><svg><use href="#i-cap"/></svg><b>Education</b><span>Where raising the standard begins</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FIRST OF ITS KIND -->
+<section id="format">
+  <div class="wrap">
+    <div class="first-grid">
+      <div class="rv">
+        <div class="sec-head" style="margin-bottom:0">
+          <span class="stamp">Malaysia's First of Its Kind</span>
+          <h2>Ten tables. Two rounds. Real conversation.</h2>
+          <p class="lede">Most franchise events are expo floors and sales pitches. The Brand Edition is built around facilitated roundtables, where ten business owners sit with one expert partner and work through a challenge they all share.</p>
+        </div>
+        <div class="steps" id="steps">
+          <button class="step on" type="button" data-phase="0"><b>Round 1 · 45 min</b><div><h3>Ten business owners at your table</h3><p>You choose the two topics that matter most to your business.</p></div></button>
+          <button class="step" type="button" data-phase="1"><b>The swap</b><div><h3>The bell rings. You move.</h3><p>Everyone heads to their second topic. The partner stays.</p></div></button>
+          <button class="step" type="button" data-phase="2"><b>Round 2 · 45 min</b><div><h3>Ten new conversations</h3><p>A new table, new perspectives, more brand owners in your network.</p></div></button>
+        </div>
+      </div>
+      <div class="rt-card rv" aria-label="Animated diagram: 100 attendees at 10 roundtables swap tables between two rounds">
+        <div class="rt-status" id="rt-status">Round 1 · 45 minutes</div>
+        <div class="rt-stage" id="rt-stage"></div>
+        <div class="rt-legend"><span><i style="background:var(--navy)"></i>An attendee</span><span><i style="background:var(--red)"></i>Partner who leads the table</span></div>
+      </div>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><b class="tnum" data-count="100">100</b><small>Brand owners &amp; leaders</small><p>Founders, C-suite and business owners in one room</p></div>
+      <div class="stat"><b class="tnum" data-count="10">10</b><small>Roundtables</small><p>Ten seats at every table</p></div>
+      <div class="stat"><b class="tnum" data-count="90">90</b><small>Minutes</small><p>Of facilitated, face-to-face discussion</p></div>
+      <div class="stat"><b class="tnum" data-count="1">1</b><small>Partner per category</small><p>Handpicked experts, never competing at the next table</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="topics" id="topics">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Roundtable discussion topics</span>
+      <h2>Which two tables would you sit at?*</h2>
+      <p class="lede">Ten real challenges franchise brands are facing. Tap the two you'd bring to the table.</p>
+    </div>
+    <div class="topic-grid rv">
+      <button type="button" class="topic" aria-pressed="false"><small>Growth</small><p>Selling your first 10 locations</p><span class="tk" aria-hidden="true"></span></button>
+      <button type="button" class="topic" aria-pressed="false"><small>Marketing</small><p>Brand fund vs local marketing: who pays, who controls?</p><span class="tk" aria-hidden="true"></span></button>
+      <button type="button" class="topic" aria-pressed="false"><small>Finance</small><p>Bankable franchisees: making your brand easy to fund</p><span class="tk" aria-hidden="true"></span></button>
+      <button type="button" class="topic" aria-pressed="false"><small>Finance</small><p>Getting paid: royalty leakage and cross-border cash</p><span class="tk" aria-hidden="true"></span></button>
+      <button type="button" class="topic" aria-pressed="false"><small>Finance</small><p>The key metrics to work on in preparation for an IPO</p><span class="tk" aria-hidden="true"></span></button>
+      <button type="button" class="topic" aria-pressed="false"><small>Operations</small><p>Supply chain: your margin or your franchisees'?</p><span class="tk" aria-hidden="true"></span></button>
+      <button type="button" class="topic" aria-pressed="false"><small>Operations</small><p>Increasing customer lifetime value and average spend</p><span class="tk" aria-hidden="true"></span></button>
+      <button type="button" class="topic" aria-pressed="false"><small>Operations</small><p>Consistency at scale</p><span class="tk" aria-hidden="true"></span></button>
+      <button type="button" class="topic" aria-pressed="false"><small>Legal</small><p>Protecting your brand when legal issues arise</p><span class="tk" aria-hidden="true"></span></button>
+      <button type="button" class="topic" aria-pressed="false"><small>People</small><p>The staffing crisis: foreign workers and frontliners</p><span class="tk" aria-hidden="true"></span></button>
+    </div>
+    <div class="pick-bar rv" id="pick-bar" aria-live="polite">
+      <div><small id="pick-label">Your day</small><p id="pick-txt">Pick two tables to see your afternoon.</p></div>
+      <a class="btn btn-red" href="#tickets" id="pick-cta">Reserve my seat <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
+    </div>
+    <p class="agenda-foot">*Roundtable discussion topics are subject to change. You'll lock in your two tables after you register, first come, first served. Each table is capped at ten.</p>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="outcomes" id="outcomes">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">What you walk away with</span>
+      <h2>One day. A year's worth of answers.</h2>
+    </div>
+    <div class="out-grid rv">
+      <div class="out"><b class="tnum" data-count="100">100</b><h3>Brand owners in your corner</h3><p>Founders, C-suite and business owners building something, all in one room.</p></div>
+      <div class="out"><b class="tnum" data-count="18">18</b><h3>Brand owners who care about what you care about</h3><p>At your two tables, peers working through the same challenges as you, there to support each other.</p></div>
+      <div class="out"><b class="tnum" data-count="10">10</b><h3>Handpicked vendors</h3><p>The backbone of the industry, chosen for what they can teach the room.</p></div>
+      <div class="out"><b class="tnum">7</b><h3>Stage sessions</h3><p>Highly curated to help you get ahead of the game.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="for">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Who it's for</span>
+      <h2>Built for franchise brands, and the businesses ready to become one</h2>
+    </div>
+    <div class="fit-grid rv">
+      <div class="fit yes">
+        <h3>This is for you if</h3>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>You're a founder, CEO, COO or head of franchise development at a franchise brand</li>
+          <li><svg><use href="#i-check"/></svg>You run an F&amp;B, retail, education, services or wellness brand, from newly registered to established</li>
+          <li><svg><use href="#i-check"/></svg>You're planning to expand your business through the franchise model</li>
+          <li><svg><use href="#i-check"/></svg>You're a business owner curious whether franchising is right for you</li>
+          <li><svg><use href="#i-check"/></svg>You're C-suite and ready to be challenged by peers who've been where you are</li>
+        </ul>
+      </div>
+      <div class="fit no">
+        <h3>This is not for you if</h3>
+        <ul>
+          <li><svg><use href="#i-x"/></svg>You're only shopping for a franchise to buy. Our community editions are built for investors and future franchisees.</li>
+          <li><svg><use href="#i-x"/></svg>You're a supplier hoping to sell to the room. Partner places are by invitation only.</li>
+          <li><svg><use href="#i-x"/></svg>You want a lecture you can sit through quietly. You'll be asked to share.</li>
+          <li><svg><use href="#i-x"/></svg>You're not open to discussing real numbers and real mistakes with peers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="agenda" id="agenda">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">The programme</span>
+      <h2>The full day*</h2>
+      <p class="lede">Learn on stage in the morning. Work through real problems together in the afternoon.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Programme">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="am" id="tab-am">Morning · Learn</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="pm" id="tab-pm">Afternoon · Work together</button>
+    </div>
+    <div class="agenda-list" id="am" role="tabpanel" aria-labelledby="tab-am">
+      <div class="slot"><time>8:30</time><b>Registration and networking coffee</b><span class="tag">Arrive</span></div>
+      <div class="slot"><time>9:00</time><b>Welcome and opening address</b><span class="tag">Stage</span></div>
+      <div class="slot"><time>9:15</time><b>Title partner welcome</b><span class="tag">Stage</span></div>
+      <div class="slot key"><time>9:25</time><b>VIP keynote</b><span class="tag">Keynote</span></div>
+      <div class="slot"><time>10:00</time><b>Partner 1: Built to Be Wanted</b><span class="tag">Insight</span></div>
+      <div class="slot"><time>10:30</time><b>Networking break and partner booths</b><span class="tag">Break</span></div>
+      <div class="slot"><time>10:50</time><b>Partner 2: Insight session</b><span class="tag">Insight</span></div>
+      <div class="slot"><time>11:30</time><b>Panel discussion: AI for Franchising</b><span class="tag">Panel</span></div>
+      <div class="slot"><time>12:10</time><b>Networking lunch · Pavillion Connect</b><span class="tag">Lunch</span></div>
+    </div>
+    <div class="agenda-list" id="pm" role="tabpanel" aria-labelledby="tab-pm" hidden>
+      <div class="slot key"><time>1:30</time><b>Roundtables · round 1</b><span class="tag">Roundtable</span></div>
+      <div class="slot"><time>2:15</time><b>The bell rings · the swap</b><span class="tag">Swap</span></div>
+      <div class="slot key"><time>2:25</time><b>Roundtables · round 2</b><span class="tag">Roundtable</span></div>
+      <div class="slot"><time>3:10</time><b>Short break + Pavillion Connect</b><span class="tag">Break</span></div>
+      <div class="slot"><time>3:25</time><b>Partner 3: Insight session</b><span class="tag">Insight</span></div>
+      <div class="slot"><time>4:05</time><b>Partner 4: Insight session</b><span class="tag">Insight</span></div>
+      <div class="slot key"><time>4:45</time><b>Fireside chat: Road to RM100 million</b><span class="tag">Fireside</span></div>
+      <div class="slot"><time>5:20</time><b>Closing: what the tables concluded</b><span class="tag">Close</span></div>
+    </div>
+    <p class="agenda-foot">*Tentative programme. Speakers and sessions will be announced progressively. Timings are subject to change.</p>
+  </div>
+</section>
+
+<!-- PAST EVENTS -->
+<section id="past">
+  <div class="wrap past-wrap">
+    <div class="past-copy rv">
+      <span class="eyebrow">Track record</span>
+      <h2>The Franchise Insider so far</h2>
+      <p class="lede">Two editions for franchise buyers and investors came first. The Brand Edition is the first built for franchise brands and the businesses ready to franchise.</p>
+      <div class="past-foot"><svg><use href="#i-star"/></svg><p>Two editions in, the Brand Edition brings the same intimate format to the people who build franchise brands.</p></div>
+    </div>
+    <div class="past-vids rv">
+      <figure class="pv"><div class="yt-slot" data-cover="" data-yt="jgCjW_sImVU" data-cap="Watch Vol. 1"></div><figcaption><b>Vol. 1</b><span>20 June 2026 · Carfe, PJ</span></figcaption></figure>
+      <figure class="pv v2"><div class="yt-slot" data-cover="" data-yt="riW2upBkHrQ" data-cap="Watch Vol. 2"></div><figcaption><b>Vol. 2</b><span>3 September 2026 · Carfe, PJ</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Our partners</span>
+      <h2>Handpicked to raise the standard</h2>
+      <p class="lede">One partner per category, chosen for what they can teach the room. Tap a partner to see who they are and how they help franchise brands.</p>
+    </div>
+    <div class="partner-grid rv" id="partner-grid"></div>
+    <p class="partner-more">More partners to be announced.</p>
+  </div>
+</section>
+
+<!-- TICKETS -->
+<section class="tickets" id="tickets">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Tickets</span>
+      <h2>Reserve your seat</h2>
+      <p class="lede">Seats are limited to keep it intentional: small-group discussions, and only the right people in the room.</p>
+    </div>
+    <div class="price-grid rv" id="price-grid">
+      <div class="price live">
+        <span class="badge" id="std-badge">Early bird</span>
+        <small>Standard ticket</small>
+        <div class="amt tnum"><sup>RM</sup><span id="std-amt">297</span></div>
+        <span id="std-when">Early-bird price until 19 November 2026</span>
+        <a class="btn btn-red" href="https://catalog.billplz.com/myfg/link/tfib" target="_blank" rel="noopener">Get my ticket <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
+        <p class="foot" id="std-foot">**RM349 from 20 November 2026</p>
+      </div>
+      <div class="price mfa">
+        <span class="badge navy">MFA members only</span>
+        <small>MFA member ticket</small>
+        <div class="amt tnum"><sup>RM</sup><span id="mfa-amt">267</span></div>
+        <span>Member special rate, before and after early bird</span>
+        <a class="btn btn-white" href="https://catalog.billplz.com/myfg/link/mfa-tfib" target="_blank" rel="noopener">Get member ticket <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
+        <p class="foot" id="mfa-foot">**RM314 from 20 November 2026. MFA membership is checked at registration.</p>
+      </div>
+      <div class="price hrdc">
+        <img src="assets/hrd-claimable.png" alt="HRD Corp Claimable" width="64" height="64">
+        <small>HRD Claimable</small>
+        <div class="amt-sm">Your HRD levy can cover your seat</div>
+        <span>For HRD Corp registered employers. Don't pay online. Fill in a short form and we'll send your quotation and documents.</span>
+        <a class="btn btn-ghost-w" href="#hrd" data-open-hrd>Start HRD claim <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <p class="secure rv">Secure payment via Billplz. Food and refreshments included.</p>
+    <div class="next rv">
+      <div><b>01</b><h3>Get your ticket</h3><p>Pay securely online. Your confirmation arrives by email.</p></div>
+      <div><b>02</b><h3>Join the WhatsApp group</h3><p>Get updates and meet fellow attendees before the day.</p></div>
+      <div><b>03</b><h3>Choose your topics</h3><p>Lock in the two roundtables you want to join.</p></div>
+      <div><b>04</b><h3>See you on 3rd Dec</h3><p>Come and connect with all of us at HELP University Subang.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HRD FORM -->
+<section id="hrd" class="hrd-sec">
+  <div class="wrap">
+    <div class="hrd-bar" id="hrd-bar">
+      <img src="assets/hrd-claimable.png" alt="" width="56" height="56">
+      <p><b>Claiming through HRD Corp?</b> Fill in a short form and we'll email your quotation, trainer profile and schedule within 2 working days.</p>
+      <button class="btn btn-red" type="button" data-open-hrd>Open HRD form</button>
+    </div>
+  </div>
+  <div class="wrap hrd-grid" id="hrd-grid" hidden>
+    <div class="rv">
+      <div class="hrd-head"><img src="assets/hrd-claimable.png" alt="HRD Corp Claimable" width="92" height="92"><span class="eyebrow">HRD Claimable</span></div>
+      <h2 style="margin-top:18px">Claim your seat through HRD Corp</h2>
+      <p class="lede" style="margin-top:18px">If your company is registered with HRD Corp, you can use your training levy for this programme. Fill in the form and we'll send you everything you need for your grant application.</p>
+      <ol class="hrd-steps">
+        <li><div><b>Submit this form</b>Tell us about your company and who's attending.</div></li>
+        <li><div><b>Receive your documents</b>We'll email a quotation, trainer profile and programme schedule within 2 working days.</div></li>
+        <li><div><b>Apply in e-TRiS</b>Submit your grant application under HRD Corp Claimable Courses before the event.</div></li>
+        <li><div><b>Choose your topics</b>Once your grant is approved, we'll confirm your seats and send the topic selection link.</div></li>
+      </ol>
+      <div class="warn"><b>Please don't pay through the ticket link</b> if you're claiming through HRD Corp. Grants must be approved before the training date, so we recommend applying at least 2 weeks ahead. Companies with outstanding levy can't apply.</div>
+    </div>
+
+    <form id="hrd-form" class="rv" novalidate>
+      <fieldset>
+        <legend>Company details</legend>
+        <label for="co-name"><span>Company name (as registered with SSM) <em>*</em></span><input id="co-name" name="company_name" required autocomplete="organization"></label>
+        <div class="row">
+          <label for="co-ssm"><span>SSM registration no. <em>*</em></span><input id="co-ssm" name="ssm_no" required placeholder="e.g. 202101012345"></label>
+          <label for="co-mycoid"><span>HRD Corp MyCoID / employer code <em>*</em></span><input id="co-mycoid" name="hrd_mycoid" required></label>
+        </div>
+        <label for="co-brand"><span>Franchise brand name <em>*</em></span><input id="co-brand" name="brand_name" required></label>
+        <label for="co-addr"><span>Company address <em>*</em></span><textarea id="co-addr" name="company_address" rows="2" required autocomplete="street-address"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>HR / contact person</legend>
+        <div class="row">
+          <label for="ct-name"><span>Full name <em>*</em></span><input id="ct-name" name="contact_name" required autocomplete="name"></label>
+          <label for="ct-role"><span>Designation <em>*</em></span><input id="ct-role" name="contact_designation" required autocomplete="organization-title"></label>
+        </div>
+        <div class="row">
+          <label for="ct-email"><span>Email <em>*</em></span><input id="ct-email" name="contact_email" type="email" required autocomplete="email"></label>
+          <label for="ct-phone"><span>Mobile no. <em>*</em></span><input id="ct-phone" name="contact_phone" type="tel" required autocomplete="tel" placeholder="e.g. 012-345 6789"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Participants</legend>
+        <p class="hint" style="font-size:13px">Names and NRIC numbers must match what you enter in e-TRiS.</p>
+        <div id="pax-list" style="display:flex;flex-direction:column;gap:12px"></div>
+        <button class="add-pax" type="button" id="add-pax">+ Add another participant</button>
+      </fieldset>
+
+      <fieldset>
+        <label for="notes">Anything else we should know? <span class="hint">Optional</span><textarea id="notes" name="notes" rows="2"></textarea></label>
+        <label class="check" for="c-levy"><input id="c-levy" name="confirm_hrd_registered" type="checkbox" required><span> I confirm our company is registered with HRD Corp and has no outstanding levy. <em>*</em></span></label>
+        <label class="check" for="c-pdpa"><input id="c-pdpa" name="pdpa_consent" type="checkbox" required><span> I consent to MYFranchiseGuide using these details to prepare HRD Corp grant documents and to contact us about this event, in line with the PDPA. <em>*</em></span></label>
+      </fieldset>
+
+      <div id="form-msg" class="form-msg" role="status" hidden></div>
+      <button class="btn btn-red" type="submit" id="hrd-submit">Submit HRD request <svg width="18" height="18"><use href="#i-arrow"/></svg></button>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--mist)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, answered</h2>
+    </div>
+    <div class="faq-list rv" id="faq-list">
+      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Is my ticket transferable?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Yes. If you can't make it and want to send a colleague in your place, email <b>myfranchiseguide@gmail.com</b> with their details and we'll update your registration.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">What can I expect from the day?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>An intimate room of franchise brand owners. You'll make real connections with other brands, learn practical ways to build your business from people who've done it, and leave with a clearer plan for 2027.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Why is the ticket so affordable?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>This is our inaugural Brand Edition. We want to cover our costs and build a great reputation for the years to come. Our partners make that possible, and we're grateful for their support.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">How do I choose my roundtable topics?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>After your ticket is confirmed, we'll email you a link to choose the two topics you want to join. Each table is capped at ten, so popular topics fill quickly. Choose early.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Is the event HRD Claimable?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Yes, for employers registered with HRD Corp. Fill in the <a href="#hrd">HRD form</a> and we'll send your quotation and programme documents for your e-TRiS grant application. Apply before the event, ideally at least 2 weeks ahead.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Who can attend?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Franchise brand owners and their senior team, business owners planning to expand through franchising, and business owners curious whether franchising suits them. If you're only looking to buy a franchise, our community editions are a better fit.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">How do MFA members get 10% off?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Choose the <b>MFA member ticket</b> in the ticket section and pay directly. Members always get 10% off, before and after early bird. Your membership is checked at registration on the day.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Is food included?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Yes. Your ticket includes morning coffee, a networking lunch and an afternoon break.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap final-in rv">
+    <span class="eyebrow">3 December 2026 · HELP University Subang</span>
+    <h2 id="final-h">Early bird ends <i>19 November.</i></h2>
+    <p class="lede">Ten tables. Ten seats each. When a table is full, it's full.</p>
+    <div class="hero-cta">
+      <a class="btn btn-red" href="https://catalog.billplz.com/myfg/link/tfib" target="_blank" rel="noopener" data-price-btn>Get early-bird ticket · RM297 <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-ghost" href="https://catalog.billplz.com/myfg/link/mfa-tfib" target="_blank" rel="noopener">MFA member ticket</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <img src="assets/tfi-mark.png" alt="The Franchise Insider" width="58" height="30">
+    <div class="contact">
+      <span>Questions?</span>
+      <button class="copy" type="button" data-copy="myfranchiseguide@gmail.com"><svg><use href="#i-copy"/></svg>myfranchiseguide@gmail.com</button>
+    </div>
+    <div class="social">
+      <a href="https://www.instagram.com/myfranchiseguide/" target="_blank" rel="noopener" aria-label="Instagram @myfranchiseguide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@myfranchiseguide</span></a>
+      <a href="https://www.tiktok.com/@my.franchiseguide" target="_blank" rel="noopener" aria-label="TikTok @my.franchiseguide"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.9 4.2 4.1v3.2c-1.5.1-2.9-.4-4.1-1.2v6.2c0 3.6-2.6 5.9-5.8 5.9-3.3 0-5.6-2.5-5.6-5.6 0-3.4 2.9-5.8 6.4-5.4v3.3c-1.6-.4-3.2.6-3.2 2.2 0 1.3 1 2.3 2.4 2.3 1.5 0 2.5-1 2.5-2.9V3h3.2z"/></svg><span>@my.franchiseguide</span></a>
+      <a href="https://www.linkedin.com/in/ngclaudia" target="_blank" rel="noopener" aria-label="LinkedIn Claudia Ng"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V21h-4z"/></svg><span>Claudia Ng</span></a>
+      <a href="https://asiafranchiseguide.com/" target="_blank" rel="noopener" aria-label="Website asiafranchiseguide.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>asiafranchiseguide.com</span></a>
+    </div>
+    <span class="rights">© 2026 MYFranchiseGuide. All rights reserved.</span>
+  </div>
+</footer>
+
+<div class="mbuy" id="mbuy"><div><small>Early bird</small><b class="tnum" id="mbuy-price">RM297</b></div><a class="btn btn-red" href="https://catalog.billplz.com/myfg/link/tfib" target="_blank" rel="noopener">Get your seat</a></div>
+
+<div class="wa" id="wa">
+  <div class="wa-tip" id="wa-tip" role="status">
+    <button class="wa-x" type="button" id="wa-x" aria-label="Hide message">&times;</button>
+    <b>Got a question?</b> Chat with us on WhatsApp. We usually reply within the day.
+  </div>
+  <a class="wa-btn" href="https://wa.me/601123377885?text=Hi%2C%20I%27m%20interested%20in%20The%20Franchise%20Insider%20Brand%20Edition%20event%20on%20Dec%203rd%20and%20I%20have%20a%20question." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.2c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.3 1.3-4-.3-.4c-1.1-1.7-1.7-3.6-1.7-5.6C5.4 9.8 10.1 5.2 16 5.2s10.6 4.6 10.6 10.4S21.9 26.1 16 26.1zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.6-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+</div>
+
+<dialog id="pmodal" aria-labelledby="m-name">
+  <button class="m-close" type="button" id="m-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="m-logo" id="m-logo"><img id="m-img" alt=""></div>
+  <div class="m-body">
+    <small id="m-cat"></small>
+    <h3 id="m-name"></h3>
+    <p class="m-tag" id="m-tag"></p>
+    <p id="m-desc"></p>
+    <div id="m-extra"></div>
+  </div>
+  <div class="m-foot"><span id="m-foot-note" style="font-size:13px;color:var(--muted)"></span><a class="btn btn-ghost" id="m-link" href="#" target="_blank" rel="noopener" style="padding:11px 18px;font-size:14px">Visit website <svg width="16" height="16"><use href="#i-arrow"/></svg></a></div>
+</dialog>
+
+<script>
+/* ===== Settings you can edit ===== */
+// 1) Create a free form at https://formspree.io (log in with myfranchiseguide@gmail.com),
+//    then paste its endpoint here. Submissions arrive in that inbox and can be exported to CSV / Google Sheets.
+const HRD_FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const PAY_LINK = "https://catalog.billplz.com/myfg/link/tfib";
+const EARLY_BIRD_END = new Date("2026-11-19T23:59:59+08:00");
+
+const PARTNERS = [
+  {
+    name: "MYFranchiseGuide",
+    full: "MYFranchiseGuide",
+    category: "Consulting",
+    tagline: "Malaysia's first Franchise Growth Partner.",
+    desc: "We help brands scale through B2B expansion like franchising and licensing. We're your go-to partner after you receive your franchise licence approval, from B2B positioning to funnel building and go-to-market strategy. We're also the organiser of this event.",
+    tags: ["Franchise strategist", "Franchise content creator", "Advisory firm"],
+    worked: "",
+    url: "https://asiafranchiseguide.com/",
+    logo: "assets/logo-myfranchiseguide.png",
+    bg: "#FFFFFF"
+  },
+  {
+    name: "Malaysian Franchise Association",
+    full: "Malaysian Franchise Association (MFA)",
+    category: "Industry Association",
+    tagline: "The backbone of Malaysia's franchise industry.",
+    desc: "The Malaysian Franchise Association brings franchisors, franchisees and industry players together to grow franchising in Malaysia. MFA members get 10% off Brand Edition tickets.",
+    tags: ["Industry association", "Franchisors", "Franchisees", "Member benefits"],
+    worked: "",
+    url: "https://www.mfa.org.my/",
+    logo: "assets/logo-mfa.png",
+    bg: "#FFFFFF"
+  },
+  {
+    name: "LPP Law",
+    full: "Lee & Poh Partnership",
+    category: "Legal Partner",
+    tagline: "Your one-stop corporate and commercial legal partner.",
+    desc: "LPP Law is a Malaysian corporate and commercial law firm with offices in Kuala Lumpur and Johor Bahru. They help growing businesses structure deals, protect their brand and resolve disputes, with a dedicated China Desk for cross-border business.",
+    tags: ["Corporate & commercial", "Intellectual property", "Employment", "Litigation & arbitration", "China Desk"],
+    worked: "",
+    url: "https://lpplaw.asia/",
+    logo: "assets/logo-lpp-law.png",
+    bg: "#111111"
+  },
+  {
+    name: "Skribble",
+    full: "Skribble Holdings Sdn. Bhd.",
+    category: "Marketing & Creative Partner",
+    tagline: "A full-service digital marketing and creative agency.",
+    desc: "Skribble helps brands grow through social media, content, performance marketing, branding and custom tech. Based in Petaling Jaya, they build campaigns for consumer brands with multi-outlet networks.",
+    tags: ["Social media & content", "Performance marketing", "Branding & design", "Custom tech", "Consulting"],
+    worked: "Texas Chicken Malaysia, The Coffee Bean & Tea Leaf, Faber-Castell and Sunway Property",
+    url: "https://skribble.me/",
+    logo: "assets/logo-skribble.png",
+    bg: "#2B2B2B"
+  },
+  {
+    name: "HELP University",
+    full: "HELP University",
+    category: "Venue Partner",
+    tagline: "The University of Achievers, and home of the Brand Edition.",
+    desc: "HELP University is an established Malaysian private university, the self-styled \"University of Achievers\". Its Subang campus hosts The Franchise Insider – Brand Edition on 3 December.",
+    tags: ["Venue partner", "Higher education", "Subang campus"],
+    worked: "",
+    url: "https://university.help.edu.my/",
+    logo: "assets/logo-help-university.png",
+    bg: "#FFFFFF"
+  }
+];
+
+/* ===== Nav border ===== */
+const nav = document.getElementById('nav');
+const mbuy = document.getElementById('mbuy');
+const onScroll = () => {
+  nav.classList.toggle('scrolled', scrollY > 10);
+  const t = document.getElementById('tickets').getBoundingClientRect();
+  const nearTickets = t.top < innerHeight && t.bottom > 0;
+  mbuy.classList.toggle('show', scrollY > 600 && !nearTickets);
+};
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+/* ===== Pricing + countdown ===== */
+const pad = n => String(n).padStart(2,'0');
+function tick(){
+  const now = new Date(), diff = EARLY_BIRD_END - now;
+  const early = diff > 0;
+  document.querySelectorAll('[data-price-btn]').forEach(b => {
+    b.firstChild.nodeValue = early ? 'Get early-bird ticket · RM297 ' : 'Get your ticket · RM349 ';
+  });
+  document.getElementById('mbuy-price').textContent = early ? 'RM297' : 'RM349';
+  document.querySelector('#mbuy small').textContent = early ? 'Early bird' : 'Standard';
+  document.getElementById('std-amt').textContent = early ? '297' : '349';
+  document.getElementById('std-when').textContent = early ? 'Early-bird price until 19 November 2026' : 'Standard price';
+  document.getElementById('std-badge').hidden = !early;
+  document.getElementById('std-foot').hidden = !early;
+  document.getElementById('mfa-amt').textContent = early ? '267' : '314';
+  document.getElementById('mfa-foot').textContent = early ? '**RM314 from 20 November 2026. MFA membership is checked at registration.' : 'MFA membership is checked at registration.';
+  const fh = document.getElementById('final-h'); if (!early && fh) fh.innerHTML = 'Take a seat <i>at the table.</i>';
+  const cd = document.getElementById('countdown');
+  if (!early){ cd.hidden = true; return; }
+  const s = Math.floor(diff/1000);
+  document.getElementById('cd-d').textContent = Math.floor(s/86400);
+  document.getElementById('cd-h').textContent = pad(Math.floor(s%86400/3600));
+  document.getElementById('cd-m').textContent = pad(Math.floor(s%3600/60));
+  document.getElementById('cd-s').textContent = pad(s%60);
+}
+tick(); setInterval(tick, 1000);
+
+
+/* ===== Roundtable diagram ===== */
+const stage = document.getElementById('rt-stage');
+const steps = [...document.querySelectorAll('.step')];
+const statusEl = document.getElementById('rt-status');
+const RATIO = 2.5/5; // height / width of stage
+const tableXY = t => ({x: ((t%5)+0.5)*20, y: t<5 ? 27 : 73});
+for (let t=0;t<10;t++){ const p=tableXY(t); const el=document.createElement('div'); el.className='rt-table'; el.style.left=p.x+'%'; el.style.top=p.y+'%'; el.innerHTML='<i></i>'; stage.appendChild(el); }
+const seats = [];
+for (let k=0;k<100;k++){ const el=document.createElement('div'); el.className='rt-seat'; stage.appendChild(el); seats.push(el); }
+function seatPos(t, s){
+  const c = tableXY(t), a = (s/10)*Math.PI*2 - Math.PI/2, r = 7.1;
+  return {x: c.x + r*Math.cos(a), y: c.y + (r*Math.sin(a))/RATIO};
+}
+function layout(round){
+  seats.forEach((el,k) => {
+    const t = Math.floor(k/10), s = k%10;
+    let nt = t, ns = s;
+    if (round === 2){ if (s < 9){ nt = (t+s+1)%10; } else { nt = (t+5)%10; } }
+    const p = seatPos(nt, ns);
+    el.style.left = p.x+'%'; el.style.top = p.y+'%';
+  });
+}
+const labels = ['Round 1 · 45 minutes','The swap · everyone moves','Round 2 · 45 minutes'];
+let phase = 0, timer = null;
+function setPhase(p){
+  phase = p;
+  steps.forEach((b,i) => b.classList.toggle('on', i===p));
+  statusEl.textContent = labels[p];
+  if (p === 0){ stage.classList.remove('moving'); layout(1); }
+  if (p === 1){ stage.classList.add('moving'); layout(2); }
+  if (p === 2){ stage.classList.remove('moving'); layout(2); }
+}
+layout(1);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function auto(){ if (reduce) return; clearInterval(timer); timer = setInterval(() => setPhase((phase+1)%3), 3200); }
+steps.forEach((b,i) => b.addEventListener('click', () => { setPhase(i); auto(); }));
+auto();
+
+/* ===== Count-up stats ===== */
+const countUp = el => {
+  const end = +el.dataset.count; if (reduce || end < 5) return;
+  const t0 = performance.now(), dur = 1200;
+  const f = now => { const p = Math.min(1,(now-t0)/dur); el.textContent = Math.round(end*(1-Math.pow(1-p,3))); if (p<1) requestAnimationFrame(f); };
+  requestAnimationFrame(f);
+};
+
+/* ===== Reveal on scroll ===== */
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting){ e.target.classList.add('in'); e.target.querySelectorAll('[data-count]').forEach(countUp); io.unobserve(e.target); }
+}), {threshold:.12, rootMargin:'0px 0px -40px 0px'}) : null;
+document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+setTimeout(() => document.querySelectorAll('.rv').forEach(el => el.classList.add('in')), 4000);
+
+
+/* ===== Past event videos (YouTube) =====
+   To add the Vol. 2 video, paste its YouTube ID into data-yt="" on the Vol. 2 slot
+   (the part after /shorts/ or watch?v= in the link). */
+document.querySelectorAll('.yt-slot').forEach(slot => {
+  const id = slot.dataset.yt, cap = slot.dataset.cap;
+  if (!id){ slot.outerHTML = '<div class="yt soon" aria-label="Video coming soon"><span>Video<br>coming soon</span></div>'; return; }
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'yt'; b.setAttribute('aria-label', cap + ' video');
+  b.innerHTML = `<img alt="" loading="lazy"><span class="yt-play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="yt-cap">${cap}</span>`;
+  // Custom cover: add data-cover="your-image.jpg" to the slot. Otherwise try YouTube's sharpest thumbnails first.
+  const img = b.querySelector('img');
+  const srcs = slot.dataset.cover ? [slot.dataset.cover] : ['oardefault','maxresdefault','sddefault','hqdefault'].map(n => `https://i.ytimg.com/vi/${id}/${n}.jpg`);
+  let k = 0;
+  const next = () => { if (k < srcs.length) img.src = srcs[k++]; };
+  img.addEventListener('load', () => { if (!slot.dataset.cover && img.naturalWidth <= 120 && k < srcs.length) next(); });
+  img.addEventListener('error', next);
+  next();
+  b.addEventListener('click', () => {
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1&rel=0`;
+    f.title = cap; f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+    b.innerHTML = ''; b.appendChild(f); b.style.cursor = 'default';
+  }, {once:true});
+  slot.replaceWith(b);
+});
+
+/* ===== Agenda tabs ===== */
+const tabs = [...document.querySelectorAll('.tab')];
+tabs.forEach(tab => tab.addEventListener('click', () => {
+  tabs.forEach(t => { const on = t===tab; t.setAttribute('aria-selected', on); document.getElementById(t.getAttribute('aria-controls')).hidden = !on; });
+}));
+
+/* ===== Partners + modal ===== */
+const grid = document.getElementById('partner-grid');
+const modal = document.getElementById('pmodal');
+PARTNERS.forEach((p,i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'partner';
+  b.innerHTML = `<div class="partner-logo" style="background:${p.bg}"><img src="${p.logo}" alt="${p.name} logo"></div>
+    <div class="partner-meta"><div><small>${p.category}</small><b>${p.name}</b></div><svg><use href="#i-arrow"/></svg></div>`;
+  b.addEventListener('click', () => openPartner(i));
+  grid.appendChild(b);
+});
+function openPartner(i){
+  const p = PARTNERS[i];
+  document.getElementById('m-logo').style.background = p.bg;
+  const img = document.getElementById('m-img'); img.src = p.logo; img.alt = p.name + ' logo';
+  document.getElementById('m-cat').textContent = p.category;
+  document.getElementById('m-name').textContent = p.full;
+  document.getElementById('m-tag').textContent = p.tagline;
+  document.getElementById('m-desc').textContent = p.desc;
+  const ex = document.getElementById('m-extra'); ex.innerHTML = '';
+  const list = document.createElement('div'); list.className = 'm-list';
+  p.tags.forEach(t => { const s = document.createElement('span'); s.textContent = t; list.appendChild(s); });
+  ex.appendChild(list);
+  if (p.worked){ const w = document.createElement('p'); w.style.marginTop = '14px'; w.style.fontSize = '15px'; w.innerHTML = '<b style="color:var(--ink)">Has worked with</b> '; w.appendChild(document.createTextNode(p.worked + '.')); ex.appendChild(w); }
+  document.getElementById('m-foot-note').textContent = p.url.replace(/^https?:\/\//,'').replace(/\/$/,'');
+  document.getElementById('m-link').href = p.url;
+  if (modal.showModal) modal.showModal(); else modal.setAttribute('open','');
+}
+document.getElementById('m-close').addEventListener('click', () => modal.close());
+modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+
+
+
+/* ===== Pick your tables ===== */
+const picks = [];
+const topicBtns = [...document.querySelectorAll('.topic')];
+const pickTxt = document.getElementById('pick-txt'), pickLabel = document.getElementById('pick-label'), pickBar = document.getElementById('pick-bar');
+function renderPicks(){
+  topicBtns.forEach(b => { const i = picks.indexOf(b); b.setAttribute('aria-pressed', i>-1); b.querySelector('.tk').textContent = i>-1 ? 'Round ' + (i+1) : ''; });
+  const t = b => b.querySelector('p').textContent;
+  pickBar.classList.toggle('ready', picks.length === 2);
+  if (!picks.length){ pickLabel.textContent = 'Your day'; pickTxt.textContent = 'Pick two tables to see your afternoon.'; }
+  else if (picks.length === 1){ pickLabel.textContent = 'Round 1 · 1:30pm'; pickTxt.textContent = t(picks[0]) + '. Now pick your second table.'; }
+  else { pickLabel.textContent = 'Your afternoon'; pickTxt.innerHTML = '<b>1:30pm</b> ' + t(picks[0]) + '<br><b>2:25pm</b> ' + t(picks[1]); }
+}
+topicBtns.forEach(b => b.addEventListener('click', () => {
+  const i = picks.indexOf(b);
+  if (i > -1) picks.splice(i,1); else { if (picks.length === 2) picks.shift(); picks.push(b); }
+  renderPicks();
+}));
+
+/* ===== HRD form open ===== */
+function openHRD(scroll){
+  document.getElementById('hrd-grid').hidden = false;
+  document.getElementById('hrd-bar').hidden = true;
+  if (scroll) document.getElementById('hrd').scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+}
+document.querySelectorAll('[data-open-hrd], a[href="#hrd"]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openHRD(true); }));
+if (location.hash === '#hrd') openHRD(true);
+
+/* ===== FAQ ===== */
+document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => {
+  const item = q.parentElement, open = !item.classList.contains('open');
+  item.classList.toggle('open', open); q.setAttribute('aria-expanded', open);
+}));
+
+/* ===== Copy buttons ===== */
+document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+  const txt = b.dataset.copy, label = b.lastChild.nodeValue;
+  try { await navigator.clipboard.writeText(txt); b.lastChild.nodeValue = 'Copied'; setTimeout(() => b.lastChild.nodeValue = label, 1500); }
+  catch(e){ const r = document.createRange(); r.selectNodeContents(b); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+}));
+
+/* ===== HRD form ===== */
+const paxList = document.getElementById('pax-list');
+const MAX_PAX = 10;
+function renumber(){
+  [...paxList.children].forEach((row,i) => {
+    row.querySelector('.pax-n').textContent = 'Participant ' + (i+1);
+    row.querySelector('.pax-rm').hidden = paxList.children.length === 1;
+  });
+  document.getElementById('add-pax').hidden = paxList.children.length >= MAX_PAX;
+}
+let paxSeq = 0;
+function addPax(){
+  const n = ++paxSeq;
+  const row = document.createElement('div'); row.className = 'pax';
+  row.innerHTML = `<div class="pax-head"><span class="pax-n"></span><button type="button" class="pax-rm">Remove</button></div>
+    <div class="row">
+      <label for="p${n}-name"><span>Full name (as per NRIC) <em>*</em></span><input id="p${n}-name" data-f="name" required></label>
+      <label for="p${n}-ic"><span>NRIC / passport no. <em>*</em></span><input id="p${n}-ic" data-f="nric" required></label>
+    </div>
+    <div class="row">
+      <label for="p${n}-role"><span>Designation <em>*</em></span><input id="p${n}-role" data-f="designation" required></label>
+      <label for="p${n}-email"><span>Email <em>*</em></span><input id="p${n}-email" data-f="email" type="email" required></label>
+    </div>`;
+  row.querySelector('.pax-rm').addEventListener('click', () => { row.remove(); renumber(); });
+  paxList.appendChild(row); renumber();
+}
+addPax();
+document.getElementById('add-pax').addEventListener('click', addPax);
+
+const form = document.getElementById('hrd-form');
+const msg = document.getElementById('form-msg');
+function showMsg(type, text){ msg.hidden = false; msg.className = 'form-msg ' + type; msg.textContent = text; msg.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'nearest'}); }
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const firstBad = [...form.querySelectorAll('input,textarea')].find(el => !el.checkValidity());
+  if (firstBad){ firstBad.focus(); showMsg('err', 'Please complete the highlighted field: ' + (firstBad.closest('label')?.childNodes[0]?.nodeValue || 'required field').trim()); firstBad.reportValidity && firstBad.reportValidity(); return; }
+  const data = {};
+  new FormData(form).forEach((v,k) => data[k] = v);
+  const pax = [...paxList.children].map(row => { const o = {}; row.querySelectorAll('[data-f]').forEach(i => o[i.dataset.f] = i.value.trim()); return o; });
+  data.participant_count = pax.length;
+  pax.forEach((p,i) => { data[`participant_${i+1}`] = `${p.name} | NRIC ${p.nric} | ${p.designation} | ${p.email}`; });
+  data._subject = `HRD request – TFI Brand Edition – ${data.company_name} (${pax.length} pax)`;
+  data._replyto = data.contact_email;
+  if (HRD_FORM_ENDPOINT.includes('YOUR_FORM_ID')){
+    showMsg('err', "This form isn't connected yet. Please email your details to myfranchiseguide@gmail.com and we'll get back to you within 2 working days.");
+    return;
+  }
+  const btn = document.getElementById('hrd-submit'); btn.disabled = true; btn.firstChild.nodeValue = 'Sending… ';
+  try{
+    const res = await fetch(HRD_FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(data)});
+    if (!res.ok) throw new Error(res.status);
+    form.reset(); paxList.innerHTML = ''; addPax();
+    showMsg('ok', `Thank you. We've received your HRD request for ${pax.length} participant${pax.length>1?'s':''}. We'll email your quotation and programme documents to ${data.contact_email} within 2 working days.`);
+  } catch(err){
+    showMsg('err', "We couldn't send your request. Check your connection and try again, or email myfranchiseguide@gmail.com.");
+  } finally { btn.disabled = false; btn.firstChild.nodeValue = 'Submit HRD request '; }
+});
+</script>
+<script>
+(function(){
+  const tip=document.getElementById('wa-tip'), x=document.getElementById('wa-x');
+  let hidden=false; try{hidden=sessionStorage.getItem('waTip')==='1'}catch(e){}
+  if(!hidden && 'IntersectionObserver' in window){
+    const ob=new IntersectionObserver(es=>{ if(es.some(e=>e.isIntersecting)){ ob.disconnect(); tip.classList.add('show'); setTimeout(()=>tip.classList.remove('show'),10000);} },{threshold:.3});
+    ['tickets','faq'].forEach(id=>{const el=document.getElementById(id); if(el) ob.observe(el);});
+  }
+  x.addEventListener('click',()=>{tip.classList.remove('show');try{sessionStorage.setItem('waTip','1')}catch(e){}});
+})();
+</script>
+</body>
+</html>
