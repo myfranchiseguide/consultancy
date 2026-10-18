@@ -163,11 +163,10 @@
   .call h3{text-transform:none;letter-spacing:-.01em;font-size:22px}
   .call p{color:#2a2f38;font-size:16px;margin:10px 0 18px;max-width:560px}
 
-  /* ---------- Optional email capture ---------- */
-  .emailme{margin-top:26px;padding:22px;border:2px solid var(--line)}
-  .emailme h4{margin:0 0 6px;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
-  .emailme p{margin:0 0 14px;font-size:14px;color:var(--muted)}
-  .lead-fields{display:grid;grid-template-columns:1fr 1fr auto;gap:8px}
+  /* ---------- Result gate ---------- */
+  .gate-form{max-width:460px;display:grid;gap:6px}
+  .gate-form label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:10px}
+  .gate-error{color:var(--red);font-size:14px;font-weight:600;margin:8px 0 0}
   input{width:100%;padding:14px;border:2px solid var(--line);background:var(--white);color:var(--ink);font:inherit;font-size:15px}
   input:focus{outline:none;border-color:var(--blue)}
 
@@ -185,7 +184,6 @@
     .about-grid{grid-template-columns:1fr}
     .portrait{width:120px;height:140px;font-size:36px}
     .help-grid{grid-template-columns:1fr}
-    .lead-fields{grid-template-columns:1fr}
     .actions .btn{flex:1}
     .call .btn,.bridge .btn{width:100%}
   }
@@ -243,11 +241,30 @@
     </div>
   </section>
 
+  <!-- ================= GATE ================= -->
+  <section id="gate" class="hidden">
+    <p class="eyebrow">Assessment complete</p>
+    <h2>Your result is <span class="red">ready.</span></h2>
+    <p class="intro-copy">Tell me where to send it, and I'll show you your 7M score and where to focus first.</p>
+    <form id="gateForm" class="gate-form" novalidate>
+      <label for="firstName">First name</label>
+      <input id="firstName" name="first_name" required autocomplete="given-name" placeholder="Your first name" />
+      <label for="gateEmail">Email</label>
+      <input id="gateEmail" name="email" type="email" required autocomplete="email" placeholder="you@company.com" />
+      <p class="gate-error hidden" id="gateError">Please enter your first name and a valid email.</p>
+      <div class="actions">
+        <button class="btn ghost" type="button" id="gateBack">Back</button>
+        <button class="btn" type="submit">See my result →</button>
+      </div>
+    </form>
+    <p class="fineprint">No spam. Your answers stay private and are only used to send you your result and relevant follow-ups.</p>
+  </section>
+
   <!-- ================= RESULTS ================= -->
   <section id="results" class="hidden">
     <div class="result-header">
       <div>
-        <p class="eyebrow red">Your growth readiness</p>
+        <p class="eyebrow red" id="resultEyebrow">Your growth readiness</p>
         <h2 id="stage"></h2>
         <p class="result-summary" id="summary"></p>
       </div>
@@ -313,20 +330,6 @@
         <p>If you'd like to talk through your result and your expansion plans, you're welcome to book a discovery call with me.</p>
         <a class="btn ghost booking-link" href="#" target="_blank" rel="noopener">Book a discovery call</a>
       </div>
-
-      <!-- Optional: only shows if FORM_ENDPOINT is set in the script below -->
-      <div class="emailme hidden" id="emailBlock">
-        <h4>Not ready for a call?</h4>
-        <p>Get your result and the 7M checklist sent to your inbox.</p>
-        <form id="leadForm">
-          <div class="lead-fields">
-            <input id="name" name="name" required placeholder="Your name" autocomplete="name" />
-            <input id="email" name="email" required type="email" placeholder="Email address" autocomplete="email" />
-            <button class="btn blue" type="submit">Send it</button>
-          </div>
-        </form>
-        <p id="leadMessage" class="fineprint"></p>
-      </div>
     </div>
 
     <button class="btn ghost" id="restartBtn" style="margin-top:26px">Retake assessment</button>
@@ -346,8 +349,9 @@
 <script>
 /* ===== CONFIG ===== */
 const BOOKING_URL = "https://link.asiafranchiseguide.com/widget/bookings/business-expansion-discovery";
-// Paste your Formspree endpoint (e.g. "https://formspree.io/f/xxxxxxx") to switch on email capture.
-const FORM_ENDPOINT = "";
+// Paste your GoHighLevel inbound webhook URL (Automation > Workflow > Inbound Webhook trigger).
+// A Formspree endpoint also works. Leads are NOT saved until this is filled in.
+const LEAD_ENDPOINT = "https://formspree.io/f/xqpejdaa";
 
 const choices = [
   { label:"We are still figuring this out.", score:0 },
@@ -403,12 +407,12 @@ let lastResult = null;
 let advanceTimer = null;
 
 const $ = id => document.getElementById(id);
-const intro = $("intro"), quiz = $("quiz"), results = $("results");
+const intro = $("intro"), quiz = $("quiz"), gate = $("gate"), results = $("results");
 const backBtn = $("backBtn"), nextBtn = $("nextBtn");
 $("yr").textContent = new Date().getFullYear();
 
 function show(screen){
-  [intro, quiz, results].forEach(el=>el.classList.add("hidden"));
+  [intro, quiz, gate, results].forEach(el=>el.classList.add("hidden"));
   screen.classList.remove("hidden");
   window.scrollTo({top:0, behavior:"smooth"});
 }
@@ -499,6 +503,8 @@ function bookingHref(r){
     utm_campaign:"7m",
     utm_content:`${r.overall}-${r.weakest.key}`
   });
+  if(lead.first_name) p.set("first_name", lead.first_name);
+  if(lead.email) p.set("email", lead.email);
   return `${BOOKING_URL}?${p.toString()}`;
 }
 
@@ -506,6 +512,7 @@ function renderResults(){
   const r = calculate();
   lastResult = r;
   $("stage").textContent = r.stage;
+  $("resultEyebrow").textContent = lead.first_name ? `${lead.first_name}, your growth readiness` : "Your growth readiness";
   $("summary").textContent = r.summary;
   $("scoreValue").textContent = r.overall;
   $("scoreRing").style.setProperty("--score", `${r.overall}%`);
@@ -532,8 +539,6 @@ function renderResults(){
   const href = bookingHref(r);
   document.querySelectorAll(".booking-link").forEach(a=>a.href = href);
 
-  if(FORM_ENDPOINT) $("emailBlock").classList.remove("hidden");
-
   show(results);
 }
 
@@ -547,7 +552,7 @@ $("startBtn").addEventListener("click", ()=>{
 nextBtn.addEventListener("click", ()=>{
   if(answers[current] === null) return;
   if(current < questions.length - 1){ current++; renderQuestion(); }
-  else{ renderResults(); }
+  else{ show(gate); $("firstName").focus(); }
 });
 
 backBtn.addEventListener("click", ()=>{
@@ -556,35 +561,54 @@ backBtn.addEventListener("click", ()=>{
 });
 
 $("restartBtn").addEventListener("click", ()=>{
+  $("gateForm").reset();
   current = 0;
   answers = Array(questions.length).fill(null);
   show(intro);
 });
 
-$("leadForm").addEventListener("submit", async (e)=>{
+let lead = {first_name:"", email:""};
+
+$("gateBack").addEventListener("click", ()=>{ show(quiz); renderQuestion(); });
+
+$("gateForm").addEventListener("submit", (e)=>{
   e.preventDefault();
-  if(!FORM_ENDPOINT) return;
-  const btn = e.target.querySelector("button");
-  btn.disabled = true; btn.textContent = "Sending…";
-  const r = lastResult;
-  const data = {
-    name: $("name").value,
-    email: $("email").value,
+  const first = $("firstName").value.trim();
+  const email = $("gateEmail").value.trim();
+  const valid = first.length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  $("gateError").classList.toggle("hidden", valid);
+  if(!valid) return;
+  lead = {first_name:first, email};
+  renderResults();
+  sendLead(lastResult);
+});
+
+function sendLead(r){
+  if(!LEAD_ENDPOINT){ console.warn("LEAD_ENDPOINT is empty: lead not saved."); return; }
+  const payload = {
+    first_name: lead.first_name,
+    email: lead.email,
+    source: "7M Growth Assessment",
+    _subject: `7M result: ${lead.first_name}, ${r.overall}/100, weak in ${r.weakest.label}`,
     overall_score: r.overall,
     stage: r.stage,
     weakest_area: r.weakest.label,
-    breakdown: Object.values(r.dimensions).map(d=>`${d.label}: ${d.percent}%`).join(", ")
+    market: r.dimensions.market.percent,
+    model: r.dimensions.model.percent,
+    money: r.dimensions.money.percent,
+    management: r.dimensions.management.percent,
+    marketing: r.dimensions.marketing.percent,
+    mechanics: r.dimensions.mechanics.percent,
+    momentum: r.dimensions.momentum.percent,
+    submitted_at: new Date().toISOString()
   };
-  try{
-    const res = await fetch(FORM_ENDPOINT, {method:"POST", headers:{"Accept":"application/json","Content-Type":"application/json"}, body:JSON.stringify(data)});
-    if(!res.ok) throw new Error();
-    $("leadMessage").textContent = "Done. Check your inbox shortly.";
-    btn.textContent = "Sent ✓";
-  }catch{
-    $("leadMessage").textContent = "Something went wrong. Please try again.";
-    btn.disabled = false; btn.textContent = "Send it";
-  }
-});
+  // Fire-and-forget: the person sees their result immediately either way.
+  fetch(LEAD_ENDPOINT, {
+    method:"POST", keepalive:true,
+    headers:{"Content-Type":"application/json","Accept":"application/json"},
+    body:JSON.stringify(payload)
+  }).catch(err=>console.warn("Lead send failed", err));
+}
 </script>
 </body>
 </html>
