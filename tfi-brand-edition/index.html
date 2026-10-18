@@ -504,6 +504,44 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 .yt img{object-position:50% 50%}
 .stamp{transform:none;align-self:flex-start;width:fit-content}
 .hero h1{font-size:clamp(30px,3.4vw,46px);line-height:1.12}
+.faq-sec{padding-block:64px}
+.faq-sec .sec-head{margin-bottom:24px}
+.faq-list{border-top:0;max-width:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;align-items:start}
+.faq-item{border:0;background:#fff;border-radius:4px;padding:0 18px}
+.faq-q{padding:14px 0;font-size:17px;gap:14px}
+.faq-q span.ic{width:26px;height:26px}
+.faq-q span.ic svg{width:11px;height:11px}
+.faq-a p{padding:0 10px 14px 0;font-size:15px}
+@media (max-width:760px){.faq-list{grid-template-columns:1fr}}
+/* v7 */
+.vsl{justify-content:flex-end}
+.yt::after{display:none}
+.yt-cover{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;margin:0;background:none;cursor:pointer;color:#fff;display:block;-webkit-tap-highlight-color:transparent}
+.yt-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(8,29,70,.75));pointer-events:none}
+.yt-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.yt-cover .yt-play,.yt-cover .yt-cap{z-index:2}
+.yt.on{background:#000}
+.yt-ctl{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid var(--navy);background:#fff;color:var(--navy);font:700 13px var(--body);letter-spacing:.04em;cursor:pointer;min-height:40px}
+.yt-ctl svg{width:14px;height:14px}
+.yt-ctl:hover{background:var(--navy);color:#fff}
+.pv{min-width:0}
+.faq-sec .wrap{max-width:940px}
+.faq-sec .sec-head h2{font-size:clamp(28px,2.6vw,36px)}
+.faq-sec .sec-head{margin-bottom:18px}
+.faq-list{gap:8px 12px}
+.faq-item{padding:0 14px}
+.faq-q{padding:10px 0;font-size:15.5px;gap:10px}
+.faq-q span.ic{width:22px;height:22px}
+.faq-q span.ic svg{width:10px;height:10px}
+.faq-a p{font-size:14px;padding:0 6px 12px 0}
+@media (max-width:520px){.past-vids{grid-template-columns:1fr 1fr}}
+.yt-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-height:40px}
+.yt-alt{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none}
+.yt-alt:hover{color:var(--navy)}
+.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;cursor:pointer}
+.vid-cover{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:linear-gradient(180deg,transparent 45%,rgba(8,29,70,.7));color:#fff;cursor:pointer;transition:opacity .3s;-webkit-tap-highlight-color:transparent}
+.vid.on .vid-cover{opacity:0;pointer-events:none}
+.vid-cover .yt-play,.vid-cover .yt-cap{z-index:2}
 </style>
 </head>
 <body>
@@ -545,9 +583,9 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <div class="hero-mark ld">Brand Edition <span>Malaysia's first franchise industry dialogue</span></div>
+      <div class="hero-mark ld">Brand Edition</div>
       <img class="hero-word ld" src="assets/tfi-wordmark.png" alt="The Franchise Insider" width="560" height="152">
-      <h1 class="ld">Bring your toughest franchise problem. Leave with <i>the people who've solved it.</i></h1>
+      <h1 class="ld">The event built for <i>franchise brands.</i></h1>
       <p class="lede ld">100 brand owners. 10 roundtables. One handpicked expert at every table, and no sales pitches. A full day built around the challenges franchise brands are actually facing.</p>
       <div class="chips ld">
         <span class="chip"><svg><use href="#i-cal"/></svg>Thu, 3 Dec 2026</span>
@@ -575,11 +613,10 @@ footer{border-top:1px solid var(--line);padding-block:36px}
     <div class="vsl" id="vsl">
       <img class="vsl-photo" src="assets/roundtable-claudia-malaysia.jpg" alt="Claudia Ng facilitating a MYFranchiseGuide roundtable">
       <div class="vsl-shade"></div>
-      <div class="vsl-top"><img src="assets/tfi-mark-white.png" alt="" width="42" height="22"><span>3 Dec · Subang</span></div>
       <div class="vsl-cap">
         <span class="live"><i></i>Roundtable in session</span>
-        <h3>Real problems. Real people. One table.</h3>
-        <p>Claudia Ng facilitating a MYFranchiseGuide roundtable</p>
+        <h3>One table. One shared challenge. Solved together.</h3>
+        <p>Discuss a topic your whole table cares about, and find the solution together.</p>
       </div>
     </div>
   </div>
@@ -601,7 +638,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
     <div class="quotes rv">
       <figure class="q"><blockquote>“A very meaningful event. The demographic is different from anything I've seen in years, with high-intent leads. Truly first of its kind.”</blockquote><figcaption><b>Daniel Sim</b>Director, Cambridge English for Life · Vol. 2</figcaption></figure>
       <figure class="q"><blockquote>“I travelled from Brunei for this event. It was an eye-opening experience. Next time I'll bring my team.”</blockquote><figcaption><b>Chewy</b>F&amp;B multi-brand owner · Vol. 2</figcaption></figure>
-      <figure class="q"><blockquote>“Claudia is very passionate about the franchise industry and this is a really nice event that brings all of us together, such a nice franchise community.”</blockquote><figcaption><b>Dr. Joolyn </b>Micfront Public Speaking CEO · Vol. 1</figcaption></figure>
+      <figure class="q"><blockquote>“Thank you MYFG for connecting brands with buyers. A really nice community event.”</blockquote><figcaption><b>Dr. Joolyn</b>CEO, Micfront Public Speaking · Vol. 1</figcaption></figure>
     </div>
   </div>
 </section>
@@ -644,13 +681,13 @@ footer{border-top:1px solid var(--line);padding-block:36px}
       <div class="rv">
         <div class="sec-head" style="margin-bottom:0">
           <span class="stamp">Malaysia's First of Its Kind</span>
-          <h2>Ten Roundtables. Two rounds. Real conversation.</h2>
-          <p class="lede">Most franchise events are expo floors and sales pitches. The Brand Edition is built around facilitated roundtables, where ten business owners sit with one expert partner and discuss a challenge they all share.</p>
+          <h2>Ten tables. Two rounds. Real conversation.</h2>
+          <p class="lede">Most franchise events are expo floors and sales pitches. The Brand Edition is built around facilitated roundtables, where ten business owners sit with one expert partner and work through a challenge they all share.</p>
         </div>
         <div class="steps" id="steps">
-          <button class="step on" type="button" data-phase="0"><b>Round 1 · 45 min</b><div><h3>Ten business owners at your table</h3><p>You already pre-selected with two topics that matter most to your business.</p></div></button>
+          <button class="step on" type="button" data-phase="0"><b>Round 1 · 45 min</b><div><h3>Ten business owners at your table</h3><p>You choose the two topics that matter most to your business.</p></div></button>
           <button class="step" type="button" data-phase="1"><b>The swap</b><div><h3>The bell rings. You move.</h3><p>Everyone heads to their second topic. The partner stays.</p></div></button>
-          <button class="step" type="button" data-phase="2"><b>Round 2 · 45 min</b><div><h3>Ten new conversations</h3><p>A new table, new perspectives, more brand owners trying to solve the challenge they are facing.</p></div></button>
+          <button class="step" type="button" data-phase="2"><b>Round 2 · 45 min</b><div><h3>Ten new conversations</h3><p>A new table, new perspectives, more brand owners in your network.</p></div></button>
         </div>
       </div>
       <div class="rt-card rv" aria-label="Animated diagram: 100 attendees at 10 roundtables swap tables between two rounds">
@@ -662,7 +699,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
     <div class="stats rv">
       <div class="stat"><b class="tnum" data-count="100">100</b><small>Brand owners &amp; leaders</small><p>Founders, C-suite and business owners in one room</p></div>
       <div class="stat"><b class="tnum" data-count="10">10</b><small>Roundtables</small><p>Ten seats at every table</p></div>
-      <div class="stat"><b class="tnum" data-count="90">90</b><small>Minutes</small><p>Quality discussion, connect with one and the other</p></div>
+      <div class="stat"><b class="tnum" data-count="90">90</b><small>Minutes</small><p>Of facilitated, face-to-face discussion</p></div>
       <div class="stat"><b class="tnum" data-count="1">1</b><small>Partner per category</small><p>Handpicked experts, never competing at the next table</p></div>
     </div>
   </div>
@@ -674,7 +711,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
     <div class="sec-head rv">
       <span class="eyebrow">Roundtable discussion topics</span>
       <h2>Which two tables would you sit at?*</h2>
-      <p class="lede">Ten real challenges franchise brands are facing. Tap the two that are top of your priority.</p>
+      <p class="lede">Ten real challenges franchise brands are facing. Tap the two you'd bring to the table.</p>
     </div>
     <div class="topic-grid rv">
       <button type="button" class="topic" aria-pressed="false"><small>Growth</small><p>Selling your first 10 locations</p><span class="tk" aria-hidden="true"></span></button>
@@ -717,7 +754,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Who it's for</span>
-      <h2>Built for franchise brands, and the businesses interested to become one</h2>
+      <h2>Built for franchise brands, and the businesses ready to become one</h2>
     </div>
     <div class="fit-grid rv">
       <div class="fit yes">
@@ -748,33 +785,33 @@ footer{border-top:1px solid var(--line);padding-block:36px}
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">The programme</span>
-      <h2>The Agenda</h2>
-      <p class="lede">This is not an event for you to sit and listen in all day. You will learn, connect, engage, discuss and make new industry friends.</p>
+      <h2>The full day*</h2>
+      <p class="lede">Learn on stage in the morning. Work through real problems together in the afternoon.</p>
     </div>
     <div class="tabs" role="tablist" aria-label="Programme">
-      <button class="tab" role="tab" aria-selected="true" aria-controls="am" id="tab-am">Morning Session </button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="pm" id="tab-pm">Afternoon Session </button>
+      <button class="tab" role="tab" aria-selected="true" aria-controls="am" id="tab-am">Morning · Learn</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="pm" id="tab-pm">Afternoon · Work together</button>
     </div>
     <div class="agenda-list" id="am" role="tabpanel" aria-labelledby="tab-am">
-      <div class="slot"><time>8:30am</time><b>Registration and networking coffee</b><span class="tag">Arrive</span></div>
-      <div class="slot"><time>9:00am</time><b>Welcome and opening address</b><span class="tag">Stage</span></div>
-      <div class="slot"><time>9:15am</time><b>Title partner welcome</b><span class="tag">Stage</span></div>
-      <div class="slot key"><time>9:25am</time><b>VIP keynote</b><span class="tag">Keynote</span></div>
-      <div class="slot"><time>10:00am</time><b>Partner 1: Built to Be Wanted</b><span class="tag">Insight</span></div>
-      <div class="slot"><time>10:30am</time><b>Networking break and partner booths</b><span class="tag">Break</span></div>
-      <div class="slot"><time>10:50am</time><b>Partner 2: Insight session</b><span class="tag">Insight</span></div>
-      <div class="slot"><time>11:30am</time><b>Panel discussion: AI for Franchising</b><span class="tag">Panel</span></div>
-      <div class="slot"><time>12:10pm</time><b>Networking lunch · Pavillion Connect</b><span class="tag">Lunch</span></div>
+      <div class="slot"><time>8:30</time><b>Registration and networking coffee</b><span class="tag">Arrive</span></div>
+      <div class="slot"><time>9:00</time><b>Welcome and opening address</b><span class="tag">Stage</span></div>
+      <div class="slot"><time>9:15</time><b>Title partner welcome</b><span class="tag">Stage</span></div>
+      <div class="slot key"><time>9:25</time><b>VIP keynote</b><span class="tag">Keynote</span></div>
+      <div class="slot"><time>10:00</time><b>Partner 1: Built to Be Wanted</b><span class="tag">Insight</span></div>
+      <div class="slot"><time>10:30</time><b>Networking break and partner booths</b><span class="tag">Break</span></div>
+      <div class="slot"><time>10:50</time><b>Partner 2: Insight session</b><span class="tag">Insight</span></div>
+      <div class="slot"><time>11:30</time><b>Panel discussion: AI for Franchising</b><span class="tag">Panel</span></div>
+      <div class="slot"><time>12:10</time><b>Networking lunch · Pavillion Connect</b><span class="tag">Lunch</span></div>
     </div>
     <div class="agenda-list" id="pm" role="tabpanel" aria-labelledby="tab-pm" hidden>
-      <div class="slot key"><time>1:30pm</time><b>Roundtables · round 1</b><span class="tag">Roundtable</span></div>
-      <div class="slot"><time>2:15pm</time><b>The bell rings · the swap</b><span class="tag">Swap</span></div>
-      <div class="slot key"><time>2:25pm</time><b>Roundtables · round 2</b><span class="tag">Roundtable</span></div>
-      <div class="slot"><time>3:10pm</time><b>Short break + Pavillion Connect</b><span class="tag">Break</span></div>
-      <div class="slot"><time>3:25pm</time><b>Partner 3: Insight session</b><span class="tag">Insight</span></div>
-      <div class="slot"><time>4:05pm</time><b>Partner 4: Insight session</b><span class="tag">Insight</span></div>
-      <div class="slot key"><time>4:45pm</time><b>Fireside chat: Road to RM100 million</b><span class="tag">Fireside</span></div>
-      <div class="slot"><time>5:20pm</time><b>Closing: what the tables concluded</b><span class="tag">Close</span></div>
+      <div class="slot key"><time>1:30</time><b>Roundtables · round 1</b><span class="tag">Roundtable</span></div>
+      <div class="slot"><time>2:15</time><b>The bell rings · the swap</b><span class="tag">Swap</span></div>
+      <div class="slot key"><time>2:25</time><b>Roundtables · round 2</b><span class="tag">Roundtable</span></div>
+      <div class="slot"><time>3:10</time><b>Short break + Pavillion Connect</b><span class="tag">Break</span></div>
+      <div class="slot"><time>3:25</time><b>Partner 3: Insight session</b><span class="tag">Insight</span></div>
+      <div class="slot"><time>4:05</time><b>Partner 4: Insight session</b><span class="tag">Insight</span></div>
+      <div class="slot key"><time>4:45</time><b>Fireside chat: Road to RM100 million</b><span class="tag">Fireside</span></div>
+      <div class="slot"><time>5:20</time><b>Closing: what the tables concluded</b><span class="tag">Close</span></div>
     </div>
     <p class="agenda-foot">*Tentative programme. Speakers and sessions will be announced progressively. Timings are subject to change.</p>
   </div>
@@ -786,12 +823,14 @@ footer{border-top:1px solid var(--line);padding-block:36px}
     <div class="past-copy rv">
       <span class="eyebrow">Track record</span>
       <h2>The Franchise Insider so far</h2>
-      <p class="lede">The first two editions was designed for franchise buyers and connected with handpicked brands. The Brand Edition is the first built for franchise brands and the businesses ready to franchise.</p>
+      <p class="lede">Two editions for franchise buyers and investors came first. The Brand Edition is the first built for franchise brands and the businesses ready to franchise.</p>
       <div class="past-foot"><svg><use href="#i-star"/></svg><p>Two editions in, the Brand Edition brings the same intimate format to the people who build franchise brands.</p></div>
     </div>
     <div class="past-vids rv">
-      <figure class="pv"><div class="yt-slot" data-cover="" data-yt="jgCjW_sImVU" data-cap="Watch Vol. 1"></div><figcaption><b>Vol. 1</b><span>20 June 2026 · 76 pax, FULL house </span></figcaption></figure>
-      <figure class="pv v2"><div class="yt-slot" data-cover="" data-yt="riW2upBkHrQ" data-cap="Watch Vol. 2"></div><figcaption><b>Vol. 2</b><span>3 Sept 2026 · 85 pax, Overcapacity </span></figcaption></figure>
+      <figure class="pv"><div class="yt vid" data-vid><video src="assets/videos/tfi-vol1.mp4" poster="assets/videos/tfi-vol1-cover.jpg" playsinline preload="none"></video><button type="button" class="vid-cover" aria-label="Play Vol. 1 video"><span class="yt-play"></span><span class="yt-cap">Watch Vol. 1</span></button></div>
+        <div class="yt-row"><button type="button" class="yt-ctl" data-ctl></button></div><figcaption><b>Vol. 1</b><span>20 June 2026 · Carfe, PJ</span></figcaption></figure>
+      <figure class="pv v2"><div class="yt vid" data-vid><video src="assets/videos/tfi-vol2.mp4" poster="assets/videos/tfi-vol2-cover.jpg" playsinline preload="none"></video><button type="button" class="vid-cover" aria-label="Play Vol. 2 video"><span class="yt-play"></span><span class="yt-cap">Watch Vol. 2</span></button></div>
+        <div class="yt-row"><button type="button" class="yt-ctl" data-ctl></button></div><figcaption><b>Vol. 2</b><span>3 September 2026 · Carfe, PJ</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -832,7 +871,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
         <div class="amt tnum"><sup>RM</sup><span id="mfa-amt">267</span></div>
         <span>Member special rate, before and after early bird</span>
         <a class="btn btn-white" href="https://catalog.billplz.com/myfg/link/mfa-tfib" target="_blank" rel="noopener">Get member ticket <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
-        <p class="foot" id="mfa-foot">**RM314 from 20 November 2026. MFA membership is checked at registration.</p>
+        <p class="foot" id="mfa-foot">**RM314 from 20 November 2026. Membership is verified with the MFA secretariat.</p>
       </div>
       <div class="price hrdc">
         <img src="assets/hrd-claimable.png" alt="HRD Corp Claimable" width="64" height="64">
@@ -919,7 +958,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="background:var(--mist)">
+<section id="faq" class="faq-sec" style="background:var(--mist)">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">FAQ</span>
@@ -932,7 +971,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
       <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">How do I choose my roundtable topics?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>After your ticket is confirmed, we'll email you a link to choose the two topics you want to join. Each table is capped at ten, so popular topics fill quickly. Choose early.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Is the event HRD Claimable?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Yes, for employers registered with HRD Corp. Fill in the <a href="#hrd">HRD form</a> and we'll send your quotation and programme documents for your e-TRiS grant application. Apply before the event, ideally at least 2 weeks ahead.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Who can attend?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Franchise brand owners and their senior team, business owners planning to expand through franchising, and business owners curious whether franchising suits them. If you're only looking to buy a franchise, our community editions are a better fit.</p></div></div></div>
-      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">How do MFA members get 10% off?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Choose the <b>MFA member ticket</b> in the ticket section and pay directly. Members always get 10% off, before and after early bird. Your membership is checked at registration on the day.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">How do MFA members get 10% off?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Just check out with the <b>MFA member payment link</b>. Your membership will be verified with the MFA secretariat.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Is food included?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Yes. Your ticket includes morning coffee, a networking lunch and an afternoon break.</p></div></div></div>
     </div>
   </div>
@@ -998,7 +1037,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 /* ===== Settings you can edit ===== */
 // 1) Create a free form at https://formspree.io (log in with myfranchiseguide@gmail.com),
 //    then paste its endpoint here. Submissions arrive in that inbox and can be exported to CSV / Google Sheets.
-const HRD_FORM_ENDPOINT = "https://formspree.io/f/xrpejdod";
+const HRD_FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 const PAY_LINK = "https://catalog.billplz.com/myfg/link/tfib";
 const EARLY_BIRD_END = new Date("2026-11-19T23:59:59+08:00");
 
@@ -1052,6 +1091,18 @@ const PARTNERS = [
     bg: "#2B2B2B"
   },
   {
+    name: "USEA",
+    full: "USEA Global",
+    category: "Sensory Marketing Partner",
+    tagline: "The Architects of Retail Sensory Experience.",
+    desc: "USEA designs omnichannel retail experiences through sight, sound and scent, from audio branding and in-store music to digital signage and ambient scenting. Part of U-NEXT HOLDINGS, with teams in Singapore, Malaysia and Vietnam serving F&B, hospitality and retail brands.",
+    tags: ["Audio branding", "In-store music", "Digital signage", "Ambient scenting", "Omnichannel retail"],
+    worked: "",
+    url: "https://usea.global/",
+    logo: "assets/logo-usea.png",
+    bg: "#FFFFFF"
+  },
+  {
     name: "HELP University",
     full: "HELP University",
     category: "Venue Partner",
@@ -1091,7 +1142,7 @@ function tick(){
   document.getElementById('std-badge').hidden = !early;
   document.getElementById('std-foot').hidden = !early;
   document.getElementById('mfa-amt').textContent = early ? '267' : '314';
-  document.getElementById('mfa-foot').textContent = early ? '**RM314 from 20 November 2026. MFA membership is checked at registration.' : 'MFA membership is checked at registration.';
+  document.getElementById('mfa-foot').textContent = early ? '**RM314 from 20 November 2026. Membership is verified with the MFA secretariat.' : 'Membership is verified with the MFA secretariat.';
   const fh = document.getElementById('final-h'); if (!early && fh) fh.innerHTML = 'Take a seat <i>at the table.</i>';
   const cd = document.getElementById('countdown');
   if (!early){ cd.hidden = true; return; }
@@ -1161,27 +1212,28 @@ setTimeout(() => document.querySelectorAll('.rv').forEach(el => el.classList.add
 /* ===== Past event videos (YouTube) =====
    To add the Vol. 2 video, paste its YouTube ID into data-yt="" on the Vol. 2 slot
    (the part after /shorts/ or watch?v= in the link). */
-document.querySelectorAll('.yt-slot').forEach(slot => {
-  const id = slot.dataset.yt, cap = slot.dataset.cap;
-  if (!id){ slot.outerHTML = '<div class="yt soon" aria-label="Video coming soon"><span>Video<br>coming soon</span></div>'; return; }
-  const b = document.createElement('button');
-  b.type = 'button'; b.className = 'yt'; b.setAttribute('aria-label', cap + ' video');
-  b.innerHTML = `<img alt="" loading="lazy"><span class="yt-play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="yt-cap">${cap}</span>`;
-  // Custom cover: add data-cover="your-image.jpg" to the slot. Otherwise try YouTube's sharpest thumbnails first.
-  const img = b.querySelector('img');
-  const srcs = slot.dataset.cover ? [slot.dataset.cover] : ['oardefault','maxresdefault','sddefault','hqdefault'].map(n => `https://i.ytimg.com/vi/${id}/${n}.jpg`);
-  let k = 0;
-  const next = () => { if (k < srcs.length) img.src = srcs[k++]; };
-  img.addEventListener('load', () => { if (!slot.dataset.cover && img.naturalWidth <= 120 && k < srcs.length) next(); });
-  img.addEventListener('error', next);
-  next();
-  b.addEventListener('click', () => {
-    const f = document.createElement('iframe');
-    f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1&rel=0`;
-    f.title = cap; f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
-    b.innerHTML = ''; b.appendChild(f); b.style.cursor = 'default';
-  }, {once:true});
-  slot.replaceWith(b);
+const PLAY_I = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg>';
+const PAUSE_I = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z"/></svg>';
+const vidEls = [...document.querySelectorAll('[data-vid] video')];
+document.querySelectorAll('[data-vid]').forEach(wrap => {
+  const video = wrap.querySelector('video'), cover = wrap.querySelector('.vid-cover');
+  const ctl = wrap.nextElementSibling.querySelector('[data-ctl]');
+  cover.querySelector('.yt-play').innerHTML = PLAY_I;
+  const setUI = () => {
+    const on = !video.paused && !video.ended;
+    ctl.innerHTML = on ? PAUSE_I + 'Pause' : PLAY_I + 'Play';
+    ctl.setAttribute('aria-label', (on ? 'Pause ' : 'Play ') + cover.getAttribute('aria-label').replace('Play ',''));
+    wrap.classList.toggle('on', on);
+  };
+  const toggle = () => {
+    if (video.paused || video.ended){ vidEls.forEach(o => o !== video && o.pause()); video.play().catch(()=>{}); }
+    else video.pause();
+  };
+  cover.addEventListener('click', toggle);
+  video.addEventListener('click', toggle);
+  ctl.addEventListener('click', toggle);
+  ['play','pause','ended'].forEach(ev => video.addEventListener(ev, setUI));
+  setUI();
 });
 
 /* ===== Agenda tabs ===== */
