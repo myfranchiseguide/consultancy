@@ -842,9 +842,9 @@ footer{border-top:1px solid var(--line);padding-block:36px}
         <span class="badge" id="std-badge">Early bird</span>
         <small>Standard ticket</small>
         <div class="amt tnum"><sup>RM</sup><span id="std-amt">297</span></div>
-        <span id="std-when">Early-bird price until 19 November 2026</span>
+        <span id="std-when">Early-bird price until 10 November 2026</span>
         <a class="btn btn-red" href="https://catalog.billplz.com/myfg/link/tfib" target="_blank" rel="noopener">Get my ticket <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
-        <p class="foot" id="std-foot">**RM349 from 20 November 2026</p>
+        <p class="foot" id="std-foot">**RM349 from 11 November 2026</p>
       </div>
       <div class="price mfa">
         <span class="badge navy">MFA members only</span>
@@ -888,7 +888,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 <section class="final">
   <div class="wrap final-in rv">
     <span class="eyebrow">3 December 2026 · HELP University Subang</span>
-    <h2 id="final-h">Early bird ends <i>19 November.</i></h2>
+    <h2 id="final-h">Early bird ends <i>10 November.</i></h2>
     <p class="lede">Ten tables. Ten seats each. When a table is full, it's full.</p>
     <div class="hero-cta">
       <a class="btn btn-red" href="https://catalog.billplz.com/myfg/link/tfib" target="_blank" rel="noopener" data-price-btn>Get early-bird ticket · RM297 <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
@@ -1042,11 +1042,11 @@ function tick(){
   document.getElementById('mbuy-price').textContent = early ? 'RM297' : 'RM349';
   document.querySelector('#mbuy small').textContent = early ? 'Early bird' : 'Standard';
   document.getElementById('std-amt').textContent = early ? '297' : '349';
-  document.getElementById('std-when').textContent = early ? 'Early-bird price until 19 November 2026' : 'Standard price';
+  document.getElementById('std-when').textContent = early ? 'Early-bird price until 10 November 2026' : 'Standard price';
   document.getElementById('std-badge').hidden = !early;
   document.getElementById('std-foot').hidden = !early;
   document.getElementById('mfa-amt').textContent = early ? '267' : '314';
-  document.getElementById('mfa-foot').textContent = early ? '**RM314 from 20 November 2026. Membership is verified with the MFA secretariat.' : 'Membership is verified with the MFA secretariat.';
+  document.getElementById('mfa-foot').textContent = early ? '**RM314 from 11 November 2026. Membership is verified with the MFA secretariat.' : 'Membership is verified with the MFA secretariat.';
   const fh = document.getElementById('final-h'); if (!early && fh) fh.innerHTML = 'Take a seat <i>at the table.</i>';
   const cd = document.getElementById('countdown');
   if (!early){ cd.hidden = true; return; }
