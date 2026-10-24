@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Franchise Insider – Brand Edition</title>
-<meta name="description" content="Malaysia's first-of-its-kind franchise industry dialogue. A highly curated, high-intent business networking event. 3 December 2026, HELP University Subang. HRD Claimable.">
+<meta name="description" content="Malaysia's first-of-its-kind franchise industry dialogue. A highly curated, high-intent business networking event. 3 December 2026, HELP University Subang.">
 <meta property="og:title" content="The Franchise Insider – Brand Edition">
-<meta property="og:description" content="Malaysia's first-of-its-kind franchise industry dialogue. 3 Dec 2026 · HELP University Subang · HRD Claimable.">
+<meta property="og:description" content="Malaysia's first-of-its-kind franchise industry dialogue. 3 Dec 2026 · HELP University Subang ·">
 <meta name="theme-color" content="#0B3D91">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,8 +74,6 @@ p{margin:0}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:600;background:#fff}
 .chip svg{width:16px;height:16px;color:var(--red);flex:none}
-.chip.hrd{background:var(--navy);border-color:var(--navy);color:#fff}
-.chip.hrd svg{color:#fff}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .countdown{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
 .cd-units{display:flex;gap:8px}
@@ -277,7 +275,7 @@ dialog[open]{animation:pop .35s cubic-bezier(.2,.9,.3,1.2)}
 .tickets .eyebrow{color:#fff}
 .tickets .eyebrow::before{background:var(--red)}
 .tickets .lede{color:var(--navy-soft)}
-.price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;position:relative}
+.price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;position:relative;max-width:820px}
 .price{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);padding:28px;display:flex;flex-direction:column;gap:10px;position:relative}
 .price.live{background:#fff;color:var(--ink);border-color:#fff}
 .price small{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--navy-soft)}
@@ -298,12 +296,6 @@ dialog[open]{animation:pop .35s cubic-bezier(.2,.9,.3,1.2)}
 .next p{font-size:15px;color:var(--navy-soft)}
 @media (max-width:860px){.price-grid,.next{grid-template-columns:1fr}.next div{padding-right:0}}
 
-/* HRD form */
-.hrd-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
-.hrd-steps{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:0;counter-reset:s}
-.hrd-steps li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;padding:16px 0;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
-.hrd-steps li::before{counter-increment:s;content:counter(s);width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
-.hrd-steps b{color:var(--ink);display:block}
 .warn{margin-top:20px;background:var(--blush);border-left:5px solid var(--red);padding:16px 18px;font-size:14px}
 form{background:var(--mist);padding:32px;display:flex;flex-direction:column;gap:22px;min-width:0}
 fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;min-width:0}
@@ -323,7 +315,6 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy);bo
 .form-msg{padding:16px 18px;font-size:15px;border-radius:3px}
 .form-msg.ok{background:#E7F5EC;color:#14532D;border-left:5px solid #15803D}
 .form-msg.err{background:var(--blush);color:#7F1D1D;border-left:5px solid var(--red)}
-@media (max-width:900px){.hrd-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.row{grid-template-columns:1fr}form{padding:22px}}
 
 /* FAQ */
@@ -368,10 +359,6 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 .vsl{animation:rise 1s .3s cubic-bezier(.2,.8,.2,1) both}
 
 /* v2 additions */
-.hrd-logo{width:58px;height:58px;flex:none;margin:-10px 0}
-.hrd-band{width:46px;height:46px;flex:none;border-radius:50%;background:#fff}
-.hrd-head{display:flex;align-items:center;gap:18px}
-.hrd-head img{width:92px;height:92px}
 .founder{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
 .founder::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;border:1px solid rgba(255,255,255,.08);right:-200px;top:-220px;pointer-events:none}
 .founder .eyebrow{color:#fff}
@@ -471,11 +458,9 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 .price{gap:12px}
 .price .btn{margin-top:8px;align-self:stretch}
 .price .foot{font-size:13px;color:var(--muted);margin-top:2px}
-.price.mfa .foot,.price.hrdc span{color:var(--navy-soft)}
 .price .badge.navy{background:#fff;color:var(--navy)}
 .price .cents{font-size:28px}
 .price.mfa{border-color:rgba(255,255,255,.45)}
-.price.hrdc img{width:64px;height:64px}
 .amt-sm{font-family:var(--display);font-size:30px;line-height:1.1}
 .btn-ghost-w{border-color:#fff;color:#fff}
 .btn-ghost-w:hover{background:#fff;color:var(--navy)}
@@ -483,11 +468,6 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 .next{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:860px){.next{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.next{grid-template-columns:1fr}}
-.hrd-sec{padding-block:56px}
-.hrd-bar{display:flex;align-items:center;gap:20px;border:1px solid var(--line);padding:20px 24px;flex-wrap:wrap}
-.hrd-bar p{flex:1;min-width:240px;font-size:16px;color:var(--muted)}
-.hrd-bar p b{color:var(--ink)}
-.hrd-sec .hrd-grid:not([hidden]){padding-top:8px}
 .price .amt{display:flex;align-items:flex-start}
 .price .amt span{font-size:inherit;color:inherit;display:inline;line-height:1}
 .price .amt .cents{font-size:28px;margin-top:4px}
@@ -542,6 +522,8 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 .vid-cover{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:linear-gradient(180deg,transparent 45%,rgba(8,29,70,.7));color:#fff;cursor:pointer;transition:opacity .3s;-webkit-tap-highlight-color:transparent}
 .vid.on .vid-cover{opacity:0;pointer-events:none}
 .vid-cover .yt-play,.vid-cover .yt-cap{z-index:2}
+.price.mfa .foot{color:var(--navy-soft)}
+.partner-logo img,.m-logo img{max-width:78%;height:auto}
 </style>
 </head>
 <body>
@@ -586,16 +568,15 @@ footer{border-top:1px solid var(--line);padding-block:36px}
       <div class="hero-mark ld">Brand Edition</div>
       <img class="hero-word ld" src="assets/tfi-wordmark.png" alt="The Franchise Insider" width="560" height="152">
       <h1 class="ld">The event built for <i>franchise brands.</i></h1>
-      <p class="lede ld">100 brand owners. 10 roundtables. One handpicked expert at every table, and no sales pitches. A full day built around the challenges franchise brands are actually facing. Once we fill up 100 registered is close. First come first served.</p>
+      <p class="lede ld">100 brand owners. 10 roundtables. One handpicked expert at every table, and no sales pitches. A full day built around the challenges franchise brands are actually facing.</p>
       <div class="chips ld">
         <span class="chip"><svg><use href="#i-cal"/></svg>Thu, 3 Dec 2026</span>
         <span class="chip"><svg><use href="#i-clock"/></svg>9:00am – 5:30pm</span>
         <span class="chip"><svg><use href="#i-pin"/></svg>HELP University Subang</span>
-        <img class="hrd-logo" src="assets/hrd-claimable.png" alt="HRD Corp Claimable" width="58" height="58">
       </div>
       <div class="hero-cta ld">
         <a class="btn btn-red" href="https://catalog.billplz.com/myfg/link/tfib" target="_blank" rel="noopener" data-price-btn>Get early-bird ticket · RM297 <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
-        <a class="btn btn-ghost" href="#tickets">MFA member or HRD claim?</a>
+        <a class="btn btn-ghost" href="#tickets">MFA member? Get 10% off</a>
       </div>
       <div class="countdown ld" id="countdown" aria-live="polite">
         <span id="cd-label">Early-bird price ends in</span>
@@ -628,7 +609,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
     <div class="band-item"><svg><use href="#i-cal"/></svg><div><small>Date</small><b>3 December 2026</b><span>Thursday</span></div></div>
     <div class="band-item"><svg><use href="#i-clock"/></svg><div><small>Time</small><b>9:00am – 5:30pm</b><span>Registration from 8:30am</span></div></div>
     <div class="band-item"><svg><use href="#i-pin"/></svg><div><small>Venue</small><b>HELP University</b><span>Subang campus</span></div></div>
-    <div class="band-item"><img class="hrd-band" src="assets/hrd-claimable.png" alt="" width="46" height="46"><div><small>Training</small><b>HRD Claimable</b><span>For HRD Corp registered employers</span></div></div>
+    <div class="band-item"><svg><use href="#i-users"/></svg><div><small>Format</small><b>10 roundtables</b><span>Ten seats at every table</span></div></div>
   </div>
 </div>
 
@@ -823,14 +804,14 @@ footer{border-top:1px solid var(--line);padding-block:36px}
     <div class="past-copy rv">
       <span class="eyebrow">Track record</span>
       <h2>The Franchise Insider so far</h2>
-      <p class="lede">Our 1st two edition was curated for franchise buyers and connect them to the handpicked brands. The Brand Edition will be our inaugural event built for franchise brands and the businesses interested to franchise.</p>
-      <div class="past-foot"><svg><use href="#i-star"/></svg><p>The Brand Edition will be the same intimate format to the people who build franchise brands.</p></div>
+      <p class="lede">Two editions for franchise buyers and investors came first. The Brand Edition is the first built for franchise brands and the businesses ready to franchise.</p>
+      <div class="past-foot"><svg><use href="#i-star"/></svg><p>Two editions in, the Brand Edition brings the same intimate format to the people who build franchise brands.</p></div>
     </div>
     <div class="past-vids rv">
       <figure class="pv"><div class="yt vid" data-vid><video src="assets/videos/tfi-vol1.mp4" poster="assets/videos/tfi-vol1-cover.jpg" playsinline preload="none"></video><button type="button" class="vid-cover" aria-label="Play Vol. 1 video"><span class="yt-play"></span><span class="yt-cap">Watch Vol. 1</span></button></div>
-        <div class="yt-row"><button type="button" class="yt-ctl" data-ctl></button></div><figcaption><b>Vol. 1</b><span>20 June 2026 · 76 Pax · Full House </span></figcaption></figure>
+        <div class="yt-row"><button type="button" class="yt-ctl" data-ctl></button></div><figcaption><b>Vol. 1</b><span>20 June 2026 · Carfe, PJ</span></figcaption></figure>
       <figure class="pv v2"><div class="yt vid" data-vid><video src="assets/videos/tfi-vol2.mp4" poster="assets/videos/tfi-vol2-cover.jpg" playsinline preload="none"></video><button type="button" class="vid-cover" aria-label="Play Vol. 2 video"><span class="yt-play"></span><span class="yt-cap">Watch Vol. 2</span></button></div>
-        <div class="yt-row"><button type="button" class="yt-ctl" data-ctl></button></div><figcaption><b>Vol. 2</b><span>3 Sept 2026 · 85 Pax · Overcapacity </span></figcaption></figure>
+        <div class="yt-row"><button type="button" class="yt-ctl" data-ctl></button></div><figcaption><b>Vol. 2</b><span>3 September 2026 · Carfe, PJ</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -873,13 +854,6 @@ footer{border-top:1px solid var(--line);padding-block:36px}
         <a class="btn btn-white" href="https://catalog.billplz.com/myfg/link/mfa-tfib" target="_blank" rel="noopener">Get member ticket <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
         <p class="foot" id="mfa-foot">**RM314 from 20 November 2026. Membership is verified with the MFA secretariat.</p>
       </div>
-      <div class="price hrdc">
-        <img src="assets/hrd-claimable.png" alt="HRD Corp Claimable" width="64" height="64">
-        <small>HRD Claimable</small>
-        <div class="amt-sm">Your HRD levy can cover your seat</div>
-        <span>For HRD Corp registered employers. Don't pay online. Fill in a short form and we'll send your quotation and documents.</span>
-        <a class="btn btn-ghost-w" href="#hrd" data-open-hrd>Start HRD claim <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
-      </div>
     </div>
     <p class="secure rv">Secure payment via Billplz. Food and refreshments included.</p>
     <div class="next rv">
@@ -888,72 +862,6 @@ footer{border-top:1px solid var(--line);padding-block:36px}
       <div><b>03</b><h3>Choose your topics</h3><p>Lock in the two roundtables you want to join.</p></div>
       <div><b>04</b><h3>See you on 3rd Dec</h3><p>Come and connect with all of us at HELP University Subang.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- HRD FORM -->
-<section id="hrd" class="hrd-sec">
-  <div class="wrap">
-    <div class="hrd-bar" id="hrd-bar">
-      <img src="assets/hrd-claimable.png" alt="" width="56" height="56">
-      <p><b>Claiming through HRD Corp?</b> Fill in a short form and we'll email your quotation, trainer profile and schedule within 2 working days.</p>
-      <button class="btn btn-red" type="button" data-open-hrd>Open HRD form</button>
-    </div>
-  </div>
-  <div class="wrap hrd-grid" id="hrd-grid" hidden>
-    <div class="rv">
-      <div class="hrd-head"><img src="assets/hrd-claimable.png" alt="HRD Corp Claimable" width="92" height="92"><span class="eyebrow">HRD Claimable</span></div>
-      <h2 style="margin-top:18px">Claim your seat through HRD Corp</h2>
-      <p class="lede" style="margin-top:18px">If your company is registered with HRD Corp, you can use your training levy for this programme. Fill in the form and we'll send you everything you need for your grant application.</p>
-      <ol class="hrd-steps">
-        <li><div><b>Submit this form</b>Tell us about your company and who's attending.</div></li>
-        <li><div><b>Receive your documents</b>We'll email a quotation, trainer profile and programme schedule within 2 working days.</div></li>
-        <li><div><b>Apply in e-TRiS</b>Submit your grant application under HRD Corp Claimable Courses before the event.</div></li>
-        <li><div><b>Choose your topics</b>Once your grant is approved, we'll confirm your seats and send the topic selection link.</div></li>
-      </ol>
-      <div class="warn"><b>Please don't pay through the ticket link</b> if you're claiming through HRD Corp. Grants must be approved before the training date, so we recommend applying at least 2 weeks ahead. Companies with outstanding levy can't apply.</div>
-    </div>
-
-    <form id="hrd-form" class="rv" novalidate>
-      <fieldset>
-        <legend>Company details</legend>
-        <label for="co-name"><span>Company name (as registered with SSM) <em>*</em></span><input id="co-name" name="company_name" required autocomplete="organization"></label>
-        <div class="row">
-          <label for="co-ssm"><span>SSM registration no. <em>*</em></span><input id="co-ssm" name="ssm_no" required placeholder="e.g. 202101012345"></label>
-          <label for="co-mycoid"><span>HRD Corp MyCoID / employer code <em>*</em></span><input id="co-mycoid" name="hrd_mycoid" required></label>
-        </div>
-        <label for="co-brand"><span>Franchise brand name <em>*</em></span><input id="co-brand" name="brand_name" required></label>
-        <label for="co-addr"><span>Company address <em>*</em></span><textarea id="co-addr" name="company_address" rows="2" required autocomplete="street-address"></textarea></label>
-      </fieldset>
-
-      <fieldset>
-        <legend>HR / contact person</legend>
-        <div class="row">
-          <label for="ct-name"><span>Full name <em>*</em></span><input id="ct-name" name="contact_name" required autocomplete="name"></label>
-          <label for="ct-role"><span>Designation <em>*</em></span><input id="ct-role" name="contact_designation" required autocomplete="organization-title"></label>
-        </div>
-        <div class="row">
-          <label for="ct-email"><span>Email <em>*</em></span><input id="ct-email" name="contact_email" type="email" required autocomplete="email"></label>
-          <label for="ct-phone"><span>Mobile no. <em>*</em></span><input id="ct-phone" name="contact_phone" type="tel" required autocomplete="tel" placeholder="e.g. 012-345 6789"></label>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Participants</legend>
-        <p class="hint" style="font-size:13px">Names and NRIC numbers must match what you enter in e-TRiS.</p>
-        <div id="pax-list" style="display:flex;flex-direction:column;gap:12px"></div>
-        <button class="add-pax" type="button" id="add-pax">+ Add another participant</button>
-      </fieldset>
-
-      <fieldset>
-        <label for="notes">Anything else we should know? <span class="hint">Optional</span><textarea id="notes" name="notes" rows="2"></textarea></label>
-        <label class="check" for="c-levy"><input id="c-levy" name="confirm_hrd_registered" type="checkbox" required><span> I confirm our company is registered with HRD Corp and has no outstanding levy. <em>*</em></span></label>
-        <label class="check" for="c-pdpa"><input id="c-pdpa" name="pdpa_consent" type="checkbox" required><span> I consent to MYFranchiseGuide using these details to prepare HRD Corp grant documents and to contact us about this event, in line with the PDPA. <em>*</em></span></label>
-      </fieldset>
-
-      <div id="form-msg" class="form-msg" role="status" hidden></div>
-      <button class="btn btn-red" type="submit" id="hrd-submit">Submit HRD request <svg width="18" height="18"><use href="#i-arrow"/></svg></button>
-    </form>
   </div>
 </section>
 
@@ -969,7 +877,6 @@ footer{border-top:1px solid var(--line);padding-block:36px}
       <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">What can I expect from the day?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>An intimate room of franchise brand owners. You'll make real connections with other brands, learn practical ways to build your business from people who've done it, and leave with a clearer plan for 2027.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Why is the ticket so affordable?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>This is our inaugural Brand Edition. We want to cover our costs and build a great reputation for the years to come. Our partners make that possible, and we're grateful for their support.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">How do I choose my roundtable topics?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>After your ticket is confirmed, we'll email you a link to choose the two topics you want to join. Each table is capped at ten, so popular topics fill quickly. Choose early.</p></div></div></div>
-      <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Is the event HRD Claimable?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Yes, for employers registered with HRD Corp. Fill in the <a href="#hrd">HRD form</a> and we'll send your quotation and programme documents for your e-TRiS grant application. Apply before the event, ideally at least 2 weeks ahead.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Who can attend?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Franchise brand owners and their senior team, business owners planning to expand through franchising, and business owners curious whether franchising suits them. If you're only looking to buy a franchise, our community editions are a better fit.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">How do MFA members get 10% off?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Just check out with the <b>MFA member payment link</b>. Your membership will be verified with the MFA secretariat.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Is food included?<span class="ic"><svg><use href="#i-plus"/></svg></span></button><div class="faq-a"><div><p>Yes. Your ticket includes morning coffee, a networking lunch and an afternoon break.</p></div></div></div>
@@ -1035,9 +942,6 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 
 <script>
 /* ===== Settings you can edit ===== */
-// 1) Create a free form at https://formspree.io (log in with myfranchiseguide@gmail.com),
-//    then paste its endpoint here. Submissions arrive in that inbox and can be exported to CSV / Google Sheets.
-const HRD_FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 const PAY_LINK = "https://catalog.billplz.com/myfg/link/tfib";
 const EARLY_BIRD_END = new Date("2026-11-19T23:59:59+08:00");
 
@@ -1088,7 +992,7 @@ const PARTNERS = [
     worked: "Texas Chicken Malaysia, The Coffee Bean & Tea Leaf, Faber-Castell and Sunway Property",
     url: "https://skribble.me/",
     logo: "assets/logo-skribble.png",
-    bg: "#2B2B2B"
+    bg: "#000000"
   },
   {
     name: "USEA",
@@ -1293,15 +1197,6 @@ topicBtns.forEach(b => b.addEventListener('click', () => {
   renderPicks();
 }));
 
-/* ===== HRD form open ===== */
-function openHRD(scroll){
-  document.getElementById('hrd-grid').hidden = false;
-  document.getElementById('hrd-bar').hidden = true;
-  if (scroll) document.getElementById('hrd').scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
-}
-document.querySelectorAll('[data-open-hrd], a[href="#hrd"]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openHRD(true); }));
-if (location.hash === '#hrd') openHRD(true);
-
 /* ===== FAQ ===== */
 document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => {
   const item = q.parentElement, open = !item.classList.contains('open');
@@ -1315,63 +1210,6 @@ document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click'
   catch(e){ const r = document.createRange(); r.selectNodeContents(b); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
 }));
 
-/* ===== HRD form ===== */
-const paxList = document.getElementById('pax-list');
-const MAX_PAX = 10;
-function renumber(){
-  [...paxList.children].forEach((row,i) => {
-    row.querySelector('.pax-n').textContent = 'Participant ' + (i+1);
-    row.querySelector('.pax-rm').hidden = paxList.children.length === 1;
-  });
-  document.getElementById('add-pax').hidden = paxList.children.length >= MAX_PAX;
-}
-let paxSeq = 0;
-function addPax(){
-  const n = ++paxSeq;
-  const row = document.createElement('div'); row.className = 'pax';
-  row.innerHTML = `<div class="pax-head"><span class="pax-n"></span><button type="button" class="pax-rm">Remove</button></div>
-    <div class="row">
-      <label for="p${n}-name"><span>Full name (as per NRIC) <em>*</em></span><input id="p${n}-name" data-f="name" required></label>
-      <label for="p${n}-ic"><span>NRIC / passport no. <em>*</em></span><input id="p${n}-ic" data-f="nric" required></label>
-    </div>
-    <div class="row">
-      <label for="p${n}-role"><span>Designation <em>*</em></span><input id="p${n}-role" data-f="designation" required></label>
-      <label for="p${n}-email"><span>Email <em>*</em></span><input id="p${n}-email" data-f="email" type="email" required></label>
-    </div>`;
-  row.querySelector('.pax-rm').addEventListener('click', () => { row.remove(); renumber(); });
-  paxList.appendChild(row); renumber();
-}
-addPax();
-document.getElementById('add-pax').addEventListener('click', addPax);
-
-const form = document.getElementById('hrd-form');
-const msg = document.getElementById('form-msg');
-function showMsg(type, text){ msg.hidden = false; msg.className = 'form-msg ' + type; msg.textContent = text; msg.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'nearest'}); }
-form.addEventListener('submit', async e => {
-  e.preventDefault();
-  const firstBad = [...form.querySelectorAll('input,textarea')].find(el => !el.checkValidity());
-  if (firstBad){ firstBad.focus(); showMsg('err', 'Please complete the highlighted field: ' + (firstBad.closest('label')?.childNodes[0]?.nodeValue || 'required field').trim()); firstBad.reportValidity && firstBad.reportValidity(); return; }
-  const data = {};
-  new FormData(form).forEach((v,k) => data[k] = v);
-  const pax = [...paxList.children].map(row => { const o = {}; row.querySelectorAll('[data-f]').forEach(i => o[i.dataset.f] = i.value.trim()); return o; });
-  data.participant_count = pax.length;
-  pax.forEach((p,i) => { data[`participant_${i+1}`] = `${p.name} | NRIC ${p.nric} | ${p.designation} | ${p.email}`; });
-  data._subject = `HRD request – TFI Brand Edition – ${data.company_name} (${pax.length} pax)`;
-  data._replyto = data.contact_email;
-  if (HRD_FORM_ENDPOINT.includes('YOUR_FORM_ID')){
-    showMsg('err', "This form isn't connected yet. Please email your details to myfranchiseguide@gmail.com and we'll get back to you within 2 working days.");
-    return;
-  }
-  const btn = document.getElementById('hrd-submit'); btn.disabled = true; btn.firstChild.nodeValue = 'Sending… ';
-  try{
-    const res = await fetch(HRD_FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(data)});
-    if (!res.ok) throw new Error(res.status);
-    form.reset(); paxList.innerHTML = ''; addPax();
-    showMsg('ok', `Thank you. We've received your HRD request for ${pax.length} participant${pax.length>1?'s':''}. We'll email your quotation and programme documents to ${data.contact_email} within 2 working days.`);
-  } catch(err){
-    showMsg('err', "We couldn't send your request. Check your connection and try again, or email myfranchiseguide@gmail.com.");
-  } finally { btn.disabled = false; btn.firstChild.nodeValue = 'Submit HRD request '; }
-});
 </script>
 <script>
 (function(){
