@@ -524,6 +524,36 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 .vid-cover .yt-play,.vid-cover .yt-cap{z-index:2}
 .price.mfa .foot{color:var(--navy-soft)}
 .partner-logo img,.m-logo img{max-width:78%;height:auto}
+
+/* v11 */
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-x{font-size:16px;color:var(--muted);font-weight:300}
+.nav-logo .nav-mfa{height:40px;width:auto}
+#partners .partner-grid{display:flex;flex-direction:column;gap:18px}
+.tier{display:grid;grid-template-columns:170px minmax(0,1fr);gap:18px;align-items:center;padding-top:18px;border-top:1px solid var(--line)}
+.tier-label{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.tier-gold .tier-label{color:#A67C00}
+.tier-silver .tier-label{color:#6B7280}
+.tier-logos{display:flex;flex-wrap:wrap;gap:12px}
+.ptile{display:flex;flex-direction:column;width:168px;border:1px solid var(--line);background:#fff;padding:0;text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;border-radius:4px;overflow:hidden}
+.ptile:hover{transform:translateY(-3px);box-shadow:0 14px 26px -18px rgba(11,61,145,.55);border-color:var(--navy)}
+.ptile-logo{height:84px;display:grid;place-items:center;padding:12px}
+.ptile-logo img{max-height:58px;max-width:86%;width:auto;height:auto;object-fit:contain}
+.tier-gold .ptile{width:196px}.tier-gold .ptile-logo{height:96px}.tier-gold .ptile-logo img{max-height:66px}
+.ptile-name{display:block;padding:8px 12px;border-top:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink);line-height:1.3}
+.ptile-name small{display:block;font-size:11px;font-weight:600;color:var(--muted)}
+.ptile-name small:empty{display:none}
+@media (max-width:700px){.tier{grid-template-columns:1fr;gap:10px}.tier-logos{gap:8px}.ptile,.tier-gold .ptile{width:calc(33.33% - 6px)}.ptile-logo,.tier-gold .ptile-logo{height:64px;padding:8px}.ptile-logo img,.tier-gold .ptile-logo img{max-height:44px}.ptile-name{font-size:11px;padding:6px 8px}.ptile-name small{font-size:10px}}
+
+/* v11 promo reel */
+.vsl.vsl-video{padding:0;background:#000}
+.vsl.vsl-video::before{display:none}
+.vsl-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.promo-sound{position:absolute;left:14px;bottom:14px;z-index:3;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:0;border-radius:999px;background:rgba(255,255,255,.95);color:var(--navy);font:700 13px var(--body);cursor:pointer;box-shadow:0 8px 20px -8px rgba(0,0,0,.5);transition:opacity .3s}
+.promo-sound svg{width:18px;height:18px}
+.promo-sound.gone{opacity:0;pointer-events:none}
+.promo-toggle{position:absolute;right:14px;bottom:14px;z-index:3;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.95);color:var(--navy);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
+.promo-toggle svg{width:16px;height:16px}
 </style>
 </head>
 <body>
@@ -548,7 +578,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="nav-logo" href="#top" aria-label="The Franchise Insider, back to top"><img src="assets/tfi-mark.png" alt="TFI" width="66" height="34"></a>
+    <a class="nav-logo" href="#top" aria-label="The Franchise Insider, in collaboration with the Malaysian Franchise Association, back to top"><img src="assets/tfi-mark.png" alt="TFI" width="66" height="34"><span class="nav-x" aria-hidden="true">×</span><img class="nav-mfa" src="assets/logo-mfa.png" alt="MFA" width="42" height="42"></a>
     <nav class="nav-links" aria-label="Sections">
       <a href="#format">The format</a>
       <a href="#agenda">Agenda</a>
@@ -589,16 +619,11 @@ footer{border-top:1px solid var(--line);padding-block:36px}
       </div>
     </div>
 
-    <!-- VSL slot: when your founder video is ready, replace the <img class="vsl-photo"> with your 9:16 video, e.g.
-         <video src="your-video.mp4" controls playsinline poster="poster.jpg" style="width:100%;height:100%;object-fit:cover"></video> -->
-    <div class="vsl" id="vsl">
-      <img class="vsl-photo" src="assets/roundtable-claudia-malaysia.jpg" alt="Claudia Ng facilitating a MYFranchiseGuide roundtable">
-      <div class="vsl-shade"></div>
-      <div class="vsl-cap">
-        <span class="live"><i></i>Roundtable in session</span>
-        <h3>One table. One shared challenge. Solved together.</h3>
-        <p>Discuss a topic your whole table cares about, and find the solution together.</p>
-      </div>
+    <!-- Promo reel: assets/videos/tfi-promo.mp4 (720x1280). Autoplays muted; "Tap for sound" restarts it with sound. -->
+    <div class="vsl vsl-video" id="vsl">
+      <video id="promo" src="assets/videos/tfi-promo.mp4" poster="assets/videos/tfi-promo-cover.jpg" muted loop playsinline preload="metadata" aria-label="The Franchise Insider – Brand Edition promo video"></video>
+      <button type="button" class="promo-sound" id="promo-sound"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg><span>Tap for sound</span></button>
+      <button type="button" class="promo-toggle" id="promo-toggle" aria-label="Pause video"></button>
     </div>
   </div>
 </section>
@@ -778,9 +803,9 @@ footer{border-top:1px solid var(--line);padding-block:36px}
       <div class="slot"><time>9:00</time><b>Welcome and opening address</b><span class="tag">Stage</span></div>
       <div class="slot"><time>9:15</time><b>Title partner welcome</b><span class="tag">Stage</span></div>
       <div class="slot key"><time>9:25</time><b>VIP keynote</b><span class="tag">Keynote</span></div>
-      <div class="slot"><time>10:00</time><b> Franchise Development Is Changing. Is Your Brand Ready for 2027? </b><span class="tag">Insight</span></div>
+      <div class="slot"><time>10:00</time><b>Partner 1: Built to Be Wanted</b><span class="tag">Insight</span></div>
       <div class="slot"><time>10:30</time><b>Networking break and partner booths</b><span class="tag">Break</span></div>
-      <div class="slot"><time>10:50</time><b> Marketing: Meta Ads Crack Code </b><span class="tag">Insight</span></div>
+      <div class="slot"><time>10:50</time><b>Partner 2: Insight session</b><span class="tag">Insight</span></div>
       <div class="slot"><time>11:30</time><b>Panel discussion: AI for Franchising</b><span class="tag">Panel</span></div>
       <div class="slot"><time>12:10</time><b>Networking lunch · Pavillion Connect</b><span class="tag">Lunch</span></div>
     </div>
@@ -791,8 +816,8 @@ footer{border-top:1px solid var(--line);padding-block:36px}
       <div class="slot"><time>3:10</time><b>Short break + Pavillion Connect</b><span class="tag">Break</span></div>
       <div class="slot"><time>3:25</time><b>Partner 3: Insight session</b><span class="tag">Insight</span></div>
       <div class="slot"><time>4:05</time><b>Partner 4: Insight session</b><span class="tag">Insight</span></div>
-      <div class="slot key"><time>4:45</time><b>Fireside chat: Road to IPO </b><span class="tag">Fireside</span></div>
-      <div class="slot"><time>5:20</time><b>Closing & Wrap up </b><span class="tag">Close</span></div>
+      <div class="slot key"><time>4:45</time><b>Fireside chat: Road to RM100 million</b><span class="tag">Fireside</span></div>
+      <div class="slot"><time>5:20</time><b>Closing: what the tables concluded</b><span class="tag">Close</span></div>
     </div>
     <p class="agenda-foot">*Tentative programme. Speakers and sessions will be announced progressively. Timings are subject to change.</p>
   </div>
@@ -825,7 +850,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
       <p class="lede">One partner per category, chosen for what they can teach the room. Tap a partner to see who they are and how they help franchise brands.</p>
     </div>
     <div class="partner-grid rv" id="partner-grid"></div>
-    <p class="partner-more">More partners to be announced.</p>
+    <p class="partner-more">More partners to be announced. Tap a logo to learn more.</p>
   </div>
 </section>
 
@@ -852,7 +877,7 @@ footer{border-top:1px solid var(--line);padding-block:36px}
         <div class="amt tnum"><sup>RM</sup><span id="mfa-amt">267</span></div>
         <span>Member special rate, before and after early bird</span>
         <a class="btn btn-white" href="https://catalog.billplz.com/myfg/link/mfa-tfib" target="_blank" rel="noopener">Get member ticket <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
-        <p class="foot" id="mfa-foot">**RM314 from 20 November 2026. Membership is verified with the MFA secretariat.</p>
+        <p class="foot" id="mfa-foot">**RM314 from 11 November 2026. Membership is verified with the MFA secretariat.</p>
       </div>
     </div>
     <p class="secure rv">Secure payment via Billplz. Food and refreshments included.</p>
@@ -943,11 +968,12 @@ footer{border-top:1px solid var(--line);padding-block:36px}
 <script>
 /* ===== Settings you can edit ===== */
 const PAY_LINK = "https://catalog.billplz.com/myfg/link/tfib";
-const EARLY_BIRD_END = new Date("2026-11-19T23:59:59+08:00");
+const EARLY_BIRD_END = new Date("2026-11-10T23:59:59+08:00");
 
 const PARTNERS = [
   {
     name: "MYFranchiseGuide",
+    tier: "Gold",
     full: "MYFranchiseGuide",
     category: "Consulting",
     tagline: "Malaysia's first Franchise Growth Partner.",
@@ -960,8 +986,9 @@ const PARTNERS = [
   },
   {
     name: "Malaysian Franchise Association",
+    tier: "Co-organiser",
     full: "Malaysian Franchise Association (MFA)",
-    category: "Industry Association",
+    category: "Co-organiser",
     tagline: "The backbone of Malaysia's franchise industry.",
     desc: "The Malaysian Franchise Association brings franchisors, franchisees and industry players together to grow franchising in Malaysia. MFA members get 10% off Brand Edition tickets.",
     tags: ["Industry association", "Franchisors", "Franchisees", "Member benefits"],
@@ -972,6 +999,7 @@ const PARTNERS = [
   },
   {
     name: "LPP Law",
+    tier: "Silver",
     full: "Lee & Poh Partnership",
     category: "Legal Partner",
     tagline: "Your one-stop corporate and commercial legal partner.",
@@ -984,6 +1012,7 @@ const PARTNERS = [
   },
   {
     name: "Skribble",
+    tier: "Gold",
     full: "Skribble Holdings Sdn. Bhd.",
     category: "Marketing & Creative Partner",
     tagline: "A full-service digital marketing and creative agency.",
@@ -996,6 +1025,7 @@ const PARTNERS = [
   },
   {
     name: "USEA",
+    tier: "Gold",
     full: "USEA Global",
     category: "Sensory Marketing Partner",
     tagline: "The Architects of Retail Sensory Experience.",
@@ -1008,6 +1038,7 @@ const PARTNERS = [
   },
   {
     name: "HELP University",
+    tier: "Venue",
     full: "HELP University",
     category: "Venue Partner",
     tagline: "The University of Achievers, and home of the Brand Edition.",
@@ -1016,6 +1047,32 @@ const PARTNERS = [
     worked: "",
     url: "https://university.help.edu.my/",
     logo: "assets/logo-help-university.png",
+    bg: "#FFFFFF"
+  },
+  {
+    name: "Rakan Sales",
+    tier: "Silver",
+    full: "Rakan Sales",
+    category: "Sales Partner",
+    tagline: "Helping businesses build and grow their sales.",
+    desc: "Rakan Sales joins the Brand Edition as a Silver Partner, sharing practical insight on building sales capability across franchise networks.",
+    tags: ["Sales", "Business growth"],
+    worked: "",
+    url: "#",
+    logo: "assets/logo-rakan-sales.png",
+    bg: "#FFFFFF"
+  },
+  {
+    name: "Gamuda",
+    tier: "Supporting",
+    full: "Gamuda",
+    category: "Supporting Partner",
+    tagline: "Building communities, townships and places for brands to grow.",
+    desc: "Gamuda supports the Brand Edition, connecting franchise brands with the communities and retail spaces in its developments.",
+    tags: ["Property", "Townships", "Retail spaces"],
+    worked: "",
+    url: "https://gamuda.com.my/",
+    logo: "assets/logo-gamuda.png",
     bg: "#FFFFFF"
   }
 ];
@@ -1140,6 +1197,23 @@ document.querySelectorAll('[data-vid]').forEach(wrap => {
   setUI();
 });
 
+
+/* ===== Hero promo reel ===== */
+(function(){
+  const v=document.getElementById('promo'); if(!v) return;
+  const snd=document.getElementById('promo-sound'), tg=document.getElementById('promo-toggle');
+  const P='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg>', Z='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z"/></svg>';
+  const ui=()=>{ const on=!v.paused; tg.innerHTML=on?Z:P; tg.setAttribute('aria-label', on?'Pause video':'Play video'); };
+  const pauseOthers=()=>document.querySelectorAll('[data-vid] video').forEach(o=>o.pause());
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){ v.play().catch(()=>{}); }
+  snd.addEventListener('click',()=>{ pauseOthers(); v.muted=false; v.loop=false; v.currentTime=0; v.play().catch(()=>{}); snd.classList.add('gone'); });
+  tg.addEventListener('click',()=>{ if(v.paused){ if(!v.muted) pauseOthers(); v.play().catch(()=>{}); } else v.pause(); });
+  v.addEventListener('click',()=>{ if(v.muted){ snd.click(); } else tg.click(); });
+  ['play','pause'].forEach(e=>v.addEventListener(e,ui)); ui();
+  // pause the promo when a past-event video starts
+  document.querySelectorAll('[data-vid] video').forEach(o=>o.addEventListener('play',()=>{ if(!v.muted) v.pause(); }));
+})();
+
 /* ===== Agenda tabs ===== */
 const tabs = [...document.querySelectorAll('.tab')];
 tabs.forEach(tab => tab.addEventListener('click', () => {
@@ -1149,13 +1223,21 @@ tabs.forEach(tab => tab.addEventListener('click', () => {
 /* ===== Partners + modal ===== */
 const grid = document.getElementById('partner-grid');
 const modal = document.getElementById('pmodal');
-PARTNERS.forEach((p,i) => {
-  const b = document.createElement('button');
-  b.type = 'button'; b.className = 'partner';
-  b.innerHTML = `<div class="partner-logo" style="background:${p.bg}"><img src="${p.logo}" alt="${p.name} logo"></div>
-    <div class="partner-meta"><div><small>${p.category}</small><b>${p.name}</b></div><svg><use href="#i-arrow"/></svg></div>`;
-  b.addEventListener('click', () => openPartner(i));
-  grid.appendChild(b);
+const TIERS = [['Gold','Gold partners'],['Silver','Silver partners'],['Other','Co-organiser · Venue · Supporting']];
+TIERS.forEach(([key,label]) => {
+  const items = PARTNERS.map((p,i)=>[p,i]).filter(([p]) => key==='Other' ? !['Gold','Silver'].includes(p.tier) : p.tier===key);
+  if (!items.length) return;
+  const row = document.createElement('div'); row.className = 'tier tier-' + key.toLowerCase();
+  row.innerHTML = `<div class="tier-label">${label}</div><div class="tier-logos"></div>`;
+  const wrap = row.querySelector('.tier-logos');
+  items.forEach(([p,i]) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'ptile'; b.setAttribute('aria-label', p.name + ': ' + p.category);
+    b.innerHTML = `<span class="ptile-logo" style="background:${p.bg}"><img src="${p.logo}" alt=""></span><span class="ptile-name">${p.name}<small>${key==='Other' ? p.category : ''}</small></span>`;
+    b.addEventListener('click', () => openPartner(i));
+    wrap.appendChild(b);
+  });
+  grid.appendChild(row);
 });
 function openPartner(i){
   const p = PARTNERS[i];
@@ -1171,7 +1253,7 @@ function openPartner(i){
   ex.appendChild(list);
   if (p.worked){ const w = document.createElement('p'); w.style.marginTop = '14px'; w.style.fontSize = '15px'; w.innerHTML = '<b style="color:var(--ink)">Has worked with</b> '; w.appendChild(document.createTextNode(p.worked + '.')); ex.appendChild(w); }
   document.getElementById('m-foot-note').textContent = p.url.replace(/^https?:\/\//,'').replace(/\/$/,'');
-  document.getElementById('m-link').href = p.url;
+  document.getElementById('m-link').href = p.url; document.getElementById('m-link').hidden = (p.url === '#'); document.getElementById('m-foot-note').hidden = (p.url === '#');
   if (modal.showModal) modal.showModal(); else modal.setAttribute('open','');
 }
 document.getElementById('m-close').addEventListener('click', () => modal.close());
