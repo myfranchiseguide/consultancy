@@ -3,13 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NPC67PNQ');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google tag (gtag.js) - GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ4QFLB8Y1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YJ4QFLB8Y1');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1752988856024256');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1752988856024256&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <title>MYFG Academy — HRD Corp Claimable Franchise & Sales Training | MYFranchiseGuide</title>
   <meta name="description" content="Practical, HRD Corp claimable training in trust-led sales, brand scaling, franchise growth systems and founder-led content — for founders and teams responsible for growth." />
   <link rel="canonical" href="https://www.myfranchiseguide.com/academy.html" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="brand.css" />
+
+  <!-- MYFG Academy nav dropdown (Events & Training) — added, does not touch brand.css -->
+  <style>
+    .nav-item.has-dropdown{position:relative;display:flex;align-items:center;gap:4px;}
+    .nav-item.has-dropdown > a{margin:0;}
+    .dropdown-toggle{background:none;border:none;cursor:pointer;color:#000;font-size:10px;padding:0;line-height:1;transition:transform .2s;}
+    .nav-item.has-dropdown:hover .dropdown-toggle,
+    .nav-item.has-dropdown.open .dropdown-toggle{transform:rotate(180deg);color:var(--blue);}
+    .dropdown-panel{
+      position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);
+      background:#fff;border:1px solid var(--mid-grey);border-radius:6px;
+      min-width:230px;padding:10px;box-shadow:0 12px 30px rgba(0,0,0,.12);
+      opacity:0;visibility:hidden;transform:translateX(-50%) translateY(6px);
+      transition:opacity .2s, transform .2s, visibility .2s;
+      z-index:50;
+    }
+    .nav-item.has-dropdown:hover .dropdown-panel,
+    .nav-item.has-dropdown.open .dropdown-panel{
+      opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+    }
+    .dropdown-eyebrow{display:block;font-size:10px;letter-spacing:1.5px;color:var(--mid-grey);text-transform:uppercase;font-weight:700;padding:6px 12px 2px;}
+    .dropdown-panel a{display:block;padding:9px 12px;border-radius:4px;font-size:12px;letter-spacing:.3px;text-transform:none;font-weight:600;color:#222 !important;}
+    .dropdown-panel a:hover{background:var(--grey);color:var(--red) !important;}
+    .dropdown-panel a::after{display:none;}
+    @media(max-width:900px){
+      .nav-item.has-dropdown{flex-wrap:wrap;}
+      .dropdown-panel{
+        position:static;transform:none;opacity:1;visibility:visible;
+        box-shadow:none;border:none;max-height:0;overflow:hidden;padding:0;
+        transition:max-height .3s ease;width:100%;
+      }
+      .nav-item.has-dropdown.open .dropdown-panel{max-height:320px;padding:6px 0 10px 16px;}
+      .dropdown-panel a{padding:12px 0;border-bottom:1px solid #f1f1f1;}
+    }
+
+    /* Events & Training breakdown cards — self-contained, new classes only */
+    .et-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:40px;}
+    .et-card{display:flex;flex-direction:column;gap:12px;padding:28px;border:1px solid var(--mid-grey);border-radius:8px;text-decoration:none;color:inherit;transition:box-shadow .2s, transform .2s;background:#fff;}
+    .et-card:hover{box-shadow:0 16px 36px rgba(0,0,0,.08);transform:translateY(-4px);}
+    .et-tag{display:inline-block;align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;border-radius:2px;color:#fff;background:var(--red);}
+    .et-tag.training{background:var(--blue);}
+    .et-card h3{margin:0;font-size:18px;}
+    .et-card p{margin:0;font-size:14px;color:#555;line-height:1.7;}
+    .et-card .et-link{margin-top:auto;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--black);}
+    .et-card:hover .et-link{color:var(--red);}
+  </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPC67PNQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <div class="scroll-progress" id="scroll-progress"></div>
 
@@ -32,7 +118,18 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="for-brands.html">For Brands</a></li>
       <li><a href="franchise-buyer-resources.html">For Business Buyers</a></li>
-      <li><a href="academy.html">MYFG Academy</a></li>
+      <li class="nav-item has-dropdown">
+        <a href="academy.html">MYFG Academy</a>
+        <button class="dropdown-toggle" aria-label="Toggle Events &amp; Training menu" aria-expanded="false">▾</button>
+        <div class="dropdown-panel">
+          <span class="dropdown-eyebrow">Events</span>
+          <a href="https://asiafranchiseguide.com/tfi-brand-edition/" target="_blank" rel="noopener">TFI Brand Edition</a>
+          <a href="https://asiafranchiseguide.com/tfi-v2/" target="_blank" rel="noopener">TFI v2</a>
+          <a href="https://asiafranchiseguide.com/the-franchise-insider/" target="_blank" rel="noopener">The Franchise Insider</a>
+          <span class="dropdown-eyebrow" style="margin-top:6px;">Training</span>
+          <a href="https://asiafranchiseguide.com/academy/personalbranding/" target="_blank" rel="noopener">Personal Branding Academy</a>
+        </div>
+      </li>
       <li><a href="enterprise-partnerships.html">Partnership</a></li>
       <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
     </ul>
@@ -52,6 +149,44 @@
     <div class="accred-row" style="margin-top:24px;">
       <span class="accred-badge"><span class="dot"></span>HRD Corp Registered</span>
       <span class="accred-badge claimable"><span class="dot"></span>HRD Claimable</span>
+    </div>
+  </section>
+
+  <!-- EVENTS & TRAINING BREAKDOWN -->
+  <section class="how-help" id="events-training">
+    <div class="how-help-header reveal">
+      <p class="section-label">Events &amp; Training</p>
+      <h2>Join a <span>Live Programme.</span></h2>
+      <p style="max-width:680px; font-size:15px; color:#555; line-height:1.8; margin-top:16px;">Our current running
+        programmes, split into events you attend and training you complete. Tap through for dates, format and
+        registration.</p>
+    </div>
+
+    <div class="et-grid">
+      <a class="et-card" href="https://asiafranchiseguide.com/tfi-brand-edition/" target="_blank" rel="noopener">
+        <span class="et-tag">Event</span>
+        <h3>TFI Brand Edition</h3>
+        <p>The Franchise Insider — Brand Edition. A focused session for brands sharpening their positioning and growth story.</p>
+        <span class="et-link">View Details &rarr;</span>
+      </a>
+      <a class="et-card" href="https://asiafranchiseguide.com/tfi-v2/" target="_blank" rel="noopener">
+        <span class="et-tag">Event</span>
+        <h3>TFI v2</h3>
+        <p>The latest edition of The Franchise Insider series — fresh content, format and franchise growth conversations.</p>
+        <span class="et-link">View Details &rarr;</span>
+      </a>
+      <a class="et-card" href="https://asiafranchiseguide.com/the-franchise-insider/" target="_blank" rel="noopener">
+        <span class="et-tag">Event</span>
+        <h3>The Franchise Insider</h3>
+        <p>Our flagship event bringing together franchise and expansion brands, operators and business buyers.</p>
+        <span class="et-link">View Details &rarr;</span>
+      </a>
+      <a class="et-card" href="https://asiafranchiseguide.com/academy/personalbranding/" target="_blank" rel="noopener">
+        <span class="et-tag training">Training</span>
+        <h3>Personal Branding Academy</h3>
+        <p>Hands-on training for founders who are the face of their brand — build visibility, trust and a personal brand that drives business.</p>
+        <span class="et-link">View Details &rarr;</span>
+      </a>
     </div>
   </section>
 
@@ -200,6 +335,7 @@
       <li><a href="academy.html">MYFG Academy</a></li>
       <li><a href="enterprise-partnerships.html">Partnership</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="pdpa-notice.html">PDPA Notice</a></li>
     </ul>
     <div class="footer-social">
       <a href="https://www.instagram.com/myfranchiseguide/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
@@ -243,5 +379,21 @@
   </a>
 
   <script src="brand.js"></script>
+  <!-- MYFG Academy dropdown: click/tap support (desktop already opens on hover via CSS) -->
+  <script>
+    document.querySelectorAll('.dropdown-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        var item = btn.closest('.nav-item');
+        var isOpen = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen);
+      });
+    });
+    document.addEventListener('click', function(e){
+      document.querySelectorAll('.nav-item.has-dropdown.open').forEach(function(item){
+        if(!item.contains(e.target)) item.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>
