@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claudia Ng</title>
+<style>
+  /* Layout: single-column mobile-first stack, light cream brand-deck look —
+     logo lockup header, then two audience tracks (brands / buyers), event,
+     written + video proof, social. Deliberately single (light) theme to
+     match Claudia's own MYFranchiseGuide brand deck (cream/navy/gold/blue). */
+  :root{
+    --cream:#FAF5EA;
+    --white:#FFFFFF;
+    --navy:#1A295B;
+    --navy-deep:#1C2B5C;
+    --navy-light:#2B3C78;
+    --blue:#4C5FD5;
+    --gold:#EDC75B;
+    --gold-pale:#F6E3A8;
+    --muted:#5B6180;
+    --border:#E6DFC7;
+    color-scheme: light;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--cream);
+    color:var(--navy);
+    font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    padding-left:max(16px, env(safe-area-inset-left, 0px));
+    padding-right:max(16px, env(safe-area-inset-right, 0px));
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px);
+    z-index:10; background:var(--cream);
+  }
+
+  .wrap{max-width:560px;margin:0 auto;padding-block:28px 56px;display:flex;flex-direction:column;gap:38px}
+
+  /* ---------- Header / logo lockup ---------- */
+  .lockup-id{display:flex;align-items:center;gap:10px}
+  .pill-logo{
+    flex:none;width:38px;height:38px;border-radius:50%;background:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:13px;color:var(--navy);
+  }
+  .lockup b{font-size:17px;font-weight:800;color:var(--navy)}
+  .hero{display:flex;flex-direction:column;gap:12px}
+  .kicker{
+    font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text,#B9933A);
+  }
+  h1.headline{
+    font-weight:800;line-height:1.08;font-size:clamp(28px,8vw,38px);
+    margin:0;color:var(--navy);text-wrap:balance;
+  }
+  h1.headline em{font-style:italic;color:var(--blue);font-weight:700}
+  .sub{font-size:14px;line-height:1.55;color:var(--muted);margin:0;max-width:46ch}
+
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+  .pill{
+    font-size:11px;font-weight:700;letter-spacing:.02em;
+    padding:7px 13px;border-radius:999px;border:1px solid var(--border);
+    background:var(--white);color:var(--muted);white-space:nowrap;
+  }
+  .pill b{color:var(--navy);font-variant-numeric:tabular-nums}
+
+  /* ---------- Section scaffolding ---------- */
+  section{display:flex;flex-direction:column;gap:14px}
+  .section-label{
+    font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    display:flex;align-items:center;gap:8px;margin:0;
+  }
+  .section-label.gold{color:#B9842A}
+  .section-label.blue{color:var(--blue)}
+  .section-label::after{content:"";flex:1;height:1px;background:var(--border)}
+  .section-sub{font-size:12.5px;color:var(--muted);margin:-8px 0 0}
+
+  /* ---------- Cards ---------- */
+  .card{
+    border:1px solid var(--border);background:var(--white);
+    border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;
+    min-width:0;
+  }
+  .num{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:13px;font-variant-numeric:tabular-nums;
+  }
+  .num.gold{background:var(--gold);color:var(--navy)}
+  .num.blue{background:var(--blue);color:var(--white)}
+  .tag{
+    font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    padding:3px 10px;border-radius:999px;width:fit-content;
+  }
+  .tag.free{color:var(--navy);background:var(--gold-pale)}
+  .tag.limited{color:var(--white);background:var(--blue)}
+  .card h3{font-size:19px;font-weight:800;margin:0;line-height:1.2;text-wrap:balance;color:var(--navy)}
+  .card p{font-size:13.5px;line-height:1.55;color:var(--muted);margin:0}
+
+  .card-cta{
+    margin-top:4px;display:inline-flex;align-items:center;gap:6px;
+    font-size:12.5px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--navy);text-decoration:none;background:none;border:none;
+    cursor:pointer;padding:0;font-family:inherit;width:fit-content;
+  }
+  .card-cta svg{width:13px;height:13px;flex:none;transition:transform .15s}
+  .card-cta:hover svg{transform:translateX(3px)}
+  .card-cta.gold svg{color:#B9842A}
+  .card-cta.blue svg{color:var(--blue)}
+
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--gold);color:var(--navy);border:none;border-radius:14px;
+    padding:15px 18px;font-family:inherit;font-weight:800;font-size:13.5px;
+    letter-spacing:.03em;text-transform:uppercase;text-decoration:none;
+    cursor:pointer;width:100%;
+  }
+  .btn svg{width:14px;height:14px}
+  .btn.on-navy{background:var(--gold)}
+
+  /* ---------- Dark spotlight card ---------- */
+  .spotlight{
+    border-radius:18px;padding:20px;background:var(--navy-deep);color:var(--white);
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .spotlight h3{font-size:19px;font-weight:800;margin:0;line-height:1.2;color:var(--white);text-wrap:balance}
+  .spotlight p{font-size:13.5px;line-height:1.55;color:#C7CEEA;margin:0}
+  .spotlight .inset{
+    background:var(--navy-light);border-radius:12px;padding:12px 14px;
+    display:flex;flex-direction:column;gap:3px;
+  }
+  .spotlight .inset .k{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+  .spotlight .inset .v{font-size:12.5px;font-weight:700;color:var(--white);line-height:1.4}
+
+  /* ---------- Event card ---------- */
+  .event-card{
+    border:1px solid var(--border);border-radius:18px;padding:20px;background:var(--white);
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .event-date{display:flex;align-items:center;gap:12px}
+  .date-box{
+    flex:none;width:52px;height:52px;border-radius:12px;background:var(--cream);
+    border:1px solid var(--border);display:flex;flex-direction:column;
+    align-items:center;justify-content:center;line-height:1;
+  }
+  .date-box .d{font-size:19px;font-weight:900;font-variant-numeric:tabular-nums;color:var(--navy)}
+  .date-box .m{font-size:9.5px;font-weight:800;letter-spacing:.08em;color:#B9842A;margin-top:2px}
+  .event-meta{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .event-meta .t{font-size:12.5px;font-weight:700;color:var(--muted)}
+  .event-meta .t b{color:var(--navy)}
+  .event-card h3{font-size:21px;font-weight:800;margin:0;line-height:1.15;color:var(--navy);text-wrap:balance}
+  .event-card p{font-size:13.5px;line-height:1.55;color:var(--muted);margin:0}
+  .urgency{font-size:12px;font-weight:800;color:var(--blue)}
+
+  /* ---------- Stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .stat{
+    border:1px solid var(--border);background:var(--white);border-radius:14px;
+    padding:14px;display:flex;flex-direction:column;gap:4px;min-width:0;
+  }
+  .stat .n{font-size:21px;font-weight:900;font-variant-numeric:tabular-nums}
+  .stat .n.gold{color:#B9842A}
+  .stat .n.blue{color:var(--blue)}
+  .stat .l{font-size:11px;font-weight:600;color:var(--muted);line-height:1.3}
+
+  /* ---------- Testimonials ---------- */
+  .quote-card{
+    border:1px solid var(--border);background:var(--white);border-radius:18px;
+    padding:18px;display:flex;flex-direction:column;gap:12px;
+  }
+  .stars{color:var(--gold);font-size:13px;letter-spacing:2px}
+  .quote-card p{font-size:13.5px;line-height:1.6;color:var(--navy);margin:0}
+  .attr{display:flex;align-items:center;gap:10px}
+  .avatar{
+    flex:none;width:34px;height:34px;border-radius:50%;background:var(--cream);
+    border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:800;color:var(--navy);
+  }
+  .attr .name2{font-size:12.5px;font-weight:700;color:var(--navy)}
+  .attr .role2{font-size:11.5px;color:var(--muted)}
+
+  /* ---------- Video proof ---------- */
+  .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .video-card{
+    position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border);
+    aspect-ratio:3/4;display:block;background:var(--navy-deep);
+  }
+  .video-card img{width:100%;height:100%;object-fit:cover;display:block;opacity:.88}
+  .video-card .play{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  }
+  .video-card .play span{
+    width:40px;height:40px;border-radius:50%;background:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .video-card .play svg{width:14px;height:14px;color:var(--navy);margin-left:2px}
+  .video-card .cap{
+    position:absolute;left:0;right:0;bottom:0;padding:9px 10px;
+    background:linear-gradient(0deg,rgba(26,41,91,.92),rgba(26,41,91,0));
+    font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#fff;
+  }
+
+  /* ---------- Socials / more ---------- */
+  .social-row{display:flex;flex-wrap:wrap;gap:8px}
+  .social{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid var(--border);border-radius:999px;padding:9px 14px;
+    color:var(--navy);text-decoration:none;font-size:12.5px;font-weight:700;
+    background:var(--white);
+  }
+  .social svg{width:14px;height:14px;flex:none}
+
+  footer{display:flex;flex-direction:column;gap:10px;padding-top:8px;border-top:1px solid var(--border)}
+  footer p{font-size:11px;line-height:1.6;color:#9A9680;margin:0}
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important} }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Montserrat:ital,wght@1,600&display=swap">
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <!-- Header -->
+  <div class="hero">
+    <div class="lockup-id"><span class="pill-logo">CN</span><b>Claudia Ng</b></div>
+    <span class="kicker" style="color:#B9842A">Franchise Growth Strategist</span>
+    <h1 class="headline">Find the path <em>that's right for you.</em></h1>
+    <p class="sub">Free tools to size up where you stand today — and the next step when you're ready to move.</p>
+    <div class="badge-row">
+      <span class="pill"><b>100+</b> brands supported</span>
+      <span class="pill"><b>Top 5</b> of 650, globally</span>
+      <span class="pill"><b>US$1.4M</b> closed in 2025</span>
+      <span class="pill">MFA <b>Council Member</b></span>
+    </div>
+  </div>
+
+  <!-- For Franchise Brands -->
+  <section>
+    <p class="section-label gold">For brand owners</p>
+    <div class="card">
+      <div class="num gold">01</div>
+      <span class="tag free">Free · self-serve</span>
+      <h3>Growth Readiness Assessment</h3>
+      <p>See exactly where your brand stands before you try to scale it through franchising — clarity, systems, team and capital readiness, in one short assessment.</p>
+      <a href="https://asiafranchiseguide.com/growth-readiness" class="card-cta gold">TAKE THE ASSESSMENT <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="spotlight">
+      <div class="num blue">02</div>
+      <h3>Apply to Work With Us</h3>
+      <p>We're a boutique Scaling Consultancy, and we're selective about who we work with. This is for:</p>
+      <div class="inset">
+        <span class="v"><b style="color:var(--gold)">01</b> &nbsp;Existing franchise brands stuck in their growth, ready to break through</span>
+        <span class="v"><b style="color:var(--gold)">02</b> &nbsp;Proven brands ready to expand through franchising</span>
+      </div>
+      <a href="https://form.typeform.com/to/PiU4RoXY" class="btn">
+        APPLY NOW
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- For Franchise Buyers -->
+  <section>
+    <p class="section-label blue">For franchise buyers</p>
+    <div class="card">
+      <div class="num blue">01</div>
+      <span class="tag limited">Free tool</span>
+      <h3>SCALE Calculator</h3>
+      <p>Evaluate a franchise through this calculator and see how much it scores.</p>
+      <a href="https://asiafranchiseguide.com/scale-calculator" class="card-cta blue">RUN THE CALCULATOR <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="spotlight">
+      <div class="num gold">02</div>
+      <h3>1:1 Franchise Buyer Coaching</h3>
+      <p>Gain confidence &amp; clarity through 1:1 coaching — a structured online coaching session to evaluate your options before you decide if franchising is suitable for you.</p>
+      <a href="https://shop.beacons.ai/myfranchiseguide/1d0db3f5-3e4b-4d6c-aace-80bf744f7f74" class="btn">
+        BOOK 1:1 COACHING
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Event -->
+  <section>
+    <p class="section-label gold">Next event</p>
+    <div class="event-card">
+      <div class="event-date">
+        <div class="date-box"><span class="d">03</span><span class="m">DEC</span></div>
+        <div class="event-meta">
+          <span class="t">HELP University, Subang</span>
+          <span class="t"><b>9:00 AM – 5:30 PM</b> · registration from 8:30</span>
+        </div>
+      </div>
+      <h3>The Franchise Insider — Brand Edition</h3>
+      <p>Malaysia's first event of its kind for franchise brands. ~100 brand owners, 12 facilitated roundtables, 90 minutes of straight talk with partner experts who've been in the room before. Built for brand owners and leadership teams — not for vendors or franchise buyers.</p>
+      <span class="urgency">Less than 2 weeks away — seats are limited</span>
+      <a href="https://asiafranchiseguide.com/tfi-brand-edition/" class="btn">
+        SECURE MY SEAT
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Written proof -->
+  <section>
+    <p class="section-label gold">What brand owners say</p>
+    <div class="quote-card">
+      <span class="stars">★★★★★</span>
+      <p>"Collaborating with Claudia on our video project was an excellent experience. We received enquiries from Mauritius, Malaysia, and Singapore. Claudia brings strong experience in franchising, sales, and marketing, which makes her a valuable asset to the franchise industry."</p>
+      <div class="attr">
+        <div class="avatar">JK</div>
+        <div><div class="name2">Jayesh Kasim</div><div class="role2">CEO, Valenta</div></div>
+      </div>
+    </div>
+    <div class="quote-card">
+      <span class="stars">★★★★★</span>
+      <p>"Claudia somehow makes two days a week feel like four, while still making time to understand people and the business deeply. If you have the opportunity to work with her, take it."</p>
+      <div class="attr">
+        <div class="avatar">HN</div>
+        <div><div class="name2">Hsien Naidu</div><div class="role2">Founder &amp; CEO, TreeAMS</div></div>
+      </div>
+    </div>
+    <div class="video-grid">
+      <a class="video-card" href="https://www.youtube.com/shorts/U_Mbgpnz6dM">
+        <img src="thumbs/U_Mbgpnz6dM.jpg" alt="Client testimonial video">
+        <div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="cap">Client story</div>
+      </a>
+      <a class="video-card" href="https://www.youtube.com/shorts/i-TcIvpUlbM">
+        <img src="thumbs/i-TcIvpUlbM.jpg" alt="Client testimonial video">
+        <div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="cap">Client story</div>
+      </a>
+      <a class="video-card" href="https://www.youtube.com/shorts/KDOG-uid9OI">
+        <img src="thumbs/KDOG-uid9OI.jpg" alt="Client testimonial video">
+        <div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="cap">Client story</div>
+      </a>
+      <a class="video-card" href="https://www.youtube.com/shorts/whhX0CFFESw">
+        <img src="thumbs/whhX0CFFESw.jpg" alt="Client testimonial video">
+        <div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="cap">Client story</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- More -->
+  <section>
+    <p class="section-label gold">More</p>
+    <a href="https://asiafranchiseguide.com" class="social">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.6 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.6-3.8-9s1.3-6.5 3.8-9z"/></svg>
+      asiafranchiseguide.com
+    </a>
+    <div class="social-row">
+      <a href="https://www.instagram.com/myfranchiseguide/" class="social">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@my.franchiseguide" class="social">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3h-3.2v12.4a2.8 2.8 0 1 1-2-2.68V9.5a6 6 0 1 0 5.2 5.95V9.3a7.6 7.6 0 0 0 4.4 1.4V7.5A4.4 4.4 0 0 1 16.6 3z"/></svg>
+        TikTok
+      </a>
+      <a href="https://www.facebook.com/myfranchiseguide" class="social">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 8h-2a2 2 0 0 0-2 2v2H9v3h2v6h3v-6h2.2l.8-3H14v-1.5c0-.4.3-.7.7-.7H16V8z"/><circle cx="12" cy="12" r="9"/></svg>
+        Facebook
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>This page is for general information only and doesn't guarantee results. Franchise and business outcomes vary — always do your own due diligence before committing capital.</p>
+    <p>© 2026 Claudia Ng · MYFranchiseGuide</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
