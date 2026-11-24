@@ -122,7 +122,7 @@ footer{margin-top:28px;padding:22px 0 36px;color:var(--muted);font-size:13px;bor
 </div>
 
 <script>
-const SCRIPT_URL = ""; // <-- paste the Web app URL from Apps Script here
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyXj_xbV84g-baF8N0yRtfdqxbWLOhCmVSjjWUKmvNC6cmhEv5tola5-wb7999A82rXeA/exec"; // <-- paste the Web app URL from Apps Script here
 
 const DEMO_TOPICS = [
  ['T01','Sales','The Modern Sales Funnel: Attracting, Engaging and Closing the Ideal Franchise Candidate','MYFranchiseGuide'],
