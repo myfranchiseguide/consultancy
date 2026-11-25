@@ -127,16 +127,16 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyXj_xbV84g-baF8N0yR
 const DEMO_TOPICS = [
  ['T01','Sales','The Modern Sales Funnel: Attracting, Engaging and Closing the Ideal Franchise Candidate','MYFranchiseGuide'],
  ['T02','Finance','Bankable Franchisees: Making Your Franchise Easier for Banks to Fund','SME Bank'],
- ['T03','Tech','Scaling from 5 to 50 Outlets: How Franchise Brands Improve Profitability and Control Operations','Ebi Software'],
- ['T04','Retail','How to Measure Brand Experience ROI','USEA'],
+ ['T03','Finance','Spotting Financial Stress Before It Affects the Network','CTOS'],
+ ['T04','Marketing','Local Community Engagement: Strategy and Ideas','Gamuda'],
  ['T05','Marketing','Brand Fund vs Local Marketing: Who Pays, Who Controls, Who Gets the Leads?','Skribble Group'],
- ['T06','Finance','Spotting Financial Stress Before It Affects the Network','CTOS'],
+ ['T06','Tech','Scaling from 5 to >100 Outlets: Leveraging AI to Drive Profitability, Excellence and Growth','Ebi Software'],
  ['T07','Legal','Dos and Don\'ts of Franchising in Malaysia','LPP Law'],
  ['T08','Operations','Franchise Operation Consistency at Scale','Lark'],
  ['T09','HR','The Staffing Crisis: Foreign Workers and Frontline Staff Management','Kakitangan.com'],
  ['T10','Government','How Can Pernas Help Me Grow My Business?','Pernas'],
- ['T11','Marketing','Local Community Engagement: Strategy and Ideas','Gamuda'],
- ['T12','Retail','How Can a Customer Recognise Your Brand Blindfolded, at Every Outlet?','Blupepper.co']].map(([id,cat,title,fac],i)=>({id,cat,title,fac,cap:9,r1:[3,9,5,2,7,4,8,1,6,0,2,5][i],r2:[6,2,9,4,1,7,3,9,5,2,0,3][i]}));
+ ['T11','Retail','How to Measure Brand Experience ROI','USEA'],
+ ['T12','Retail','What Does brand consistency actually mean to your customers','Blupepper.co']].map(([id,cat,title,fac],i)=>({id,cat,title,fac,cap:9,r1:[3,9,5,2,7,4,8,1,6,0,2,5][i],r2:[6,2,9,4,1,7,3,9,5,2,0,3][i]}));
 
 let topics = [], pick = {r1:null, r2:null};
 const $ = id => document.getElementById(id);
