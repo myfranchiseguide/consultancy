@@ -124,21 +124,21 @@ footer{margin-top:28px;padding:22px 0 36px;color:var(--muted);font-size:13px;bor
 </div>
 
 <script>
-const SCRIPT_URL = https://script.google.com/macros/s/AKfycbyXj_xbV84g-baF8N0yRtfdqxbWLOhCmVSjjWUKmvNC6cmhEv5tola5-wb7999A82rXeA/exec; // <-- copy this from your current live file // <-- paste the Web app URL from Apps Script here
+const SCRIPT_URL = "PASTE_YOUR_WEB_APP_URL_HERE"; // <-- copy this from your current live file // <-- paste the Web app URL from Apps Script here
 
 const DEMO_TOPICS = [
- ['T01','Sales','The Modern Sales Funnel: Attracting, Engaging and Closing the Ideal Franchise Candidate','MYFranchiseGuide'],
- ['T02','Finance','Bankable Franchisees: Making Your Franchise Easier for Banks to Fund','SME Bank'],
- ['T03','Tech','Scaling from 5 to 100+ Outlets: Leveraging AI to Drive Profitability, Excellence and Growth','Ebi Software'],
- ['T04','Retail','How to Measure Brand Experience ROI','USEA'],
+ ['T01','Finance','Bankable Franchisees: Making Your Franchise Easier for Banks to Fund','SME Bank'],
+ ['T02','Finance','Spotting Financial Stress Before It Affects the Network','CTOS'],
+ ['T03','Retail','How to Measure Brand Experience ROI','USEA'],
+ ['T04','Retail','What Does Brand Consistency Actually Mean to Your Customers?','Blupepper.co'],
  ['T05','Marketing','Brand Fund vs Local Marketing: Who Pays, Who Controls, Who Gets the Leads?','Skribble Group'],
- ['T06','Finance','Spotting Financial Stress Before It Affects the Network','CTOS'],
- ['T07','Legal','Dos and Don\'ts of Franchising in Malaysia','LPP Law'],
+ ['T06','Marketing','Local Community Engagement: Strategy and Ideas','Gamuda'],
+ ['T07','Sales','The Modern Sales Funnel: Attracting, Engaging and Closing the Ideal Franchise Candidate','MYFranchiseGuide'],
  ['T08','Operations','Franchise Operation Consistency at Scale','Lark'],
- ['T09','HR','The Staffing Crisis: Foreign Workers and Frontline Staff Management','Kakitangan.com'],
- ['T10','Government','How Can Pernas Help Me Grow My Business?','Pernas'],
- ['T11','Marketing','Local Community Engagement: Strategy and Ideas','Gamuda'],
- ['T12','Retail','What Does Brand Consistency Actually Mean to Your Customers?','Blupepper.co']].map(([id,cat,title,fac],i)=>({id,cat,title,fac,cap:9,r1:[3,9,5,2,7,4,8,1,6,0,2,5][i],r2:[6,2,9,4,1,7,3,9,5,2,0,3][i]}));
+ ['T09','Tech','Scaling from 5 to 100+ Outlets: Leveraging AI to Drive Profitability, Excellence and Growth','Ebi Software'],
+ ['T10','HR','The Staffing Crisis: Foreign Workers and Frontline Staff Management','Kakitangan.com'],
+ ['T11','Legal','Dos and Don\'ts of Franchising in Malaysia','LPP Law'],
+ ['T12','Government','How Can Pernas Help Me Grow My Business?','Pernas']].map(([id,cat,title,fac],i)=>({id,cat,title,fac,cap:9,r1:[3,9,5,2,7,4,8,1,6,0,2,5][i],r2:[6,2,9,4,1,7,3,9,5,2,0,3][i]}));
 
 let topics = [], pick = {r1:null, r2:null};
 const $ = id => document.getElementById(id);
@@ -147,19 +147,17 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':
 const CAT_ORDER = ['Finance','Retail','Marketing','Sales','Operations','Tech','HR','Legal','Government'];
 const catIdx = c => { const i = CAT_ORDER.indexOf(c); return i < 0 ? 99 : i; };
 function render(){
-  const sorted = [...topics].sort((a,b) => (catIdx(a.cat) - catIdx(b.cat)) || a.id.localeCompare(b.id));
+  const sorted = [...topics].sort((a,b) => a.id.localeCompare(b.id));
   ['r1','r2'].forEach(r => {
     const other = r === 'r1' ? pick.r2 : pick.r1;
-    let lastCat = '';
     $(r).innerHTML = sorted.map(t => {
-      const head = t.cat !== lastCat ? `<div class="cathead">${esc(t.cat)}</div>` : ''; lastCat = t.cat;
       const left = Math.max(t.cap - t[r], 0), full = left === 0, taken = t.id === other;
       if (full && pick[r] === t.id) pick[r] = null;
       const sel = pick[r] === t.id;
       const badge = full ? 'Full' : left + (left === 1 ? ' seat left' : ' seats left');
-      return head + `<label class="topic ${full?'full':''} ${taken&&!full?'taken':''} ${sel?'sel':''}">
+      return `<label class="topic ${full?'full':''} ${taken&&!full?'taken':''} ${sel?'sel':''}">
         <input type="radio" name="${r}" value="${t.id}" ${sel?'checked':''} ${full||taken?'disabled':''}>
-        <span class="t"><small>Table ${Number(t.id.slice(1))}</small><span>${esc(t.title)}</span>${t.fac?`<em class="fac">Facilitated by ${esc(t.fac)}</em>`:''}</span>
+        <span class="t"><small>Table ${Number(t.id.slice(1))} · ${esc(t.cat)}</small><span>${esc(t.title)}</span>${t.fac?`<em class="fac">Facilitated by ${esc(t.fac)}</em>`:''}</span>
         <span class="seats ${!full&&left<=2?'low':''}">${taken&&!full?'Your other round':badge}</span></label>`;
     }).join('');
   });
