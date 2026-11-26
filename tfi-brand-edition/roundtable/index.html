@@ -40,6 +40,8 @@ input:focus-visible,.topic:focus-within{outline:3px solid rgba(1,81,179,.35);out
 .rhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
 .rhead h3{font-size:19px}.rhead span{font-size:13px;color:var(--muted)}
 .topics{display:grid;gap:8px;margin-top:12px}
+.cathead{margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:4px}
+.cathead:first-child{margin-top:0}
 .topic{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;cursor:pointer;background:#fff;transition:border-color .15s,background .15s}
 .topic input{width:18px;height:18px;accent-color:var(--navy)}
 .topic .t small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--red);text-transform:uppercase}
@@ -104,7 +106,7 @@ footer{margin-top:28px;padding:22px 0 36px;color:var(--muted);font-size:13px;bor
   <div class="round"><div class="rhead"><h3>Round 1 · 1:30pm</h3><span>Pick 1 table</span></div><div class="topics" id="r1"></div></div>
   <div class="round"><div class="rhead"><h3>Round 2 · 2:25pm</h3><span>Pick a different table</span></div><div class="topics" id="r2"></div></div>
 
-  <label class="consent" for="pdpa"><input id="pdpa" type="checkbox" required><span><b>*</b> I have read and agree to MYFranchiseGuide's <a href="https://asiafranchiseguide.com/pdpa-notice.html" target="_blank" rel="noopener">PDPA Notice</a>. * I have read and agree to the PDPA Notice, and consent to my personal data being shared with the event organisers and partners, in accordance with the Personal Data Protection Act 2010.</span></label>
+  <label class="consent" for="pdpa"><input id="pdpa" type="checkbox" required><span><b>*</b> I have read and agree to the <a href="https://asiafranchiseguide.com/pdpa-notice.html" target="_blank" rel="noopener">PDPA Notice</a>, and consent to my personal data being shared with the event organisers and partners, in accordance with the Personal Data Protection Act 2010.</span></label>
   <div id="msg" class="msg" role="alert"></div>
   <button class="btn" id="go" type="submit">Reserve my two seats →</button>
 </form>
@@ -122,37 +124,42 @@ footer{margin-top:28px;padding:22px 0 36px;color:var(--muted);font-size:13px;bor
 </div>
 
 <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyXj_xbV84g-baF8N0yRtfdqxbWLOhCmVSjjWUKmvNC6cmhEv5tola5-wb7999A82rXeA/exec"; // <-- paste the Web app URL from Apps Script here
+const SCRIPT_URL = "PASTE_YOUR_WEB_APP_URL_HERE"; // <-- copy this from your current live file // <-- paste the Web app URL from Apps Script here
 
 const DEMO_TOPICS = [
  ['T01','Sales','The Modern Sales Funnel: Attracting, Engaging and Closing the Ideal Franchise Candidate','MYFranchiseGuide'],
  ['T02','Finance','Bankable Franchisees: Making Your Franchise Easier for Banks to Fund','SME Bank'],
- ['T03','Finance','Spotting Financial Stress Before It Affects the Network','CTOS'],
- ['T04','Marketing','Local Community Engagement: Strategy and Ideas','Gamuda'],
+ ['T03','Tech','Scaling from 5 to 100+ Outlets: Leveraging AI to Drive Profitability, Excellence and Growth','Ebi Software'],
+ ['T04','Retail','How to Measure Brand Experience ROI','USEA'],
  ['T05','Marketing','Brand Fund vs Local Marketing: Who Pays, Who Controls, Who Gets the Leads?','Skribble Group'],
- ['T06','Tech','Scaling from 5 to >100 Outlets: Leveraging AI to Drive Profitability, Excellence and Growth','Ebi Software'],
+ ['T06','Finance','Spotting Financial Stress Before It Affects the Network','CTOS'],
  ['T07','Legal','Dos and Don\'ts of Franchising in Malaysia','LPP Law'],
  ['T08','Operations','Franchise Operation Consistency at Scale','Lark'],
  ['T09','HR','The Staffing Crisis: Foreign Workers and Frontline Staff Management','Kakitangan.com'],
  ['T10','Government','How Can Pernas Help Me Grow My Business?','Pernas'],
- ['T11','Retail','How to Measure Brand Experience ROI','USEA'],
- ['T12','Retail','What Does brand consistency actually mean to your customers','Blupepper.co']].map(([id,cat,title,fac],i)=>({id,cat,title,fac,cap:9,r1:[3,9,5,2,7,4,8,1,6,0,2,5][i],r2:[6,2,9,4,1,7,3,9,5,2,0,3][i]}));
+ ['T11','Marketing','Local Community Engagement: Strategy and Ideas','Gamuda'],
+ ['T12','Retail','What Does Brand Consistency Actually Mean to Your Customers?','Blupepper.co']].map(([id,cat,title,fac],i)=>({id,cat,title,fac,cap:9,r1:[3,9,5,2,7,4,8,1,6,0,2,5][i],r2:[6,2,9,4,1,7,3,9,5,2,0,3][i]}));
 
 let topics = [], pick = {r1:null, r2:null};
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
+const CAT_ORDER = ['Finance','Retail','Marketing','Sales','Operations','Tech','HR','Legal','Government'];
+const catIdx = c => { const i = CAT_ORDER.indexOf(c); return i < 0 ? 99 : i; };
 function render(){
+  const sorted = [...topics].sort((a,b) => (catIdx(a.cat) - catIdx(b.cat)) || a.id.localeCompare(b.id));
   ['r1','r2'].forEach(r => {
     const other = r === 'r1' ? pick.r2 : pick.r1;
-    $(r).innerHTML = topics.map(t => {
+    let lastCat = '';
+    $(r).innerHTML = sorted.map(t => {
+      const head = t.cat !== lastCat ? `<div class="cathead">${esc(t.cat)}</div>` : ''; lastCat = t.cat;
       const left = Math.max(t.cap - t[r], 0), full = left === 0, taken = t.id === other;
       if (full && pick[r] === t.id) pick[r] = null;
       const sel = pick[r] === t.id;
       const badge = full ? 'Full' : left + (left === 1 ? ' seat left' : ' seats left');
-      return `<label class="topic ${full?'full':''} ${taken&&!full?'taken':''} ${sel?'sel':''}">
+      return head + `<label class="topic ${full?'full':''} ${taken&&!full?'taken':''} ${sel?'sel':''}">
         <input type="radio" name="${r}" value="${t.id}" ${sel?'checked':''} ${full||taken?'disabled':''}>
-        <span class="t"><small>Table ${Number(t.id.slice(1))} · ${esc(t.cat)}</small><span>${esc(t.title)}</span>${t.fac?`<em class="fac">Facilitated by ${esc(t.fac)}</em>`:''}</span>
+        <span class="t"><small>Table ${Number(t.id.slice(1))}</small><span>${esc(t.title)}</span>${t.fac?`<em class="fac">Facilitated by ${esc(t.fac)}</em>`:''}</span>
         <span class="seats ${!full&&left<=2?'low':''}">${taken&&!full?'Your other round':badge}</span></label>`;
     }).join('');
   });
@@ -160,7 +167,7 @@ function render(){
 }
 
 async function load(){
-  if (!SCRIPT_URL){ $('demo').hidden = false; topics = DEMO_TOPICS; render(); return; }
+  if (!SCRIPT_URL || SCRIPT_URL.indexOf('PASTE_') === 0){ $('demo').hidden = false; topics = DEMO_TOPICS; render(); return; }
   try {
     const res = await fetch(SCRIPT_URL, {cache:'no-store'});
     const d = await res.json(); topics = d.topics; render();
@@ -179,7 +186,7 @@ $('f').addEventListener('submit', async e => {
   const go = $('go'); go.disabled = true; go.textContent = 'Reserving…';
   try {
     let d;
-    if (!SCRIPT_URL){ d = {ok:true}; }
+    if (!SCRIPT_URL || SCRIPT_URL.indexOf('PASTE_') === 0){ d = {ok:true}; }
     else {
       const res = await fetch(SCRIPT_URL, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify({name, email, company:'', r1: pick.r1, r2: pick.r2, pdpa: true})});
       d = await res.json();
